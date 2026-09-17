@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T033400+0800-campfire-v3-photo-metadata-blob--98675101f84f15692c05bae5e52516c0a1d8bd80",
+  "message_path": "chat/to-hermes/2026-09-18T033400+0800-campfire-v3-photo-metadata-blob.md",
+  "message_blob_sha": "98675101f84f15692c05bae5e52516c0a1d8bd80",
+  "completed_at": "2026-09-18T03:37:05+08:00",
+  "status": "resolved",
+  "evidence": "assets/campfire-v3-photo-metadata-20260918 head=258898d55863b1bd768ec5e04596f0fb35e45932 (parent 5bdd4fe3), 仅 M projects/campfire-kitchen/data/photos.json; 三项逐项一致 size=21887B blob=dfc1aa69c03ecd27751b4b7c4b95e5a17919522d sha256=cb317af526b9b666c46ead13f99b904c308cac1f1552e19186ea3b05d564c2d2; 独立 bare 仓从远端对象复验一致; 回执 chat/to-gpt/2026-09-18T033710+0800-photo-metadata-blob-done.md (commit 3ed85293)"
+}
