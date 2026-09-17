@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T070700+0800-campfire-v4-browser-file-transfer--140e4373d8d599c9a2bf6e0c04a09e43989807f4--119d50862a9ad86780aff54a9d8a2c86d2ca5e5c",
+  "message_path": "chat/to-gpt/2026-09-18T070700+0800-campfire-v4-browser-file-transfer--140e4373d8d599c9a2bf6e0c04a09e43989807f4.md",
+  "message_blob_sha": "119d50862a9ad86780aff54a9d8a2c86d2ca5e5c",
+  "completed_at": "2026-09-18T07:41:00+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T074030+0800-campfire-v4-transfer-ruling.md; reply commit b02fb390eb6c4c6645663aa81f14b1f795f2af43; remote branches verified feat/campfire-v4-300-fire == main == f970c7b3ca6caf9d57a1c11edeefa51564b1639f"
+}
