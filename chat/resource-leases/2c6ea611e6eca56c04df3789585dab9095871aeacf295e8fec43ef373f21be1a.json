@@ -7,7 +7,7 @@
   "purpose": "status-append campfire-v3-0-0 release receipt",
   "fence": 49,
   "acquired_at": "2026-09-18T04:12:48+08:00",
-  "lease_until": "2026-09-18T04:42:48+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T04:15:37+08:00",
+  "released_at": "2026-09-18T04:15:37+08:00",
+  "status": "released"
 }
