@@ -1,0 +1,13 @@
+{
+  "protocol_version": 1,
+  "resource_key": "resource:chat/STATUS.md",
+  "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "ca04d122-38a4-48d4-801e-9d7157c47007",
+  "purpose": "append completion status for parallelism-gate-for-lease",
+  "fence": 1,
+  "acquired_at": "2026-09-17T17:45:53+08:00",
+  "lease_until": "2026-09-17T18:15:53+08:00",
+  "released_at": null,
+  "status": "held"
+}
