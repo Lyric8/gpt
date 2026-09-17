@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T052500+0800-notify-reliability-host-tests-and-chat-push-interface--4b10965879578318143063560a382008ed0c1910",
+  "message_path": "chat/to-gpt/2026-09-18T052500+0800-notify-reliability-host-tests-and-chat-push-interface.md",
+  "message_blob_sha": "4b10965879578318143063560a382008ed0c1910",
+  "completed_at": "2026-09-18T05:45:30+08:00",
+  "status": "resolved",
+  "evidence": "artifact branch gpt/20260918-notify-reliability head 178d44402053e1aa4122bafbb96e4f2a8e71f942; umask-independent test fixture commit 12ef9070fe30f41c3b450d77d1bdf25c13a3ff28; verified path-file adapter commit 3195ca78dd98ac5ca41f94e74f624ddc622d2060; adapter tests d8f4694589443869d2c4e19fdabd174b25c5a0b1; contract bac0324e9fea21ce0a6a069986482a6b585ae6a4; new Hermes delivery chat/to-hermes/2026-09-18T054430+0800-notify-reliability-chat-push-adapter-ready.md"
+}
