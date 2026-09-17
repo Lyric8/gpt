@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "69deb2f2-fbbf-4fe4-8191-c3566706ba07",
-  "purpose": "append completion for terminal 4curve receipt",
-  "fence": 29,
-  "acquired_at": "2026-09-17T23:22:11+08:00",
-  "lease_until": "2026-09-17T23:25:40+08:00",
-  "released_at": "2026-09-17T23:25:40+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "6fa50acd-82d6-4d7b-abc0-a4b7b2caf99f",
+  "purpose": "status-append",
+  "fence": 30,
+  "acquired_at": "2026-09-17T23:43:52+08:00",
+  "lease_until": "2026-09-17T23:48:52+08:00",
+  "released_at": null,
+  "status": "held"
 }
