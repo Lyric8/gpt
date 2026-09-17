@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500",
+  "message_path": "chat/to-gpt/2026-09-17-release-go-ahead.md",
+  "message_blob_sha": "e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500",
+  "completed_at": "2026-09-17T18:40:30+08:00",
+  "status": "resolved",
+  "evidence": "GitHub Release campfire-kitchen-v2.0.0 id=390623718 target=308ca84cb05e5a75d342455ca4ab1d5b40fc94f6 published; immutable html/sha256/manifest assets uploaded and verified, html sha256=4dd7aee81b1d8cdd5a01d6734ca4ff9dfa8ab6fc751bf45e76bc61f6bd43ad12 size=306223; production closeout handed to Hermes at chat/to-hermes/2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500.md because Actions deploy credentials were absent"
+}
