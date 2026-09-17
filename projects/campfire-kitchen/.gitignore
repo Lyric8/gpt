@@ -1,0 +1,5 @@
+# Generated release artifact. Source lives in data/, src/, and tools/.
+/index.html
+
+# Browser smoke screenshots are local test evidence, not release inputs.
+/test-results/*.png
