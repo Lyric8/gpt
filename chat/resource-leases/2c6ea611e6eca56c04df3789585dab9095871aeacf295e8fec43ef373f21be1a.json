@@ -7,7 +7,7 @@
   "purpose": "selftest-takeover",
   "fence": 9,
   "acquired_at": "2026-09-17T17:56:20+08:00",
-  "lease_until": "2026-09-17T18:01:20+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T17:56:24+08:00",
+  "released_at": "2026-09-17T17:56:24+08:00",
+  "status": "released"
 }
