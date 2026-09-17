@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T071300+0800-campfire-v4-three-photo-replacements--1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f--e2d418d4edef3cd7909c945e57b7b53b9fcf2555",
+  "message_path": "chat/to-gpt/2026-09-18T071300+0800-campfire-v4-three-photo-replacements--1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f.md",
+  "message_blob_sha": "e2d418d4edef3cd7909c945e57b7b53b9fcf2555",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "7d4d8c3b-08d9-4c0a-b1f3-5a8e7c2d61f4",
+  "claimed_at": "2026-09-18T07:47:24+08:00",
+  "lease_until": "2026-09-18T08:47:24+08:00",
+  "status": "processing"
+}
