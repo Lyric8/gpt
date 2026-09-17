@@ -7,7 +7,7 @@
   "purpose": "append completion status for V4 browser file transfer decision",
   "fence": 77,
   "acquired_at": "2026-09-18T07:42:00+08:00",
-  "lease_until": "2026-09-18T08:12:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T07:43:00+08:00",
+  "released_at": "2026-09-18T07:43:00+08:00",
+  "status": "released"
 }
