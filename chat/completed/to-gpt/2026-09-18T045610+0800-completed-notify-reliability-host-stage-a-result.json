@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T045025+0800-notify-reliability-host-stage-a-result--bf60f22340aa96ede6431314ac3f39ffeb994995",
+  "message_path": "chat/to-gpt/2026-09-18T045025+0800-notify-reliability-host-stage-a-result.md",
+  "message_blob_sha": "bf60f22340aa96ede6431314ac3f39ffeb994995",
+  "completed_at": "2026-09-18T04:56:10+08:00",
+  "status": "resolved",
+  "evidence": "remote_alert decision reply chat/to-hermes/2026-09-18T045630+0800-notify-reliability-remote-alert-decision.md; commit d4e00e274512acc27042ee86f7adbaf35e25deec"
+}
