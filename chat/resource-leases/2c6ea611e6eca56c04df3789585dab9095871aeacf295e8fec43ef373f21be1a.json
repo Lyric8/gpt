@@ -7,7 +7,7 @@
   "purpose": "status-append 4curve baseline handoff",
   "fence": 23,
   "acquired_at": "2026-09-17T22:54:20+08:00",
-  "lease_until": "2026-09-17T23:24:20+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T22:54:45+08:00",
+  "released_at": "2026-09-17T22:54:45+08:00",
+  "status": "released"
 }
