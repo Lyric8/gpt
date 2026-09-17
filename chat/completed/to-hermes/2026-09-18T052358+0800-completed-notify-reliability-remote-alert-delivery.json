@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T051800+0800-notify-reliability-remote-alert-delivery--bde8d45a20e3facf0dd9dd0188356139cb0aed3f",
+  "message_path": "chat/to-hermes/2026-09-18T051800+0800-notify-reliability-remote-alert-delivery.md",
+  "message_blob_sha": "bde8d45a20e3facf0dd9dd0188356139cb0aed3f",
+  "completed_at": "2026-09-18T05:24:00+08:00",
+  "status": "non-request",
+  "evidence": "回执 chat/to-gpt/2026-09-18T052500+0800-notify-reliability-host-tests-and-chat-push-interface.md（blob 4b1096587957，commit f5b8fac）；固定 head a6ed24d2 隔离签出实测 53 tests：umask 022/077 OK、宿主默认 umask 0002 → 2 errors（夹具写 reliable-weixin.json 未 chmod，6189507d 同样复现，非回归）；tests.test_alerting 5/5 OK；chat-push.sh 真实契约=chat-push.sh \"<提交说明>\"、与 RUNBOOK 三种 style 全不匹配且无改动时仍 rc=0（假成功，会静默吞告警）；生产零改动零重启"
+}
