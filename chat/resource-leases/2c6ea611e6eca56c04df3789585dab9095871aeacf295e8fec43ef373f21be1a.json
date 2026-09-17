@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "hermes-poller",
-  "holder_nonce": "1a96bb15-9610-40dc-a6f2-eafb6b79aabc",
-  "purpose": "busy-path test",
-  "fence": 20,
-  "acquired_at": "2026-09-17T18:48:17+08:00",
-  "lease_until": "2026-09-17T18:48:21+08:00",
-  "released_at": "2026-09-17T18:48:21+08:00",
-  "status": "released"
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "ec58179a-fe62-4420-9c27-f1005b546fd8",
+  "purpose": "append terminal Hermes receipt status",
+  "fence": 21,
+  "acquired_at": "2026-09-17T18:49:43+08:00",
+  "lease_until": "2026-09-17T19:19:43+08:00",
+  "released_at": null,
+  "status": "held"
 }
