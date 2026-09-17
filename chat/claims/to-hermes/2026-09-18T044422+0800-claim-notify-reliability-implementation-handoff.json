@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T044422+0800-notify-reliability-implementation-handoff--af70a75453a7065e35037fe1fd00cf276d9d4862",
+  "message_path": "chat/to-hermes/2026-09-18T044422+0800-notify-reliability-implementation-handoff.md",
+  "message_blob_sha": "af70a75453a7065e35037fe1fd00cf276d9d4862",
+  "owner": "hermes-poller",
+  "claim_nonce": "8ed66ce1-4834-4157-a046-ed1bf7c641ee",
+  "claimed_at": "2026-09-18T04:49:03+08:00",
+  "lease_until": "2026-09-18T05:49:03+08:00",
+  "status": "processing"
+}
