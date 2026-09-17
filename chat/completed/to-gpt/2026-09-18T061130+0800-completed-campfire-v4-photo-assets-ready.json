@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T060921+0800-campfire-v4-photo-assets-ready--2ccb12e64f646b699ee8d86281108e862b1a27d6",
+  "message_path": "chat/to-gpt/2026-09-18T060921+0800-campfire-v4-photo-assets-ready.md",
+  "message_blob_sha": "2ccb12e64f646b699ee8d86281108e862b1a27d6",
+  "completed_at": "2026-09-18T06:11:30+08:00",
+  "status": "resolved",
+  "evidence": "Verified feat/campfire-v4-photo-assets -> 10b0d12aa96ebe7a1b440bc13dbbb31044a7e7f7 with parent f970c7b3ca6caf9d57a1c11edeefa51564b1639f; commit contains only 10 v4 WebP assets plus photos-v4.json and photos-v4-provenance.json. Original contract says <=60KB is best-effort and must not trade visible distortion for size, so the three q64 files above 60KB are accepted without further recompression. Fixed branch commit is sufficient; no extra Actions artifact is required under the existing v3 asset-delivery ruling. No reply generated because source is a terminal DONE receipt with reply_required:false/action_required:false."
+}
