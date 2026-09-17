@@ -1,0 +1,452 @@
+{
+  "basil-toast": {
+    "src": "assets/photos/basil-toast.webp",
+    "alt": "番茄丁与罗勒叶铺在烤面包片上的开胃小食",
+    "author": "Abi Porter",
+    "source": "https://commons.wikimedia.org/wiki/File:Tomato_and_basil_bruschetta_(4925749658).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "rosemary-beef": {
+    "src": "assets/photos/rosemary-beef.webp",
+    "alt": "烤牛小排切片盛在米饭上",
+    "author": "Ceeseven",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Beef_Short_Ribs_with_Rice.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "chimi-beef": {
+    "src": "assets/photos/chimi-beef.webp",
+    "alt": "切片烤牛排淋绿色香草酸汁（chimichurri）",
+    "author": "Dominic Lockyer",
+    "source": "https://commons.wikimedia.org/wiki/File:Steak_with_Chimichurri_Sauce_(13316522335).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "cumin-beef-wrap": {
+    "src": "assets/photos/cumin-beef-wrap.webp",
+    "alt": "生菜叶包炒肉馅，配洋葱香草",
+    "author": "Vegan Feast Catering",
+    "source": "https://commons.wikimedia.org/wiki/File:Lettuce_Wraps_(4104199873).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "greek-chicken": {
+    "src": "assets/photos/greek-chicken.webp",
+    "alt": "柠檬牛至风味烤鸡块，配橄榄与蔬菜",
+    "author": "Orderinchaos",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_souvlaki_at_Hellenic_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "mustard-chicken": {
+    "src": "assets/photos/mustard-chicken.webp",
+    "alt": "裹黄色芥末酱汁的鸡块",
+    "author": "Luca Nebuloni",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_delicacies_with_honey,_mustard_and_turmeric_(16717511506).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "pepper-chicken": {
+    "src": "assets/photos/pepper-chicken.webp",
+    "alt": "整只烤鸡腿（带皮，撒黑椒调味）",
+    "author": "Fumikas Sagisavas",
+    "source": "https://commons.wikimedia.org/wiki/File:Freshippo_lemon_black_pepper_chicken_drumsticks.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "teriyaki-chicken": {
+    "src": "assets/photos/teriyaki-chicken.webp",
+    "alt": "照烧鸡排便当盒",
+    "author": "Daderot",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_teriyaki_bento_box_-_Massachusetts.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "mint-lamb": {
+    "src": "assets/photos/mint-lamb.webp",
+    "alt": "铁签烤羊肉串",
+    "author": "John Thompson from Iqaluit",
+    "source": "https://commons.wikimedia.org/wiki/File:Ju_Xiang_Yuan_Restaurant,_Ottawa_-_Grilled_Lamb_(6453828095).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "lemon-shrimp": {
+    "src": "assets/photos/lemon-shrimp.webp",
+    "alt": "烤虾串配柠檬角",
+    "author": "Eximiousincorp",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Skewers.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "paprika-shrimp": {
+    "src": "assets/photos/paprika-shrimp.webp",
+    "alt": "红椒蒜香虾（浅锅油浸）",
+    "author": "Juan Emilio Prades Bel",
+    "source": "https://commons.wikimedia.org/wiki/File:Gambas_al_ajillo,_2024.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "lime-shrimp": {
+    "src": "assets/photos/lime-shrimp.webp",
+    "alt": "整只烤大虾配米饭与香菜",
+    "author": "Paul Lowry",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Kebab_and_Basmati_Rice,_Saba_New_Orleans_April_2025.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "dill-salmon": {
+    "src": "assets/photos/dill-salmon.webp",
+    "alt": "烤三文鱼排佐新鲜莳萝与沙拉",
+    "author": "DanaTentis",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_plated_salmon_fillet_(cropped).jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "ginger-fish": {
+    "src": "assets/photos/ginger-fish.webp",
+    "alt": "整条清蒸鱼淋姜丝葱油与汤汁",
+    "author": "Tim Sackton from Somerville, MA",
+    "source": "https://commons.wikimedia.org/wiki/File:Ginger_Scallion_Red_Perch_(50-366)_(25058329532).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "miso-salmon": {
+    "src": "assets/photos/miso-salmon.webp",
+    "alt": "味噌釉烤三文鱼排，配米饭与蔬菜",
+    "author": "Calvin Marquess",
+    "source": "https://commons.wikimedia.org/wiki/File:Miso_Salmon.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "clams-tofu": {
+    "src": "assets/photos/clams-tofu.webp",
+    "alt": "白汤花蛤汤，撒葱花",
+    "author": "by shizu k (shezzz) at Flickr",
+    "source": "https://commons.wikimedia.org/wiki/File:Korean_clam_soup-Jaecheopguk-01.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "thyme-mushroom": {
+    "src": "assets/photos/thyme-mushroom.webp",
+    "alt": "平底锅黄油煎口蘑片",
+    "author": "Cheryl from River City (Richmond), VA, USA",
+    "source": "https://commons.wikimedia.org/wiki/File:Baby_bella_mushrooms_being_sautéed.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "garlic-soy-mushroom": {
+    "src": "assets/photos/garlic-soy-mushroom.webp",
+    "alt": "铁板煎蘑菇片与烤番茄",
+    "author": "Acabashi",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_tomatoes_and_mushrooms_at_Starmugs_Café_Lordship_Lane_Tottenham_London_England.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "miso-corn": {
+    "src": "assets/photos/miso-corn.webp",
+    "alt": "切段烤玉米，表面焦痕与抹酱",
+    "author": "Dragne Marius marius_dragne",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Corn_(Unsplash).jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "lime-corn": {
+    "src": "assets/photos/lime-corn.webp",
+    "alt": "墨西哥街头风味玉米棒（elote），撒芝士辣粉",
+    "author": "Alexisromeromar",
+    "source": "https://commons.wikimedia.org/wiki/File:Mexican_Corn_Cob.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "garlic-eggplant": {
+    "src": "assets/photos/garlic-eggplant.webp",
+    "alt": "烤茄子片淋酱汁，撒香草",
+    "author": "Rick Audet from San Francisco, USA",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_eggplant_appetizer.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "miso-eggplant": {
+    "src": "assets/photos/miso-eggplant.webp",
+    "alt": "茄子泥（baba ganoush）配薄饼",
+    "author": "takaokun",
+    "source": "https://commons.wikimedia.org/wiki/File:Baba_ganoush_and_pita.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "rosemary-potato": {
+    "src": "assets/photos/rosemary-potato.webp",
+    "alt": "烤土豆块撒迷迭香与黑椒",
+    "author": "白洛嘉",
+    "source": "https://commons.wikimedia.org/wiki/File:Roasted_potatoes_with_rosemary_and_gralic_and_black_pepper.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "lemon-asparagus": {
+    "src": "assets/photos/lemon-asparagus.webp",
+    "alt": "整根烤芦笋装盘",
+    "author": "Lablascovegmenu from London",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_asparagus_(6722646999).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "soy-rice": {
+    "src": "assets/photos/soy-rice.webp",
+    "alt": "两个表面焦香的酱油饭团",
+    "author": "Ocdp",
+    "source": "https://commons.wikimedia.org/wiki/File:Yaki-Onigiri_001.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "bean-quesadilla": {
+    "src": "assets/photos/bean-quesadilla.webp",
+    "alt": "切角芝士薄饼，配番茄莎莎",
+    "author": "Photograph by Mike Peel (www.mikepeel.net).",
+    "source": "https://commons.wikimedia.org/wiki/File:At_Long_Island_2023_267.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "pita-pizza": {
+    "src": "assets/photos/pita-pizza.webp",
+    "alt": "薄饼底小披萨，铺芝士与火腿",
+    "author": "jeffreyw",
+    "source": "https://commons.wikimedia.org/wiki/File:Pita_pizza_(1).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "camembert-dip": {
+    "src": "assets/photos/camembert-dip.webp",
+    "alt": "热烤卡门贝尔奶酪，配面包片蘸食",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Baked_Camembert_with_truffle_oil,_honey_&_toast_-_Long_Man_Inn_2024-12-18.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "halloumi": {
+    "src": "assets/photos/halloumi.webp",
+    "alt": "煎哈罗米奶酪片，撒香草",
+    "author": "Hmioannou",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Halloumi.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "mint-pineapple": {
+    "src": "assets/photos/mint-pineapple.webp",
+    "alt": "烤菠萝块淋酱汁",
+    "author": "A Healthier Michigan from Detroit, United States",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Pineapple_with_Rum_Sauce_and_Frozen_Vanilla_Yogurt_(34046929653).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "sweetpotato-dessert": {
+    "src": "assets/photos/sweetpotato-dessert.webp",
+    "alt": "焦糖烤红薯切片，撒肉桂",
+    "author": "Ella Olsson from Stockholm, Sweden",
+    "source": "https://commons.wikimedia.org/wiki/File:Baked_Cinnamon_Sweet_Potatoes_(30863441397).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "banana-chocolate": {
+    "src": "assets/photos/banana-chocolate.webp",
+    "alt": "锡纸包烤香蕉夹巧克力（banana boat）",
+    "author": "Andrew Malone",
+    "source": "https://commons.wikimedia.org/wiki/File:Banana_boat.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "cinnamon-apple": {
+    "src": "assets/photos/cinnamon-apple.webp",
+    "alt": "整只烤苹果撒肉桂（Bratapfel）",
+    "author": "Manfred Heyde",
+    "source": "https://commons.wikimedia.org/wiki/File:Bratapfel300.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "virgin-mojito": {
+    "src": "assets/photos/virgin-mojito.webp",
+    "alt": "手持青柠薄荷冰饮玻璃杯",
+    "author": "Shixart1985",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_holds_a_glass_of_drink_with_lime_and_mint_in_a_bright_indoor_setting.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "basil-berry-soda": {
+    "src": "assets/photos/basil-berry-soda.webp",
+    "alt": "草莓口味气泡饮（冷藏玻璃杯）",
+    "author": "Jeff Nelson from Canada",
+    "source": "https://commons.wikimedia.org/wiki/File:Strawberry_Italian_soda.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "smash-taco": {
+    "src": "assets/photos/smash-taco.webp",
+    "alt": "三只牛肉塔可，撒香菜洋葱",
+    "author": "Larry Miller",
+    "source": "https://commons.wikimedia.org/wiki/File:001_Tacos_de_carnitas,_carne_asada_y_al_pastor.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "satay-chicken": {
+    "src": "assets/photos/satay-chicken.webp",
+    "alt": "沙嗲鸡肉串配花生酱",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Satay_-_Little_Thai_2024-09-26.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "summer-roll": {
+    "src": "assets/photos/summer-roll.webp",
+    "alt": "鲜虾米纸卷切段，可见虾仁与薄荷",
+    "author": "Tran Hai Duong",
+    "source": "https://commons.wikimedia.org/wiki/File:Gỏi_cuốn.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "okonomiyaki": {
+    "src": "assets/photos/okonomiyaki.webp",
+    "alt": "大阪烧，淋酱汁与蛋黄酱撒葱花",
+    "author": "ume-y",
+    "source": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_001.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "kimchi-cheese-rice": {
+    "src": "assets/photos/kimchi-cheese-rice.webp",
+    "alt": "泡菜炒饭配煎蛋与海苔",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Kimchi-bokkeum-bap_(Kimchi_fried_rice)_-_Kogi_2023-09-11.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "onigiri-chazuke": {
+    "src": "assets/photos/onigiri-chazuke.webp",
+    "alt": "米饭浇茶汤，配烤鲑鱼定食",
+    "author": "avlxyz from Melbourne",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Salmon_and_Ochazuke_Set_in_Melbourne.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "shakshuka": {
+    "src": "assets/photos/shakshuka.webp",
+    "alt": "番茄甜椒酱窝蛋（平底锅）",
+    "author": "Calliopejen1",
+    "source": "https://commons.wikimedia.org/wiki/File:Shakshuka_by_Calliopejen1.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "scallop-vermicelli": {
+    "src": "assets/photos/scallop-vermicelli.webp",
+    "alt": "扇贝连半壳装盘（撒香草）",
+    "author": "CNEcija12345",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_scallops_dish.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "strawberry-cheesecake-cup": {
+    "src": "assets/photos/strawberry-cheesecake-cup.webp",
+    "alt": "草莓芝士蛋糕（整只，表面草莓酱）",
+    "author": "Josefine Linnea Jonsson",
+    "source": "https://commons.wikimedia.org/wiki/File:Strawberry_cheesecake_round.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "smores": {
+    "src": "assets/photos/smores.webp",
+    "alt": "烤棉花糖与巧克力夹在饼干中",
+    "author": "Heather Katsoulis from Western Mass",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetarian_s'mores_(3680344160).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "lemon-pancakes": {
+    "src": "assets/photos/lemon-pancakes.webp",
+    "alt": "蓝莓松饼淋糖浆",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Blueberry_Pancakes_-_Nowhere_Man_2023-09-21.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "nori-popcorn": {
+    "src": "assets/photos/nori-popcorn.webp",
+    "alt": "现爆玉米花（满盘）",
+    "author": "ViajeroExtraviado",
+    "source": "https://commons.wikimedia.org/wiki/File:Popcorn_9.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "sesame-soba": {
+    "src": "assets/photos/sesame-soba.webp",
+    "alt": "冷荞麦面配时蔬与海苔丝",
+    "author": "jetalone from Udon and soba restaurant Yukiyanagi in Hanno, Saitama",
+    "source": "https://commons.wikimedia.org/wiki/File:Sansai_hiyashi_soba_by_jetalone_in_Hanno,_Saitama.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "corn-chowder": {
+    "src": "assets/photos/corn-chowder.webp",
+    "alt": "奶香玉米浓汤，撒香葱",
+    "author": "tomatoes and friends",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegan_Garden_Corn_Chowder_with_Chives_(cropped).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  },
+  "spiced-hot-apple": {
+    "src": "assets/photos/spiced-hot-apple.webp",
+    "alt": "热苹果饮，杯中浮柠檬与香料",
+    "author": "NatalieMaynor from Jackson, Mississippi, USA",
+    "source": "https://commons.wikimedia.org/wiki/File:Hot_cider.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+  }
+}
