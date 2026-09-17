@@ -3,11 +3,11 @@
   "resource_key": "resource:chat-branch",
   "lease_id": "9f2b8e1e97e930013a2aeb118a903c908509fd093f16dd6ed1951b925387da68",
   "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "059fbef6-6cb4-4d16-994b-f4a761ad1edd",
-  "purpose": "clarify v3 timestamp fallback policy",
-  "fence": 2,
-  "acquired_at": "2026-09-18T00:24:22+08:00",
-  "lease_until": "2026-09-18T00:24:52+08:00",
-  "released_at": "2026-09-18T00:24:52+08:00",
-  "status": "released"
+  "holder_nonce": "6fbd9bab-e04b-4e8d-a57a-39d5bfbe3132",
+  "purpose": "codify outbound STATUS lifecycle semantics",
+  "fence": 3,
+  "acquired_at": "2026-09-18T06:01:00+08:00",
+  "lease_until": "2026-09-18T06:31:00+08:00",
+  "released_at": null,
+  "status": "held"
 }
