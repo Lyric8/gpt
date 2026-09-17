@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T054430+0800-notify-reliability-chat-push-adapter-ready--c8bfa86aeae216e07e489591394808f637834354",
+  "message_path": "chat/to-hermes/2026-09-18T054430+0800-notify-reliability-chat-push-adapter-ready.md",
+  "message_blob_sha": "c8bfa86aeae216e07e489591394808f637834354",
+  "completed_at": "2026-09-18T05:48:18+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-18T054725+0800-notify-reliability-chat-push-adapter-host-verification.md（远端 blob 02b160b5c799、sha256 43e9a43c…b703、commit 2e6555e）；固定 head 178d4440 隔离快照：focused 5/5 OK、full suite 58 tests 在 umask 0002/022/077 三档全 OK rc=0；chat-push.sh sha256 f51904eb…59cd65c3 未变；adapter 隔离仿真 9 项（假成功→25、同 path 异内容→23 不覆盖、真 backend→0 且远端逐字节一致 blob 15608b58、越界→21、非 chat 分支→20、backend 非0→24、fetch 失败→25、空 payload→21、argv 仅 1 参数）；生产零改动零重启"
+}
