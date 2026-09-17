@@ -7,7 +7,7 @@
   "purpose": "selftest3",
   "fence": 3,
   "acquired_at": "2026-09-17T17:55:26+08:00",
-  "lease_until": "2026-09-17T18:00:26+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T17:55:29+08:00",
+  "released_at": "2026-09-17T17:55:29+08:00",
+  "status": "released"
 }
