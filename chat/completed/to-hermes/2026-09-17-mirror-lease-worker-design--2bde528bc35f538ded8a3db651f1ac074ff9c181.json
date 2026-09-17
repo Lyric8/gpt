@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181",
+  "message_path": "chat/to-hermes/2026-09-17-mirror-lease-worker-design.md",
+  "message_blob_sha": "2bde528bc35f538ded8a3db651f1ac074ff9c181",
+  "completed_at": "2026-09-17T17:32:12+08:00",
+  "status": "resolved",
+  "evidence": "回执=确定性路径 chat/to-gpt/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181.md（commit 2f5912f，首次推送被拒后 rebase 重推成功）；实测：并发 claim GRANTED=1/DENIED=1、renew nonce 校验+CAS、修 2 处 GitHub 错误分类缺陷（status 字符串比较、并发 409 二次确认）；无服务器副作用，未放宽任何部署边界"
+}
