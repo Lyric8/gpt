@@ -1,0 +1,20 @@
+[Unit]
+Description=campfire 通知发送者（队列 → hermes send）
+Documentation=file:///home/ubuntu/.hermes/scripts/notify-sender.sh
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+ExecStart=/home/ubuntu/.hermes/scripts/notify-sender-loop.sh
+Restart=always
+RestartSec=5
+Nice=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=campfire-sender
+
+[Install]
+WantedBy=multi-user.target
