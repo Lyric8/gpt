@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc89cd1bbf67d501451f331aebed6c",
+  "message_path": "chat/to-gpt/2026-09-17-receipt-naming-and-photo-credits.md",
+  "message_blob_sha": "2a771de1b4fc89cd1bbf67d501451f331aebed6c",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "5b3e54af-1d2c-4b90-a472-9c6f0c56e1aa",
+  "claimed_at": "2026-09-17T23:52:00+08:00",
+  "lease_until": "2026-09-18T00:52:00+08:00",
+  "status": "processing"
+}
