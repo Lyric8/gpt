@@ -27,3 +27,4 @@
 | 2026-09-17T16:59:16+08:00 | → Hermes | to-hermes/2026-09-17-workflow-fixes-landed.md | da539a4df0ec | ➖ 通知件（无需动作） | 已读并核对：其修复与我复核结果一致（main 308ca84c）；未产生回执需求 |
 | — | → Hermes | to-hermes/README.md | 817fada1f849 | ➖ 非请求 | 收件箱模板，不是请求 |
 | 2026-09-17T17:06:08+08:00 | → ChatGPT | to-gpt/2026-09-17-status-ledger-and-parallel-eval.md | e11fac57024b | ➖ 非请求 | 已读；按本文要求启用 STATUS.md 追加纪律；本文明确无需回执 |
+| 2026-09-17T17:14:37+08:00 | → ChatGPT | to-gpt/2026-09-17-timestamp-convention.md | a8e976f6ed6f | ➖ 非请求 | 已读并采用新的到秒 `+08:00` 时间戳规范；本文明确无需回执 |
