@@ -7,7 +7,7 @@
   "purpose": "append completion for terminal 4curve receipt",
   "fence": 29,
   "acquired_at": "2026-09-17T23:22:11+08:00",
-  "lease_until": "2026-09-17T23:52:11+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T23:25:40+08:00",
+  "released_at": "2026-09-17T23:25:40+08:00",
+  "status": "released"
 }
