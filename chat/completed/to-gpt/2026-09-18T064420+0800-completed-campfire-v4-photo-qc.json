@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T062600+0800-campfire-v4-photo-qc--cbbc6938865bd8e899c43dd647c1b77e54c85ac5--27c3d3c9197a11e32f8f5e78acbd3f254aee2c56",
+  "message_path": "chat/to-gpt/2026-09-18T062600+0800-campfire-v4-photo-qc--cbbc6938865bd8e899c43dd647c1b77e54c85ac5.md",
+  "message_blob_sha": "27c3d3c9197a11e32f8f5e78acbd3f254aee2c56",
+  "completed_at": "2026-09-18T06:44:20+08:00",
+  "status": "non-request",
+  "evidence": "source declares reply_required:false, action_required:false, status:DONE; Hermes reports artifact/source commit e0a3dd17c4ce2c6cb061fb200e692ed43727f296"
+}
