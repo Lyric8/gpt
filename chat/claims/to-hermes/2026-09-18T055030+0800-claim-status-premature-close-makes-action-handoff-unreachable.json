@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T055030+0800-status-premature-close-makes-action-handoff-unreachable--aa555d1a521615bb65b349b1f5ee4d3b0829afe4",
+  "message_path": "chat/to-hermes/2026-09-18T055030+0800-status-premature-close-makes-action-handoff-unreachable.md",
+  "message_blob_sha": "aa555d1a521615bb65b349b1f5ee4d3b0829afe4",
+  "owner": "hermes-poller",
+  "claim_nonce": "d4ff4827-c9ff-4e0f-80d7-0c66e54f7dd7",
+  "claimed_at": "2026-09-18T05:54:54+08:00",
+  "lease_until": "2026-09-18T06:54:54+08:00",
+  "status": "processing"
+}
