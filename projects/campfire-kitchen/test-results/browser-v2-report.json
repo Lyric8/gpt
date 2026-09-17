@@ -1,0 +1,141 @@
+{
+  "ok": true,
+  "count": 33,
+  "checks": [
+    {
+      "name": "内置50卡正确启动；没有鲜干/材料选项控件",
+      "passed": true
+    },
+    {
+      "name": "初始加载零网络请求",
+      "passed": true
+    },
+    {
+      "name": "中文搜索按菜谱与材料匹配，输入焦点保留",
+      "passed": true
+    },
+    {
+      "name": "分类与动手体验筛选可组合且可清除",
+      "passed": true
+    },
+    {
+      "name": "固定鲜枝牛肉、半份计算、温度步骤同卡同步",
+      "passed": true
+    },
+    {
+      "name": "鲜欧芹与干牛至同菜共存，两份半菜合并220g牛肉",
+      "passed": true
+    },
+    {
+      "name": "相关原料需求变化后旧备好勾选自动失效",
+      "passed": true
+    },
+    {
+      "name": "操作步骤进度随配方量变化失效，笔记仍保留",
+      "passed": true
+    },
+    {
+      "name": "前台检查提醒可启动/停止，不宣称后台闹钟",
+      "passed": true
+    },
+    {
+      "name": "套菜单或切换主页面从顶部开始，不被旧滚动位置覆盖",
+      "passed": true
+    },
+    {
+      "name": "新互动预设正确替换并生成5道菜单与节奏统计",
+      "passed": true
+    },
+    {
+      "name": "手动换出餐顺序与恢复推荐顺序正常",
+      "passed": true
+    },
+    {
+      "name": "最近三次做过记录真实影响新鲜感筛选",
+      "passed": true
+    },
+    {
+      "name": "预制任务、原料形态与独立分装组都可见可勾",
+      "passed": true
+    },
+    {
+      "name": "只看未备食材筛选不会删除底层数量",
+      "passed": true
+    },
+    {
+      "name": "Markdown Blob含完整定稿步骤与换算，模板已解析",
+      "passed": true
+    },
+    {
+      "name": "CSV Blob保留材料形态、按菜分配，不只给购物总量",
+      "passed": true
+    },
+    {
+      "name": "完整JSON备份同时含菜单、记录与定稿菜谱库",
+      "passed": true
+    },
+    {
+      "name": "打印区域由当前清单生成，未使用旧版模板",
+      "passed": true
+    },
+    {
+      "name": "导出→清空→导入可恢复5道选菜、份量与状态",
+      "passed": true
+    },
+    {
+      "name": "旧版备份迁移明示退役/重写，不暗替用户换菜",
+      "passed": true
+    },
+    {
+      "name": "含鲜干choices的坏库被拒，当前定稿库未覆盖",
+      "passed": true
+    },
+    {
+      "name": "扩展库可加载，导入文本HTML转义不会执行注入",
+      "passed": true
+    },
+    {
+      "name": "恢复内置库可用，保留仍存在的菜单ID",
+      "passed": true
+    },
+    {
+      "name": "模拟存储重新加载保留菜单和笔记（Storage接口替身）",
+      "passed": true
+    },
+    {
+      "name": "360/390/430/768px四种宽度，四主页面均无横向溢出",
+      "passed": true
+    },
+    {
+      "name": "手机操作卡可滚动、逐步打勾，按钮和数量不挤成文本矩阵",
+      "passed": true
+    },
+    {
+      "name": "页面/弹窗DOM ID唯一",
+      "passed": true
+    },
+    {
+      "name": "真实存储被拒仍能选菜与计算，明确提醒备份",
+      "passed": true
+    },
+    {
+      "name": "损坏存储原文被救援留存，不静默覆写唯一副本",
+      "passed": true
+    },
+    {
+      "name": "设备冷冻前提明确提示，确认后不改食谱",
+      "passed": true
+    },
+    {
+      "name": "全部交互未发生JS异常",
+      "passed": true
+    },
+    {
+      "name": "交互过程中无外部网络依赖",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "mode": "Exact bundled HTML set_content; Storage test double and real denied-storage branches; Blob byte inspection. file:// blocked by sandbox policy."
+}

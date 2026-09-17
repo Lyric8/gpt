@@ -78,8 +78,8 @@ data/recipes.json          正式菜谱、原料、材料裁决、菜单、来�
 data/recipes.schema.json   v2结构规范
 src/engine.mjs             纯用量／合并／菜单审查／备份／导出逻辑
 src/app.mjs                DOM、交互、本地保存、文件导入与计时
-src/styles.css             响应式与打印布局
-src/index.template.html    离线HTML模板
+src/styles.css            响应式与打印布局
+src/index.template.html   离线HTML模板
 tools/check_catalog.mjs    无依赖菜谱语义校验器
 tools/build.py             Python标准库单文件打包器
 tools/serve.py             可选静态服务

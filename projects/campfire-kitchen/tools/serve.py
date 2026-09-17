@@ -5,6 +5,7 @@ import argparse
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import socket
 import sys
 import webbrowser
 

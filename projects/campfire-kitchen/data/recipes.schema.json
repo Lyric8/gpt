@@ -1,0 +1,928 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:campfire-kitchen:recipes:2",
+  "title": "火边定稿菜谱库 v2",
+  "description": "结构校验；跨引用、重复ID、材料模板与采购组规则由src/engine.mjs进一步校验。没有鲜干选择或optional材料。",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "version",
+    "title",
+    "updated",
+    "ingredients",
+    "sources",
+    "recipes",
+    "herbGuide",
+    "principles",
+    "safety",
+    "presets",
+    "audit"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "version": {
+      "type": "string",
+      "maxLength": 200,
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "minLength": 1
+    },
+    "updated": {
+      "type": "string",
+      "maxLength": 200,
+      "minLength": 1
+    },
+    "basePeople": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "ingredients": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+        "not": {
+          "enum": [
+            "constructor",
+            "prototype",
+            "__proto__"
+          ]
+        }
+      },
+      "maxProperties": 1000,
+      "additionalProperties": {
+        "$ref": "#/$defs/ingredient"
+      }
+    },
+    "sources": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+        "not": {
+          "enum": [
+            "constructor",
+            "prototype",
+            "__proto__"
+          ]
+        }
+      },
+      "maxProperties": 500,
+      "additionalProperties": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/recipe"
+      },
+      "maxItems": 500,
+      "minItems": 1
+    },
+    "herbGuide": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/herb"
+      },
+      "maxItems": 1000,
+      "minItems": 0
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 4000,
+        "minLength": 0
+      },
+      "maxItems": 1000,
+      "minItems": 0
+    },
+    "safety": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/safety"
+      },
+      "maxItems": 1000,
+      "minItems": 0
+    },
+    "presets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/preset"
+      },
+      "maxItems": 1000,
+      "minItems": 0
+    },
+    "audit": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/audit"
+      },
+      "maxItems": 1000,
+      "minItems": 0
+    },
+    "migration": {
+      "$ref": "#/$defs/migration"
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "purchase": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "unit",
+        "yield",
+        "method",
+        "roundTo",
+        "note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 1
+        },
+        "unit": {
+          "enum": [
+            "g",
+            "ml",
+            "tsp",
+            "个",
+            "张"
+          ]
+        },
+        "yield": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "method": {
+          "enum": [
+            "sum",
+            "max"
+          ]
+        },
+        "roundTo": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 1000,
+          "minLength": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "ingredient": {
+      "type": "object",
+      "required": [
+        "name",
+        "unit",
+        "group",
+        "storage",
+        "note",
+        "allergens"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 1
+        },
+        "unit": {
+          "enum": [
+            "g",
+            "ml",
+            "tsp",
+            "个",
+            "张"
+          ]
+        },
+        "group": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "storage": {
+          "type": "string",
+          "maxLength": 250,
+          "minLength": 0
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 2000,
+          "minLength": 0
+        },
+        "allergens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 0
+          },
+          "maxItems": 30,
+          "minItems": 0
+        },
+        "freshHerb": {
+          "type": "boolean"
+        },
+        "pantryHint": {
+          "type": "boolean"
+        },
+        "purchase": {
+          "$ref": "#/$defs/purchase"
+        }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "title",
+        "url",
+        "scope"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 300,
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "scope": {
+          "type": "string",
+          "maxLength": 1500,
+          "minLength": 0
+        },
+        "accessed": {
+          "type": "string",
+          "maxLength": 20,
+          "minLength": 0
+        },
+        "kind": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "line": {
+      "type": "object",
+      "required": [
+        "key",
+        "ingredient",
+        "qty",
+        "form",
+        "stage",
+        "pack",
+        "scaling"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "ingredient": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "qty": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100000
+        },
+        "form": {
+          "type": "string",
+          "maxLength": 1000,
+          "minLength": 0
+        },
+        "stage": {
+          "enum": [
+            "在家",
+            "现场"
+          ]
+        },
+        "pack": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 0
+        },
+        "scaling": {
+          "enum": [
+            "linear",
+            "batch"
+          ]
+        },
+        "optional": false
+      },
+      "additionalProperties": true
+    },
+    "recipe": {
+      "type": "object",
+      "required": [
+        "title",
+        "category",
+        "tip",
+        "smoke",
+        "fun",
+        "technique",
+        "difficulty",
+        "origin",
+        "cleanup",
+        "batchNote",
+        "profile",
+        "taste",
+        "texture",
+        "textureFamily",
+        "moment",
+        "why",
+        "hold",
+        "main",
+        "interaction",
+        "id",
+        "needsFreezer",
+        "rich",
+        "light",
+        "basePeople",
+        "revision",
+        "batchFactor",
+        "activeMinutes",
+        "totalMinutes",
+        "homeMinutes",
+        "rank",
+        "steps",
+        "prep",
+        "decisions",
+        "equipment",
+        "tags",
+        "sources",
+        "ingredients"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "tip": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "smoke": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "fun": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "technique": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "difficulty": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "origin": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "cleanup": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "batchNote": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "taste": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "texture": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "textureFamily": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "moment": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "why": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "hold": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "main": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "interaction": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "needsFreezer": {
+          "type": "boolean"
+        },
+        "rich": {
+          "type": "boolean"
+        },
+        "light": {
+          "type": "boolean"
+        },
+        "basePeople": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "revision": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "batchFactor": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "activeMinutes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1440
+        },
+        "totalMinutes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1440
+        },
+        "homeMinutes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1440
+        },
+        "rank": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1440
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 1
+        },
+        "prep": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxItems": 100,
+          "minItems": 1
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/line"
+          },
+          "maxItems": 100,
+          "minItems": 1
+        },
+        "choices": false
+      },
+      "additionalProperties": true
+    },
+    "herb": {
+      "type": "object",
+      "required": [
+        "name",
+        "decision",
+        "why",
+        "recipes",
+        "sources"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 0
+        },
+        "decision": {
+          "type": "string",
+          "maxLength": 3000,
+          "minLength": 0
+        },
+        "why": {
+          "type": "string",
+          "maxLength": 3000,
+          "minLength": 0
+        },
+        "recipes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxItems": 100,
+          "minItems": 0
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "title",
+        "text",
+        "sources"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 0
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 0
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "preset": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "note",
+        "selected"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 150,
+          "minLength": 0
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 1500,
+          "minLength": 0
+        },
+        "selected": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxProperties": 50,
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0.25,
+            "maximum": 4
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "oldId",
+        "oldTitle",
+        "status",
+        "newId",
+        "reason"
+      ],
+      "properties": {
+        "oldId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "oldTitle": {
+          "type": "string",
+          "maxLength": 300,
+          "minLength": 0
+        },
+        "status": {
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 0
+        },
+        "newId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+              "not": {
+                "enum": [
+                  "constructor",
+                  "prototype",
+                  "__proto__"
+                ]
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 3000,
+          "minLength": 0
+        },
+        "suggestedId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+          "not": {
+            "enum": [
+              "constructor",
+              "prototype",
+              "__proto__"
+            ]
+          }
+        },
+        "decision": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 0
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "migration": {
+      "type": "object",
+      "required": [
+        "retired",
+        "rewritten"
+      ],
+      "properties": {
+        "retired": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "title",
+              "reason",
+              "suggestedId"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "maxLength": 300,
+                "minLength": 0
+              },
+              "reason": {
+                "type": "string",
+                "maxLength": 2000,
+                "minLength": 0
+              },
+              "suggestedId": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+                "not": {
+                  "enum": [
+                    "constructor",
+                    "prototype",
+                    "__proto__"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "rewritten": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]{0,79}$",
+            "not": {
+              "enum": [
+                "constructor",
+                "prototype",
+                "__proto__"
+              ]
+            }
+          },
+          "maxItems": 100,
+          "minItems": 0
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

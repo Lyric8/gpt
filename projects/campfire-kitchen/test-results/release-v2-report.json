@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "count": 6,
+  "checks": [
+    {
+      "name": "JSON Schema v2自身有效且完整50道数据通过结构校验",
+      "passed": true
+    },
+    {
+      "name": "独立CLI语义校验器成功",
+      "passed": true
+    },
+    {
+      "name": "相同源码数据连续构建逐字节一致",
+      "passed": true
+    },
+    {
+      "name": "全部ES模块与CLI通过Node语法检查",
+      "passed": true
+    },
+    {
+      "name": "可选标准库HTTP服务真实返回完整发行HTML及nosniff头",
+      "passed": true
+    },
+    {
+      "name": "HTTP服务不开放目录列表",
+      "passed": true
+    }
+  ],
+  "sha256": "4dd7aee81b1d8cdd5a01d6734ca4ff9dfa8ab6fc751bf45e76bc61f6bd43ad12",
+  "bytes": 306223
+}
