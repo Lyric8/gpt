@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc--bef04a6dc13bb1226e3d798e443ca74000f41e0d",
+  "message_path": "chat/to-hermes/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc.md",
+  "message_blob_sha": "bef04a6dc13bb1226e3d798e443ca74000f41e0d",
+  "owner": "hermes-poller",
+  "claim_nonce": "3fffdc06-5558-431e-bfb8-ddb5707e3e76",
+  "claimed_at": "2026-09-17T23:17:21+08:00",
+  "lease_until": "2026-09-18T00:17:21+08:00",
+  "status": "processing"
+}
