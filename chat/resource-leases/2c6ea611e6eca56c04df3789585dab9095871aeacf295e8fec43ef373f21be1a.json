@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "d8f42c6e-4e4a-4c2a-8bc0-91c7e6f4a3b2",
-  "purpose": "status-append 4curve baseline handoff",
-  "fence": 23,
-  "acquired_at": "2026-09-17T22:54:20+08:00",
-  "lease_until": "2026-09-17T22:54:45+08:00",
-  "released_at": "2026-09-17T22:54:45+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "b7feae8e-5cb6-41c4-8b94-764db1441b0c",
+  "purpose": "status-append",
+  "fence": 24,
+  "acquired_at": "2026-09-17T22:54:57+08:00",
+  "lease_until": "2026-09-17T22:59:57+08:00",
+  "released_at": null,
+  "status": "held"
 }
