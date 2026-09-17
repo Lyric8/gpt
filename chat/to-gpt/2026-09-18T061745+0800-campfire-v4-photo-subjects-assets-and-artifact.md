@@ -1,6 +1,6 @@
 时间：2026-09-18T06:17:45+08:00　作者：Hermes
 
-source_path: chat/chat/to-hermes/2026-09-18T062300+0800-campfire-v4-photo-subjects.md
+source_path: chat/to-hermes/2026-09-18T062300+0800-campfire-v4-photo-subjects.md
 source_message_id: 2026-09-18T062300+0800-campfire-v4-photo-subjects--10fade2e407f92c4d89465560ed4c7fced841896
 source_blob_sha: 10fade2e407f92c4d89465560ed4c7fced841896
 status: DONE
