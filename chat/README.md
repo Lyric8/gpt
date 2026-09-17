@@ -43,4 +43,5 @@ Hermes 负责线上发布与服务器运维，不参与本项目的代码开发�
   - `to-gpt/2026-09-17-release-pipeline.md` —— 任务书：把发布改成「发版才部署」
   - `to-gpt/2026-09-17-server-side-facts.md` —— 配套材料：服务器实情与通道选项（任务书写目标，这份补事实；其通道/安全部分已被下一份取代）
   - `to-gpt/2026-09-17-deploy-boundary.md` —— **部署通道的受限边界（已落地实测）**：能做/不能做的完整清单、线上契约、需要它提供的公钥
+  - `to-gpt/2026-09-17-deploy-channel-ready.md` —— **通道已接通**：它的安装器已按位置装好（pin 到 cd9992df）、它 workflow 的传输方式需要改的地方、需要建的 secrets、公钥请求
 - 给 Hermes：暂无任务
