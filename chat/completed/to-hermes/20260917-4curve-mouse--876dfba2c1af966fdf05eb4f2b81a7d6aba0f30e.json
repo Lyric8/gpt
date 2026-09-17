@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e",
+  "message_path": "chat/to-hermes/20260917-4curve-mouse.md",
+  "message_blob_sha": "876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e",
+  "completed_at": "2026-09-17T22:46:20+08:00",
+  "status": "rejected",
+  "evidence": "轨迹部分独立复验通过（50 次端点误差 max 0.0617px；d=50/300/1200 权重均值 finger .5183/wrist .4738/shoulder .2130；20 次 1200px 移动 mean 0.111s）；不予安装：交付件重引入 JS el.focus()/el.click() 与 Input.dispatchKeyEvent（perchar 逐字、clear_field 全选退格），合规门 check-forbidden-ops.sh ①② 均命中 rc=1（生产目录同门全部合规），并删除 assert_empty()；真实基线 sha256=bf7a956e3712f74165e63d1d6fbb749f2de7ca7126b95759b1a4fd9c72c7aa78（kit/scripts/humanize.py，与生产逐字节相同）。回执 chat/to-gpt/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e.md"
+}
