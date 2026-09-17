@@ -372,9 +372,9 @@
   },
   "v4-tofu-skin": {
     "src": "assets/photos/v4-tofu-skin.webp",
-    "alt": "成堆摊开的干豆皮（腐竹）条",
+    "alt": "黑色托盘里折叠叠放的白色薄豆皮（千张）片",
     "author": "Fumikas Sagisavas",
-    "source": "https://commons.wikimedia.org/wiki/File:Bean_curd_sticks.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:White_tofu_sheet.jpg",
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
@@ -392,11 +392,11 @@
   },
   "v4-chives": {
     "src": "assets/photos/v4-chives.webp",
-    "alt": "木桌上的一把新鲜细长叶韭菜（带白色基部与须根）",
-    "author": "SarKaLay စာကလေး",
-    "source": "https://commons.wikimedia.org/wiki/File:Onion_chives.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "alt": "深色砧板上成堆择净的中国韭菜（Allium tuberosum），叶片扁平细长",
+    "author": "경빈마마",
+    "source": "https://commons.wikimedia.org/wiki/File:Garlic_chives_2.jpg",
+    "license": "CC BY 2.0 kr",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/kr/deed.en",
     "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
     "kind": "ingredient"
   },
@@ -421,7 +421,7 @@
   },
   "v4-pumpkin": {
     "src": "assets/photos/v4-pumpkin.webp",
-    "alt": "黑色烤盘上切成块的烤南瓜",
+    "alt": "切开摊成花瓣状的去皮南瓜块，放在带孔金属蒸架上",
     "author": "Taylorderek",
     "source": "https://commons.wikimedia.org/wiki/File:Skinned_Roast_Pumpkin_01.jpg",
     "license": "CC BY 4.0",
@@ -475,7 +475,7 @@
   },
   "v4-cucumber": {
     "src": "assets/photos/v4-cucumber.webp",
-    "alt": "黑盘中拍碎后用红油拌好的黄瓜块",
+    "alt": "黑盘中拍碎的黄瓜块，裹奶白色酱汁、淋辣椒油并撒脆葱酥",
     "author": "Andy Li",
     "source": "https://commons.wikimedia.org/wiki/File:Smacked_cucumber_salad,_Dan_dan_dressing,_chilli_oil_-_Bonsai_Plant_Kitchen_2024-07-30.jpg",
     "license": "CC0",
@@ -503,11 +503,11 @@
   },
   "v4-enoki": {
     "src": "assets/photos/v4-enoki.webp",
-    "alt": "白底上的一把金针菇，长柄小伞",
-    "author": "claralieu",
-    "source": "https://commons.wikimedia.org/wiki/File:Mushroom_Reference_-11.jpg",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "alt": "深色菌棒上长出的一丛白色细柄金针菇，菌盖浅色",
+    "author": "Dushan Hanuska",
+    "source": "https://commons.wikimedia.org/wiki/File:Enoki_mushrooms_(50313211173).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
     "kind": "ingredient"
   },
@@ -522,7 +522,7 @@
   },
   "v4-meat-patties": {
     "src": "assets/photos/v4-meat-patties.webp",
-    "alt": "烤架上翻烤的肉饼，旁边放着面包胚",
+    "alt": "烤架上并排翻烤的肉饼，左侧金属盘里放着切开烤过的面包胚",
     "author": "Carlos Lopez from hermosillo, Mexico",
     "source": "https://commons.wikimedia.org/wiki/File:Hamburguesas_grill.jpg",
     "license": "CC BY 2.0",
