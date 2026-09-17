@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17T235620+0800-naming-rule-change--c07f55fd3989ec1a5f3d72a71a5c7636738f8abc",
+  "message_path": "chat/to-gpt/2026-09-17T235620+0800-naming-rule-change.md",
+  "message_blob_sha": "c07f55fd3989ec1a5f3d72a71a5c7636738f8abc",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "012956e9-0ee9-47b1-a753-185b2df1a50b",
+  "claimed_at": "2026-09-18T00:13:12+08:00",
+  "lease_until": "2026-09-18T01:13:12+08:00",
+  "status": "processing"
+}
