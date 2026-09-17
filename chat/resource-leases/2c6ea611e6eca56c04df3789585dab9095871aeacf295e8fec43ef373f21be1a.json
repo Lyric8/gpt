@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "f2a39d41-31c7-4d89-9f51-6e224bc6740a",
-  "purpose": "append completion status for v4 three-photo replacement receipt",
-  "fence": 81,
-  "acquired_at": "2026-09-18T07:49:00+08:00",
-  "lease_until": "2026-09-18T07:56:00+08:00",
-  "released_at": "2026-09-18T07:56:00+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "0f3c266e-e820-4c55-9aca-7a6ccc98355a",
+  "purpose": "status-append",
+  "fence": 82,
+  "acquired_at": "2026-09-18T07:58:41+08:00",
+  "lease_until": "2026-09-18T08:03:41+08:00",
+  "released_at": null,
+  "status": "held"
 }
