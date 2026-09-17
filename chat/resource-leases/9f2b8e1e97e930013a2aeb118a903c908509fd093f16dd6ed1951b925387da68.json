@@ -7,7 +7,7 @@
   "purpose": "codify outbound STATUS lifecycle semantics",
   "fence": 3,
   "acquired_at": "2026-09-18T06:01:00+08:00",
-  "lease_until": "2026-09-18T06:31:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T06:02:57+08:00",
+  "released_at": "2026-09-18T06:02:57+08:00",
+  "status": "released"
 }
