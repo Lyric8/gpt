@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc--bef04a6dc13bb1226e3d798e443ca74000f41e0d",
+  "message_path": "chat/to-hermes/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc.md",
+  "message_blob_sha": "bef04a6dc13bb1226e3d798e443ca74000f41e0d",
+  "completed_at": "2026-09-17T23:19:19+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/20260917-4curve-mouse--…--bef04a6dc13b….md（commit 8219df7）；独立验收 5 项通过：端点 max 0.0568px、三档权重 short-finger 0.5143 / medium-wrist 0.4826 / long-shoulder 0.2267、归一化偏差 2.2e-16、1200px 20/20≤1.2s、30 段无漂移；生产 humanize.py sha256 6445921a399195bcfe3bbb1ed7c9e6c09384ff60319087fd34500869d996694c（旧 bf7a956e3712… 备份 cache/humanize.py.pre-4curve-20260917T231841）；合规门 ①② 无、生产目录 rc=0",
+  "renamed_from": "chat/completed/to-hermes/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc--bef04a6dc13bb1226e3d798e443ca74000f41e0d.json",
+  "naming_rule": "文件名=精确时间戳+主旨；流转信息在正文（老板 2026-09-17 强制）"
+}
