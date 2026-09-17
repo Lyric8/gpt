@@ -1,0 +1,317 @@
+name: Campfire Kitchen Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campfire-kitchen-production
+  cancel-in-progress: false
+
+env:
+  PROJECT_ROOT: projects/campfire-kitchen
+  TAG_PREFIX: campfire-kitchen-v
+
+jobs:
+  build-release:
+    name: Build immutable Release asset
+    if: ${{ !github.event.release.prerelease && startsWith(github.event.release.tag_name, 'campfire-kitchen-v') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
+      source_sha: ${{ steps.meta.outputs.source_sha }}
+      artifact_name: ${{ steps.meta.outputs.artifact_name }}
+      checksum_name: ${{ steps.meta.outputs.checksum_name }}
+      manifest_name: ${{ steps.meta.outputs.manifest_name }}
+      artifact_sha256: ${{ steps.build.outputs.artifact_sha256 }}
+    steps:
+      - name: Check out the released tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate tag, version, and source branch
+        id: meta
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_ROOT"
+          version="${RELEASE_TAG#${TAG_PREFIX}}"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || {
+            echo "Release tag must be ${TAG_PREFIX}X.Y.Z; got: $RELEASE_TAG" >&2
+            exit 1
+          }
+          package_version="$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")"
+          data_version="$(node -p "JSON.parse(require('fs').readFileSync('data/recipes.json','utf8')).version")"
+          [ "$version" = "$package_version" ] || {
+            echo "Tag version $version != package.json version $package_version" >&2
+            exit 1
+          }
+          [ "$version" = "$data_version" ] || {
+            echo "Tag version $version != data/recipes.json version $data_version" >&2
+            exit 1
+          }
+          source_sha="$(git rev-parse HEAD)"
+          git fetch --no-tags origin main
+          git merge-base --is-ancestor "$source_sha" origin/main || {
+            echo "Release tag must point to a commit reachable from main" >&2
+            exit 1
+          }
+          artifact_name="campfire-kitchen-v${version}.html"
+          checksum_name="campfire-kitchen-v${version}.sha256"
+          manifest_name="campfire-kitchen-v${version}.manifest.json"
+          {
+            echo "version=$version"
+            echo "source_sha=$source_sha"
+            echo "artifact_name=$artifact_name"
+            echo "checksum_name=$checksum_name"
+            echo "manifest_name=$manifest_name"
+          } >> "$GITHUB_OUTPUT"
+          {
+            echo "VERSION=$version"
+            echo "SOURCE_SHA=$source_sha"
+            echo "ARTIFACT_NAME=$artifact_name"
+            echo "CHECKSUM_NAME=$checksum_name"
+            echo "MANIFEST_NAME=$manifest_name"
+          } >> "$GITHUB_ENV"
+
+      - name: Validate source and run engine tests
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_ROOT"
+          npm run validate
+          npm test
+          node --check src/engine.mjs
+          node --check src/app.mjs
+          python -m json.tool data/recipes.json >/dev/null
+          python -m json.tool data/recipes.schema.json >/dev/null
+
+      - name: Build twice and prove reproducibility
+        id: build
+        env:
+          RELEASE_ID: ${{ github.event.release.id }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_PUBLISHED_AT: ${{ github.event.release.published_at }}
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_ROOT"
+          dist="$RUNNER_TEMP/campfire-release"
+          rm -rf "$dist"
+          mkdir -p "$dist"
+          python tools/build.py --output "$dist/$ARTIFACT_NAME"
+          python tools/build.py --output "$dist/.second-build.html"
+          cmp -s "$dist/$ARTIFACT_NAME" "$dist/.second-build.html" || {
+            echo "Build is not reproducible: two builds differ byte-for-byte" >&2
+            exit 1
+          }
+          rm -f "$dist/.second-build.html"
+          artifact_sha256="$(sha256sum "$dist/$ARTIFACT_NAME" | awk '{print $1}')"
+          artifact_bytes="$(wc -c < "$dist/$ARTIFACT_NAME" | tr -d ' ')"
+          printf '%s  %s\n' "$artifact_sha256" "$ARTIFACT_NAME" > "$dist/$CHECKSUM_NAME"
+          python - "$dist/$MANIFEST_NAME" <<'PY'
+          import hashlib, json, os, pathlib, sys
+          path = pathlib.Path(sys.argv[1])
+          artifact = pathlib.Path(os.environ['RUNNER_TEMP']) / 'campfire-release' / os.environ['ARTIFACT_NAME']
+          digest = hashlib.sha256(artifact.read_bytes()).hexdigest()
+          payload = {
+              'project': 'campfire-kitchen',
+              'version': os.environ['VERSION'],
+              'tag': os.environ['RELEASE_TAG'],
+              'releaseId': int(os.environ['RELEASE_ID']),
+              'publishedAt': os.environ['RELEASE_PUBLISHED_AT'],
+              'sourceSha': os.environ['SOURCE_SHA'],
+              'artifact': os.environ['ARTIFACT_NAME'],
+              'sha256': digest,
+              'bytes': artifact.stat().st_size,
+          }
+          path.write_text(json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+          PY
+          echo "artifact_sha256=$artifact_sha256" >> "$GITHUB_OUTPUT"
+          echo "ARTIFACT_SHA256=$artifact_sha256" >> "$GITHUB_ENV"
+          {
+            echo "### Campfire Kitchen release artifact"
+            echo "- version: \`$VERSION\`"
+            echo "- source: \`$SOURCE_SHA\`"
+            echo "- artifact: \`$ARTIFACT_NAME\`"
+            echo "- sha256: \`$artifact_sha256\`"
+            echo "- bytes: \`$artifact_bytes\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Attach immutable assets to the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          dist="$RUNNER_TEMP/campfire-release"
+          existing_names="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')"
+          for name in "$ARTIFACT_NAME" "$CHECKSUM_NAME" "$MANIFEST_NAME"; do
+            file="$dist/$name"
+            if grep -Fxq "$name" <<<"$existing_names"; then
+              verify_dir="$(mktemp -d)"
+              gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$name" --dir "$verify_dir"
+              cmp -s "$file" "$verify_dir/$name" || {
+                echo "Release asset $name already exists with different bytes; version assets are immutable" >&2
+                exit 1
+              }
+              rm -rf "$verify_dir"
+              echo "Verified existing immutable asset: $name"
+            else
+              gh release upload "$RELEASE_TAG" "$file" --repo "$GITHUB_REPOSITORY"
+              echo "Uploaded Release asset: $name"
+            fi
+          done
+
+  deploy-production:
+    name: Deploy exact Release asset
+    needs: build-release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      deployments: write
+    environment:
+      name: campfire-kitchen-production
+      url: http://124.223.114.109/
+    steps:
+      - name: Download the canonical artifact back from the Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
+          CHECKSUM_NAME: ${{ needs.build-release.outputs.checksum_name }}
+          EXPECTED_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$ARTIFACT_NAME" --dir dist
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$CHECKSUM_NAME" --dir dist
+          (cd dist && sha256sum -c "$CHECKSUM_NAME")
+          actual="$(sha256sum "dist/$ARTIFACT_NAME" | awk '{print $1}')"
+          [ "$actual" = "$EXPECTED_SHA256" ] || {
+            echo "Downloaded Release asset hash differs from build job output" >&2
+            exit 1
+          }
+
+      - name: Validate deployment credentials
+        env:
+          DEPLOY_HOST: ${{ secrets.CAMPFIRE_DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.CAMPFIRE_DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.CAMPFIRE_DEPLOY_USER }}
+          DEPLOY_KEY: ${{ secrets.CAMPFIRE_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.CAMPFIRE_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_HOST:?missing CAMPFIRE_DEPLOY_HOST}"
+          : "${DEPLOY_PORT:?missing CAMPFIRE_DEPLOY_PORT}"
+          : "${DEPLOY_USER:?missing CAMPFIRE_DEPLOY_USER}"
+          : "${DEPLOY_KEY:?missing CAMPFIRE_DEPLOY_SSH_KEY}"
+          : "${DEPLOY_KNOWN_HOSTS:?missing CAMPFIRE_DEPLOY_KNOWN_HOSTS}"
+          [[ "$DEPLOY_PORT" =~ ^[0-9]+$ ]] || { echo "CAMPFIRE_DEPLOY_PORT must be numeric" >&2; exit 1; }
+          [[ "$DEPLOY_USER" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "invalid deploy username" >&2; exit 1; }
+          umask 077
+          key="$RUNNER_TEMP/campfire-deploy-key"
+          known="$RUNNER_TEMP/campfire-known-hosts"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$known"
+          chmod 600 "$key" "$known"
+          ssh-keygen -y -f "$key" >/dev/null
+          {
+            echo "DEPLOY_KEY_FILE=$key"
+            echo "DEPLOY_KNOWN_HOSTS_FILE=$known"
+          } >> "$GITHUB_ENV"
+
+      - name: Deploy through the restricted server installer
+        id: remote
+        env:
+          DEPLOY_HOST: ${{ secrets.CAMPFIRE_DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.CAMPFIRE_DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.CAMPFIRE_DEPLOY_USER }}
+          ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
+          EXPECTED_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
+          VERSION: ${{ needs.build-release.outputs.version }}
+          SOURCE_SHA: ${{ needs.build-release.outputs.source_sha }}
+        run: |
+          set -euo pipefail
+          remote="${DEPLOY_USER}@${DEPLOY_HOST}"
+          ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
+          scp_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -P "$DEPLOY_PORT")
+          remote_tmp="$(ssh "${ssh_opts[@]}" "$remote" 'mktemp /tmp/campfire-kitchen.XXXXXXXX.html')"
+          cleanup() {
+            printf -v rm_cmd 'rm -f -- %q' "$remote_tmp"
+            ssh "${ssh_opts[@]}" "$remote" "$rm_cmd" >/dev/null 2>&1 || true
+          }
+          trap cleanup EXIT
+          scp "${scp_opts[@]}" "dist/$ARTIFACT_NAME" "$remote:$remote_tmp"
+          printf -v deploy_cmd 'sudo /usr/local/sbin/campfire-kitchen-install-release deploy %q %q %q %q' \
+            "$remote_tmp" "$VERSION" "$EXPECTED_SHA256" "$SOURCE_SHA"
+          deploy_output="$(ssh "${ssh_opts[@]}" "$remote" "$deploy_cmd")"
+          printf '%s\n' "$deploy_output"
+          served_sha="$(sed -n 's/^served_sha256=//p' <<<"$deploy_output" | tail -n 1)"
+          [ "$served_sha" = "$EXPECTED_SHA256" ] || {
+            echo "Server installer did not prove the live response hash" >&2
+            exit 1
+          }
+          echo "served_sha256=$served_sha" >> "$GITHUB_OUTPUT"
+          trap - EXIT
+          cleanup
+
+      - name: Record successful deployment on the Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          VERSION: ${{ needs.build-release.outputs.version }}
+          SOURCE_SHA: ${{ needs.build-release.outputs.source_sha }}
+          ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
+          ARTIFACT_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
+          SERVED_SHA256: ${{ steps.remote.outputs.served_sha256 }}
+        run: |
+          set -euo pipefail
+          receipt="campfire-kitchen-v${VERSION}.deployment.json"
+          python - "$receipt" <<'PY'
+          from datetime import datetime, timezone
+          import json, os, pathlib, sys
+          payload = {
+              'project': 'campfire-kitchen',
+              'version': os.environ['VERSION'],
+              'tag': os.environ['RELEASE_TAG'],
+              'sourceSha': os.environ['SOURCE_SHA'],
+              'artifact': os.environ['ARTIFACT_NAME'],
+              'artifactSha256': os.environ['ARTIFACT_SHA256'],
+              'servedSha256': os.environ['SERVED_SHA256'],
+              'site': 'http://124.223.114.109/',
+              'workflowRun': f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+              'deployedAt': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+          }
+          pathlib.Path(sys.argv[1]).write_text(json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+          PY
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq "$receipt"; then
+            echo "Deployment receipt already exists; keeping the first successful receipt immutable."
+          else
+            gh release upload "$RELEASE_TAG" "$receipt" --repo "$GITHUB_REPOSITORY"
+          fi
+          {
+            echo "### Production deployment"
+            echo "- version: \`$VERSION\`"
+            echo "- source: \`$SOURCE_SHA\`"
+            echo "- Release artifact: \`$ARTIFACT_NAME\`"
+            echo "- artifact sha256: \`$ARTIFACT_SHA256\`"
+            echo "- live served sha256: \`$SERVED_SHA256\`"
+            echo "- site: http://124.223.114.109/"
+          } >> "$GITHUB_STEP_SUMMARY"
