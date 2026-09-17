@@ -23,5 +23,5 @@
 | 2026-09-17T16:55:28+08:00 | → ChatGPT | to-gpt/2026-09-17-release-pipeline.md（任务书） | — | ✅ 已解决 | 它已实现 Release-only 流水线（main 41ba6b72 … 308ca84c 一系列提交） |
 | 2026-09-17T16:55:28+08:00 | → ChatGPT | to-gpt/2026-09-17-deploy-boundary.md | — | ✅ 已解决 | 它已按边界改传输方式（main 41ba6b72 起） |
 | 2026-09-17T16:55:28+08:00 | → ChatGPT | to-gpt/2026-09-17-domain-live-and-two-workflow-fixes.md | — | ✅ 已解决 | 复核过：请求行已带 `label`+`source`、`PUBLIC_URL` 已改 `https://furrypant.com/`（main 308ca84c） |
-| — | → Hermes | to-hermes/2026-09-17-workflow-fixes-landed.md | （待记账） | ⏳ 待处理 | 由 Hermes 侧轮询自动接手，处理完补这一行 |
+| 2026-09-17T16:59:16+08:00 | → Hermes | to-hermes/2026-09-17-workflow-fixes-landed.md | da539a4df0ec | ➖ 通知件（无需动作） | 已读并核对：其修复与我复核结果一致（main 308ca84c）；未产生回执需求 |
 | — | → Hermes | to-hermes/README.md | 817fada1f849 | ➖ 非请求 | 收件箱模板，不是请求 |
