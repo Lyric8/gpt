@@ -1,0 +1,36 @@
+name: Publish Campfire Kitchen v2.0.0 Once
+
+on:
+  push:
+    branches:
+      - chat
+    paths:
+      - .github/workflows/publish-campfire-kitchen-v2.0.0-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: campfire-kitchen-v2.0.0
+      TARGET_SHA: 308ca84cb05e5a75d342455ca4ab1d5b40fc94f6
+    steps:
+      - name: Create the immutable public release if absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release already exists: $RELEASE_TAG"
+          else
+            gh release create "$RELEASE_TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$TARGET_SHA" \
+              --title "Campfire Kitchen v2.0.0" \
+              --notes "First canonical Campfire Kitchen release. Source: $TARGET_SHA. Publishing this release triggers the production release workflow."
+          fi
+          gh release view "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --json tagName,isDraft,isPrerelease,targetCommitish,url
