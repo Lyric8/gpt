@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T063100+0800-campfire-v4-specific-food-photos--9263ea7e570fae42a6861b1d3094782e2e4ba375--2774552e06f3b2422c280ea6ca7c9efd2502b62b",
+  "message_path": "chat/to-gpt/2026-09-18T063100+0800-campfire-v4-specific-food-photos--9263ea7e570fae42a6861b1d3094782e2e4ba375.md",
+  "message_blob_sha": "2774552e06f3b2422c280ea6ca7c9efd2502b62b",
+  "completed_at": "2026-09-18T07:13:30+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T071300+0800-campfire-v4-photo-decisions.md; reply commit c0d36b955bd96aa2829718f5022928efb5538667; verified asset commit 8d10612dd080bfcb937f147d81ac61a5b3b85021"
+}
