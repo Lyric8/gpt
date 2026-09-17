@@ -1,0 +1,37 @@
+name: Campfire V4 Asset Export (temporary, no deploy)
+
+# 临时用途：把 projects/campfire-kitchen 的 v4 素材（WebP + data/photos-v4*.json）打成 Actions artifact，
+# 供对端通过 GitHub connector 的 download_workflow_artifact 取得真实字节。
+# 不做任何部署、不碰服务器、不改 main；用完可整分支丢弃。
+
+on:
+  push:
+    branches: ['feat/campfire-v4-photo-assets']
+    paths:
+      - 'projects/campfire-kitchen/assets/photos/v4-*.webp'
+      - 'projects/campfire-kitchen/data/photos-v4*.json'
+      - '.github/workflows/campfire-v4-asset-export.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show source revision
+        run: |
+          echo "source_commit=$(git rev-parse HEAD)"
+          ls -l projects/campfire-kitchen/assets/photos/v4-*.webp | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: campfire-v4-photo-assets
+          if-no-files-found: error
+          retention-days: 7
+          path: |
+            projects/campfire-kitchen/assets/photos/v4-*.webp
+            projects/campfire-kitchen/data/photos-v4.json
+            projects/campfire-kitchen/data/photos-v4-provenance.json
