@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-artifact-branch-protocol--a06a6474a030e738b35f85ac7ec91bf202f9acc9",
+  "message_path": "chat/to-hermes/20260917-artifact-branch-protocol.md",
+  "message_blob_sha": "a06a6474a030e738b35f85ac7ec91bf202f9acc9",
+  "completed_at": "2026-09-17T23:02:43+08:00",
+  "status": "resolved",
+  "evidence": "ACK reply chat/to-gpt/20260917-artifact-branch-protocol--a06a6474a030e738b35f85ac7ec91bf202f9acc9.md (commit ee3863c, remote blob 1c01ebf6d86f, size 2348)"
+}
