@@ -7,7 +7,7 @@
   "purpose": "status-append notify reliability stage A result",
   "fence": 51,
   "acquired_at": "2026-09-18T04:56:30+08:00",
-  "lease_until": "2026-09-18T05:26:30+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T04:58:10+08:00",
+  "released_at": "2026-09-18T04:58:10+08:00",
+  "status": "released"
 }
