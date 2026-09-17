@@ -2,6 +2,7 @@ import asyncio
 import dataclasses
 import importlib.util
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -39,6 +40,18 @@ class Adapter:
 
 
 class BindingTests(unittest.IsolatedAsyncioTestCase):
+    def write_private_config(self, payload: str) -> Path:
+        path = self.root/"reliable-weixin.json"
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        try:
+            os.fchmod(fd, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8", closefd=False) as stream:
+                stream.write(payload)
+                stream.flush()
+        finally:
+            os.close(fd)
+        return path
+
     async def asyncSetUp(self):
         self.temp = tempfile.TemporaryDirectory(); self.root=Path(self.temp.name)
         self.s=Store(self.root/"state.db")
@@ -46,7 +59,7 @@ class BindingTests(unittest.IsolatedAsyncioTestCase):
         self.event=types.SimpleNamespace(message_id="incoming-1", source=types.SimpleNamespace(chat_id="peer"))
         self.patch=mock.patch.object(binding, "store", return_value=self.s); self.patch.start()
         self.homepatch=mock.patch.object(binding, "home", return_value=self.root); self.homepatch.start()
-        (self.root/"reliable-weixin.json").write_text('{"enabled":true,"gap_seconds":20}')
+        self.write_private_config('{"enabled":true,"gap_seconds":20}')
     async def asyncTearDown(self):
         self.homepatch.stop(); self.patch.stop(); self.temp.cleanup()
 
@@ -104,7 +117,7 @@ class BindingTests(unittest.IsolatedAsyncioTestCase):
         path=self.root/"reliable-weixin.json"
         path.unlink()
         with self.assertRaises(RuntimeError): binding.enabled(self.adapter)
-        path.write_text('{"enabled":false}')
+        self.write_private_config('{"enabled":false}')
         with self.assertRaises(RuntimeError): binding.enabled(self.adapter)
 
     async def test_missing_inbound_id_preserves_generated_reply(self):
