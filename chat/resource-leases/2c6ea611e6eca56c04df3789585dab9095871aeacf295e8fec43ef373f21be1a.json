@@ -3,11 +3,11 @@
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
   "owner": "hermes-poller",
-  "holder_nonce": "5a3ba0ca-0550-40e6-8df5-8b9bdbd7a266",
-  "purpose": "selftest-expire",
-  "fence": 8,
-  "acquired_at": "2026-09-17T17:56:13+08:00",
-  "lease_until": "2026-09-17T17:56:15+08:00",
+  "holder_nonce": "590ffb8e-b1fb-417b-a1b6-d19914c75150",
+  "purpose": "selftest-takeover",
+  "fence": 9,
+  "acquired_at": "2026-09-17T17:56:20+08:00",
+  "lease_until": "2026-09-17T18:01:20+08:00",
   "released_at": null,
   "status": "held"
 }
