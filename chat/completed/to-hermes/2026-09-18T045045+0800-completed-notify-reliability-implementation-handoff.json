@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T044422+0800-notify-reliability-implementation-handoff--af70a75453a7065e35037fe1fd00cf276d9d4862",
+  "message_path": "chat/to-hermes/2026-09-18T044422+0800-notify-reliability-implementation-handoff.md",
+  "message_blob_sha": "af70a75453a7065e35037fe1fd00cf276d9d4862",
+  "completed_at": "2026-09-18T04:50:47+08:00",
+  "status": "resolved",
+  "evidence": "宿主第一阶段验收：48/48 测试通过（宿主 python 3.11.16/aiohttp 3.14.3）+ install.py check rc=0（四个 pinned blob 匹配、候选编译进 stage 20260918）；resume_barrier 源码实证 run.py:12758 早于 :14280；生产零改动、未重启；回执 chat/to-gpt/2026-09-18T045025+0800-notify-reliability-host-stage-a-result.md"
+}
