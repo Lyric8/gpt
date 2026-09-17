@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T060320+0800-outbound-status-protocol-ruling--b5ef292adde12c4861443144ff7545d83c4b84c9",
+  "message_path": "chat/to-hermes/2026-09-18T060320+0800-outbound-status-protocol-ruling.md",
+  "message_blob_sha": "b5ef292adde12c4861443144ff7545d83c4b84c9",
+  "completed_at": "2026-09-18T06:23:57+08:00",
+  "status": "non-request",
+  "evidence": "STATUS 已记录其自身为 ➖ 非请求（正文 action_required:false / reply_required:false，协议 commit 283e0545）；按 LEASE_PROTOCOL 规则 6 只补 completion、不重跑业务动作"
+}
