@@ -1,7 +1,7 @@
 # chat —— 跨执行者交接频道
 
 时间：2026-09-17T17:12:30+08:00　作者：ChatGPT
-修订：2026-09-17T17:44:07+08:00　作者：ChatGPT
+修订：2026-09-18T00:12:15+08:00　作者：ChatGPT
 
 本目录只存在于 `chat` 分支，用于 ChatGPT、Hermes 与老板之间的文字交接；不要把 `chat` 分支合回 `main`。
 
@@ -21,26 +21,45 @@
 | `chat/QUEUE_BASELINE.md` | to-gpt 队列启用前的历史 activation baseline |
 | `chat/STATUS.md` | 人类可读状态账本 |
 
-## 文档纪律
+## 文档与文件名纪律
 
-1. **新发起的请求 / 通知**使用可读文件名：`YYYY-MM-DD-主题.md`。
-2. **针对某条既有消息的回执 / 回复**必须按 `chat/LEASE_PROTOCOL.md` 使用确定性路径：`<source-message_id>.md`。这一条优先于上一条，因为确定性文件名承担幂等去重职责。
-3. 每份新文档头部写：`时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>`。
-4. 一份文档只处理一件事；写完不原地修改，需要更正就新增一份替代文档。
-5. 不修改对方留下的交接文档。
-6. 真有事项才写入对方收件目录；回执完成后停止，不互发纯“收到”。
-7. `claims/`、`completed/`、`resource-leases/`、`QUEUE_BASELINE.md` 是队列/并发元数据，不属于给对方的新请求。
+协议 v3 起，人类可见的新文件不再把 message_id / blob SHA / 派生链塞进文件名。
+
+新请求与回复统一：
+
+```text
+YYYY-MM-DDTHHMMSS+0800-<subject>.md
+```
+
+其中：
+
+- 时间戳到秒，文件名中使用 `+0800`，避免 Windows 路径冒号；
+- subject 是简短业务主旨，建议 ≤ 56 字符；
+- 流转关系写正文里的 `source_path` / `source_message_id` / `source_blob_sha`；
+- 新文档正文头部时间仍写 `时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>`；
+- 文档 immutable，需要更正就新增文件，禁止原地改写对方消息。
+
+claim / completion 也使用短文件名，但原子 claim 有一个关键约束：
+
+```text
+claim:      <source-stable-timestamp>-claim-<subject>.json
+completion: <created-timestamp>-completed-<subject>.json
+```
+
+claim 的时间戳必须来自 source message 的稳定时间，而不是“当前尝试 claim 的时间”。这样同一 source 的竞争 worker 才会命中同一个 create-file 路径，保留原子冲突裁决。详细规则以 `chat/LEASE_PROTOCOL.md` v3 为准。
+
+历史 v2 的 SHA 链文件不要求全量重命名；新 worker 必须兼容旧路径，并通过正文稳定键索引新 marker / reply。
 
 ## 两层 lease：消息所有权 vs 资源所有权
 
-本系统有两个不同层次，禁止混用：
+两层 lease 不可互换：
 
-- `chat/LEASE_PROTOCOL.md`：决定“谁有权处理这条消息”。
-- `chat/RESOURCE_LEASE_PROTOCOL.md`：决定“当前处理者是否有权修改这个共享资源”。
+- `chat/LEASE_PROTOCOL.md`：决定谁有权处理某条 inbox 消息；
+- `chat/RESOURCE_LEASE_PROTOCOL.md`：决定当前处理者是否有权修改某个共享资源。
 
-A/B 类只读或独占新文件写入不需要 resource lease；C/D 类修改既有共享文件、部署、回滚、改服务配置时必须同时满足 message lease 与相应 resource lease。
+A/B 类只读、纯计算或创建本次独占新文件，不需要 resource lease。C/D 类修改既有共享文件、共享账本、部署状态、服务配置或执行高风险外部副作用时，必须同时满足 message lease 与对应 resource lease。
 
-当前共享资源键：
+当前 canonical resource key：
 
 ```text
 resource:chat/STATUS.md
@@ -50,31 +69,38 @@ resource:release-ledger
 resource:caddy-config
 ```
 
-多资源操作必须按 canonical key 排序后获取，拿不到任一资源就释放本轮已拿到的其他资源，不持部分锁等待，避免死锁。完整 acquire / renew / release / fencing 规则见 `chat/RESOURCE_LEASE_PROTOCOL.md`。
+多资源操作必须按 canonical key 字节序获取；任一 BUSY/ERROR 时，立即逆序释放本轮已获得的其他资源，不持部分锁等待。
 
-## baseline 与 completion 的职责
+## baseline、claim 与 completion
 
-`QUEUE_BASELINE.md` 是 ChatGPT 侧启用 10-worker 队列时，为当时已经存在的 `to-gpt` 历史消息建立的一次性迁移边界；它不是要求双向长期维护的第二套状态系统。
+`QUEUE_BASELINE.md` 只处理 ChatGPT 侧启用 worker pool 时已经存在的历史消息，是一次性 migration watermark，不是长期状态库。
 
-Hermes 侧协议 v2 接入前已经存在的 `to-hermes` 历史消息，已由 Hermes 补写 `chat/completed/to-hermes/<message_id>.json`。这些 completion marker 已足够，因此 **不再为 to-hermes 另建 baseline**。
+正常运行时：
 
-正常运行以后，两个方向都以本方向 `completed/<direction>/` + `STATUS.md` 作为完成事实；baseline 只处理启用瞬间的历史迁移问题。
+1. source `path + blob SHA` 决定 message identity；
+2. `message_id = <filename-without-.md>--<full-blob-sha>`，但 v3 起它写正文，不再强制写入文件名；
+3. claim 决定 active owner；
+4. completion + STATUS 表示逻辑处理已闭环；
+5. reply / completion / claim 的关联关系通过正文 `message_id` / `message_blob_sha` / `source_message_id` 建索引；
+6. completion 已存在的逻辑消息永不重新执行业务动作。
+
+Hermes 侧协议 v2 接入前的历史 `to-hermes` 已补 completion，不另建 baseline。
 
 ## 时间戳规矩
 
-1. 每份文档头部必须到秒：`时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>`
-2. 时区统一使用 `UTC+8` 或 `+08:00`
-3. 不使用城市名或地区名代替时区
-4. `STATUS.md` 每行完成时间同样精确到秒并带 `+08:00`
-5. 引用时间一律带时区，不留裸时间
+正文和 STATUS：
 
-## Hermes 侧队列工具（协议 v2）
+```text
+YYYY-MM-DDTHH:MM:SS+08:00
+```
 
-Hermes worker：`hermes-poller`。本机脚本 `~/.hermes/scripts/chat-queue.sh` 提供 `list / claim / complete / status-append`；业务判断仍由 Hermes 会话层负责。
+文件名：
 
-Hermes 推送 `chat` 分支使用 `~/.hermes/scripts/chat-push.sh` 做本机写通道串行化、fetch/rebase/retry，且不强推。该本地锁只解决同机写仓库并发；消息所有权仍由 Git-backed message lease 决定，共享资源所有权由 resource lease 决定。
+```text
+YYYY-MM-DDTHHMMSS+0800
+```
 
-Hermes 对 C/D 类工作应按 `chat/RESOURCE_LEASE_PROTOCOL.md` 提供等价脚本接口：`acquire / renew / release / inspect`。资源锁失败不得拖死 A/B 类工作；`BUSY` 与 `ERROR` 必须区别处理。
+统一使用 UTC+8 / `+08:00` 语义，不使用城市名代替时区。
 
 ## 自动轮询
 
@@ -86,26 +112,31 @@ ChatGPT 使用 10 个彼此独立的普通 Scheduled Tasks，在每小时：
 
 触发，整体约每 6 分钟检查一次 `chat/to-gpt/`。
 
-两边都把 inbox 当作 durable queue，而不是“看见文件就直接执行”的目录。任何业务动作前都必须：
+双方都把 inbox 当成 durable Git-backed queue。每轮必须：
 
-1. 计算 source `message_id`；
-2. 检查本方向 completion；
-3. 通过本方向 `claims/<direction>/<message_id>.json` 获取有效 message lease；
-4. 没拿到 message lease 就退出；
-5. 只有 message lease owner 可以继续业务判断；
-6. 若将修改 C/D 类共享资源，再按 `RESOURCE_LEASE_PROTOCOL.md` 获取对应 resource lease；
-7. 需要回复时使用 deterministic reply path；
-8. 完成后写本方向 completion 与 `STATUS.md`；
-9. lease 过期接管前先核对已有 reply、STATUS 和真实外部副作用，再决定补收尾还是继续。
-
-详细消息算法、CAS、续租、崩溃恢复与幂等顺序以 `chat/LEASE_PROTOCOL.md` 为准；共享资源锁、fence 与多资源死锁规避以 `chat/RESOURCE_LEASE_PROTOCOL.md` 为准。
+1. 重新读取最新 `LEASE_PROTOCOL.md`、`RESOURCE_LEASE_PROTOCOL.md`、`QUEUE_BASELINE.md`、`STATUS.md`；
+2. 枚举本方向 inbox 并排除 baseline / completion / STATUS 已终结项；
+3. 计算 source message_id；
+4. 按 `LEASE_PROTOCOL.md` 获取有效 message lease；
+5. 没拿到 lease 就 fail closed；
+6. 只有 lease owner 可以继续业务判断；
+7. 若修改 C/D 类共享资源，再取得 resource lease；
+8. 回复前按正文 source identity 查重；
+9. 完成后写 completion，并在持有 `resource:chat/STATUS.md` 时用当前 blob SHA CAS 追加 STATUS；
+10. 过期接管前先核对 reply、completion、STATUS 与真实外部副作用，只补缺失步骤。
 
 ## STATUS
 
-每处理完一份交接消息，在 `chat/STATUS.md` 追加一行。只追加，不删除或覆盖别人的历史行。修改 `STATUS.md` 属于 C 类共享写：必须持有 `resource:chat/STATUS.md`，同时更新仍须基于当前 blob SHA 做 CAS；resource lease 与文件 CAS 是双层保护，不互相替代。
+每处理完一份交接消息，在 `chat/STATUS.md` 追加一行。只追加，不覆盖历史。
+
+修改 STATUS 属于 C 类共享写：
+
+- 必须持有 `resource:chat/STATUS.md`；
+- 同时必须基于 STATUS 当前 blob SHA 做 CAS；
+- resource lease 与文件 CAS 是双层保护，不互相替代。
 
 状态固定使用：`⏳ 待处理` / `🔧 处理中` / `✅ 已解决` / `⛔ 不做` / `➖ 非请求`。
 
 ## ChatGPT 资源边界
 
-这套 relay 只允许普通 ChatGPT Scheduled Tasks 与 GitHub connector。不要把 relay 自动升级到 ChatGPT Work、Codex、Codex automation、Codex CLI 或其他 delegated agent 执行路径；需要这些能力的事项留给用户的正式开发流程。
+relay 只允许普通 ChatGPT Scheduled Tasks 与 GitHub connector。禁止升级到 ChatGPT Work、Codex、Codex automations/CLI、delegated agents、Workspace Agents 或其他会计入 Work/Codex 共享 agentic allowance 的路径。
