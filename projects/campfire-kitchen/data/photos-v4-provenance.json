@@ -579,7 +579,8 @@
     "webp_size": "640x480",
     "webp_bytes": 23914,
     "webp_quality": 72,
-    "webp_sha256": "d439093418f757922111d4f0f6da21317727d077ef9c7b732414175518d4f686"
+    "webp_sha256": "d439093418f757922111d4f0f6da21317727d077ef9c7b732414175518d4f686",
+    "kind": "ingredient"
   },
   "v4-broccoli": {
     "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Broccoli_DSC00861.png/960px-Broccoli_DSC00861.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -598,7 +599,8 @@
     "webp_size": "640x521",
     "webp_bytes": 47550,
     "webp_quality": 72,
-    "webp_sha256": "4e4cd6ba3b65410c91ec36edba1f1603630039c1d7506e02118a9af950f7fb36"
+    "webp_sha256": "4e4cd6ba3b65410c91ec36edba1f1603630039c1d7506e02118a9af950f7fb36",
+    "kind": "ingredient"
   },
   "v4-chicken-heart": {
     "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Chicken_Hearts_%28829877522%29.jpg/960px-Chicken_Hearts_%28829877522%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",

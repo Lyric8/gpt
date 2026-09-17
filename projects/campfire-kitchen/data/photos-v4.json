@@ -303,7 +303,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Cabbage_in_a_stack.jpg",
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可"
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
   },
   "v4-broccoli": {
     "src": "assets/photos/v4-broccoli.webp",
@@ -312,7 +313,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Broccoli_DSC00861.png",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可"
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
   },
   "v4-chicken-heart": {
     "src": "assets/photos/v4-chicken-heart.webp",
