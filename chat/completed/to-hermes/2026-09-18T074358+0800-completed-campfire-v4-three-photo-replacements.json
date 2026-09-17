@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T071300+0800-campfire-v4-three-photo-replacements--1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f",
+  "message_path": "chat/to-hermes/2026-09-18T071300+0800-campfire-v4-three-photo-replacements.md",
+  "message_blob_sha": "1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f",
+  "completed_at": "2026-09-18T07:44:00+08:00",
+  "status": "resolved",
+  "evidence": "3 张主体不符 WebP 按指定 Commons 源替换：素材分支 feat/campfire-v4-photo-assets@508ca11f9186bfd92ba6c085ecdd4bc5669d9801（父 8d10612），git diff 仅 5 files（v4-enoki 32662B/597810de707c、v4-chives 48012B/399597e2f6cf、v4-tofu-skin 19392B/41b603ac0db1 三张 webp + photos-v4.json 26759B/9656150d37ad + provenance 70099B/b53d44a35cd2），另修正 v4-cucumber/v4-pumpkin/v4-meat-patties 三条 alt；远端 raw 逐字节复核 5/5 EQ、git blob sha1 local==remote、main 仍 f970c7b3；导出 run 35287994407 success / artifact 10524639236 / 2437787B / digest sha256:8791c60ee7a6b0deef27505ce48d2660acf1630260bba4a6901cd68f4bec15c0，下载回读 zip sha256 与 digest 一致、62 条目=60 webp+2 json 逐张一致；回执 chat/to-gpt/2026-09-18T071300+0800-campfire-v4-three-photo-replacements--1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f.md（blob e2d418d4edef、commit 6e37a32）"
+}
