@@ -28,12 +28,12 @@
   },
   "cumin-beef-wrap": {
     "src": "assets/photos/cumin-beef-wrap.webp",
-    "alt": "生菜叶包炒肉馅，配洋葱香草",
+    "alt": "生菜手卷形态参考；照片为蔬菜馅，并非牛肉配方成品",
     "author": "Vegan Feast Catering",
     "source": "https://commons.wikimedia.org/wiki/File:Lettuce_Wraps_(4104199873).jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+    "note": "生菜手卷形态参考，原照片是蔬菜馅；本配方使用牛肉，材料与做法以操作卡为准；缩放并压缩为WebP"
   },
   "greek-chicken": {
     "src": "assets/photos/greek-chicken.webp",
@@ -59,7 +59,7 @@
     "author": "Fumikas Sagisavas",
     "source": "https://commons.wikimedia.org/wiki/File:Freshippo_lemon_black_pepper_chicken_drumsticks.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "teriyaki-chicken": {
@@ -68,7 +68,7 @@
     "author": "Daderot",
     "source": "https://commons.wikimedia.org/wiki/File:Chicken_teriyaki_bento_box_-_Massachusetts.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "mint-lamb": {
@@ -99,13 +99,13 @@
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "lime-shrimp": {
-    "src": "assets/photos/lime-shrimp.webp",
-    "alt": "整只烤大虾配米饭与香菜",
-    "author": "Paul Lowry",
-    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Kebab_and_Basmati_Rice,_Saba_New_Orleans_April_2025.jpg",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
+    "src": "assets/photos/lemon-shrimp.webp",
+    "alt": "香草烤虾实拍参考；非本配方青柠香菜虾成品",
+    "author": "Eximiousincorp",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Skewers.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类烤虾参考照片，非本配方复刻；缩放并压缩为WebP。调味与摆盘以操作卡为准"
   },
   "dill-salmon": {
     "src": "assets/photos/dill-salmon.webp",
@@ -113,7 +113,7 @@
     "author": "DanaTentis",
     "source": "https://commons.wikimedia.org/wiki/File:Grilled_plated_salmon_fillet_(cropped).jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "ginger-fish": {
@@ -167,7 +167,7 @@
     "author": "Dragne Marius marius_dragne",
     "source": "https://commons.wikimedia.org/wiki/File:Grilled_Corn_(Unsplash).jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "lime-corn": {
@@ -221,7 +221,7 @@
     "author": "Ocdp",
     "source": "https://commons.wikimedia.org/wiki/File:Yaki-Onigiri_001.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "bean-quesadilla": {
@@ -248,7 +248,7 @@
     "author": "Andy Li",
     "source": "https://commons.wikimedia.org/wiki/File:Baked_Camembert_with_truffle_oil,_honey_&_toast_-_Long_Man_Inn_2024-12-18.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "halloumi": {
@@ -329,7 +329,7 @@
     "author": "Andy Li",
     "source": "https://commons.wikimedia.org/wiki/File:Chicken_Satay_-_Little_Thai_2024-09-26.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "summer-roll": {
@@ -338,7 +338,7 @@
     "author": "Tran Hai Duong",
     "source": "https://commons.wikimedia.org/wiki/File:Gỏi_cuốn.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "okonomiyaki": {
@@ -356,7 +356,7 @@
     "author": "Andy Li",
     "source": "https://commons.wikimedia.org/wiki/File:Kimchi-bokkeum-bap_(Kimchi_fried_rice)_-_Kogi_2023-09-11.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "onigiri-chazuke": {
@@ -388,7 +388,7 @@
   },
   "strawberry-cheesecake-cup": {
     "src": "assets/photos/strawberry-cheesecake-cup.webp",
-    "alt": "草莓芝士蛋糕（整只，表面草莓酱）",
+    "alt": "草莓芝士甜点实拍参考；照片为整蛋糕，并非杯装配方成品",
     "author": "Josefine Linnea Jonsson",
     "source": "https://commons.wikimedia.org/wiki/File:Strawberry_cheesecake_round.jpg",
     "license": "CC BY-SA 4.0",
@@ -410,7 +410,7 @@
     "author": "Andy Li",
     "source": "https://commons.wikimedia.org/wiki/File:Blueberry_Pancakes_-_Nowhere_Man_2023-09-21.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "nori-popcorn": {
@@ -419,7 +419,7 @@
     "author": "ViajeroExtraviado",
     "source": "https://commons.wikimedia.org/wiki/File:Popcorn_9.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类菜品实拍，非本配方复刻；缩放并压缩为WebP"
   },
   "sesame-soba": {
