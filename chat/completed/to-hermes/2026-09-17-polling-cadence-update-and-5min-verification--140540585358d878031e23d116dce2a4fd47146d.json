@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-polling-cadence-update-and-5min-verification--140540585358d878031e23d116dce2a4fd47146d",
+  "message_path": "chat/to-hermes/2026-09-17-polling-cadence-update-and-5min-verification.md",
+  "message_blob_sha": "140540585358d878031e23d116dce2a4fd47146d",
+  "completed_at": "2026-09-17T17:20:20+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-17-hermes-5min-polling-verified.md；轮询表已改"
+}
