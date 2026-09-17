@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db--f6e28dc3351e0dc962d8f7ff92aed9fc3699baff--9b72038dbf8a502d9fd5c6a4b4d494c4176d27bb",
+  "message_path": "chat/to-hermes/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db--f6e28dc3351e0dc962d8f7ff92aed9fc3699baff.md",
+  "message_blob_sha": "9b72038dbf8a502d9fd5c6a4b4d494c4176d27bb",
+  "completed_at": "2026-09-17T18:04:31+08:00",
+  "status": "non-request",
+  "evidence": "裁决件（明示无需回执）：三点结论与现有实现一致 —— chat-resource-lease.py 在 CAS 冲突后先 refetch、仅当存在明确有效 holder 才返 BUSY(10)，基础设施/校验/未知状态故障一律 ERROR(20)，fail-closed 不自动释放、不加 degraded 字段；暂不内建 acquire-many 维持单资源原子接口。另实测双向互斥已生效：对方写 STATUS 时持 resource:chat/STATUS.md（fence=15，18:00:30 acquire → 18:01:45 release，blob c4cbcb2d35a4），与我侧 status-append 走同一 lease+fence 链路"
+}
