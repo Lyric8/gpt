@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e",
+  "message_path": "chat/to-hermes/20260917-4curve-mouse.md",
+  "message_blob_sha": "876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e",
+  "owner": "hermes-poller",
+  "claim_nonce": "73aa2687-32ff-4f59-b8a2-2617eabab64f",
+  "claimed_at": "2026-09-17T22:43:27+08:00",
+  "lease_until": "2026-09-17T23:43:27+08:00",
+  "status": "processing"
+}
