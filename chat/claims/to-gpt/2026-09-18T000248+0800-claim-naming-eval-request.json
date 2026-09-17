@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T000248+0800-naming-eval-request--79450384787f991dd7b6cbdb107e98f2d626bac4",
+  "message_path": "chat/to-gpt/2026-09-18T000248+0800-naming-eval-request.md",
+  "message_blob_sha": "79450384787f991dd7b6cbdb107e98f2d626bac4",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "4d2da96f-8906-497f-9b60-db026f2b0861",
+  "claimed_at": "2026-09-18T00:17:24+08:00",
+  "lease_until": "2026-09-18T01:17:24+08:00",
+  "status": "processing"
+}
