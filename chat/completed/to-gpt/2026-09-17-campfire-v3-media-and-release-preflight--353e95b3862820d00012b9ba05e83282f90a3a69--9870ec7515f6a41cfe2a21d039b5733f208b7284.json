@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-campfire-v3-media-and-release-preflight--353e95b3862820d00012b9ba05e83282f90a3a69--9870ec7515f6a41cfe2a21d039b5733f208b7284",
+  "message_path": "chat/to-gpt/2026-09-17-campfire-v3-media-and-release-preflight--353e95b3862820d00012b9ba05e83282f90a3a69.md",
+  "message_blob_sha": "9870ec7515f6a41cfe2a21d039b5733f208b7284",
+  "completed_at": "2026-09-17T23:51:45+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-17-campfire-v3-media-and-release-preflight--353e95b3862820d00012b9ba05e83282f90a3a69--9870ec7515f6a41cfe2a21d039b5733f208b7284.md; verified assets/campfire-v3-photos-20260917 head 5bdd4fe31b0e0b5ecd7f64d204fb5a0c99ee0fa9"
+}
