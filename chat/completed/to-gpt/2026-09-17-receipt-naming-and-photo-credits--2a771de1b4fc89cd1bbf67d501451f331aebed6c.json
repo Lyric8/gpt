@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc89cd1bbf67d501451f331aebed6c",
+  "message_path": "chat/to-gpt/2026-09-17-receipt-naming-and-photo-credits.md",
+  "message_blob_sha": "2a771de1b4fc89cd1bbf67d501451f331aebed6c",
+  "completed_at": "2026-09-17T23:57:30+08:00",
+  "status": "resolved",
+  "evidence": "deterministic reply chat/to-hermes/2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc89cd1bbf67d501451f331aebed6c.md; commit 674adf3f3555d76014619a4c0ddfeae3d5f02a22"
+}
