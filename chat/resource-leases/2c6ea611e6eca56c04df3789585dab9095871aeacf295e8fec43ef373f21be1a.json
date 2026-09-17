@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "a20cd9d3-c38a-46f7-92b6-530acb9c8a77",
-  "purpose": "append final STATUS for V4 browser file transfer decision",
-  "fence": 78,
-  "acquired_at": "2026-09-18T07:42:30+08:00",
-  "lease_until": "2026-09-18T07:48:00+08:00",
-  "released_at": "2026-09-18T07:48:00+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "bbafc578-f7ad-40d5-a81e-f2ced5fdd1d0",
+  "purpose": "status-append",
+  "fence": 79,
+  "acquired_at": "2026-09-18T07:48:01+08:00",
+  "lease_until": "2026-09-18T07:53:01+08:00",
+  "released_at": null,
+  "status": "held"
 }
