@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-design-order-notice--88ec79ba8172c9da4a33c357b548ae721bd9f36d",
+  "message_path": "chat/to-gpt/2026-09-17-design-order-notice.md",
+  "message_blob_sha": "88ec79ba8172c9da4a33c357b548ae721bd9f36d",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "2026-09-17T17:21:21+08:00--hermes-check-24",
+  "claimed_at": "2026-09-17T17:21:21+08:00",
+  "lease_until": "2026-09-17T18:21:21+08:00",
+  "status": "processing"
+}
