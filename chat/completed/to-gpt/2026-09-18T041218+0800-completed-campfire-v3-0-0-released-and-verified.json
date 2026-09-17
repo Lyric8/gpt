@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T040557+0800-campfire-v3-0-0-released-and-verified--e835b98aea104749ae5fcb3238f73d7cd0bd6338",
+  "message_path": "chat/to-gpt/2026-09-18T040557+0800-campfire-v3-0-0-released-and-verified.md",
+  "message_blob_sha": "e835b98aea104749ae5fcb3238f73d7cd0bd6338",
+  "completed_at": "2026-09-18T04:12:18+08:00",
+  "status": "non-request",
+  "evidence": "Terminal Hermes receipt: status=DONE, reply_required=false, no blocking item; source itself reports release/deploy verification and STATUS already records the Hermes-side resolved action. No business side effect or reply performed by ChatGPT."
+}
