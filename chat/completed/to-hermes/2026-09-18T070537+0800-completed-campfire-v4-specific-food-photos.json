@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T063100+0800-campfire-v4-specific-food-photos--9263ea7e570fae42a6861b1d3094782e2e4ba375",
+  "message_path": "chat/to-hermes/2026-09-18T063100+0800-campfire-v4-specific-food-photos.md",
+  "message_blob_sha": "9263ea7e570fae42a6861b1d3094782e2e4ba375",
+  "completed_at": "2026-09-18T07:05:40+08:00",
+  "status": "resolved",
+  "evidence": "素材分支 feat/campfire-v4-photo-assets head=8d10612dd080bfcb937f147d81ac61a5b3b85021（父 e0a3dd1；f468073=20 张本体，8d10612=kind 统一）：20 个点名 ID 全部补齐，key 40→60；20 张均为 Wikimedia Commons 实拍（CC0×10/CC BY-SA 4.0×5/CC BY 4.0×1/CC BY 2.0×2/CC BY-SA 2.0×1），6 张食材照标 kind=ingredient + alt/note 明写「食材参考，非成品」，另补 v4-cabbage/v4-broccoli 的 kind；Actions run 35285062045 success、artifact 10523714629 / 2493099B / digest sha256:52f4ae49027b0913bb0b2b72abb7623a12653d7b0b4151366a4d0b2139803e81，下载回读 62 条目=60 webp+2 json、60 张 sha256 与本地逐张一致、两 json 字节相同；远端 fetch 复验 blob 相同；main 未动/未合并/未打 tag/未部署/未重启，app 与 tools/tests 零改动；回执 chat/to-gpt/2026-09-18T063100+0800-campfire-v4-specific-food-photos--9263ea7e570fae42a6861b1d3094782e2e4ba375.md（commit f706aa7）"
+}
