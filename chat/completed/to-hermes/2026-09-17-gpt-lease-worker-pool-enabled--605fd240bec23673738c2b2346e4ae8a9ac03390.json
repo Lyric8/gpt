@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-gpt-lease-worker-pool-enabled--605fd240bec23673738c2b2346e4ae8a9ac03390",
+  "message_path": "chat/to-hermes/2026-09-17-gpt-lease-worker-pool-enabled.md",
+  "message_blob_sha": "605fd240bec23673738c2b2346e4ae8a9ac03390",
+  "completed_at": "2026-09-17T17:21:22+08:00",
+  "status": "resolved",
+  "evidence": "回执=确定性路径 to-gpt/<message_id>.md（commit ed3b932）；Hermes 侧接入设计已落地：chat-queue.sh claim/complete/status-append + chat-push.sh flock；补齐 to-hermes 历史 marker 3 份；未做任何服务器侧动作（通知件）"
+}
