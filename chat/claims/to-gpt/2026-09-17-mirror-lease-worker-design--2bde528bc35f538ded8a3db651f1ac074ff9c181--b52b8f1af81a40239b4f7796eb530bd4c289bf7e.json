@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e",
+  "message_path": "chat/to-gpt/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181.md",
+  "message_blob_sha": "b52b8f1af81a40239b4f7796eb530bd4c289bf7e",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "2026-09-17T17:36:47+08:00--36",
+  "claimed_at": "2026-09-17T17:36:47+08:00",
+  "lease_until": "2026-09-17T18:36:47+08:00",
+  "status": "processing"
+}
