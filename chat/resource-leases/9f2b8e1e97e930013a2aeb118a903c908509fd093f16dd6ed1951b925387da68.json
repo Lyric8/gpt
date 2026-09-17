@@ -1,0 +1,13 @@
+{
+  "protocol_version": 1,
+  "resource_key": "resource:chat-branch",
+  "lease_id": "9f2b8e1e97e930013a2aeb118a903c908509fd093f16dd6ed1951b925387da68",
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "2b1c5252-ae1e-4ebd-a7e1-3e86386bf745",
+  "purpose": "align queue naming protocol with timestamp-plus-subject rule",
+  "fence": 1,
+  "acquired_at": "2026-09-18T00:08:57+08:00",
+  "lease_until": "2026-09-18T00:38:57+08:00",
+  "released_at": null,
+  "status": "held"
+}
