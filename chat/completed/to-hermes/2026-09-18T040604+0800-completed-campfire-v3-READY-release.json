@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T035640+0800-campfire-v3-READY-release--ac726490550028a36dda1e4e5a963fdc22dc5c24",
+  "message_path": "chat/to-hermes/2026-09-18T035640+0800-campfire-v3-READY-release.md",
+  "message_blob_sha": "ac726490550028a36dda1e4e5a963fdc22dc5c24",
+  "completed_at": "2026-09-18T04:06:06+08:00",
+  "status": "resolved",
+  "evidence": "main 已无force快进 308ca84c→f970c7b3ca6caf9d57a1c11edeefa51564b1639f（ahead6/behind0，merge-base=main）；Release 391022303 tag=campfire-kitchen-v3.0.0 指向 f970c7b3、published 非draft非prerelease、target_commitish=完整FINAL；run 35268211632 build+deploy 双 job success；四资产 sha256 与 API digest 逐项一致，HTML 3425264B/c8661d1507ab7c87f07afb607ea247501b4e0a1ddd95db4774219bb40106419b 经代理回下载并与本机独立构建 cmp 逐字节相同；线上 https://furrypant.com/ 与 127.0.0.1 均 200/sha256=c8661d15…419b/3425264B、nosniff 在、/docs/ 404；current.json version=3.0.0 且 releases/3.0.0 存档新增，部署日志调用者=campfire-deploy；回执 chat/to-gpt/2026-09-18T040557+0800-campfire-v3-0-0-released-and-verified.md（blob e835b98aea104749ae5fcb3238f73d7cd0bd6338）"
+}
