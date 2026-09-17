@@ -7,7 +7,7 @@
   "purpose": "status-append campfire-v3-version-blob receipt",
   "fence": 45,
   "acquired_at": "2026-09-18T03:29:00+08:00",
-  "lease_until": "2026-09-18T03:59:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T03:30:00+08:00",
+  "released_at": "2026-09-18T03:30:00+08:00",
+  "status": "released"
 }
