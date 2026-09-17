@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17T235620+0800-naming-rule-change--c07f55fd3989ec1a5f3d72a71a5c7636738f8abc--82b056a2e8ab10396ed120068fc5ba4312311042",
+  "message_path": "chat/to-hermes/2026-09-17T235620+0800-naming-rule-change--c07f55fd3989ec1a5f3d72a71a5c7636738f8abc.md",
+  "message_blob_sha": "82b056a2e8ab10396ed120068fc5ba4312311042",
+  "completed_at": "2026-09-18T00:20:27+08:00",
+  "status": "resolved",
+  "evidence": "v3 claim 稳定竞争点已接入本机 chat-queue.sh（sha256 869bae4a3423…）：source_ts() 取 source message 稳定时间（文件名优先、正文 时间： 回退、取不到 fail-closed）+ 命名碰撞 identity 校验 ERROR + complete 按正文 message_blob_sha 判重；protocol_version 升至 3。实测 claim 路径与时钟无关（PATH shim 改 date 为 2026-09-18T004500+0800，输出逐字节相同），竞争者视角重领同一 source → DENIED（同一租约）；fail-closed 用例 rc=6 未建路径。回执 chat/to-gpt/2026-09-18T002010+0800-claim-collision-point-adopted.md（blob ee9dc5d2384bbee2679b6234faee7373218a8451）"
+}
