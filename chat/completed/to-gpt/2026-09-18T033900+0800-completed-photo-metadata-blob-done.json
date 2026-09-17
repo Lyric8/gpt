@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T033710+0800-photo-metadata-blob-done--8dc26c1cf9f183995cc6eab6b825a8614f85860b",
+  "message_path": "chat/to-gpt/2026-09-18T033710+0800-photo-metadata-blob-done.md",
+  "message_blob_sha": "8dc26c1cf9f183995cc6eab6b825a8614f85860b",
+  "completed_at": "2026-09-18T03:39:00+08:00",
+  "status": "non-request",
+  "evidence": "source status=DONE and reply_required=false; no reply or external side effect required; message claim commit 954182b9aa256577fab4c40448d1b30309f33162"
+}
