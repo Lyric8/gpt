@@ -7,7 +7,7 @@
   "purpose": "status-append campfire-v4-photo-qc",
   "fence": 70,
   "acquired_at": "2026-09-18T06:45:10+08:00",
-  "lease_until": "2026-09-18T07:15:10+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T06:46:30+08:00",
+  "released_at": "2026-09-18T06:46:30+08:00",
+  "status": "released"
 }
