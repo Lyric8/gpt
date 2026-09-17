@@ -1,0 +1,92 @@
+{
+  "v4-pork-skewers": {
+    "src": "assets/photos/v4-pork-skewers.webp",
+    "alt": "烤架上并排摆放的猪肉串",
+    "author": "Phoebus 28",
+    "source": "https://commons.wikimedia.org/wiki/File:Mu_ping.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-ribs": {
+    "src": "assets/photos/v4-ribs.webp",
+    "alt": "烤架上的一整排猪肋排，旁边烤着玉米",
+    "author": "Gyfjonas",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribs_barbecue.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-squid": {
+    "src": "assets/photos/v4-squid.webp",
+    "alt": "木板上的整只烤鱿鱼，旁边配一碟蘸汁",
+    "author": "Joy D. Ganaden",
+    "source": "https://commons.wikimedia.org/wiki/File:Inihaw_na_Pusit_DSCF4327.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-wings": {
+    "src": "assets/photos/v4-wings.webp",
+    "alt": "圆烤盘上烤至微焦的鸡翅",
+    "author": "P1898",
+    "source": "https://commons.wikimedia.org/wiki/File:Dak_nalgae_wings.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-sausage": {
+    "src": "assets/photos/v4-sausage.webp",
+    "alt": "烤架上并排烤制的香肠",
+    "author": "gcardinal from Norway",
+    "source": "https://commons.wikimedia.org/wiki/File:Sausages_on_a_Barbecue.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-whole-chicken": {
+    "src": "assets/photos/v4-whole-chicken.webp",
+    "alt": "整只香料烤鸡盛盘，配小土豆、红椒与香菜",
+    "author": "Jameswasswa",
+    "source": "https://commons.wikimedia.org/wiki/File:Whole_spiced_chicken_(roasted).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-duck": {
+    "src": "assets/photos/v4-duck.webp",
+    "alt": "整只烧鸭盛盘，鸭皮油亮",
+    "author": "CNEcija12345",
+    "source": "https://commons.wikimedia.org/wiki/File:Roast_duck_Cantonese_styleCNE.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-oyster": {
+    "src": "assets/photos/v4-oyster.webp",
+    "alt": "烤架上壳已张开的生蚝",
+    "author": "そらみみ",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_oysters_20171001.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-whole-fish": {
+    "src": "assets/photos/v4-whole-fish.webp",
+    "alt": "白盘中的整条烤鱼",
+    "author": "Yaco*",
+    "source": "https://commons.wikimedia.org/wiki/File:Yakizakana.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pork-belly": {
+    "src": "assets/photos/v4-pork-belly.webp",
+    "alt": "烤架上的五花肉片，正用筷子翻动",
+    "author": "avlxyz",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilling_streaky_pork_belly_-_Maedaya.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  }
+}
