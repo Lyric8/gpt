@@ -6,7 +6,9 @@
 
 ## 立即打开
 
-电脑直接双击 `index.html`，选择现代浏览器打开；Windows 也可双击 `打开程序.cmd`。HTML 已内嵌代码、样式、菜谱数据，无 CDN、字体下载或远程请求。
+**普通使用优先下载 GitHub Release 里的 `campfire-kitchen-vX.Y.Z.html`，保存后直接用现代浏览器打开。** 这是正式、带版本号和 SHA-256 的单文件成品，无 CDN、字体下载或远程请求。
+
+源码 checkout 不再提交生成后的 `index.html`。开发者运行 `python tools/build.py` 后打开 `index.html`；Windows 可直接双击 `打开程序.cmd`，它会先构建再打开。
 
 1. 在「挑菜与灵感」选一套菜单，或按想吃的菜多选。
 2. 在「这顿怎么吃」设置人数、每道份量与顺序；先看重复口感、浓味、操作负担等提示。
@@ -51,6 +53,12 @@
 
 旧v1程序先「导出备份」，再在v2「配方与审查 → 导入完整备份」。保留还存在的选菜ID、人数、份量、笔记；鲜干选项与旧进度清空。退役菜报告后跳过，不自动换成其他菜；实质重写菜会提示重读操作卡。**不要导入v1独立菜谱库来覆盖v2。**
 
+## 正式发布
+
+本项目采用 **“GitHub Release 才部署”**：普通 push 到 `main` 永远不触发生产发布。正式 tag 为 `campfire-kitchen-vX.Y.Z`，版本必须同时匹配 `package.json` 与 `data/recipes.json`。Release workflow 在 GitHub runner 上测试并双构建，把 HTML、SHA-256 与 manifest 挂到 Release，再把**从 Release 下载回来的同一个 HTML**部署到生产服务器。
+
+发布架构、失败边界、Secret 契约和回滚见 [`docs/RELEASE_PIPELINE.md`](docs/RELEASE_PIPELINE.md)；线上操作见 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)。`deploy/release.sh --deploy` 仅保留作 break-glass 人工兜底，不是日常发布方式。
+
 ## 手机打开
 
 聊天软件附件预览器不等于完整浏览器，可能禁止执行HTML。先把文件保存后交给浏览器打开；具体是否支持本地HTML由手机和浏览器决定。
@@ -77,9 +85,9 @@ python tools/serve.py --no-browser
 data/recipes.json          正式菜谱、原料、材料裁决、菜单、来源与迁移数据
 data/recipes.schema.json   v2结构规范
 src/engine.mjs             纯用量／合并／菜单审查／备份／导出逻辑
-src/app.mjs                DOM、交互、本地保存、文件导入与计时
-src/styles.css            响应式与打印布局
-src/index.template.html   离线HTML模板
+src/app.mjs                DOM、交互、本地保存、文件导入和计时
+src/styles.css             响应式与打印布局
+src/index.template.html    离线HTML模板
 tools/check_catalog.mjs    无依赖菜谱语义校验器
 tools/build.py             Python标准库单文件打包器
 tools/serve.py             可选静态服务
