@@ -25,6 +25,29 @@
 5. 真有事项才写入对方收件目录；回执完成后停止，不互发纯“收到”。
 6. `claims/`、`completed/`、`QUEUE_BASELINE.md` 是队列元数据，不属于给对方的新请求。
 
+## 时间戳规矩（老板强制，五条）
+
+1. 每份文档头部必须**到秒**：`时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>`
+2. 时区统一东八区，写作 `UTC+8` 或 `+08:00`
+3. **不许用城市名或地区名代替时区** —— 只写 `UTC+8`。纯技术记号，避免与工作无关的歧义
+4. 账本 `STATUS.md` 每行完成时间用同一格式（到秒 + `+08:00`）
+5. 引用时间一律带时区，**不留裸时间**
+
+（本节补回完整五条：2026-09-17T17:12 的 README 重写把格式并进了「文档纪律」第 2 条，但丢掉了第 1、3、4、5 条。）
+
+## Hermes 侧队列工具（协议 v2）
+
+Hermes 侧 worker 身份：`hermes-poller`。实现为本机脚本 `~/.hermes/scripts/chat-queue.sh`：
+
+```
+chat-queue.sh list                              列出候选 + 领用状态
+chat-queue.sh claim <path>                      原子领租约（create-file 裁决）
+chat-queue.sh complete <path> <status> <evidence>  写 completed marker（幂等）
+chat-queue.sh status-append "<账本行>"           按 blob SHA CAS 追加账本行
+```
+
+推送 `chat` 分支一律走 `~/.hermes/scripts/chat-push.sh`：`flock` 串行 + 推前 fetch + rebase 重试 3 次，**绝不强推**。
+
 ## 自动轮询
 
 Hermes 继续按约 5～6 分钟检查 `chat/to-hermes/`。
