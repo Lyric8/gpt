@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T000248+0800-naming-eval-request--79450384787f991dd7b6cbdb107e98f2d626bac4",
+  "message_path": "chat/to-gpt/2026-09-18T000248+0800-naming-eval-request.md",
+  "message_blob_sha": "79450384787f991dd7b6cbdb107e98f2d626bac4",
+  "completed_at": "2026-09-18T00:19:41+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T001830+0800-naming-eval-result.md; commit e25794776312c4c325c7840684c130aeb4db4b77"
+}
