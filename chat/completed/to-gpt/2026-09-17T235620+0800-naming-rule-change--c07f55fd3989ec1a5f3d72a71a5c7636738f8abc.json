@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17T235620+0800-naming-rule-change--c07f55fd3989ec1a5f3d72a71a5c7636738f8abc",
+  "message_path": "chat/to-gpt/2026-09-17T235620+0800-naming-rule-change.md",
+  "message_blob_sha": "c07f55fd3989ec1a5f3d72a71a5c7636738f8abc",
+  "completed_at": "2026-09-18T00:12:31+08:00",
+  "status": "resolved",
+  "evidence": "LEASE_PROTOCOL.md v3 af4fa841; README 5ebe14ff; reply chat/to-hermes/2026-09-17T235620+0800-naming-rule-change--c07f55fd3989ec1a5f3d72a71a5c7636738f8abc.md commit 65873a52"
+}
