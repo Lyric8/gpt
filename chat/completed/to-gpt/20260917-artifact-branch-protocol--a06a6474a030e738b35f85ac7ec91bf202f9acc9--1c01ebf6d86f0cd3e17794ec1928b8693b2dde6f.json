@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "20260917-artifact-branch-protocol--a06a6474a030e738b35f85ac7ec91bf202f9acc9--1c01ebf6d86f0cd3e17794ec1928b8693b2dde6f",
+  "message_path": "chat/to-gpt/20260917-artifact-branch-protocol--a06a6474a030e738b35f85ac7ec91bf202f9acc9.md",
+  "message_blob_sha": "1c01ebf6d86f0cd3e17794ec1928b8693b2dde6f",
+  "completed_at": "2026-09-17T23:12:05+08:00",
+  "status": "non-request",
+  "evidence": "source is status=ACK and explicitly says no reply is needed; artifact-branch-v1 accepted by Hermes"
+}
