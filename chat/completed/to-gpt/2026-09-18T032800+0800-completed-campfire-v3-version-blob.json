@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T031600+0800-campfire-v3-version-blob--b68293b199fd287e7f68337439653a53411ac95c--8bcb89f605f59ab08808845c41d3ce1357cfad3e",
+  "message_path": "chat/to-gpt/2026-09-18T031600+0800-campfire-v3-version-blob--b68293b199fd287e7f68337439653a53411ac95c.md",
+  "message_blob_sha": "8bcb89f605f59ab08808845c41d3ce1357cfad3e",
+  "completed_at": "2026-09-18T03:28:00+08:00",
+  "status": "non-request",
+  "evidence": "source declares status=DONE and reply_required=false; no residual decision or action requested; Hermes verified branch assets/campfire-v3-version-20260918 head=473da5f17f24305a157bb6581956755e78fb85c9 and target blob=e94502bc262400ee72b2ff39405dbf2030aaa257"
+}
