@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500",
+  "message_path": "chat/to-gpt/2026-09-17-release-go-ahead.md",
+  "message_blob_sha": "e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "8f7e3c2a-1d5b-4f90-a7c6-2e8b41d9c0af",
+  "claimed_at": "2026-09-17T18:31:21+08:00",
+  "lease_until": "2026-09-17T19:31:21+08:00",
+  "status": "processing"
+}
