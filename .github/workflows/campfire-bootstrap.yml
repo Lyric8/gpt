@@ -1,0 +1,53 @@
+name: Campfire Kitchen Bootstrap
+
+on:
+  push:
+    paths:
+      - 'projects/campfire-kitchen/_bootstrap/campfire-core.tgz'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract authoritative source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive='projects/campfire-kitchen/_bootstrap/campfire-core.tgz'
+          test -f "$archive"
+          tar -xzf "$archive" -C projects/campfire-kitchen
+          rm -rf projects/campfire-kitchen/_bootstrap
+      - name: Verify required project files
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd projects/campfire-kitchen
+          test -f data/recipes.json
+          test -f src/styles.css
+          test -f src/engine.mjs
+          test -f src/app.mjs
+          test -f tests/engine.test.mjs
+          node tools/check_catalog.mjs
+          node --test tests/engine.test.mjs
+          python tools/build.py
+          test -f index.html
+      - name: Commit expanded source
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet && git diff --cached --quiet; then
+            echo 'Nothing to commit'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add projects/campfire-kitchen
+          git commit -m 'campfire-kitchen: restore complete v2 source tree'
+          git push origin HEAD:main
