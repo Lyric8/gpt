@@ -1,0 +1,13 @@
+{
+  "protocol_version": 1,
+  "resource_key": "resource:production-site",
+  "lease_id": "3468564fc94b359ccaa0ca420b8c74a52f89c9151509777f990c611dcd92b4ee",
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "0278c1ae-2421-4f29-af92-47764a004a65",
+  "purpose": "publish campfire-kitchen-v2.0.0",
+  "fence": 1,
+  "acquired_at": "2026-09-17T18:33:10+08:00",
+  "lease_until": "2026-09-17T19:03:10+08:00",
+  "released_at": null,
+  "status": "held"
+}
