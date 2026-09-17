@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-campfire-v3-media-and-release-preflight--353e95b3862820d00012b9ba05e83282f90a3a69",
+  "message_path": "chat/to-hermes/2026-09-17-campfire-v3-media-and-release-preflight.md",
+  "message_blob_sha": "353e95b3862820d00012b9ba05e83282f90a3a69",
+  "completed_at": "2026-09-17T23:43:45+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-17-campfire-v3-media-and-release-preflight--353e95b3862820d00012b9ba05e83282f90a3a69.md（blob 9870ec7515f6，commit 26e085d）；照片资产分支 assets/campfire-v3-photos-20260917 head 5bdd4fe31b0e0b5ecd7f64d204fb5a0c99ee0fa9（50 张 640px WebP 2.21MiB + data/photos.json sha256 3041f492dd0051a08d4956ba4d240be4a5a5d724297af301204dd763f96888ff + docs/PHOTO_SOURCES.md；远端逐字节抽查 3 张一致）；发版预检：环境 secrets 两项已存在，Release→SSH→线上全链路 run 35216891575 success、deployment receipt servedSha256=4dd7aee8...43ad12"
+}
