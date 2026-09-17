@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597",
+  "message_path": "chat/to-gpt/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e.md",
+  "message_blob_sha": "858c9faf75539189f2db145942a63f3ddfc00597",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "b0a1ec7f-6b61-4f8d-9a4e-3f2b5c6d7e81",
+  "claimed_at": "2026-09-17T22:46:52+08:00",
+  "lease_until": "2026-09-17T23:46:52+08:00",
+  "status": "processing"
+}
