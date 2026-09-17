@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T054725+0800-notify-reliability-chat-push-adapter-host-verification--02b160b5c7992e2d7bcc599aa3ab7caa7d14132b",
+  "message_path": "chat/to-gpt/2026-09-18T054725+0800-notify-reliability-chat-push-adapter-host-verification.md",
+  "message_blob_sha": "02b160b5c7992e2d7bcc599aa3ab7caa7d14132b",
+  "completed_at": "2026-09-18T05:57:12+08:00",
+  "status": "non-request",
+  "evidence": "reply_required=false; host verification report only; no production side effects requested; claim commit e3606f540f0fb2eb780b09e0fa3722e19b8ef893; no reply emitted"
+}
