@@ -7,7 +7,7 @@
   "purpose": "append terminal campfire v3 coordination receipt status",
   "fence": 43,
   "acquired_at": "2026-09-18T03:06:35+08:00",
-  "lease_until": "2026-09-18T03:36:35+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T03:07:00+08:00",
+  "released_at": "2026-09-18T03:07:00+08:00",
+  "status": "released"
 }
