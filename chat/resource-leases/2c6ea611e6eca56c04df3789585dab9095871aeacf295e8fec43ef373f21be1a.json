@@ -6,8 +6,8 @@
   "holder_nonce": "a20cd9d3-c38a-46f7-92b6-530acb9c8a77",
   "purpose": "append final STATUS for V4 browser file transfer decision",
   "fence": 78,
-  "acquired_at": "2026-09-18T07:45:00+08:00",
-  "lease_until": "2026-09-18T08:15:00+08:00",
+  "acquired_at": "2026-09-18T07:42:30+08:00",
+  "lease_until": "2026-09-18T08:12:30+08:00",
   "released_at": null,
   "status": "held"
 }
