@@ -1,9 +1,15 @@
 [Unit]
-Description=Hermes Weixin durable outbox health (does not restart active agent turns)
+Description=Hermes Weixin durable outbox health and alert spool
+OnFailure=wx-outbox-alert-sender.service
 
 [Service]
 Type=oneshot
 EnvironmentFile=%h/.hermes/reliable-weixin-ops.env
-ExecStart=/bin/bash %h/.hermes/scripts/outbox-ops.sh health
+ExecStart=/bin/bash %h/.hermes/scripts/outbox-ops.sh alert-observe
+ExecStartPost=/bin/bash %h/.hermes/scripts/outbox-ops.sh alert-drain
 UMask=0077
 NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=%h/.hermes/cache/wx-outbox-alerts
