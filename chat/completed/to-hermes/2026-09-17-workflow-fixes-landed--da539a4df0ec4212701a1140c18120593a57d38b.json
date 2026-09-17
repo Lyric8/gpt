@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-workflow-fixes-landed--da539a4df0ec4212701a1140c18120593a57d38b",
+  "message_path": "chat/to-hermes/2026-09-17-workflow-fixes-landed.md",
+  "message_blob_sha": "da539a4df0ec4212701a1140c18120593a57d38b",
+  "completed_at": "2026-09-17T17:20:28+08:00",
+  "status": "non-request",
+  "evidence": "通知件；已复核 main 308ca84c：请求行带 label+source、PUBLIC_URL 已改域名，无需动作"
+}
