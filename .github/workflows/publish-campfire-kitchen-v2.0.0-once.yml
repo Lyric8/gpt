@@ -1,4 +1,4 @@
-name: Publish Campfire Kitchen v2.0.0 Once
+name: Publish and Deploy Campfire Kitchen v2.0.0 Once
 
 on:
   push:
@@ -9,28 +9,290 @@ on:
 
 permissions:
   contents: write
+  deployments: write
+
+concurrency:
+  group: campfire-kitchen-production
+  cancel-in-progress: false
+
+env:
+  PROJECT_ROOT: projects/campfire-kitchen
+  RELEASE_TAG: campfire-kitchen-v2.0.0
+  VERSION: 2.0.0
+  TARGET_SHA: 308ca84cb05e5a75d342455ca4ab1d5b40fc94f6
+  ARTIFACT_NAME: campfire-kitchen-v2.0.0.html
+  CHECKSUM_NAME: campfire-kitchen-v2.0.0.sha256
+  MANIFEST_NAME: campfire-kitchen-v2.0.0.manifest.json
+  RECEIPT_NAME: campfire-kitchen-v2.0.0.deployment.json
+  DEPLOY_HOST: 124.223.114.109
+  DEPLOY_PORT: '22'
+  DEPLOY_USER: campfire-deploy
+  PUBLIC_URL: https://furrypant.com/
 
 jobs:
-  publish:
+  publish-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: campfire-kitchen-production
+      url: https://furrypant.com/
     env:
       GH_TOKEN: ${{ github.token }}
-      RELEASE_TAG: campfire-kitchen-v2.0.0
-      TARGET_SHA: 308ca84cb05e5a75d342455ca4ab1d5b40fc94f6
     steps:
-      - name: Create the immutable public release if absent
+      - name: Confirm the published Release exists and targets the approved source
         shell: bash
         run: |
           set -euo pipefail
-          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "Release already exists: $RELEASE_TAG"
+          release_json="$RUNNER_TEMP/release.json"
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$RELEASE_TAG" > "$release_json"
+          [ "$(jq -r '.draft' "$release_json")" = "false" ]
+          [ "$(jq -r '.prerelease' "$release_json")" = "false" ]
+          [ "$(jq -r '.target_commitish' "$release_json")" = "$TARGET_SHA" ]
+          release_id="$(jq -r '.id' "$release_json")"
+          release_published_at="$(jq -r '.published_at' "$release_json")"
+          [ -n "$release_id" ] && [ "$release_id" != "null" ]
+          [ -n "$release_published_at" ] && [ "$release_published_at" != "null" ]
+          {
+            echo "RELEASE_ID=$release_id"
+            echo "RELEASE_PUBLISHED_AT=$release_published_at"
+          } >> "$GITHUB_ENV"
+
+      - name: Check out the immutable release tag
+        uses: actions/checkout@v4
+        with:
+          ref: campfire-kitchen-v2.0.0
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate release source and project versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_sha="$(git rev-parse HEAD)"
+          [ "$source_sha" = "$TARGET_SHA" ] || {
+            echo "Tag source $source_sha differs from approved source $TARGET_SHA" >&2
+            exit 1
+          }
+          cd "$PROJECT_ROOT"
+          package_version="$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")"
+          data_version="$(node -p "JSON.parse(require('fs').readFileSync('data/recipes.json','utf8')).version")"
+          [ "$package_version" = "$VERSION" ]
+          [ "$data_version" = "$VERSION" ]
+          echo "SOURCE_SHA=$source_sha" >> "$GITHUB_ENV"
+
+      - name: Validate source and run engine tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_ROOT"
+          npm run validate
+          npm test
+          node --check src/engine.mjs
+          node --check src/app.mjs
+          python -m json.tool data/recipes.json >/dev/null
+          python -m json.tool data/recipes.schema.json >/dev/null
+
+      - name: Build twice and prove reproducibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_ROOT"
+          dist="$RUNNER_TEMP/campfire-release"
+          rm -rf "$dist"
+          mkdir -p "$dist"
+          python tools/build.py --output "$dist/$ARTIFACT_NAME"
+          python tools/build.py --output "$dist/.second-build.html"
+          cmp -s "$dist/$ARTIFACT_NAME" "$dist/.second-build.html" || {
+            echo "Build is not reproducible: two builds differ byte-for-byte" >&2
+            exit 1
+          }
+          rm -f "$dist/.second-build.html"
+          artifact_sha256="$(sha256sum "$dist/$ARTIFACT_NAME" | awk '{print $1}')"
+          artifact_bytes="$(wc -c < "$dist/$ARTIFACT_NAME" | tr -d ' ')"
+          printf '%s  %s\n' "$artifact_sha256" "$ARTIFACT_NAME" > "$dist/$CHECKSUM_NAME"
+          export ARTIFACT_SHA256="$artifact_sha256" ARTIFACT_BYTES="$artifact_bytes"
+          python - "$dist/$MANIFEST_NAME" <<'PY'
+          import json, os, pathlib, sys
+          payload = {
+              'project': 'campfire-kitchen',
+              'version': os.environ['VERSION'],
+              'tag': os.environ['RELEASE_TAG'],
+              'releaseId': int(os.environ['RELEASE_ID']),
+              'publishedAt': os.environ['RELEASE_PUBLISHED_AT'],
+              'sourceSha': os.environ['SOURCE_SHA'],
+              'artifact': os.environ['ARTIFACT_NAME'],
+              'sha256': os.environ['ARTIFACT_SHA256'],
+              'bytes': int(os.environ['ARTIFACT_BYTES']),
+          }
+          pathlib.Path(sys.argv[1]).write_text(
+              json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + '\n',
+              encoding='utf-8',
+          )
+          PY
+          {
+            echo "ARTIFACT_SHA256=$artifact_sha256"
+            echo "ARTIFACT_BYTES=$artifact_bytes"
+          } >> "$GITHUB_ENV"
+
+      - name: Preflight and attach immutable Release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          dist="$RUNNER_TEMP/campfire-release"
+          existing_names="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')"
+          for name in "$ARTIFACT_NAME" "$CHECKSUM_NAME" "$MANIFEST_NAME"; do
+            if grep -Fxq "$name" <<<"$existing_names"; then
+              verify_dir="$(mktemp -d)"
+              gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$name" --dir "$verify_dir"
+              cmp -s "$dist/$name" "$verify_dir/$name" || {
+                echo "Release asset $name already exists with different bytes; refusing mutation" >&2
+                exit 1
+              }
+              rm -rf "$verify_dir"
+              echo "Verified existing immutable asset: $name"
+            else
+              gh release upload "$RELEASE_TAG" "$dist/$name" --repo "$GITHUB_REPOSITORY"
+              echo "Uploaded Release asset: $name"
+            fi
+          done
+
+      - name: Download canonical Release artifact back and verify it
+        shell: bash
+        run: |
+          set -euo pipefail
+          deploy_dir="$RUNNER_TEMP/campfire-deploy"
+          rm -rf "$deploy_dir"
+          mkdir -p "$deploy_dir"
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$ARTIFACT_NAME" --dir "$deploy_dir"
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$CHECKSUM_NAME" --dir "$deploy_dir"
+          (cd "$deploy_dir" && sha256sum -c "$CHECKSUM_NAME")
+          actual="$(sha256sum "$deploy_dir/$ARTIFACT_NAME" | awk '{print $1}')"
+          [ "$actual" = "$ARTIFACT_SHA256" ] || {
+            echo "Downloaded Release asset hash differs from the reproducible build" >&2
+            exit 1
+          }
+          echo "DEPLOY_ARTIFACT=$deploy_dir/$ARTIFACT_NAME" >> "$GITHUB_ENV"
+
+      - name: Prepare restricted SSH identity
+        shell: bash
+        env:
+          DEPLOY_KEY: ${{ secrets.CAMPFIRE_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.CAMPFIRE_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_KEY:?missing CAMPFIRE_DEPLOY_SSH_KEY}"
+          : "${DEPLOY_KNOWN_HOSTS:?missing CAMPFIRE_DEPLOY_KNOWN_HOSTS}"
+          umask 077
+          key="$RUNNER_TEMP/campfire-deploy-key"
+          known="$RUNNER_TEMP/campfire-known-hosts"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$known"
+          chmod 600 "$key" "$known"
+          ssh-keygen -y -f "$key" >/dev/null
+          {
+            echo "DEPLOY_KEY_FILE=$key"
+            echo "DEPLOY_KNOWN_HOSTS_FILE=$known"
+          } >> "$GITHUB_ENV"
+
+      - name: Converge production to the exact Release bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          current="$RUNNER_TEMP/current-public.html"
+          if curl -fsS --retry 3 --retry-delay 2 --max-time 20 -o "$current" "$PUBLIC_URL"; then
+            current_sha="$(sha256sum "$current" | awk '{print $1}')"
           else
-            gh release create "$RELEASE_TAG" \
-              --repo "$GITHUB_REPOSITORY" \
-              --target "$TARGET_SHA" \
-              --title "Campfire Kitchen v2.0.0" \
-              --notes "First canonical Campfire Kitchen release. Source: $TARGET_SHA. Publishing this release triggers the production release workflow."
+            current_sha="unavailable"
           fi
-          gh release view "$RELEASE_TAG" \
-            --repo "$GITHUB_REPOSITORY" \
-            --json tagName,isDraft,isPrerelease,targetCommitish,url
+          if [ "$current_sha" = "$ARTIFACT_SHA256" ]; then
+            echo "Production already serves the exact Release bytes; skipping duplicate deploy."
+          else
+            ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
+            remote="${DEPLOY_USER}@${DEPLOY_HOST}"
+            deploy_output="$({
+              printf 'request=deploy label=%s sha256=%s source=%s\n' "$VERSION" "$ARTIFACT_SHA256" "$SOURCE_SHA"
+              cat "$DEPLOY_ARTIFACT"
+            } | ssh "${ssh_opts[@]}" "$remote" deploy)"
+            printf '%s\n' "$deploy_output"
+            grep -Fq 'deploy-release: 完成' <<<"$deploy_output" || {
+              echo "Restricted server entry did not report a successful deploy" >&2
+              exit 1
+            }
+            grep -Fq "sha256=$ARTIFACT_SHA256" <<<"$deploy_output" || {
+              echo "Server success receipt did not contain the expected sha256" >&2
+              exit 1
+            }
+          fi
+
+      - name: Verify public production bytes and security header
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$RUNNER_TEMP/public-index.html"
+          headers="$RUNNER_TEMP/public-headers.txt"
+          curl -fsS --retry 5 --retry-delay 2 --max-time 20 -o "$body" "$PUBLIC_URL"
+          served_sha="$(sha256sum "$body" | awk '{print $1}')"
+          [ "$served_sha" = "$ARTIFACT_SHA256" ] || {
+            echo "Public site sha256 mismatch: $served_sha" >&2
+            exit 1
+          }
+          curl -fsSI --retry 3 --retry-delay 1 --max-time 20 -o "$headers" "$PUBLIC_URL"
+          tr -d '\r' < "$headers" | grep -qi '^X-Content-Type-Options:[[:space:]]*nosniff[[:space:]]*$' || {
+            echo "Public site is missing X-Content-Type-Options: nosniff" >&2
+            exit 1
+          }
+          echo "SERVED_SHA256=$served_sha" >> "$GITHUB_ENV"
+
+      - name: Record the first successful production deployment immutably
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt="$RUNNER_TEMP/$RECEIPT_NAME"
+          export WORKFLOW_RUN="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          python - "$receipt" <<'PY'
+          from datetime import datetime, timezone
+          import json, os, pathlib, sys
+          payload = {
+              'project': 'campfire-kitchen',
+              'version': os.environ['VERSION'],
+              'tag': os.environ['RELEASE_TAG'],
+              'sourceSha': os.environ['SOURCE_SHA'],
+              'artifact': os.environ['ARTIFACT_NAME'],
+              'artifactSha256': os.environ['ARTIFACT_SHA256'],
+              'servedSha256': os.environ['SERVED_SHA256'],
+              'site': os.environ['PUBLIC_URL'],
+              'workflowRun': os.environ['WORKFLOW_RUN'],
+              'deployedAt': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+          }
+          pathlib.Path(sys.argv[1]).write_text(
+              json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + '\n',
+              encoding='utf-8',
+          )
+          PY
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq "$RECEIPT_NAME"; then
+            echo "Deployment receipt already exists; preserving the first successful receipt."
+          else
+            gh release upload "$RELEASE_TAG" "$receipt" --repo "$GITHUB_REPOSITORY"
+          fi
+
+      - name: Final release summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json tagName,isDraft,isPrerelease,targetCommitish,url,assets
+          {
+            echo "### Campfire Kitchen v2.0.0"
+            echo "- source: \`$SOURCE_SHA\`"
+            echo "- Release/public sha256: \`$ARTIFACT_SHA256\`"
+            echo "- bytes: \`$ARTIFACT_BYTES\`"
+            echo "- site: $PUBLIC_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
