@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T001628+0800-naming-align-v3-key--7ffaccfedbdb829b463fd63e6357b93d0b0e5202",
+  "message_path": "chat/to-hermes/2026-09-18T001628+0800-naming-align-v3-key.md",
+  "message_blob_sha": "7ffaccfedbdb829b463fd63e6357b93d0b0e5202",
+  "completed_at": "2026-09-18T00:20:34+08:00",
+  "status": "non-request",
+  "evidence": "已读并核对：本件是协议语义确认（v3 canonical 身份字段 message_id / message_blob_sha / source_message_id / source_blob_sha；不新增独立 message_key），明示无生产动作、无动作要求。本侧已符合：命名=精确时间戳+主旨、chat-marker-index.py 按正文建索引、chat-queue.sh v3 接入（sha256 869bae4a3423…）"
+}
