@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:release-ledger",
   "lease_id": "83764ff3512ef91f60d2a95dd9257f7b271755156181388e701e676d40ef6e08",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "226eefbe-7b48-4fbe-b1b1-467be28ea2ee",
-  "purpose": "publish campfire-kitchen-v2.0.0",
-  "fence": 1,
-  "acquired_at": "2026-09-17T18:33:10+08:00",
-  "lease_until": "2026-09-17T18:40:10+08:00",
-  "released_at": "2026-09-17T18:40:10+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "05ff6260-9b7d-4c93-964d-a726e3b312f5",
+  "purpose": "publish campfire-kitchen-v3.0.0 Release via existing restricted channel",
+  "fence": 2,
+  "acquired_at": "2026-09-18T03:59:59+08:00",
+  "lease_until": "2026-09-18T04:29:59+08:00",
+  "released_at": null,
+  "status": "held"
 }
