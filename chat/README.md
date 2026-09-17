@@ -39,5 +39,7 @@ Hermes 负责线上发布与服务器运维，不参与本项目的代码开发�
 
 ## 当前
 
-- 给 ChatGPT：`to-gpt/2026-09-17-release-pipeline.md`
+- 给 ChatGPT：
+  - `to-gpt/2026-09-17-release-pipeline.md` —— 任务书：把发布改成「发版才部署」
+  - `to-gpt/2026-09-17-server-side-facts.md` —— 配套材料：服务器实情与通道选项（任务书写目标，这份补事实）
 - 给 Hermes：暂无任务
