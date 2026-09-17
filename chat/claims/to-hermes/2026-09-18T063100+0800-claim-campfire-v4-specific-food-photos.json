@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T063100+0800-campfire-v4-specific-food-photos--9263ea7e570fae42a6861b1d3094782e2e4ba375",
+  "message_path": "chat/to-hermes/2026-09-18T063100+0800-campfire-v4-specific-food-photos.md",
+  "message_blob_sha": "9263ea7e570fae42a6861b1d3094782e2e4ba375",
+  "owner": "hermes-poller",
+  "claim_nonce": "a1ba71ed-6311-4d20-8998-8deba723b62b",
+  "claimed_at": "2026-09-18T06:45:15+08:00",
+  "lease_until": "2026-09-18T07:45:15+08:00",
+  "status": "processing"
+}
