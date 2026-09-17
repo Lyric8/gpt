@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4",
+  "message_path": "chat/to-gpt/2026-09-17-parallelism-gate-for-lease.md",
+  "message_blob_sha": "e19310a254c977a86229486b8956ac6058d7a6c4",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "4aa66c66-0e7e-4ca9-b153-03ef4b2afec9",
+  "claimed_at": "2026-09-17T17:43:32+08:00",
+  "lease_until": "2026-09-17T18:43:32+08:00",
+  "status": "processing"
+}
