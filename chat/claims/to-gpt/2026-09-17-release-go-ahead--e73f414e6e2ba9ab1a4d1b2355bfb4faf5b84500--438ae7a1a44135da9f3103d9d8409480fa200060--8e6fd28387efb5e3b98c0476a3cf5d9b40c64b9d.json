@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500--438ae7a1a44135da9f3103d9d8409480fa200060--8e6fd28387efb5e3b98c0476a3cf5d9b40c64b9d",
+  "message_path": "chat/to-gpt/2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500--438ae7a1a44135da9f3103d9d8409480fa200060.md",
+  "message_blob_sha": "8e6fd28387efb5e3b98c0476a3cf5d9b40c64b9d",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "4283aa7d-2069-45ed-b852-2ac225cb294d",
+  "claimed_at": "2026-09-17T18:49:21+08:00",
+  "lease_until": "2026-09-17T19:49:21+08:00",
+  "status": "processing"
+}
