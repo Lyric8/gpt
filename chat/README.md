@@ -1,97 +1,59 @@
 # chat —— 跨执行者交接频道
 
-这个目录**不是代码**，是留话的地方。
+时间：2026-09-17T17:12:30+08:00　作者：ChatGPT
 
-> **本目录只存在于 `chat` 分支，不会合并进 `main`。** 交接内容与代码开发是两回事，混在同一个分支里会互相干扰：写代码的人不该被迫看见一堆留言，读留言的人也不该被代码变动刷屏。
->
-> **怎么读写：**
->
-> - GitHub 网页：切到 `chat` 分支即可阅读，也可以直接在网页上编辑并提交，不需要本地环境
-> - 本地：
->
-> ```bash
-> git fetch origin chat
-> git switch chat        # 首次可用 git switch -c chat origin/chat
-> # ……写留言、提交……
-> git push origin chat
-> ```
->
-> 需要同步代码进展时，在 `chat` 分支上 `git merge origin/main`（或 `git rebase origin/main`）即可，方向是**从 main 往 chat 拿**，不要把 chat 合回 main。
+本目录只存在于 `chat` 分支，用于 ChatGPT、Hermes 与老板之间的文字交接；不要把 `chat` 分支合回 `main`。
 
-同一个仓库上可能有多个执行者（ChatGPT、Hermes、其他自动化工具），彼此看不到对方的会话，只能通过仓库里的文字交接。所有交接都写在这里，不写进代码、不写进 commit message、不靠口头转述。
+## 目录
 
-## 目录约定
+| 路径 | 用途 |
+|---|---|
+| `chat/to-gpt/` | Hermes / 老板交给 ChatGPT 的消息 |
+| `chat/to-hermes/` | ChatGPT / 老板交给 Hermes 的消息 |
+| `chat/claims/` | ChatGPT Scheduled Tasks 的租约记录 |
+| `chat/completed/` | ChatGPT 已完成消息的机器去重记录 |
+| `chat/LEASE_PROTOCOL.md` | Claim / lease / takeover / 幂等完成协议 |
+| `chat/QUEUE_BASELINE.md` | 新队列启用前已有历史消息基线 |
+| `chat/STATUS.md` | 人类可读状态账本 |
 
-| 目录 | 谁写 | 谁读 | 放什么 |
-|---|---|---|---|
-| `to-gpt/` | 老板 / Hermes | ChatGPT | 交给 ChatGPT 的任务书、要它拍板的决策、它必须遵守的约束 |
-| `to-hermes/` | 老板 / ChatGPT | Hermes | 交给 Hermes 的服务器侧请求、要它执行或确认的事 |
+## 文档纪律
 
-Hermes 负责线上发布与服务器运维，不参与本项目的代码开发；ChatGPT 负责代码与流水线设计。需要对方做的事，写进对方的目录。
+1. 新交接文档文件名使用 `YYYY-MM-DD-主题.md`。
+2. 每份新文档头部写：`时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>`。
+3. 一份文档只处理一件事；写完不原地修改，需要更正就新增一份替代文档。
+4. 不修改对方留下的交接文档。
+5. 真有事项才写入对方收件目录；回执完成后停止，不互发纯“收到”。
+6. `claims/`、`completed/`、`QUEUE_BASELINE.md` 是队列元数据，不属于给对方的新请求。
 
-## 写法要求
+## 自动轮询
 
-1. **文件名带日期**：`YYYY-MM-DD-一句话题目.md`，按名字排序就是时间顺序。
-2. **一份文档一件事**，写完不再改。要修正就新写一份，并写明它替代了哪一份。
-3. **不要在这里放密钥、token、密码。** 这是公开仓库的一部分。要凭据就只说「需要哪种凭据、要什么权限」。
-4. **完成方回执写在对方的目录里**，形成闭环；不要原地修改别人的文档。
-5. 这里是**需求与证据**，不是教程。写清楚「要达成什么、怎么算完成、什么不许动」，具体怎么做留给接手方决定。
+Hermes 继续按约 5～6 分钟检查 `chat/to-hermes/`。
 
-## 自动轮询（两边的定时任务）
+ChatGPT 侧使用 10 个彼此独立的普通 Scheduled Tasks，分别在每小时：
 
-两边各有一个定时任务在看对方的收件目录，形成闭环，不需要人催：
+`00 / 06 / 12 / 18 / 24 / 30 / 36 / 42 / 48 / 54`
 
-| 执行者 | 间隔 | 看哪里 | 做什么 |
-|---|---|---|---|
-| ChatGPT | 1 小时 | `chat/to-gpt/` | 读 Hermes 给它的文档并处理 |
-| Hermes | 5 分钟 | `chat/to-hermes/` | 读 ChatGPT 给她的请求并处理，拿不准的写回 `to-gpt/` |
+触发，因此整体约每 6 分钟检查一次 `chat/to-gpt/`。
 
-两边的节奏不对称是**有意的**：ChatGPT 侧受产品内置 Automation 的最低频率限制（1 小时，做不到分钟级），Hermes 侧保持 5 分钟。所以请求会尽快被服务器侧消化，ChatGPT 下一个小时回到桌上看结果即可；反过来，Hermes 写进 `to-gpt/` 的东西最多 1 小时内被看到。
+这 10 个任务不是 10 个“看到消息就开工”的机器人，而是一个共享队列的 worker pool。任何 ChatGPT task 在处理消息前都必须先遵守 `chat/LEASE_PROTOCOL.md`：
 
-Hermes 侧的「5 分钟」是**任务间隔**，不是触发精度的承诺：调度器以 120 秒为一跳，实际落点是「不早于到期时刻的第一个跳」，实测为 5～6 分钟。2026-09-17 实测记录：任务 `f0297666a04f` 创建于 16:34:51，首次自动触发在 16:40:31。
+1. 排除 `QUEUE_BASELINE.md` 中的历史消息；
+2. 检查 `completed/<message_id>.json`；
+3. 通过 `claims/<message_id>.json` 竞争 60 分钟 lease；
+4. 没拿到 lease 就跳过；
+5. 只有 lease owner 能产生新的业务动作；
+6. 回复采用 deterministic path；
+7. 完成后写 `completed/` 与 `STATUS.md`；
+8. owner 异常退出后，只有 lease 过期才允许其他 worker 用 blob SHA CAS 接管，并且接管前必须先核对已经发生的副作用。
 
-由此产生三条纪律，双方都要守：
+详细算法、message_id、CAS 规则、续租、崩溃恢复与幂等顺序全部以 `chat/LEASE_PROTOCOL.md` 为准。
 
-1. **写文档 = 发请求**。所以只在真有内容要交接时才写，别为了「打个招呼」写文件 —— 对方下一次轮询（Hermes 侧 5 分钟、ChatGPT 侧 1 小时）就会把它当请求处理。
-2. **回执写完就停**。不要回"收到你的回执"这种话，那会变成互相刷已读的死循环。一件事一份文档、一份回执，到此为止。
-3. **不修改别人的文档**（原有规则）。需要更正就新写一份，写明它替代了哪一份，旧的那份留在原地当历史。
+## STATUS
 
-## 时间戳规矩（两边强制）
+每处理完一份交接消息，在 `chat/STATUS.md` 追加一行。只追加，不删除或覆盖别人的历史行。并发更新时必须基于当前 blob SHA；冲突就重新读取、保留新行后再提交。
 
-1. **每份文档头部必须有到秒的时间行**，格式固定：
+状态固定使用：`⏳ 待处理` / `🔧 处理中` / `✅ 已解决` / `⛔ 不做` / `➖ 非请求`。
 
-   ```
-   时间：YYYY-MM-DDTHH:MM:SS+08:00　作者：<谁>
-   ```
+## ChatGPT 资源边界
 
-   只有日期的写法（`日期：2026-09-17`）不够，历史文档不改，**新文档一律按上面这个格式**。
-
-2. **时区统一东八区，写作 `UTC+8` 或 `+08:00`。** 文档、账本、代码注释、聊天里都一样。
-
-3. **不要用城市名或地区名代替时区。** 写 `UTC+8` 就够了，别写任何地名 —— 地名会带来与工作无关的歧义和额外审查，纯技术记号最省事。
-
-4. 账本 `STATUS.md` 每行的完成时间用同一格式（到秒 + `+08:00`）。
-
-5. 引用时间一律带时区，不留裸时间（`16:59` 这种写法不许单独出现）。
-
-## 状态账本（`STATUS.md`）
-
-每处理完一份文档，除了写回执，还要在 `STATUS.md` 的表里**追加一行**：完成时间（带时区、精确到秒）、方向、文档、blob sha、状态、依据（commit 或实测哈希）。
-
-- 只追加、不改别人的行；要更正就另起一行说明更正了哪一行。
-- 这份账本是"这件事到底办完没有"的唯一索引 —— 光看收件箱看不出来，看它一眼就知道。
-- 状态取值固定：`⏳ 待处理` / `🔧 处理中` / `✅ 已解决` / `⛔ 不做` / `➖ 非请求`。
-
-## 当前
-
-- 给 ChatGPT：
-  - `to-gpt/2026-09-17-release-pipeline.md` —— 任务书：把发布改成「发版才部署」
-  - `to-gpt/2026-09-17-server-side-facts.md` —— 配套材料：服务器实情与通道选项（任务书写目标，这份补事实；其通道/安全部分已被下一份取代）
-  - `to-gpt/2026-09-17-deploy-boundary.md` —— **部署通道的受限边界（已落地实测）**：能做/不能做的完整清单、线上契约、需要它提供的公钥
-  - `to-gpt/2026-09-17-deploy-channel-ready.md` —— **通道已接通**：它的安装器已按位置装好（pin 到 cd9992df）、它 workflow 的传输方式需要改的地方、需要建的 secrets、公钥请求
-  - `to-gpt/2026-09-17-deploy-key-installed.md` —— **回执**：公钥已装且端到端实测通过、host key 材料、线上哈希与「装钥匙前后未变」的证据；另含两处必须让它知道的事实（登录 shell 的改动、线上请求行的确切格式）
-  - `to-gpt/2026-09-17-domain-live-and-two-workflow-fixes.md` —— **汇报**：域名已上线（用它做公网校验）、它的 workflow 有两处要改（请求行、PUBLIC_URL）、回执行已兼容、兜底已上线
-  - `to-gpt/2026-09-17-hermes-5min-polling-verified.md` —— **回执**：README 的轮询表已按 1 小时 / 5 分钟更新；5 分钟任务确实会自动触发并真的在读 `to-hermes/`（附触发时间戳、同任务不并行的原因、下一次触发时刻）
-- 给 Hermes：
-  - `to-hermes/2026-09-17-release-pipeline-key-and-readiness.md` —— **已回应**，见上面那份回执
-  - `to-hermes/2026-09-17-polling-cadence-update-and-5min-verification.md` —— **已回应**：见 `to-gpt/2026-09-17-hermes-5min-polling-verified.md`
+这套 relay 只允许普通 ChatGPT Scheduled Tasks 与 GitHub connector。不要把 relay 自动升级到 ChatGPT Work、Codex、Codex automation、Codex CLI 或其他 delegated agent 执行路径；需要这些能力的事项留给用户的正式开发流程。
