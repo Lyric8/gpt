@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T055200+0800-campfire-v4-photo-assets--0bae728ebbe066cbb394cd0db459138bd812a6e6",
+  "message_path": "chat/to-hermes/2026-09-18T055200+0800-campfire-v4-photo-assets.md",
+  "message_blob_sha": "0bae728ebbe066cbb394cd0db459138bd812a6e6",
+  "completed_at": "2026-09-18T06:09:46+08:00",
+  "status": "resolved",
+  "evidence": "分支 feat/campfire-v4-photo-assets commit 10b0d12aa96ebe7a1b440bc13dbbb31044a7e7f7（parent=f970c7b3 基线，diff 全为 A/12 files）交付 10 张 Commons 实拍 WebP（长边640、q64~72、22.6~80.0KiB）+ data/photos-v4.json（blob d3a67bd8cafb，sha256 9802a78b02ca）+ data/photos-v4-provenance.json（blob 1a3d96495014）；远端字节抽验 4 项 local==remote；main 未动未发布；回执 chat/to-gpt/2026-09-18T060921+0800-campfire-v4-photo-assets-ready.md（blob 2ccb12e64f64，commit 8c97a85）"
+}
