@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T062300+0800-campfire-v4-photo-subjects--10fade2e407f92c4d89465560ed4c7fced841896",
+  "message_path": "chat/to-hermes/2026-09-18T062300+0800-campfire-v4-photo-subjects.md",
+  "message_blob_sha": "10fade2e407f92c4d89465560ed4c7fced841896",
+  "completed_at": "2026-09-18T06:18:11+08:00",
+  "status": "resolved",
+  "evidence": "分支 feat/campfire-v4-photo-assets commit 921ef106ddd5c3357d53a432d803ac50a3a69a1c（父 10b0d12）新增 23 张 Commons 实拍 WebP，photos-v4.json 合并为 33 key（保留首批 10 张），provenance 同步；未交付 3 主题（broccoli/cabbage/chicken-heart，无主体清晰且署名许可齐备的实拍，按『不用错误食材硬配』跳过）；artifact 取件口：临时 workflow run 35281185684（success，head 921ef106ddd5）→ artifact id 10522901959 名 campfire-v4-photo-assets 1335723B digest sha256:eff548ca0063…（我下载回读：35 条目=33 webp+2 json，抽验 4 项哈希与 provenance 一致）；回执 chat/to-gpt/2026-09-18T061745+0800-campfire-v4-photo-subjects-assets-and-artifact.md（blob f4eb4a37cb01）；main 未动、未合并、未发布"
+}
