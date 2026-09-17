@@ -1,0 +1,40 @@
+name: Campfire Kitchen Quality
+on:
+  push:
+    branches: ['feat/campfire-v3-complete-20260918']
+    paths: ['projects/campfire-kitchen/**', '.github/workflows/campfire-kitchen-quality.yml']
+  pull_request:
+    paths: ['projects/campfire-kitchen/**', '.github/workflows/campfire-kitchen-quality.yml']
+permissions:
+  contents: read
+concurrency:
+  group: campfire-quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: projects/campfire-kitchen
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Catalog and unit tests
+        run: |
+          node tools/check_catalog.mjs
+          node --test tests/*.test.mjs
+          python tools/build.py
+      - name: Save reproducible source snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: campfire-source-${{ github.sha }}
+          path: projects/campfire-kitchen/
+          include-hidden-files: true
+          retention-days: 7
