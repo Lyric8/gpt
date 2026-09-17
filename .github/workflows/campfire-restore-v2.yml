@@ -1,0 +1,57 @@
+name: Campfire Kitchen Restore v2
+
+on:
+  push:
+    paths:
+      - 'projects/campfire-kitchen/_bootstrap/v2/READY'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct authoritative source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          dir='projects/campfire-kitchen/_bootstrap/v2'
+          test -f "$dir/READY"
+          cat "$dir"/part* | base64 -d > /tmp/campfire-source.tar.xz
+          xz -t /tmp/campfire-source.tar.xz
+          tar -xJf /tmp/campfire-source.tar.xz -C projects/campfire-kitchen
+      - name: Verify source, tests, and build
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd projects/campfire-kitchen
+          test -f data/recipes.json
+          test -f data/recipes.schema.json
+          test -f src/styles.css
+          test -f src/engine.mjs
+          test -f src/app.mjs
+          test -f tests/engine.test.mjs
+          test -f index.html
+          node tools/check_catalog.mjs
+          node --test tests/engine.test.mjs
+          python tools/build.py
+          test -s index.html
+      - name: Commit canonical project tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf projects/campfire-kitchen/_bootstrap
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add projects/campfire-kitchen
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit'
+            exit 0
+          fi
+          git commit -m 'campfire-kitchen: restore complete v2 source tree'
+          git push origin HEAD:main
