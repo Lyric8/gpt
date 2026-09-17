@@ -17,7 +17,7 @@ env:
   DEPLOY_HOST: 124.223.114.109
   DEPLOY_PORT: '22'
   DEPLOY_USER: campfire-deploy
-  PUBLIC_URL: http://124.223.114.109/
+  PUBLIC_URL: https://furrypant.com/
 
 jobs:
   build-release:
@@ -203,7 +203,7 @@ jobs:
       deployments: write
     environment:
       name: campfire-kitchen-production
-      url: http://124.223.114.109/
+      url: https://furrypant.com/
     steps:
       - name: Download the canonical artifact back from the Release
         env:
@@ -250,12 +250,13 @@ jobs:
           ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
           EXPECTED_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
           VERSION: ${{ needs.build-release.outputs.version }}
+          SOURCE_SHA: ${{ needs.build-release.outputs.source_sha }}
         run: |
           set -euo pipefail
           ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
           remote="${DEPLOY_USER}@${DEPLOY_HOST}"
           deploy_output="$({
-            printf 'version=1 tag=v%s sha256=%s\n' "$VERSION" "$EXPECTED_SHA256"
+            printf 'request=deploy label=%s sha256=%s source=%s\n' "$VERSION" "$EXPECTED_SHA256" "$SOURCE_SHA"
             cat "dist/$ARTIFACT_NAME"
           } | ssh "${ssh_opts[@]}" "$remote" deploy)"
           printf '%s\n' "$deploy_output"
