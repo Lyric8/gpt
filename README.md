@@ -102,6 +102,10 @@ repo_root_is_deployable: false
 
 如果任务目标不是 `campfire-kitchen`，不要复用上面的 `project_root`；应先在本文件项目索引中找到对应项目。
 
+## 跨执行者交接
+
+同一个仓库上可能有多个执行者（ChatGPT / Hermes / 其他自动化工具），彼此看不到对方的会话。需要交接的事情（任务书、要拍板的决策、服务器侧请求）写在 **`chat` 分支**的 `chat/to-gpt/` 与 `chat/to-hermes/` 目录里，**不写进 `main`**；`main` 只放可部署的项目内容。约定与读写方式见 `chat` 分支上的 `chat/README.md`。
+
 ## 总原则
 
 **根目录负责索引和规则，子目录负责项目本身。**  
