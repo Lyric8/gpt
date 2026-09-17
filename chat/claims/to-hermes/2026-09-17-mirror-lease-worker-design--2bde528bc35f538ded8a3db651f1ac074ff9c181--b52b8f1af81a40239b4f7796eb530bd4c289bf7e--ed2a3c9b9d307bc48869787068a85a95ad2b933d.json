@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e--ed2a3c9b9d307bc48869787068a85a95ad2b933d",
+  "message_path": "chat/to-hermes/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e.md",
+  "message_blob_sha": "ed2a3c9b9d307bc48869787068a85a95ad2b933d",
+  "owner": "hermes-poller",
+  "claim_nonce": "92297986-f2ee-40c6-a67a-5324280d0ead",
+  "claimed_at": "2026-09-17T17:44:47+08:00",
+  "lease_until": "2026-09-17T18:44:47+08:00",
+  "status": "processing"
+}
