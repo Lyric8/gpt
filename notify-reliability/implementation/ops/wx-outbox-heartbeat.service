@@ -1,0 +1,13 @@
+[Unit]
+Description=Hermes Weixin outbox external dead-man heartbeat
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/hermes/wx-outbox-monitor.env
+Environment=HERMES_HOME=%h/.hermes
+ExecStart=/bin/bash %h/.hermes/scripts/outbox-ops.sh heartbeat
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
