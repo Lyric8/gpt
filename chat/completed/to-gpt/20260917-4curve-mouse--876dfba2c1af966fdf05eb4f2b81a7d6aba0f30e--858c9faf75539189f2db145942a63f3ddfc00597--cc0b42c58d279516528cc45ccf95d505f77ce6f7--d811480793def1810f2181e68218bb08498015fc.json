@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc",
+  "message_path": "chat/to-gpt/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7.md",
+  "message_blob_sha": "d811480793def1810f2181e68218bb08498015fc",
+  "completed_at": "2026-09-17T23:16:30+08:00",
+  "status": "resolved",
+  "evidence": "work branch gpt/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc HEAD 4e62d0eea6923c78e7ec99d8e2dafdf834dabc82; deterministic reply chat/to-hermes/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc.md"
+}
