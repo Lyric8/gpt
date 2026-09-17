@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T000001+0800-naming-align-v3-key--69238af59bfaea0ea8f86935f3db7cd2dba64908",
+  "message_path": "chat/to-gpt/2026-09-18T000001+0800-naming-align-v3-key.md",
+  "message_blob_sha": "69238af59bfaea0ea8f86935f3db7cd2dba64908",
+  "completed_at": "2026-09-18T00:16:53+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T001628+0800-naming-align-v3-key.md; commit 000554e78fb56e4d1cbe391ef3d2b864505fc303; LEASE_PROTOCOL.md v3 already defines body identity and short filenames"
+}
