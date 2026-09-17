@@ -33,6 +33,60 @@ from cdpmini import DirectCDP, attach  # noqa: E402  （纯标准库 CDP 客户�
 HSTATE = os.environ.get("HUMANIZE_STATE", "/home/ubuntu/.hermes/cache/humanize-state.json")
 
 
+# ── 四条运动链参数（所有区间都集中在这里，方便后续实机调参）──────────────
+# 权重先按距离档位独立随机抽样，再归一化到总和为 1。
+MOTION_WEIGHT_RANGES = {
+    "short": {
+        "finger": (0.44, 0.62),
+        "wrist": (0.28, 0.46),
+        "elbow": (0.05, 0.14),
+        "shoulder": (0.01, 0.07),
+    },
+    "medium": {
+        "finger": (0.10, 0.22),
+        "wrist": (0.44, 0.62),
+        "elbow": (0.22, 0.38),
+        "shoulder": (0.06, 0.16),
+    },
+    "long": {
+        "finger": (0.12, 0.24),
+        "wrist": (0.30, 0.48),
+        "elbow": (0.24, 0.40),
+        "shoulder": (0.18, 0.34),
+    },
+}
+
+# 每次移动内的归一化周期数。典型 skilled 手势约 0.15~0.35s，finger 区间
+# 对应约 8~15Hz 量级；其余三条运动链逐级降低。
+MOTION_FREQUENCY_CYCLES = {
+    "finger": (2.4, 4.2),
+    "wrist": (0.85, 1.55),
+    "elbow": (0.35, 0.80),
+    "shoulder": (0.10, 0.32),
+}
+
+# 未加权分量的幅度区间。finger 用绝对像素；其余用移动距离比例。
+FINGER_AMPLITUDE_PX = (0.5, 2.5)
+WRIST_AMPLITUDE_RATIO = {
+    "short": (0.05, 0.10), "medium": (0.12, 0.24), "long": (0.14, 0.26),
+}
+ELBOW_AMPLITUDE_RATIO = {
+    "short": (0.015, 0.05), "medium": (0.08, 0.16), "long": (0.10, 0.20),
+}
+SHOULDER_AMPLITUDE_RATIO = {
+    "short": (0.005, 0.025), "medium": (0.03, 0.08), "long": (0.08, 0.16),
+}
+
+# 各链允许少量沿运动方向的分量，避免轨迹只是“直线 + 纵向波纹”。
+MOTION_TANGENT_MIX = {
+    "finger": (-0.35, 0.35),
+    "wrist": (-0.10, 0.10),
+    "elbow": (-0.20, 0.20),
+    "shoulder": (-0.28, 0.28),
+}
+MOTION_SHAPE_NORMALIZE_SAMPLES = 64
+
+
 def _load_hstate():
     try:
         with open(HSTATE) as f:
@@ -131,47 +185,203 @@ class Human:
         s = min(max(s, 0.0), 1.0)
         return s * s * s * (s * (s * 6 - 15) + 10)
 
-    def _arc_base(self, x0, y0, x1, y1, n):
-        """手腕控制 → 轨迹是**圆弧**：先按弦长定矢高，再由矢高算圆半径。
+    @staticmethod
+    def _motion_band(dist):
+        if dist < 60.0:
+            return "short"
+        if dist < 400.0:
+            return "medium"
+        return "long"
 
-        短距离（<40px）近似直线（手指微调不会画弧）；长距离弧度按 4%~15% 弦长。
-        速度仍用尖锐 smoothstep（把缓动施加在**角度**上）。
+    @staticmethod
+    def _bridge_wave(t, cycles, phase):
+        """任意相位正弦的端点桥接版本：t=0/1 都严格回到 0。"""
+        a = math.sin(phase)
+        b = math.sin(2.0 * math.pi * cycles + phase)
+        raw = math.sin(2.0 * math.pi * cycles * t + phase)
+        return raw - ((1.0 - t) * a + t * b)
+
+    @staticmethod
+    def _endpoint_window(t):
+        """端点位移和一阶速度都归零；中点为 1。"""
+        u = t * (1.0 - t)
+        return 16.0 * u * u
+
+    @staticmethod
+    def _shape_peak(fn):
+        peak = 0.0
+        for i in range(MOTION_SHAPE_NORMALIZE_SAMPLES + 1):
+            peak = max(peak, abs(fn(i / MOTION_SHAPE_NORMALIZE_SAMPLES)))
+        return max(peak, 1e-9)
+
+    def _sample_motion_model(self, dist):
+        """为单次移动抽样四条运动链的权重、频率、幅度与相位。"""
+        band = self._motion_band(dist)
+        ranges = MOTION_WEIGHT_RANGES[band]
+        raw_weights = {name: random.uniform(*ranges[name]) for name in ranges}
+        total = sum(raw_weights.values())
+        weights = {name: value / total for name, value in raw_weights.items()}
+
+        model = {
+            "band": band,
+            "distance": dist,
+            "weights": weights,
+            "finger": {
+                "cycles": random.uniform(*MOTION_FREQUENCY_CYCLES["finger"]),
+                "phase": random.uniform(0.0, 2.0 * math.pi),
+                "amplitude": random.uniform(*FINGER_AMPLITUDE_PX),
+                "tangent_mix": random.uniform(*MOTION_TANGENT_MIX["finger"]),
+            },
+            "wrist": {
+                "cycles": random.uniform(*MOTION_FREQUENCY_CYCLES["wrist"]),
+                "phase": random.uniform(0.0, 2.0 * math.pi),
+                "amplitude": dist * random.uniform(*WRIST_AMPLITUDE_RATIO[band]),
+                "sign": random.choice((-1.0, 1.0)),
+                "tangent_mix": random.uniform(*MOTION_TANGENT_MIX["wrist"]),
+            },
+            "elbow": {
+                "cycles": random.uniform(*MOTION_FREQUENCY_CYCLES["elbow"]),
+                "phase": random.uniform(0.0, 2.0 * math.pi),
+                "amplitude": dist * random.uniform(*ELBOW_AMPLITUDE_RATIO[band]),
+                "sign": random.choice((-1.0, 1.0)),
+                "tangent_mix": random.uniform(*MOTION_TANGENT_MIX["elbow"]),
+            },
+            "shoulder": {
+                "cycles": random.uniform(*MOTION_FREQUENCY_CYCLES["shoulder"]),
+                "phase": random.uniform(0.0, 2.0 * math.pi),
+                "amplitude": dist * random.uniform(*SHOULDER_AMPLITUDE_RATIO[band]),
+                "sign": random.choice((-1.0, 1.0)),
+                "tangent_mix": random.uniform(*MOTION_TANGENT_MIX["shoulder"]),
+            },
+        }
+
+        f = model["finger"]
+        f["normal_peak"] = self._shape_peak(
+            lambda t: self._bridge_wave(t, f["cycles"], f["phase"]) *
+                      self._endpoint_window(t) * (1.0 - 0.55 * self._ease(t))
+        )
+        f["tangent_peak"] = self._shape_peak(
+            lambda t: self._bridge_wave(t, f["cycles"], f["phase"] + math.pi / 2.0) *
+                      self._endpoint_window(t) * (1.0 - 0.55 * self._ease(t))
+        )
+
+        w = model["wrist"]
+        w["peak"] = self._shape_peak(
+            lambda t: w["sign"] * (
+                0.82 * math.sin(math.pi * t) +
+                0.18 * self._bridge_wave(t, w["cycles"], w["phase"])
+            ) * self._endpoint_window(t)
+        )
+
+        e = model["elbow"]
+        e["peak"] = self._shape_peak(
+            lambda t: e["sign"] * self._bridge_wave(t, e["cycles"], e["phase"]) *
+                      self._endpoint_window(t)
+        )
+
+        sh = model["shoulder"]
+        sh["peak"] = self._shape_peak(
+            lambda t: sh["sign"] * (4.0 * t * (1.0 - t)) *
+                      (0.74 + 0.26 * math.cos(2.0 * math.pi * sh["cycles"] * t + sh["phase"])) *
+                      self._endpoint_window(t)
+        )
+        return model
+
+    def _motion_offsets(self, t, tx, ty, nx, ny, model):
+        """返回四条运动链在进度 t 上的独立二维贡献，便于测试/频谱分析。"""
+        weights = model["weights"]
+        result = {}
+
+        f = model["finger"]
+        fade = 1.0 - 0.55 * self._ease(t)
+        window = self._endpoint_window(t)
+        fn = self._bridge_wave(t, f["cycles"], f["phase"]) * window * fade / f["normal_peak"]
+        ft = self._bridge_wave(t, f["cycles"], f["phase"] + math.pi / 2.0) * window * fade / f["tangent_peak"]
+        amp = weights["finger"] * f["amplitude"]
+        result["finger"] = (
+            nx * amp * fn + tx * amp * f["tangent_mix"] * ft,
+            ny * amp * fn + ty * amp * f["tangent_mix"] * ft,
+        )
+
+        w = model["wrist"]
+        ws = w["sign"] * (
+            0.82 * math.sin(math.pi * t) +
+            0.18 * self._bridge_wave(t, w["cycles"], w["phase"])
+        ) * window / w["peak"]
+        amp = weights["wrist"] * w["amplitude"]
+        result["wrist"] = (
+            nx * amp * ws + tx * amp * w["tangent_mix"] * ws,
+            ny * amp * ws + ty * amp * w["tangent_mix"] * ws,
+        )
+
+        e = model["elbow"]
+        es = (
+            e["sign"] * self._bridge_wave(t, e["cycles"], e["phase"]) *
+            window / e["peak"]
+        )
+        amp = weights["elbow"] * e["amplitude"]
+        result["elbow"] = (
+            nx * amp * es + tx * amp * e["tangent_mix"] * es,
+            ny * amp * es + ty * amp * e["tangent_mix"] * es,
+        )
+
+        sh = model["shoulder"]
+        ss = (
+            sh["sign"] * (4.0 * t * (1.0 - t)) *
+            (0.74 + 0.26 * math.cos(2.0 * math.pi * sh["cycles"] * t + sh["phase"])) *
+            window / sh["peak"]
+        )
+        amp = weights["shoulder"] * sh["amplitude"]
+        result["shoulder"] = (
+            nx * amp * ss + tx * amp * sh["tangent_mix"] * ss,
+            ny * amp * ss + ty * amp * sh["tangent_mix"] * ss,
+        )
+        return result
+
+    def _arc_base(self, x0, y0, x1, y1, n):
+        """四运动链复合轨迹：finger / wrist / elbow / shoulder 加权叠加。
+
+        沿弦方向的主进度始终使用 smootherstep；所有横向/纵向附加分量都构造成
+        端点为 0 的函数，所以复合后不会积累端点偏移。
         """
         dx, dy = x1 - x0, y1 - y0
-        d = math.hypot(dx, dy)
-        if d < 40:
-            return [(x0 + dx * self._ease(i / n), y0 + dy * self._ease(i / n)) for i in range(1, n + 1)]
-        sag = d * random.uniform(0.04, 0.15) * random.choice([-1, 1])   # 矢高（带方向）
-        abs_s = abs(sag)
-        R = (d * d) / (8 * abs_s) + abs_s / 2                          # 弦长 + 矢高 → 半径
-        px, py = -dy / d, dx / d                                       # 弦的法向
-        sgn = 1 if sag > 0 else -1
-        cx = (x0 + x1) / 2 + px * sgn * (R - abs_s)                    # 圆心（在弦的另一侧）
-        cy = (y0 + y1) / 2 + py * sgn * (R - abs_s)
-        a0 = math.atan2(y0 - cy, x0 - cx)
-        a1 = math.atan2(y1 - cy, x1 - cx)
-        da = (a1 - a0 + math.pi) % (2 * math.pi) - math.pi             # 走短弧
+        dist = math.hypot(dx, dy)
+        if dist < 1e-9:
+            self._last_motion = self._sample_motion_model(0.0)
+            return [(x1, y1) for _ in range(n)]
+
+        tx, ty = dx / dist, dy / dist
+        nx, ny = -ty, tx
+        model = self._sample_motion_model(dist)
+        self._last_motion = model
+
         pts = []
         for i in range(1, n + 1):
-            a = a0 + da * self._ease(i / n)
-            pts.append((cx + R * math.cos(a), cy + R * math.sin(a)))
+            if i == n:
+                pts.append((x1, y1))
+                continue
+            t = i / n
+            e = self._ease(t)
+            bx = x0 + dx * e
+            by = y0 + dy * e
+            offsets = self._motion_offsets(t, tx, ty, nx, ny, model)
+            ox = sum(v[0] for v in offsets.values())
+            oy = sum(v[1] for v in offsets.values())
+            pts.append((bx + ox, by + oy))
         return pts
 
     def _segment(self, x0, y0, x1, y1, profile_only=False):
-        """走一段：圆弧轨迹 + 尖锐缓动 + 逐点小抖动 + 偶发启停。"""
+        """走一段：四运动链复合轨迹 + smootherstep 基础速度 + 偶发启停/微回撤。"""
         dx, dy = x1 - x0, y1 - y0
-        dist = max((dx * dx + dy * dy) ** 0.5, 1.0)
+        dist = max(math.hypot(dx, dy), 1.0)
         lo_s, hi_s = self.profile["steps"]
         lo_m, hi_m = self.profile["step_ms"]
-        n = max(4, min(hi_s, int(dist / random.uniform(24, 46))))
+        n = max(lo_s, min(hi_s, int(dist / random.uniform(24, 46))))
         base = self._arc_base(x0, y0, x1, y1, n)
         prev = (x0, y0)
         for i, (bx, by) in enumerate(base, start=1):
             e = self._ease(i / n)
-            # 逐点抖动：越接近终点越小（人类临近目标会收敛）
-            amp = (1 - e) * 1.9
-            jx = bx + random.uniform(-amp, amp)
-            jy = by + random.uniform(-amp, amp)
+            jx, jy = bx, by
             r = random.random()
             if i < n and r < 0.035:                # 启停：原地顿一下（速度突然为 0）
                 time.sleep(random.uniform(0.02, 0.07))
@@ -181,7 +391,7 @@ class Human:
                 jy = by - (by - prev[1]) * random.uniform(0.15, 0.5)
             self.tab.send("Input.dispatchMouseEvent", wait=False, type="mouseMoved",
                           x=round(jx, 1), y=round(jy, 1), buttons=0)
-            time.sleep(random.uniform(lo_m, hi_m) * (1.0 + 1.4 * (1 - e)))
+            time.sleep(random.uniform(lo_m, hi_m) * (1.0 + 1.4 * (1.0 - e)))
             prev = (jx, jy)
         self.x, self.y = x1, y1
 
