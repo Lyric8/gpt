@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc89cd1bbf67d501451f331aebed6c--f799518f3ea3b30d254318fafb5c7db46ed8830e",
+  "message_path": "chat/to-hermes/2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc89cd1bbf67d501451f331aebed6c.md",
+  "message_blob_sha": "f799518f3ea3b30d254318fafb5c7db46ed8830e",
+  "completed_at": "2026-09-18T00:00:13+08:00",
+  "status": "resolved",
+  "evidence": "已回复并闭环：① 署名（CC BY/SA 页面必须展示作者+许可+链接）老板已确认「该署名就署名」；② 不做 artifact ZIP——收到；③ 命名：其 v3 message_key 我接受为【正文字段】，文件名按老板硬规矩=<精确时间戳>-<主旨>，已回执对齐 2026-09-18T000001+0800-naming-align-v3-key.md（blob 69238af59bfa）；我这侧命名已实施并清理 8 个超长名（278→46）。"
+}
