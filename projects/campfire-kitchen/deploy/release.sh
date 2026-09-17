@@ -10,9 +10,10 @@ case "${1:-}" in
     cat <<'HELP'
 Usage:
   ./deploy/release.sh --dry-run   # validate + test + deterministic double build; no server changes
-  ./deploy/release.sh --deploy    # emergency/manual publish through the server installer
+  ./deploy/release.sh --deploy    # emergency/manual publish through Hermes' restricted SSH channel
 
 Normal production publishing is triggered only by a GitHub Release. --deploy is a break-glass fallback.
+For --deploy, set DEPLOY_KEY_FILE and DEPLOY_KNOWN_HOSTS_FILE to local files.
 HELP
     [ -n "${1:-}" ] && exit 0 || exit 2
     ;;
@@ -22,6 +23,10 @@ esac
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
+DEPLOY_HOST="${DEPLOY_HOST:-124.223.114.109}"
+DEPLOY_PORT="${DEPLOY_PORT:-22}"
+DEPLOY_USER="${DEPLOY_USER:-campfire-deploy}"
+PUBLIC_URL="${PUBLIC_URL:-http://124.223.114.109/}"
 
 step() { printf '\n=== %s ===\n' "$*"; }
 cleanup_files=()
@@ -35,6 +40,7 @@ done
 
 package_version="$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")"
 data_version="$(node -p "JSON.parse(require('fs').readFileSync('data/recipes.json','utf8')).version")"
+[[ "$package_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "version must be stable SemVer X.Y.Z" >&2; exit 1; }
 [ "$package_version" = "$data_version" ] || {
   echo "version mismatch: package.json=$package_version data/recipes.json=$data_version" >&2; exit 1; }
 
@@ -59,9 +65,23 @@ if [ "$MODE" = "dry-run" ]; then
   exit 0
 fi
 
-step "4/4 break-glass deploy"
-source_sha="$(git rev-parse HEAD)"
-[[ "$source_sha" =~ ^[0-9a-f]{40}$ ]] || { echo "cannot resolve a full git commit SHA" >&2; exit 1; }
-label="manual-${package_version}-${source_sha}"
-sudo /usr/local/sbin/campfire-kitchen-install-release deploy "$out1" "$label" "$built" "$source_sha"
-echo "Manual fallback complete: $label"
+step "4/4 break-glass deploy through restricted SSH stdin"
+: "${DEPLOY_KEY_FILE:?set DEPLOY_KEY_FILE to the deployment private-key file}"
+: "${DEPLOY_KNOWN_HOSTS_FILE:?set DEPLOY_KNOWN_HOSTS_FILE to the pinned known_hosts file}"
+[ -f "$DEPLOY_KEY_FILE" ] || { echo "DEPLOY_KEY_FILE does not exist" >&2; exit 1; }
+[ -f "$DEPLOY_KNOWN_HOSTS_FILE" ] || { echo "DEPLOY_KNOWN_HOSTS_FILE does not exist" >&2; exit 1; }
+ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
+remote="${DEPLOY_USER}@${DEPLOY_HOST}"
+deploy_output="$({
+  printf 'version=1 tag=v%s sha256=%s\n' "$package_version" "$built"
+  cat "$out1"
+} | ssh "${ssh_opts[@]}" "$remote" deploy)"
+printf '%s\n' "$deploy_output"
+grep -Fq 'deploy-release: 完成' <<<"$deploy_output" || { echo "server did not report successful deployment" >&2; exit 1; }
+grep -Fq "sha256=$built" <<<"$deploy_output" || { echo "server receipt hash mismatch" >&2; exit 1; }
+served="$(mktemp /tmp/campfire-kitchen.served.XXXXXXXX.html)"
+cleanup_files+=("$served")
+curl -fsS --retry 5 --retry-delay 2 --max-time 20 -o "$served" "$PUBLIC_URL"
+served_hash="$(sha256sum "$served" | awk '{print $1}')"
+[ "$served_hash" = "$built" ] || { echo "public site hash mismatch: $served_hash" >&2; exit 1; }
+echo "Manual fallback complete: tag=v${package_version} sha256=$built"
