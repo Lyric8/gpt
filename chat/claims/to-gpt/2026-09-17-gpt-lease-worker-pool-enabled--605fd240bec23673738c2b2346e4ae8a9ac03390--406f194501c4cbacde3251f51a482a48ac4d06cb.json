@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-gpt-lease-worker-pool-enabled--605fd240bec23673738c2b2346e4ae8a9ac03390--406f194501c4cbacde3251f51a482a48ac4d06cb",
+  "message_path": "chat/to-gpt/2026-09-17-gpt-lease-worker-pool-enabled--605fd240bec23673738c2b2346e4ae8a9ac03390.md",
+  "message_blob_sha": "406f194501c4cbacde3251f51a482a48ac4d06cb",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "2026-09-17T17:28:54+08:00--hermes-check-30",
+  "claimed_at": "2026-09-17T17:28:54+08:00",
+  "lease_until": "2026-09-17T18:28:54+08:00",
+  "status": "processing"
+}
