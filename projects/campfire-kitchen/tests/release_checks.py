@@ -4,6 +4,7 @@ import jsonschema
 
 R = Path(__file__).resolve().parents[1]
 checks = []
+(R/'test-results').mkdir(exist_ok=True)
 
 def ok(name):
     checks.append({'name': name, 'passed': True})
@@ -29,7 +30,7 @@ try:
     assert index.read_bytes() == first
     ok('相同源码数据连续构建逐字节一致')
 
-    for p in ['src/engine.mjs', 'src/app.mjs', 'tools/check_catalog.mjs', 'tests/engine.test.mjs']:
+    for p in sorted(R.glob('src/**/*.mjs')) + sorted(R.glob('tools/*.mjs')) + sorted(R.glob('tests/*.mjs')):
         subprocess.run(['node', '--check', p], cwd=R, check=True)
     ok('全部ES模块与CLI通过Node语法检查')
 
@@ -73,7 +74,7 @@ try:
         'sha256': hashlib.sha256(first).hexdigest(),
         'bytes': len(first),
     }
-    (R / 'test-results/release-v2-report.json').write_text(
+    (R / 'test-results/release-v3-report.json').write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 finally:
     if had_index:

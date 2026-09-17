@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "tools": [
+    {
+      "id": "pan",
+      "name": "带沿煎盘（无漏油孔）",
+      "group": "锅具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "lidded-pan",
+      "name": "带盖平底锅",
+      "group": "锅具",
+      "provides": [
+        "pan"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pot",
+      "name": "带沿耐热小锅",
+      "group": "锅具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "lidded-pot",
+      "name": "带盖耐热小锅",
+      "group": "锅具",
+      "provides": [
+        "pot"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pot15",
+      "name": "至少1.5L带盖小锅",
+      "group": "锅具",
+      "provides": [
+        "pot",
+        "lidded-pot"
+      ],
+      "note": ""
+    },
+    {
+      "id": "thick-pot15",
+      "name": "至少1.5L带盖厚底小锅",
+      "group": "锅具",
+      "provides": [
+        "pot",
+        "lidded-pot",
+        "pot15"
+      ],
+      "note": ""
+    },
+    {
+      "id": "lid",
+      "name": "与所用锅具适配的锅盖",
+      "group": "锅具",
+      "provides": [],
+      "note": "需核对直径与材质；其他锅的盖子不自动算适配。"
+    },
+    {
+      "id": "tongs",
+      "name": "熟食夹 / 公夹",
+      "group": "操作工具",
+      "provides": [
+        "cooked-tongs"
+      ],
+      "note": "不能同时夹生肉和即食食物。"
+    },
+    {
+      "id": "raw-tongs",
+      "name": "另备生食夹",
+      "group": "操作工具",
+      "provides": [],
+      "note": "与熟食夹分开，不混用。"
+    },
+    {
+      "id": "tongs-pair",
+      "name": "生熟分开的两套夹子",
+      "group": "操作工具",
+      "provides": [
+        "tongs",
+        "cooked-tongs",
+        "raw-tongs"
+      ],
+      "note": ""
+    },
+    {
+      "id": "spatula",
+      "name": "煎铲",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "wide-spatula",
+      "name": "宽面煎铲",
+      "group": "操作工具",
+      "provides": [
+        "spatula"
+      ],
+      "note": ""
+    },
+    {
+      "id": "scissors",
+      "name": "食品剪刀",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "brush",
+      "name": "硅胶刷",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "probe",
+      "name": "探针温度计",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "knife",
+      "name": "小刀",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "board",
+      "name": "干净砧板",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "grater",
+      "name": "细齿擦皮器",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "long-fork",
+      "name": "食品用长柄烤叉",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "gloves",
+      "name": "隔热手套",
+      "group": "操作工具",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "spoon",
+      "name": "勺子",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "ladle",
+      "name": "汤勺",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "fork",
+      "name": "叉子",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "chopsticks",
+      "name": "筷子",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "mixing-bowl",
+      "name": "拌料碗",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "bowl",
+      "name": "耐热餐碗",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "cup",
+      "name": "耐热餐杯",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "plate",
+      "name": "餐盘",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "tray",
+      "name": "食品用浅盘",
+      "group": "餐具与容器",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "cup-pair",
+      "name": "两只小餐杯",
+      "group": "餐具与容器",
+      "provides": [
+        "cup"
+      ],
+      "note": ""
+    },
+    {
+      "id": "film",
+      "name": "食品保鲜膜",
+      "group": "耗材",
+      "provides": [],
+      "note": ""
+    },
+    {
+      "id": "bags",
+      "name": "食品密封袋",
+      "group": "耗材",
+      "provides": [],
+      "note": ""
+    }
+  ],
+  "requirements": {
+    "带沿煎盘（无漏油孔）": [
+      [
+        "pan"
+      ]
+    ],
+    "带盖平底锅": [
+      [
+        "lidded-pan"
+      ]
+    ],
+    "带沿小锅": [
+      [
+        "pot"
+      ]
+    ],
+    "带盖小锅": [
+      [
+        "lidded-pot"
+      ]
+    ],
+    "耐热带盖小锅": [
+      [
+        "lidded-pot"
+      ]
+    ],
+    "至少1.5L带盖小锅": [
+      [
+        "pot15"
+      ]
+    ],
+    "至少1.5L带盖厚底小锅": [
+      [
+        "thick-pot15"
+      ]
+    ],
+    "锅盖": [
+      [
+        "lid"
+      ]
+    ],
+    "适配锅盖": [
+      [
+        "lid"
+      ]
+    ],
+    "夹子": [
+      [
+        "tongs"
+      ]
+    ],
+    "熟食夹": [
+      [
+        "cooked-tongs"
+      ]
+    ],
+    "公夹": [
+      [
+        "cooked-tongs"
+      ]
+    ],
+    "生食夹": [
+      [
+        "raw-tongs"
+      ]
+    ],
+    "煎铲": [
+      [
+        "spatula"
+      ]
+    ],
+    "铲子": [
+      [
+        "spatula"
+      ]
+    ],
+    "宽面煎铲": [
+      [
+        "wide-spatula"
+      ]
+    ],
+    "硅胶刷": [
+      [
+        "brush"
+      ]
+    ],
+    "探针温度计": [
+      [
+        "probe"
+      ]
+    ],
+    "小刀": [
+      [
+        "knife"
+      ]
+    ],
+    "干净砧板": [
+      [
+        "board"
+      ]
+    ],
+    "细齿擦皮器": [
+      [
+        "grater"
+      ]
+    ],
+    "食品用长柄烤叉": [
+      [
+        "long-fork"
+      ]
+    ],
+    "隔热手套": [
+      [
+        "gloves"
+      ]
+    ],
+    "勺子": [
+      [
+        "spoon"
+      ]
+    ],
+    "汤勺": [
+      [
+        "ladle"
+      ]
+    ],
+    "叉子": [
+      [
+        "fork"
+      ]
+    ],
+    "筷子": [
+      [
+        "chopsticks"
+      ]
+    ],
+    "拌料碗": [
+      [
+        "mixing-bowl"
+      ]
+    ],
+    "耐热餐碗": [
+      [
+        "bowl"
+      ]
+    ],
+    "餐碗": [
+      [
+        "bowl"
+      ]
+    ],
+    "耐热杯": [
+      [
+        "cup"
+      ]
+    ],
+    "餐杯": [
+      [
+        "cup"
+      ]
+    ],
+    "饮料杯": [
+      [
+        "cup"
+      ]
+    ],
+    "餐盘": [
+      [
+        "plate"
+      ]
+    ],
+    "食品用浅盘": [
+      [
+        "tray"
+      ]
+    ],
+    "两只小餐杯": [
+      [
+        "cup-pair"
+      ]
+    ],
+    "食品保鲜膜": [
+      [
+        "film"
+      ]
+    ],
+    "食品密封袋": [
+      [
+        "bags"
+      ]
+    ],
+    "夹子/铲子": [
+      [
+        "tongs",
+        "spatula"
+      ]
+    ],
+    "铲子/剪刀": [
+      [
+        "spatula",
+        "scissors"
+      ]
+    ],
+    "生熟两夹": [
+      [
+        "raw-tongs"
+      ],
+      [
+        "cooked-tongs"
+      ]
+    ],
+    "生熟分开的夹子": [
+      [
+        "raw-tongs"
+      ],
+      [
+        "cooked-tongs"
+      ]
+    ]
+  }
+}

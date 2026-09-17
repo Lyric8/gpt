@@ -1,0 +1,8 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f5f0; --white: #fffefa; --ink: #24352c; --muted: #667064;
+  --green: #28523e; --green-soft: #eaf0e5; --orange: #935032; --orange-soft: #fbefdf;
+  --line: #dce0d5; --danger: #963e36; --radius: 16px;
+  --shadow: 0 8px 28px #283c2e0d; --max-width: 1240px;
+  font: 16px/1.65 system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}

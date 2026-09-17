@@ -1,128 +1,81 @@
-# 火边 · 好好玩一顿（2.0）
+# 火边 · 露营风味厨房 v3
 
-离线运行的露营菜谱与备料工具。**你选想吃的菜；配方已经决定鲜叶、干料、成品酱、材料形态与加入时机。**
+离线优先的露营菜谱、现有食材匹配和一顿饭规划工具。内置50道定稿菜谱、112种规范材料、6类菜与8套现成菜单。正式站点：<https://furrypant.com/>。
 
-内置 **50 道定稿操作卡、8 套菜单、40 道旧菜逐项审查记录**。不是微信原生小程序，不要求账号、服务器、安装依赖或联网。
+## 三个入口
 
-## 立即打开
+**看菜谱**：实拍参考图卡片、分类、中文搜索、主动操作时间和核心食材直接可见。完整做法在操作卡中；照片有来源与许可。八套现成菜单放在可展开区域，不挤占浏览主线。
 
-**普通使用优先下载 GitHub Release 里的 `campfire-kitchen-vX.Y.Z.html`，保存后直接用现代浏览器打开。** 这是正式、带版本号和 SHA-256 的单文件成品，无 CDN、字体下载或远程请求。
+**我有这些**：先多选想做的菜谱类别，再按组勾选已有食材和工具；候选来自范围内菜谱，不摆出无关物品。勾选实时更新“完全具备 / 缺食材 / 缺工具或冷冻 / 全部”；换分类保留库存，搜索状态只选择可见候选。符合条件的菜可组成有理由的组合，不把盐、油或冰箱能力默认算有。
 
-源码 checkout 不再提交生成后的 `index.html`。开发者运行 `python tools/build.py` 后打开 `index.html`；Windows 可直接双击 `打开程序.cmd`，它会先构建再打开。
+**这顿菜单**：按人数、每菜份数和出餐顺序计算；接着进入“备料与分装”，查看合计采购、按菜分配、预制任务、操作进度、Markdown/CSV与完整JSON备份。已有一种食材不代表数量足够或已经称量装车。
 
-1. 在「挑菜与灵感」选一套菜单，或按想吃的菜多选。
-2. 在「这顿怎么吃」设置人数、每道份量与顺序；先看重复口感、浓味、操作负担等提示。
-3. 在「备料与分装」看合并净需求、采购折算、各菜分配与在家任务。
-4. 点「操作卡」，现场照材料量表、步骤、温度与停止条件做；步骤可打勾、写笔记。
-5. 做完记录这一桌，下一次「最近三次没做过」会避开已经记录的菜。
+库存、菜单、笔记与记录仅保存在浏览器，不上传服务器。页面打开后不请求外部图片、字体、脚本或API。下载发行HTML后可离线打开；浏览器拒绝本地存储时明确提示先导出备份。
 
-先试 **「两个人 · 动手但不忙乱」**：半份米纸卷、压烤塔可、焦玉米杯、分层甜品和无酒精饮料。不是要求你一次把50道全做。
-
-## 本次重做了什么
-
-- **没有鲜／干总开关，也没有每道鲜／干二选一。** 配方固定；同一道欧芹酸汁可以同时用鲜欧芹和干牛至。
-- 旧40道中32道保留校准、3道实质重写、5道合并退役；新增15道不同技法／口感的菜，合计50道。
-- 特色分为「味型」「口感描述」「共同口感组」「现场动作」。口感组会合并相近结构，不能给同一道煎肉换个形容词就算新体验。
-- 新增压烤牛肉塔可、沙嗲、米纸卷、大阪烧、泡菜锅底饭、焦壳饭团热汤泡、番茄窝蛋、粉丝扇贝、芝士甜品杯、棉花糖夹饼、迷你松饼、现爆玉米、冷荞麦面、玉米浓汤、无酒精热果饮。
-- 一桌不舒服时给出可解释提醒：主材／味型重复、同口感过密、现场操作多、缺少清口、鲜叶采购分散、没有持续冷冻却选冰淇淋。
-- 补充建议不会擅自加入菜单、替换菜或改配方。
-
-## 数量与备料规则
-
-所有基准配方为**两人分享小份**。每道有自己的份量乘数。人数4人×半份，等于该菜的两人基准用量；这不是“每人再吃半盘”。
-
-- 同一食材会合计；鲜蒜的拍裂、切片、蒜蓉形态仍按菜保留。
-- 生虾与即食熟虾、整根熟玉米与熟玉米粒不能错误合并。
-- 柠檬汁与皮屑可复用一颗果实，采购按瓶颈需求取最大；鸡蛋液与整蛋需求必须相加。
-- 清单中的米饭是熟饭净重。采购区另列生米估算，不是再多买一份。
-- 蒸贝底水、焖锅底水等按锅／批次计算；小份不盲目把锅底水减半。
-- 分装组只在同菜内部组合，不会为了省一个盒子混生肉与冷食酱。
-- 在家混好的酱与现场列出的酱是**同一份材料**，不要再次称量添加。
-- 清洗、家庭煮面、泡粉丝、煮饭用水与临时补水另带；程序所列是有明确配方量的饮用水。
-- 茶匙是5ml的量勺容量，不是5g。小份可能出现很小用量；可先在家配正常份调味，按比例分取，不必现场精称。
-
-采购数量是估算，水果出汁、蛋大小与米饭吸水存在差异。商品包装规格、供应地库存、营养值与食客食量不在自动计算范围。
-
-## 保存、导出与迁移
-
-自动保存在当前浏览器允许的本地存储中；不会云同步。清缓存、换浏览器、移动文件路径可能改变记录的可见性。**出发前导出完整 JSON 备份**，不要把本地自动保存当唯一备份。
-
-可导出：完整 Markdown 行动指南、按菜分配的 CSV 材料表、打印页、完整 JSON 备份、独立菜谱 JSON。
-
-完整v2备份包含菜谱库、菜单、份量、笔记、检查进度与做过记录；导入会校验，不执行 JSON 中的代码。修改份量或配方后，相关“已备好／已完成”勾选会失效，笔记保留。
-
-旧v1程序先「导出备份」，再在v2「配方与审查 → 导入完整备份」。保留还存在的选菜ID、人数、份量、笔记；鲜干选项与旧进度清空。退役菜报告后跳过，不自动换成其他菜；实质重写菜会提示重读操作卡。**不要导入v1独立菜谱库来覆盖v2。**
-
-## 正式发布
-
-本项目采用 **“GitHub Release 才部署”**：普通 push 到 `main` 永远不触发生产发布。正式 tag 为 `campfire-kitchen-vX.Y.Z`，版本必须同时匹配 `package.json` 与 `data/recipes.json`。Release workflow 在 GitHub runner 上测试并双构建，把 HTML、SHA-256 与 manifest 挂到 Release，再把**从 Release 下载回来的同一个 HTML**部署到生产服务器。
-
-发布架构、失败边界、Secret 契约和回滚见 [`docs/RELEASE_PIPELINE.md`](docs/RELEASE_PIPELINE.md)；线上操作见 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)。`deploy/release.sh --deploy` 仅保留作 break-glass 人工兜底，不是日常发布方式。
-
-## 手机打开
-
-聊天软件附件预览器不等于完整浏览器，可能禁止执行HTML。先把文件保存后交给浏览器打开；具体是否支持本地HTML由手机和浏览器决定。
-
-本地文件不能执行时，可在可信的同一局域网用源码自带的可选服务：
-
-```bash
-python tools/serve.py --lan --no-browser
-```
-
-手机浏览器访问 `http://电脑局域网IP:8765/index.html`。Windows可用 `ipconfig` 查看局域网IPv4。只在可信私人网络使用；必要时允许该端口的**专用网络**访问，不开放公网、不做端口映射；结束按Ctrl+C停止。手机换网络后访问不到电脑，这是局域网服务的边界，不是云部署。
-
-不想开放局域网时：
-
-```bash
-python tools/serve.py --no-browser
-```
-
-只在本机访问 `http://127.0.0.1:8765/index.html`。
-
-## 可维护源码
+## 源码结构
 
 ```text
-data/recipes.json          正式菜谱、原料、材料裁决、菜单、来源与迁移数据
-data/recipes.schema.json   v2结构规范
-src/engine.mjs             纯用量／合并／菜单审查／备份／导出逻辑
-src/app.mjs                DOM、交互、本地保存、文件导入和计时
-src/styles.css             响应式与打印布局
-src/index.template.html    离线HTML模板
-tools/check_catalog.mjs    无依赖菜谱语义校验器
-tools/build.py             Python标准库单文件打包器
-tools/serve.py             可选静态服务
-tests/engine.test.mjs      单元与数据回归
-tests/browser_smoke.py     Chromium浏览器交互回归
-docs/RECIPE_AUDIT.md       40道旧菜的逐项去留及50道新版差异
-docs/MATERIAL_DECISIONS.md 每道固定鲜干形态、用量与加入理由
-docs/EXTENDING.md          数据契约、计算、迁移及扩展要求
-docs/SOURCES.md            来源、用途范围及改编边界
-docs/TEST_REPORT.md        实跑结果与未覆盖边界
+data/
+  recipes.json              # 定稿菜谱、材料、分类、菜单、来源
+  recipes.schema.json       # 结构契约
+  equipment.json            # 工具实体、能力、AND/OR要求
+  photos.json               # 每菜照片、署名、许可、参考边界
+assets/photos/              # 本地实拍WebP
+src/
+  app.mjs                   # 状态、事件、存储和视图协调
+  engine.mjs                # 数量/备料/进度/备份迁移引擎
+  core/
+    pantry.mjs              # 分类范围、候选并集、精确可做判断
+    recommendations.mjs     # 有约束的组合选择与解释
+    storage.mjs             # 可失败的存储适配
+  ui/
+    components.mjs          # 安全转义、照片、图卡、分类组件
+    browse.mjs              # 看菜谱
+    pantry.mjs              # 我有这些
+    planning.mjs            # 这顿菜单与备料
+    recipe.mjs              # 操作卡
+    settings.mjs            # 资料、导入与管理
+  styles.css                # 本地样式入口
+  styles/                   # 设计变量、基础、卡片、库存、操作布局
+  index.template.html       # 极小HTML壳
+ tools/                     # 确定性离线打包、校验、可选HTTP服务
+ tests/                     # 引擎/库存/构建/浏览器/发版回归
 ```
 
-普通使用不需要开发环境。修改源码／重新构建使用 **Node.js 20+、Python 3.10+**，无npm运行时依赖：
+维护的是多文件源码；`index.html` 是自动打包出的离线发行物，已gitignore，不应手改。新增菜谱/分类不需要修改渲染分支。详细扩展入口、库存语义、工具规则、构建语法与发布边界见 [EXTENDING_V3.md](docs/EXTENDING_V3.md)。
+
+## 本地运行与测试
+
+Node.js 20以上，Python 3.10以上；运行时与构建无npm第三方依赖。测试依赖单独固定在 `tests/requirements.txt`。
 
 ```bash
-node tools/check_catalog.mjs
-node --test tests/engine.test.mjs
+cd projects/campfire-kitchen
+npm run validate
+npm test
 python tools/build.py
+python tools/serve.py --no-browser --port 8080
 ```
 
-浏览器交互测试额外需要 Python Playwright 和其 Chromium。测试脚本优先使用 `CHROMIUM_PATH` 环境变量指定的浏览器，其次系统chromium，最后Playwright安装的Chromium。
+浏览器访问本地8080端口。完整验证：
 
 ```bash
 python -m pip install -r tests/requirements.txt
-python -m playwright install chromium
-python tests/browser_smoke.py
+python -m unittest discover -s tests -p '*_test.py'
 python tests/release_checks.py
+python -m playwright install --with-deps chromium
+python tests/browser_smoke.py --mode http
 ```
 
-发布前的实际环境、通过数、浏览器沙箱限制见测试报告。新增菜谱须调整旧库数量快照测试，并为新材料规则补测试，不是只把总数改绿。
+Quality workflow 在独立分支/PR运行这些测试并保留源码、报告与截图artifact；**它不部署**。报告区分真实HTTP与受限沙箱content模式，不能拿模拟存储替代真实浏览器刷新验收。
 
-## 研究与操作边界
+## 发版与回滚
 
-配方有经典组合和技法依据，但数量是两人小份露营改编；没有声称逐道在你的炉子上实灶试吃、也没有承诺“每一口必好吃”。分钟是检查起点，熟度以中心温度／相应食物终态为准。
+只保留既有 **published Release → build → immutable assets → exact-asset deploy → public SHA256 verification** 流水线。代码push不部署。
 
-温控、生熟分离、炉具使用及材料接触边界在程序内和导出文档中保留。过敏原提示不是产品标签替代物。户外前台计时只提醒检查，浏览器切到后台可能暂停，不能当后台安全闹钟。
+版本同步修改 `package.json` 与 `data/recipes.json`，提交通过Quality并进入main，再创建非prerelease `campfire-kitchen-vX.Y.Z`。正式流水线会验证版本与main祖先关系、两次构建字节一致、Release产物下载校验、受限SSH部署、线上字节哈希与安全响应头。禁止覆盖已发布的不同字节产物。部署/回滚细节见 [RELEASE_PIPELINE.md](docs/RELEASE_PIPELINE.md)。
 
-MIT许可证覆盖本项目原创源码。外部食谱只作为来源链接与技法参考，不附赠、不转载外部照片或全文。
+## 设计与内容边界
+
+[UX_V3_PLAN.md](docs/UX_V3_PLAN.md) 记录信息架构与研究依据；[PHOTO_POLICY_V3.md](docs/PHOTO_POLICY_V3.md) 记录真实照片引用、参考差异和署名要求。照片并非本配方复刻成果，不依据照片替换原材料。
+
+原105项数量引擎回归保留。v3新增库存、工具、组合、焦点/范围/存储恢复与构建边界测试。受控测试不等同于野外实测烹饪；安全、冷链、禁火规定和真实熟度仍按操作卡与现场要求确认。主动操作时间是配方估计，不是实测保证。
