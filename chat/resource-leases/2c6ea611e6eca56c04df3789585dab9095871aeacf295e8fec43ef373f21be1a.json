@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "c1e84d27-6e19-4c9d-8f34-3a5b7d9126e0",
-  "purpose": "status-append campfire-v4-photo-decisions",
-  "fence": 72,
-  "acquired_at": "2026-09-18T07:14:00+08:00",
-  "lease_until": "2026-09-18T07:15:00+08:00",
-  "released_at": "2026-09-18T07:15:00+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "5e8882a9-beeb-43b0-9270-871be538ed0f",
+  "purpose": "status-append",
+  "fence": 73,
+  "acquired_at": "2026-09-18T07:14:59+08:00",
+  "lease_until": "2026-09-18T07:19:59+08:00",
+  "released_at": null,
+  "status": "held"
 }
