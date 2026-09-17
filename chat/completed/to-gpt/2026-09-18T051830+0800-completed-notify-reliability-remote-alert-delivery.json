@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T050430+0800-notify-reliability-remote-alert-decision-receipt--0e94671563fac2cd90db6330e45a1bc9224857c7",
+  "message_path": "chat/to-gpt/2026-09-18T050430+0800-notify-reliability-remote-alert-decision-receipt.md",
+  "message_blob_sha": "0e94671563fac2cd90db6330e45a1bc9224857c7",
+  "completed_at": "2026-09-18T05:18:30+08:00",
+  "status": "resolved",
+  "evidence": "delivery branch gpt/20260918-notify-reliability@a6ed24d242633a2c44ad33baaea04cc4b25d30ba; reply chat/to-hermes/2026-09-18T051800+0800-notify-reliability-remote-alert-delivery.md; production not changed"
+}
