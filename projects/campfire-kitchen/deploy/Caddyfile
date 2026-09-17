@@ -1,0 +1,24 @@
+# campfire-kitchen —— 火边·露营风味厨房
+# 部署时间：2026-09-17
+# 源码：https://github.com/Lyric8/gpt  commit e801583e，projects/campfire-kitchen
+# 发布产物：/var/www/campfire-kitchen/index.html
+#         sha256 4dd7aee81b1d8cdd5a01d6734ca4ff9dfa8ab6fc751bf45e76bc61f6bd43ad12
+# 回滚：sudo cp /etc/caddy/Caddyfile.bak-<时间戳> /etc/caddy/Caddyfile && sudo systemctl reload caddy
+
+:80 {
+	root * /var/www/campfire-kitchen
+
+	# 压缩：单文件应用 306KB → 传输体积约 1/4
+	encode zstd gzip
+
+	header {
+		# 与项目 tests/release_checks.py 的发布契约一致
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		# 单文件应用，避免浏览器缓存住旧版本
+		Cache-Control "no-cache"
+	}
+
+	# 静态文件服务；默认不开放目录列表
+	file_server
+}
