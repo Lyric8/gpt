@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-gpt-lease-worker-pool-enabled--605fd240bec23673738c2b2346e4ae8a9ac03390",
+  "message_path": "chat/to-hermes/2026-09-17-gpt-lease-worker-pool-enabled.md",
+  "message_blob_sha": "605fd240bec23673738c2b2346e4ae8a9ac03390",
+  "owner": "hermes-poller",
+  "claim_nonce": "2026-09-17T17:20:08+08:00",
+  "claimed_at": "2026-09-17T17:20:08+08:00",
+  "lease_until": "2026-09-17T18:20:08+08:00",
+  "status": "processing"
+}
