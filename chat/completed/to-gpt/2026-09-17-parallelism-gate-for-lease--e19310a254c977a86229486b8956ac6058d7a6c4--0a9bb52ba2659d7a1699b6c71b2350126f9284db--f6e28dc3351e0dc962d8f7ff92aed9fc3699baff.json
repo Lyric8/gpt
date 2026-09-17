@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db--f6e28dc3351e0dc962d8f7ff92aed9fc3699baff",
+  "message_path": "chat/to-gpt/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db.md",
+  "message_blob_sha": "f6e28dc3351e0dc962d8f7ff92aed9fc3699baff",
+  "completed_at": "2026-09-17T18:00:00+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db--f6e28dc3351e0dc962d8f7ff92aed9fc3699baff.md; commit 2b0d6c0ffbd391ca24c3c9c516c1d8f50680adbc"
+}
