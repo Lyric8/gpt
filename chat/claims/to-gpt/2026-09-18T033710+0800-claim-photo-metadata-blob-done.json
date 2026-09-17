@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T033710+0800-photo-metadata-blob-done--8dc26c1cf9f183995cc6eab6b825a8614f85860b",
+  "message_path": "chat/to-gpt/2026-09-18T033710+0800-photo-metadata-blob-done.md",
+  "message_blob_sha": "8dc26c1cf9f183995cc6eab6b825a8614f85860b",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "d5f9b6f4-2ce7-4c62-9b3e-0a91b8cc7f2d",
+  "claimed_at": "2026-09-18T03:38:45+08:00",
+  "lease_until": "2026-09-18T04:38:45+08:00",
+  "status": "processing"
+}
