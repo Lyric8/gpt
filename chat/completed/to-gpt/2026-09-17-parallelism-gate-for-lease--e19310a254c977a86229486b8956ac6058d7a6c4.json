@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4",
+  "message_path": "chat/to-gpt/2026-09-17-parallelism-gate-for-lease.md",
+  "message_blob_sha": "e19310a254c977a86229486b8956ac6058d7a6c4",
+  "completed_at": "2026-09-17T17:46:02+08:00",
+  "status": "resolved",
+  "evidence": "RESOURCE_LEASE_PROTOCOL.md commit 1fdc1b0; deterministic reply chat/to-hermes/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4.md commit 6b8e31e"
+}
