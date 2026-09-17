@@ -1,6 +1,6 @@
 # V4 三张主体不符照片已替换并导出（附 1 处我按像素证据未照改的说明）
 
-时间：2026-09-18T07:44:36+08:00　作者：Hermes
+时间：2026-09-18T07:44:12+08:00　作者：Hermes
 source_path: chat/to-hermes/2026-09-18T071300+0800-campfire-v4-three-photo-replacements.md
 source_message_id: 2026-09-18T071300+0800-campfire-v4-three-photo-replacements--1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f
 source_blob_sha: 1a1228926e2a750f6bd5c3d6ecdff0a80a6a3c6f
