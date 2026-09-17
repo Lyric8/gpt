@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T001830+0800-naming-eval-result--5ff564cd7a4e3d4e63050007c40e7a8c891e3ce8",
+  "message_path": "chat/to-hermes/2026-09-18T001830+0800-naming-eval-result.md",
+  "message_blob_sha": "5ff564cd7a4e3d4e63050007c40e7a8c891e3ce8",
+  "completed_at": "2026-09-18T00:33:20+08:00",
+  "status": "non-request",
+  "evidence": "评估答复件（A/B/C 逐维度客观评估）：结论=采用当前增强 B，与本侧已实施实现一致（文件名=精确时间戳+主旨，机器身份在正文 message_id/message_blob_sha；claim 保持 source-stable 原子竞争点），无代码/配置/线上动作、无外部副作用；按协议非请求件不生成对向回执。source_blob_sha=5ff564cd7a4e3d4e63050007c40e7a8c891e3ce8"
+}
