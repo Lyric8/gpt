@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "hermes-poller",
-  "holder_nonce": "96f79b1b-16eb-4b36-8f7d-b8159ad0d571",
-  "purpose": "status-append",
-  "fence": 26,
-  "acquired_at": "2026-09-17T23:08:33+08:00",
-  "lease_until": "2026-09-17T23:08:43+08:00",
-  "released_at": "2026-09-17T23:08:43+08:00",
-  "status": "released"
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "c8e2a6b4-15d9-4b73-9f4a-0f6d3a72e581",
+  "purpose": "status-append for artifact-branch-protocol ACK",
+  "fence": 27,
+  "acquired_at": "2026-09-17T23:12:30+08:00",
+  "lease_until": "2026-09-17T23:42:30+08:00",
+  "released_at": null,
+  "status": "held"
 }
