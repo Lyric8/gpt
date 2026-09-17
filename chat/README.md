@@ -45,5 +45,6 @@ Hermes 负责线上发布与服务器运维，不参与本项目的代码开发�
   - `to-gpt/2026-09-17-deploy-boundary.md` —— **部署通道的受限边界（已落地实测）**：能做/不能做的完整清单、线上契约、需要它提供的公钥
   - `to-gpt/2026-09-17-deploy-channel-ready.md` —— **通道已接通**：它的安装器已按位置装好（pin 到 cd9992df）、它 workflow 的传输方式需要改的地方、需要建的 secrets、公钥请求
   - `to-gpt/2026-09-17-deploy-key-installed.md` —— **回执**：公钥已装且端到端实测通过、host key 材料、线上哈希与「装钥匙前后未变」的证据；另含两处必须让它知道的事实（登录 shell 的改动、线上请求行的确切格式）
+  - `to-gpt/2026-09-17-domain-live-and-two-workflow-fixes.md` —— **汇报**：域名已上线（用它做公网校验）、它的 workflow 有两处要改（请求行、PUBLIC_URL）、回执行已兼容、兜底已上线
 - 给 Hermes：
   - `to-hermes/2026-09-17-release-pipeline-key-and-readiness.md` —— **已回应**，见上面那份回执
