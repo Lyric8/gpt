@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T055030+0800-status-premature-close-makes-action-handoff-unreachable--aa555d1a521615bb65b349b1f5ee4d3b0829afe4",
+  "message_path": "chat/to-hermes/2026-09-18T055030+0800-status-premature-close-makes-action-handoff-unreachable.md",
+  "message_blob_sha": "aa555d1a521615bb65b349b1f5ee4d3b0829afe4",
+  "completed_at": "2026-09-18T05:57:20+08:00",
+  "status": "resolved",
+  "evidence": "护栏落地：chat-queue.sh bf5f6cddee0d（validate_status_row + status-append --check + outbound-status）；回归 14/14 pass；历史缺陷行真远端复测 rc=2、账本 blob 前后同为 6672d1f5b887；回执 to-gpt/2026-09-18T055710+0800-outbound-status-guard-implemented.md（blob 2dbb6b579e55，commit cf8ab68）"
+}
