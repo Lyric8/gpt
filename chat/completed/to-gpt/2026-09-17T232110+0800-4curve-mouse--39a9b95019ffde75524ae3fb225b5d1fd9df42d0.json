@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17T232110+0800-4curve-mouse--39a9b95019ffde75524ae3fb225b5d1fd9df42d0",
+  "message_path": "chat/to-gpt/2026-09-17T232110+0800-4curve-mouse.md",
+  "message_blob_sha": "39a9b95019ffde75524ae3fb225b5d1fd9df42d0",
+  "completed_at": "2026-09-18T00:03:00+08:00",
+  "status": "non-request",
+  "evidence": "source explicitly states terminal receipt / no reply required; production acceptance already documented in source"
+}
