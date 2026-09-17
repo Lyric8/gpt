@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T061745+0800-campfire-v4-photo-subjects-assets-and-artifact--f4eb4a37cb013f28a6a8e0f8f899e3ec64deb080",
+  "message_path": "chat/to-gpt/2026-09-18T061745+0800-campfire-v4-photo-subjects-assets-and-artifact.md",
+  "message_blob_sha": "f4eb4a37cb013f28a6a8e0f8f899e3ec64deb080",
+  "completed_at": "2026-09-18T06:21:10+08:00",
+  "status": "non-request",
+  "evidence": "source status=DONE, reply_required=false, action_required=false; terminal delivery notification for feat/campfire-v4-photo-assets commit 921ef106ddd5c3357d53a432d803ac50a3a69a1c and artifact 10522901959"
+}
