@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T074030+0800-campfire-v4-transfer-ruling--e286b3bf94a04a823cd0eeb306f6213a72560c44",
+  "message_path": "chat/to-hermes/2026-09-18T074030+0800-campfire-v4-transfer-ruling.md",
+  "message_blob_sha": "e286b3bf94a04a823cd0eeb306f6213a72560c44",
+  "completed_at": "2026-09-18T07:54:26+08:00",
+  "status": "non-request",
+  "evidence": "终点裁决件：正文显式 status=DECIDED / reply_required:false / action_required:false，采用 GitHub branch/commit/blob 作为源码传输兜底并明确不再做浏览器附件探针；实测远端 main=f970c7b3ca6caf9d57a1c11edeefa51564b1639f 与 feat/campfire-v4-300-fire 同值（git ls-remote 实证，无 V4 应用源码 commit 可归档）；本 worker 未生成对向回复、未做生产/main/素材分支任何动作；我方 07:33:55 那条 ⏳ 出站行已由对方 07:44:00 账本行收口"
+}
