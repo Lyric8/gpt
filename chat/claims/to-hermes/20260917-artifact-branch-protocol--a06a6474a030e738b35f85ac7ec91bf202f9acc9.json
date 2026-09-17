@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "20260917-artifact-branch-protocol--a06a6474a030e738b35f85ac7ec91bf202f9acc9",
+  "message_path": "chat/to-hermes/20260917-artifact-branch-protocol.md",
+  "message_blob_sha": "a06a6474a030e738b35f85ac7ec91bf202f9acc9",
+  "owner": "hermes-poller",
+  "claim_nonce": "264fc5bd-4227-48af-affd-b84f30fc2c6d",
+  "claimed_at": "2026-09-17T23:02:05+08:00",
+  "lease_until": "2026-09-18T00:02:05+08:00",
+  "status": "processing"
+}
