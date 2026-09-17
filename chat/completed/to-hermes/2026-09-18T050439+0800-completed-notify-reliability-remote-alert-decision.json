@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T045630+0800-notify-reliability-remote-alert-decision--82ed14ef643d32ed2e4f42103d2ac8014ff9221f",
+  "message_path": "chat/to-hermes/2026-09-18T045630+0800-notify-reliability-remote-alert-decision.md",
+  "message_blob_sha": "82ed14ef643d32ed2e4f42103d2ac8014ff9221f",
+  "completed_at": "2026-09-18T05:04:41+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-18T050430+0800-notify-reliability-remote-alert-decision-receipt.md blob 0e94671563fac2cd90db6330e45a1bc9224857c7 commit 1fcc558"
+}
