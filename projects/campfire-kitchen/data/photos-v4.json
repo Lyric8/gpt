@@ -118,7 +118,7 @@
   },
   "v4-pepper": {
     "src": "assets/photos/v4-pepper.webp",
-    "alt": "炭火上烤制的甜椒",
+    "alt": "白碗中拌了香料的烤青椒块",
     "author": "pelican from Tokyo, Japan",
     "source": "https://commons.wikimedia.org/wiki/File:Green_peppers_grilled_with_Indian_spices_(2619956062).jpg",
     "license": "CC BY-SA 2.0",
@@ -176,12 +176,12 @@
     "author": "Fumikas Sagisavas",
     "source": "https://commons.wikimedia.org/wiki/File:Grilled_lamb_chops.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
   },
   "v4-meatballs": {
     "src": "assets/photos/v4-meatballs.webp",
-    "alt": "烤架上的肉丸串",
+    "alt": "垫白纸的编织篮里成串的肉丸",
     "author": "PattayaPatrol",
     "source": "https://commons.wikimedia.org/wiki/File:DFC_4387_Savory_grilled_meatball_skewers_golden-brown_and_garnished_with_fresh_herbs_ready_to_enjoy.jpg",
     "license": "CC BY-SA 4.0",
@@ -203,12 +203,12 @@
     "author": "Daderot",
     "source": "https://commons.wikimedia.org/wiki/File:Easter_dinner_of_pulled_pork_with_Kansas_City_barbecue_sauce,_potato_pancake_with_scallions_and_onion,_bell_peppers,_celery,_and_carrots_-_Massachusetts.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
   },
   "v4-gizzard": {
     "src": "assets/photos/v4-gizzard.webp",
-    "alt": "盘中烤鸡胗，配香菜与辣椒",
+    "alt": "白盘上穿签烤制的鸡胗",
     "author": "Flixtey",
     "source": "https://commons.wikimedia.org/wiki/File:Grilled_Gizzard.jpg",
     "license": "CC BY-SA 4.0",
@@ -244,20 +244,20 @@
   },
   "v4-pasta": {
     "src": "assets/photos/v4-pasta.webp",
-    "alt": "盘中番茄酱意面，撒奶酪碎",
+    "alt": "一只盘中并盛通心粉与番茄炖菜",
     "author": "LingLass",
     "source": "https://commons.wikimedia.org/wiki/File:A_dish_of_Rasta_Pasta.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
   },
   "v4-fried-noodles": {
     "src": "assets/photos/v4-fried-noodles.webp",
-    "alt": "盘中炒面，配肉片与青菜",
-    "author": "Peachyeung316",
-    "source": "https://commons.wikimedia.org/wiki/File:Chinese_Chow_mein_noodles_in_Po_Toi.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "alt": "盘中炒面，配牛肉片与红椒",
+    "author": "cyclonebill",
+    "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Stegte_nudler_med_oksek%C3%B8d_og_r%C3%B8d_peber.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
   },
   "v4-potato-salad": {
@@ -266,7 +266,7 @@
     "author": "Ocdp",
     "source": "https://commons.wikimedia.org/wiki/File:Potato_salad_001.jpg",
     "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
   },
   "v4-grilled-peach": {
@@ -292,6 +292,69 @@
     "alt": "杯中的奶茶，带奶泡",
     "author": "Gaurav Dhwaj Khadka",
     "source": "https://commons.wikimedia.org/wiki/File:Fresh_Milk_Tea_1.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cabbage": {
+    "src": "assets/photos/v4-cabbage.webp",
+    "alt": "成堆摆放的绿甘蓝（卷心菜）整颗",
+    "author": "Jeffery Martin",
+    "source": "https://commons.wikimedia.org/wiki/File:Cabbage_in_a_stack.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-broccoli": {
+    "src": "assets/photos/v4-broccoli.webp",
+    "alt": "深色背景上的两颗新鲜西兰花",
+    "author": "David Monniaux",
+    "source": "https://commons.wikimedia.org/wiki/File:Broccoli_DSC00861.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-chicken-heart": {
+    "src": "assets/photos/v4-chicken-heart.webp",
+    "alt": "白盘中蒜香煎鸡心，配整瓣蒜头",
+    "author": "David Pursehouse from Kawasaki, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Hearts_(829877522).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考（蒜香煎鸡心，非烤制）；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-watermelon": {
+    "src": "assets/photos/v4-watermelon.webp",
+    "alt": "烤架上烤出焦痕的西瓜片",
+    "author": "Glane23",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_watermelon.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-berry-crumble": {
+    "src": "assets/photos/v4-berry-crumble.webp",
+    "alt": "小烤盘中的混合莓果酥，配一球香草冰淇淋",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Mixed_berry_%26_apple_crumble,_vanilla_ice_cream_-_One_Kitchen.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cookie": {
+    "src": "assets/photos/v4-cookie.webp",
+    "alt": "木砧板上散放的巧克力豆曲奇",
+    "author": "Mshuang2",
+    "source": "https://commons.wikimedia.org/wiki/File:Chocolate_chip_cookies_on_cutting_board.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-sweet-drink": {
+    "src": "assets/photos/v4-sweet-drink.webp",
+    "alt": "玻璃杯中的洛神花红色饮品，垫木杯垫",
+    "author": "MRG90",
+    "source": "https://commons.wikimedia.org/wiki/File:Chai_torsh_-_Hibiscus_tea.png",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
