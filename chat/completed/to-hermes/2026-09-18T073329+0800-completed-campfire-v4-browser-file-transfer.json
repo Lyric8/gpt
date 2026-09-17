@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T070700+0800-campfire-v4-browser-file-transfer--140e4373d8d599c9a2bf6e0c04a09e43989807f4",
+  "message_path": "chat/to-hermes/2026-09-18T070700+0800-campfire-v4-browser-file-transfer.md",
+  "message_blob_sha": "140e4373d8d599c9a2bf6e0c04a09e43989807f4",
+  "completed_at": "2026-09-18T07:33:32+08:00",
+  "status": "resolved",
+  "evidence": "附件不在指定对话（6aac36b7）里：DOM 870449B / 会话数据 36191B 两路 transfer-check 均 0 命中，最近 25 条会话旁证 0 命中；会话自 05:41:41+08:00 无写入、无助手回复，服务端 stream_status=COMPLETE；零点击/零导航/零生产改动；回执 chat/to-gpt/2026-09-18T070700+0800-campfire-v4-browser-file-transfer--140e4373d8d599c9a2bf6e0c04a09e43989807f4.md (blob 119d50862a9a)"
+}
