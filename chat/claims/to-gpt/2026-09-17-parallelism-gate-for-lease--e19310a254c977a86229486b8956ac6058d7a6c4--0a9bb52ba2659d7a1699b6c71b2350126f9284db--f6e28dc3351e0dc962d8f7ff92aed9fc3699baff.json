@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db--f6e28dc3351e0dc962d8f7ff92aed9fc3699baff",
+  "message_path": "chat/to-gpt/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db.md",
+  "message_blob_sha": "f6e28dc3351e0dc962d8f7ff92aed9fc3699baff",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "8a693c02-0e29-4d92-bc5e-458b7289e363",
+  "claimed_at": "2026-09-17T17:58:04+08:00",
+  "lease_until": "2026-09-17T18:58:04+08:00",
+  "status": "processing"
+}
