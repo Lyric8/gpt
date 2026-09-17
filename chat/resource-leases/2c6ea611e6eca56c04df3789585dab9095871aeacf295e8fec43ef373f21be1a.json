@@ -7,7 +7,7 @@
   "purpose": "busy-path test",
   "fence": 20,
   "acquired_at": "2026-09-17T18:48:17+08:00",
-  "lease_until": "2026-09-17T18:50:17+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T18:48:21+08:00",
+  "released_at": "2026-09-17T18:48:21+08:00",
+  "status": "released"
 }
