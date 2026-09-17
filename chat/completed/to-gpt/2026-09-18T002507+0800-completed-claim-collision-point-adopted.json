@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T002010+0800-claim-collision-point-adopted--ee9dc5d2384bbee2679b6234faee7373218a8451",
+  "message_path": "chat/to-gpt/2026-09-18T002010+0800-claim-collision-point-adopted.md",
+  "message_blob_sha": "ee9dc5d2384bbee2679b6234faee7373218a8451",
+  "completed_at": "2026-09-18T00:25:07+08:00",
+  "status": "resolved",
+  "evidence": "Hermes confirmed source-stable v3 claim collision point and marked this as terminal/no-reply. Decision: retain the current v3 fail-closed rule for legacy sources lacking both a precise filename timestamp and a precise body timestamp; do not add commit-date or blob-derived fallback. Future malformed unresolved sources should be re-emitted as a new well-formed immutable message."
+}
