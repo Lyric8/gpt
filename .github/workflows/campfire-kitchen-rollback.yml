@@ -1,0 +1,140 @@
+name: Campfire Kitchen Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing published Release tag, e.g. campfire-kitchen-v2.0.0
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campfire-kitchen-production
+  cancel-in-progress: false
+
+env:
+  TAG_PREFIX: campfire-kitchen-v
+  DEPLOY_HOST: 124.223.114.109
+  DEPLOY_PORT: '22'
+  DEPLOY_USER: campfire-deploy
+  PUBLIC_URL: http://124.223.114.109/
+
+jobs:
+  rollback-existing-release:
+    name: Roll back to immutable Release asset
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: campfire-kitchen-production
+      url: http://124.223.114.109/
+    steps:
+      - name: Validate requested Release and download immutable assets
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" == ${TAG_PREFIX}* ]] || {
+            echo "rollback target must use ${TAG_PREFIX}X.Y.Z" >&2
+            exit 1
+          }
+          version="${RELEASE_TAG#${TAG_PREFIX}}"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || {
+            echo "rollback target must be a stable SemVer Release" >&2
+            exit 1
+          }
+          info="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json tagName,isDraft,isPrerelease,assets)"
+          [ "$(jq -r '.isDraft' <<<"$info")" = "false" ] || { echo "draft Releases cannot be rolled back to" >&2; exit 1; }
+          [ "$(jq -r '.isPrerelease' <<<"$info")" = "false" ] || { echo "prereleases cannot be rolled back to production" >&2; exit 1; }
+          artifact_name="campfire-kitchen-v${version}.html"
+          checksum_name="campfire-kitchen-v${version}.sha256"
+          manifest_name="campfire-kitchen-v${version}.manifest.json"
+          for name in "$artifact_name" "$checksum_name" "$manifest_name"; do
+            jq -e --arg n "$name" '.assets[] | select(.name == $n)' <<<"$info" >/dev/null || {
+              echo "Release is missing required immutable asset: $name" >&2
+              exit 1
+            }
+          done
+          mkdir -p dist
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$artifact_name" --dir dist
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$checksum_name" --dir dist
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$manifest_name" --dir dist
+          (cd dist && sha256sum -c "$checksum_name")
+          actual="$(sha256sum "dist/$artifact_name" | awk '{print $1}')"
+          python - "dist/$manifest_name" "$RELEASE_TAG" "$version" "$artifact_name" "$actual" <<'PY'
+          import json, pathlib, re, sys
+          p, expected_tag, expected_version, expected_artifact, actual_hash = sys.argv[1:]
+          m = json.loads(pathlib.Path(p).read_text(encoding='utf-8'))
+          assert m.get('project') == 'campfire-kitchen', m
+          assert m.get('tag') == expected_tag, m
+          assert m.get('version') == expected_version, m
+          assert m.get('artifact') == expected_artifact, m
+          assert m.get('sha256') == actual_hash, m
+          assert re.fullmatch(r'[0-9a-f]{40}', str(m.get('sourceSha', ''))), m
+          PY
+          {
+            echo "version=$version"
+            echo "artifact_name=$artifact_name"
+            echo "sha256=$actual"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Prepare restricted SSH identity
+        env:
+          DEPLOY_KEY: ${{ secrets.CAMPFIRE_DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.CAMPFIRE_DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_KEY:?missing CAMPFIRE_DEPLOY_SSH_KEY}"
+          : "${DEPLOY_KNOWN_HOSTS:?missing CAMPFIRE_DEPLOY_KNOWN_HOSTS}"
+          umask 077
+          key="$RUNNER_TEMP/campfire-deploy-key"
+          known="$RUNNER_TEMP/campfire-known-hosts"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$known"
+          chmod 600 "$key" "$known"
+          ssh-keygen -y -f "$key" >/dev/null
+          {
+            echo "DEPLOY_KEY_FILE=$key"
+            echo "DEPLOY_KNOWN_HOSTS_FILE=$known"
+          } >> "$GITHUB_ENV"
+
+      - name: Stream the old Release artifact through the restricted deploy channel
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+          ARTIFACT_NAME: ${{ steps.release.outputs.artifact_name }}
+          EXPECTED_SHA256: ${{ steps.release.outputs.sha256 }}
+        run: |
+          set -euo pipefail
+          ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
+          remote="${DEPLOY_USER}@${DEPLOY_HOST}"
+          deploy_output="$({
+            printf 'version=1 tag=v%s sha256=%s\n' "$VERSION" "$EXPECTED_SHA256"
+            cat "dist/$ARTIFACT_NAME"
+          } | ssh "${ssh_opts[@]}" "$remote" deploy)"
+          printf '%s\n' "$deploy_output"
+          grep -Fq 'deploy-release: 完成' <<<"$deploy_output" || { echo "server did not report successful rollback deployment" >&2; exit 1; }
+          grep -Fq "sha256=$EXPECTED_SHA256" <<<"$deploy_output" || { echo "server rollback receipt hash mismatch" >&2; exit 1; }
+
+      - name: Verify public bytes after rollback
+        env:
+          EXPECTED_SHA256: ${{ steps.release.outputs.sha256 }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          set -euo pipefail
+          body="$RUNNER_TEMP/public-index.html"
+          curl -fsS --retry 5 --retry-delay 2 --max-time 20 -o "$body" "$PUBLIC_URL"
+          served_sha="$(sha256sum "$body" | awk '{print $1}')"
+          [ "$served_sha" = "$EXPECTED_SHA256" ] || { echo "public site hash mismatch after rollback: $served_sha" >&2; exit 1; }
+          {
+            echo "### Production rollback"
+            echo "- target version: \`$VERSION\`"
+            echo "- immutable Release sha256: \`$EXPECTED_SHA256\`"
+            echo "- public site sha256: \`$served_sha\`"
+            echo "- site: $PUBLIC_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
