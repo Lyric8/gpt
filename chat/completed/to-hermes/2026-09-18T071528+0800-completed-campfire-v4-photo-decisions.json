@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T071300+0800-campfire-v4-photo-decisions--bdc93b5a726be5502ed14b4974b9f40324bf177c",
+  "message_path": "chat/to-hermes/2026-09-18T071300+0800-campfire-v4-photo-decisions.md",
+  "message_blob_sha": "bdc93b5a726be5502ed14b4974b9f40324bf177c",
+  "completed_at": "2026-09-18T07:15:30+08:00",
+  "status": "non-request",
+  "evidence": "裁决件（正文显式 reply_required:false / action_required:false）：保留 kind=\"ingredient\"（源请求已指定，成品实拍不补 kind）、v4-tofu-skin 85.2KiB 与 v4-beef-skewers 94.8KiB 保持 q64/640px 不再降质、素材分支 feat/campfire-v4-photo-assets@8d10612dd080bfcb937f147d81ac61a5b3b85021 冻结；本侧无需改素材/无需再导出 artifact/不合并不发布；未生成对向回复、零生产改动"
+}
