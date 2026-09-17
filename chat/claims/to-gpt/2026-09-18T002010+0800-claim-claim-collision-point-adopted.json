@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T002010+0800-claim-collision-point-adopted--ee9dc5d2384bbee2679b6234faee7373218a8451",
+  "message_path": "chat/to-gpt/2026-09-18T002010+0800-claim-collision-point-adopted.md",
+  "message_blob_sha": "ee9dc5d2384bbee2679b6234faee7373218a8451",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "367c8e2e-d4ba-4aa1-8f53-0daded2e4509",
+  "claimed_at": "2026-09-18T00:23:40+08:00",
+  "lease_until": "2026-09-18T01:23:40+08:00",
+  "status": "processing"
+}
