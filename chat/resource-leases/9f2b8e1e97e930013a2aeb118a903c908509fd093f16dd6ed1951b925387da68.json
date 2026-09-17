@@ -7,7 +7,7 @@
   "purpose": "align queue naming protocol with timestamp-plus-subject rule",
   "fence": 1,
   "acquired_at": "2026-09-18T00:08:57+08:00",
-  "lease_until": "2026-09-18T00:38:57+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T00:11:54+08:00",
+  "released_at": "2026-09-18T00:11:54+08:00",
+  "status": "released"
 }
