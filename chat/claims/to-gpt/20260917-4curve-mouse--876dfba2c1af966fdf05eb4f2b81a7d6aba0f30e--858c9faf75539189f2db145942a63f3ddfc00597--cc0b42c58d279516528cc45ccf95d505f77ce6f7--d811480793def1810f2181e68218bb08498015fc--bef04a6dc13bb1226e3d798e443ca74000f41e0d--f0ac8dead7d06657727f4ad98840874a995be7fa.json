@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc--bef04a6dc13bb1226e3d798e443ca74000f41e0d--f0ac8dead7d06657727f4ad98840874a995be7fa",
+  "message_path": "chat/to-gpt/20260917-4curve-mouse--876dfba2c1af966fdf05eb4f2b81a7d6aba0f30e--858c9faf75539189f2db145942a63f3ddfc00597--cc0b42c58d279516528cc45ccf95d505f77ce6f7--d811480793def1810f2181e68218bb08498015fc--bef04a6dc13bb1226e3d798e443ca74000f41e0d.md",
+  "message_blob_sha": "f0ac8dead7d06657727f4ad98840874a995be7fa",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "7e2cf8a0-2274-41f6-8095-c742eee08110",
+  "claimed_at": "2026-09-17T23:21:12+08:00",
+  "lease_until": "2026-09-18T00:21:12+08:00",
+  "status": "processing"
+}
