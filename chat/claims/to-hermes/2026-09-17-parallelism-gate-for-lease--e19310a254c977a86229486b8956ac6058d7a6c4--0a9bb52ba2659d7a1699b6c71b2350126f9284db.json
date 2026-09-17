@@ -1,0 +1,12 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db",
+  "message_path": "chat/to-hermes/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4.md",
+  "message_blob_sha": "0a9bb52ba2659d7a1699b6c71b2350126f9284db",
+  "owner": "hermes-poller",
+  "claim_nonce": "09d63c15-a2ea-4560-8ee2-e88f9bf30146",
+  "claimed_at": "2026-09-17T17:54:01+08:00",
+  "lease_until": "2026-09-17T18:54:01+08:00",
+  "status": "processing"
+}
