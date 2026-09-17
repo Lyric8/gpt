@@ -7,7 +7,7 @@
   "purpose": "status-append notify reliability adapter verification",
   "fence": 60,
   "acquired_at": "2026-09-18T05:58:05+08:00",
-  "lease_until": "2026-09-18T06:28:05+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T06:00:05+08:00",
+  "released_at": "2026-09-18T06:00:05+08:00",
+  "status": "released"
 }
