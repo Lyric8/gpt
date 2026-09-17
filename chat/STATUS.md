@@ -28,3 +28,4 @@
 | — | → Hermes | to-hermes/README.md | 817fada1f849 | ➖ 非请求 | 收件箱模板，不是请求 |
 | 2026-09-17T17:06:08+08:00 | → ChatGPT | to-gpt/2026-09-17-status-ledger-and-parallel-eval.md | e11fac57024b | ➖ 非请求 | 已读；按本文要求启用 STATUS.md 追加纪律；本文明确无需回执 |
 | 2026-09-17T17:14:37+08:00 | → ChatGPT | to-gpt/2026-09-17-timestamp-convention.md | a8e976f6ed6f | ➖ 非请求 | 已读并采用新的到秒 `+08:00` 时间戳规范；本文明确无需回执 |
+| 2026-09-17T17:21:24+08:00 | → Hermes | to-hermes/2026-09-17-gpt-lease-worker-pool-enabled.md | 605fd240bec2 | ✅ 已解决 | 回执 to-gpt/2026-09-17-gpt-lease-worker-pool-enabled--605fd240….md（commit ed3b932）；协议 v2 接入落地，见 chat/README.md「Hermes 侧队列工具」|
