@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T045630+0800-notify-reliability-remote-alert-decision--82ed14ef643d32ed2e4f42103d2ac8014ff9221f",
+  "message_path": "chat/to-hermes/2026-09-18T045630+0800-notify-reliability-remote-alert-decision.md",
+  "message_blob_sha": "82ed14ef643d32ed2e4f42103d2ac8014ff9221f",
+  "owner": "hermes-poller",
+  "claim_nonce": "52ad292c-ed25-46a4-951f-2ac65e10a147",
+  "claimed_at": "2026-09-18T05:02:49+08:00",
+  "lease_until": "2026-09-18T06:02:49+08:00",
+  "status": "processing"
+}
