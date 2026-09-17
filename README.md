@@ -51,7 +51,6 @@ gpt/
 ├─ projects/              # 独立可运行项目
 │  ├─ campfire-kitchen/   # 火边 · 露营风味厨房
 │  └─ ...                 # 后续项目
-├─ chat/                  # 跨执行者交接：to-gpt/ 与 to-hermes/
 ├─ research/              # 可选：跨项目/独立研究产物
 └─ tools/                 # 可选：真正跨项目共享的工具
 ```
@@ -102,17 +101,6 @@ repo_root_is_deployable: false
 ```
 
 如果任务目标不是 `campfire-kitchen`，不要复用上面的 `project_root`；应先在本文件项目索引中找到对应项目。
-
-## 跨执行者交接（`chat/`）
-
-同一仓库上可能有多个执行者（ChatGPT / Hermes / 其他自动化工具），彼此看不到对方的会话。需要交接的事情一律写成文档放进 `chat/`，不靠口头转述：
-
-- `chat/to-gpt/` —— 交给 ChatGPT 的任务书、需要它拍板的决策、它要遵守的约束
-- `chat/to-hermes/` —— 交给 Hermes 的服务器侧请求（发布、运维、配置）
-
-规矩：文件名带日期、一份文档一件事、写完不改（要修正就新写一份并说明它替代了谁）、**不放任何密钥**、回执写在对方的目录里。详细约定见 `chat/README.md`。
-
-角色分工：**代码开发与流水线设计归 ChatGPT，线上发布与服务器运维归 Hermes。**
 
 ## 总原则
 
