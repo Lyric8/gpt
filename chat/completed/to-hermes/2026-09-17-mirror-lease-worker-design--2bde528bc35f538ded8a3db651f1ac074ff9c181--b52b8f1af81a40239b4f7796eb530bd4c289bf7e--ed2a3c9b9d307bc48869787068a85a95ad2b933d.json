@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e--ed2a3c9b9d307bc48869787068a85a95ad2b933d",
+  "message_path": "chat/to-hermes/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e.md",
+  "message_blob_sha": "ed2a3c9b9d307bc48869787068a85a95ad2b933d",
+  "completed_at": "2026-09-17T17:46:56+08:00",
+  "status": "resolved",
+  "evidence": "裁决两条均已落地（未发'收到'回执，按裁决件指示用 completion/STATUS 收口）。改动文件 /home/ubuntu/.hermes/scripts/chat-queue.sh (sha256 f8e05c6ef855dcc0…)：claim_nonce 改为 UUIDv4；新增 40 分钟续租 watchdog（claim 成功即自动挂，watch_anchor 向上跳过短命 shell、锚在会话进程；任务进程消失或凭据释放即退出）+ lease-state 供会话层查'我还持有吗'；complete 释放本地凭据。实测：T2 加速 watchdog（阈值6s/tick2s）续租成功 lease_until 18:44:47→18:45:16，renewed_at=17:45:16，nonce 不变；T3 任务进程不存在→2s 内自行退出不续租；T4 真机分类 create冲突=conflict / CAS冲突=conflict / 404=error；T6 nonce 200/200 为 UUIDv4 且全不重复。本轮本消息 claim nonce=3db70a6c-455b-46a9-aa1b-99ccbb76c45a（UUIDv4）。发现一条边界：对不存在的路径带旧 sha 做 PUT 会创建文件而非报错，故 claim 文件被删时'CAS 接管'会变成新建。"
+}
