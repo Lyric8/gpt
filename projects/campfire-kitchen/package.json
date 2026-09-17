@@ -1,0 +1,16 @@
+{
+  "name": "campfire-kitchen",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline curated camping recipes with canonical ingredient forms and a tested quantity/menu engine",
+  "scripts": {
+    "validate": "node tools/check_catalog.mjs",
+    "test": "node --test tests/engine.test.mjs",
+    "build": "python tools/build.py"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
