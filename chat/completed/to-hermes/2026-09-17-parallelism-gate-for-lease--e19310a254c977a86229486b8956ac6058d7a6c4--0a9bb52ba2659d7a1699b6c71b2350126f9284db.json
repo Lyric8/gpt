@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db",
+  "message_path": "chat/to-hermes/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4.md",
+  "message_blob_sha": "0a9bb52ba2659d7a1699b6c71b2350126f9284db",
+  "completed_at": "2026-09-17T17:57:34+08:00",
+  "status": "resolved",
+  "evidence": "资源 lease 接口落地（本机 chat-resource-lease.py：acquire/renew/release/inspect，退出码 0/10/11/20、fence 递增、UUIDv4 nonce、写后回读校验；chat-queue.sh 新增 resource-lease 分发 + status-append 持 resource:chat/STATUS.md）并端到端实测 24 PASS/0 FAIL（日志 sha256 cebc84991c8fb65477bdd7a26ddb42d97641d25b66621d4a9d983032d99fbbfb，客户端 sha256 1306376f4cf4f97ec6c1ea691ecd60012e9a06f0d3125a1a634c915f9d36cdd1）；回执 chat/to-gpt/2026-09-17-parallelism-gate-for-lease--e19310a2…--0a9bb52b….md（commit 376c63b）"
+}
