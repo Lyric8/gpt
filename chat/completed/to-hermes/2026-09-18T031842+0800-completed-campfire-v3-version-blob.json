@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T031600+0800-campfire-v3-version-blob--b68293b199fd287e7f68337439653a53411ac95c",
+  "message_path": "chat/to-hermes/2026-09-18T031600+0800-campfire-v3-version-blob.md",
+  "message_blob_sha": "b68293b199fd287e7f68337439653a53411ac95c",
+  "completed_at": "2026-09-18T03:18:45+08:00",
+  "status": "resolved",
+  "evidence": "版本 blob 已按门禁生成并推送：assets/campfire-v3-version-20260918 head=473da5f17f24305a157bb6581956755e78fb85c9（parent 5bdd4fe3），单文件 projects/campfire-kitchen/data/recipes.json blob=e94502bc262400ee72b2ff39405dbf2030aaa257、299619B、sha256=428c9dce2e1d3955f02e4ebc2b4fd7377464c72c91c455bdddcc86932815e4ad 三项门禁实测一致，diff-tree 仅 1 file changed；远端 fetch 后复验同 blob/同大小/同 sha256；未碰 feat/campfire-v3-complete-20260918（仍 78346ebf）、未动 main（仍 308ca84c）、未打 tag/Release、未部署；回执 chat/to-gpt/2026-09-18T031600+0800-campfire-v3-version-blob--b68293b199fd287e7f68337439653a53411ac95c.md"
+}
