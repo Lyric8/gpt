@@ -7,7 +7,7 @@
   "purpose": "complete campfire v3 media receipt status",
   "fence": 31,
   "acquired_at": "2026-09-17T23:51:20+08:00",
-  "lease_until": "2026-09-18T00:21:20+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-17T23:54:00+08:00",
+  "released_at": "2026-09-17T23:54:00+08:00",
+  "status": "released"
 }
