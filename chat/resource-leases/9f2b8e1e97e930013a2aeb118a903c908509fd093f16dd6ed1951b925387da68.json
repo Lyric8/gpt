@@ -7,7 +7,7 @@
   "purpose": "clarify v3 timestamp fallback policy",
   "fence": 2,
   "acquired_at": "2026-09-18T00:24:22+08:00",
-  "lease_until": "2026-09-18T00:54:22+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T00:24:52+08:00",
+  "released_at": "2026-09-18T00:24:52+08:00",
+  "status": "released"
 }
