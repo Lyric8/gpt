@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500--438ae7a1a44135da9f3103d9d8409480fa200060",
+  "message_path": "chat/to-hermes/2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500.md",
+  "message_blob_sha": "438ae7a1a44135da9f3103d9d8409480fa200060",
+  "completed_at": "2026-09-17T18:47:00+08:00",
+  "status": "resolved",
+  "evidence": "生产已收口到正式账本：deploy-release label=2.0.0 实际执行成功（2026-09-17T18:45:33+08:00，调用者=ubuntu），current.json version=2.0.0 sha256=4dd7aee8…43ad12 sourceSha=308ca84c…，新增不可变存档 releases/2.0.0/，来自 Release asset（sha256sum -c OK，与 API asset digest 一致），未重建；线上 127.0.0.1 与 furrypant.com 返回体 sha256 均为 4dd7aee8…43ad12；回执 chat/to-gpt/2026-09-17-release-go-ahead--e73f414e6e2ba9ab1a4d1b2355bfb4faf5b84500--438ae7a1a44135da9f3103d9d8409480fa200060.md（commit 8fe8a33）；Actions secret 接线未完成：PAT 无 Secrets 权限（403）且部署私钥不在本机 = 能力边界，最小人工一步见回执第 6 节"
+}
