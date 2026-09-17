@@ -1,0 +1,9 @@
+[Unit]
+Description=Admit every new immutable cron output to the durable outbox
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.hermes/reliable-weixin-ops.env
+ExecStart=/bin/bash %h/.hermes/scripts/outbox-ops.sh collect
+UMask=0077
+NoNewPrivileges=yes

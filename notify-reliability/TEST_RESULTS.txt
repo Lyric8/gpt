@@ -1,0 +1,56 @@
+test_cancel_resume_barrier_then_boot_recovery (test_binding_installer.BindingTests.test_cancel_resume_barrier_then_boot_recovery) ... ok
+test_capture_raw_before_resume_and_media_snapshot (test_binding_installer.BindingTests.test_capture_raw_before_resume_and_media_snapshot) ... ok
+test_config_disappearance_or_false_cannot_reenable_raw_sends (test_binding_installer.BindingTests.test_config_disappearance_or_false_cannot_reenable_raw_sends) ... ok
+test_filtered_explicit_attachment_cannot_be_reported_accepted (test_binding_installer.BindingTests.test_filtered_explicit_attachment_cannot_be_reported_accepted) ... wx_outbox_plan_blocked id=8d29dbb15063cd0eddac080b4563fd64c83daf69c29f6bf135a9791fd4359710
+ok
+test_missing_attachment_is_not_parent_success (test_binding_installer.BindingTests.test_missing_attachment_is_not_parent_success) ... wx_outbox_plan_blocked id=8d29dbb15063cd0eddac080b4563fd64c83daf69c29f6bf135a9791fd4359710
+ok
+test_missing_inbound_id_preserves_generated_reply (test_binding_installer.BindingTests.test_missing_inbound_id_preserves_generated_reply) ... ok
+test_other_platform_is_not_intercepted (test_binding_installer.BindingTests.test_other_platform_is_not_intercepted) ... ok
+test_repeated_final_event_has_one_envelope (test_binding_installer.BindingTests.test_repeated_final_event_has_one_envelope) ... ok
+test_resume_clear_failure_cannot_fall_through_to_agent_restart (test_binding_installer.BindingTests.test_resume_clear_failure_cannot_fall_through_to_agent_restart) ... ok
+test_blob_pinning_stops_unknown_production_source (test_binding_installer.InstallerTests.test_blob_pinning_stops_unknown_production_source) ... ok
+test_changed_anchor_is_fail_closed (test_binding_installer.InstallerTests.test_changed_anchor_is_fail_closed) ... ok
+test_duplicate_function_is_fail_closed (test_binding_installer.InstallerTests.test_duplicate_function_is_fail_closed) ... ok
+test_live_service_refuses_apply (test_binding_installer.InstallerTests.test_live_service_refuses_apply) ... ok
+test_pending_queue_refuses_destructive_rollback (test_binding_installer.InstallerTests.test_pending_queue_refuses_destructive_rollback) ... ok
+test_source_hooks_compile_and_do_not_remove_original_logic (test_binding_installer.InstallerTests.test_source_hooks_compile_and_do_not_remove_original_logic) ... ok
+test_actual_local_http_429_then_200_and_latest_context (test_outbox.AsyncTests.test_actual_local_http_429_then_200_and_latest_context) ... Executing <Task pending name='Task-90' coro=<AsyncTests.test_actual_local_http_429_then_200_and_latest_context() running at /mnt/data/notify-reliability/implementation/tests/test_outbox.py:382> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /usr/lib/python3.13/asyncio/tasks.py:765> cb=[_run_until_complete_cb() at /usr/lib/python3.13/asyncio/base_events.py:181] created at /usr/lib/python3.13/asyncio/runners.py:100> took 0.126 seconds
+ok
+test_cancelled_attempt_recovers_without_disappearance (test_outbox.AsyncTests.test_cancelled_attempt_recovers_without_disappearance) ... ok
+test_cancelled_db_thread_is_drained_before_lock_release (test_outbox.AsyncTests.test_cancelled_db_thread_is_drained_before_lock_release) ... ok
+test_repeated_rate_limits_then_success_exact_physical_ids (test_outbox.AsyncTests.test_repeated_rate_limits_then_success_exact_physical_ids) ... ok
+test_200_negative_business_code_is_failure (test_outbox.ClassificationTests.test_200_negative_business_code_is_failure) ... ok
+test_5xx_and_timeout_are_ambiguous (test_outbox.ClassificationTests.test_5xx_and_timeout_are_ambiguous) ... ok
+test_empty_malformed_and_boolean_ack_are_not_success (test_outbox.ClassificationTests.test_empty_malformed_and_boolean_ack_are_not_success) ... ok
+test_http_429_honors_server_retry_after (test_outbox.ClassificationTests.test_http_429_honors_server_retry_after) ... ok
+test_http_date_retry_after (test_outbox.ClassificationTests.test_http_date_retry_after) ... ok
+test_minus_two_unknown_is_session_not_rate_limit (test_outbox.ClassificationTests.test_minus_two_unknown_is_session_not_rate_limit) ... ok
+test_success_requires_explicit_zero (test_outbox.ClassificationTests.test_success_requires_explicit_zero) ... ok
+test_account_profile_isolation (test_outbox.CoreTests.test_account_profile_isolation) ... ok
+test_admission_never_claims_provider_success (test_outbox.CoreTests.test_admission_never_claims_provider_success) ... ok
+test_attempting_recovery_is_ambiguous_and_fenced (test_outbox.CoreTests.test_attempting_recovery_is_ambiguous_and_fenced) ... ok
+test_conflicting_key_does_not_overwrite (test_outbox.CoreTests.test_conflicting_key_does_not_overwrite) ... ok
+test_cooldown_is_account_wide_and_survives_reopen (test_outbox.CoreTests.test_cooldown_is_account_wide_and_survives_reopen) ... ok
+test_failed_plan_keeps_raw (test_outbox.CoreTests.test_failed_plan_keeps_raw) ... ok
+test_idempotency_never_resets_accepted (test_outbox.CoreTests.test_idempotency_never_resets_accepted) ... ok
+test_legacy_ownership_transfer_atomic_idempotent (test_outbox.CoreTests.test_legacy_ownership_transfer_atomic_idempotent) ... ok
+test_lossless_unicode_and_whitespace (test_outbox.CoreTests.test_lossless_unicode_and_whitespace) ... ok
+test_no_send_until_resume_barrier (test_outbox.CoreTests.test_no_send_until_resume_barrier) ... ok
+test_notice_coalesces_and_never_recurses (test_outbox.CoreTests.test_notice_coalesces_and_never_recurses) ... ok
+test_partial_text_then_attachment_failure (test_outbox.CoreTests.test_partial_text_then_attachment_failure) ... ok
+test_permanent_auth_pauses_until_explicit_repair (test_outbox.CoreTests.test_permanent_auth_pauses_until_explicit_repair) ... ok
+test_process_lock_prevents_second_owner (test_outbox.CoreTests.test_process_lock_prevents_second_owner) ... ok
+test_queue_partial_is_not_blindly_replayed (test_outbox.CoreTests.test_queue_partial_is_not_blindly_replayed) ... ok
+test_real_sigkill_after_provider_receipt_before_local_ack (test_outbox.CoreTests.test_real_sigkill_after_provider_receipt_before_local_ack) ... ok
+test_retention_does_not_delete_700_pending (test_outbox.CoreTests.test_retention_does_not_delete_700_pending) ... ok
+test_retries_do_not_expire_or_cap (test_outbox.CoreTests.test_retries_do_not_expire_or_cap) ... ok
+test_same_body_distinct_events_are_not_deduplicated (test_outbox.CoreTests.test_same_body_distinct_events_are_not_deduplicated) ... ok
+test_short_multiline_is_one_part (test_outbox.CoreTests.test_short_multiline_is_one_part) ... ok
+test_snapshot_is_independent_of_source_and_rejects_symlink (test_outbox.CoreTests.test_snapshot_is_independent_of_source_and_rejects_symlink) ... ok
+test_sqlite_full_does_not_become_success (test_outbox.CoreTests.test_sqlite_full_does_not_become_success) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 2.425s
+
+OK

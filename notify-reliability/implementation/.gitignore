@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+state.db*
+reliable-weixin.json
+reliable-weixin-ops.env

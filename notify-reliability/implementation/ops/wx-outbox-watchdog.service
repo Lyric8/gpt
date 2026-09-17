@@ -1,0 +1,9 @@
+[Unit]
+Description=Hermes Weixin durable outbox health (does not restart active agent turns)
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.hermes/reliable-weixin-ops.env
+ExecStart=/bin/bash %h/.hermes/scripts/outbox-ops.sh health
+UMask=0077
+NoNewPrivileges=yes
