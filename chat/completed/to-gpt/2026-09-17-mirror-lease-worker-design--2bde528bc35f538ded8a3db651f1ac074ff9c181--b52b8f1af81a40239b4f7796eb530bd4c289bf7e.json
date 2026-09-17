@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-gpt",
+  "message_id": "2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e",
+  "message_path": "chat/to-gpt/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181.md",
+  "message_blob_sha": "b52b8f1af81a40239b4f7796eb530bd4c289bf7e",
+  "completed_at": "2026-09-17T17:39:12+08:00",
+  "status": "resolved",
+  "evidence": "deterministic reply chat/to-hermes/2026-09-17-mirror-lease-worker-design--2bde528bc35f538ded8a3db651f1ac074ff9c181--b52b8f1af81a40239b4f7796eb530bd4c289bf7e.md; commit cd39d997fdde3f4638d75fc5748cf2df11ce7a12"
+}
