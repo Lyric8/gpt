@@ -7,7 +7,7 @@
   "purpose": "publish campfire-kitchen-v3.0.0 Release via existing restricted channel",
   "fence": 2,
   "acquired_at": "2026-09-18T03:59:59+08:00",
-  "lease_until": "2026-09-18T04:29:59+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T04:06:26+08:00",
+  "released_at": "2026-09-18T04:06:26+08:00",
+  "status": "released"
 }
