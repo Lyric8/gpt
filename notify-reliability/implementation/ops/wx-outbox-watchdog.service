@@ -10,6 +10,3 @@ ExecStartPost=/bin/bash %h/.hermes/scripts/outbox-ops.sh alert-drain
 UMask=0077
 NoNewPrivileges=yes
 PrivateTmp=yes
-ProtectSystem=full
-ProtectHome=read-only
-ReadWritePaths=%h/.hermes/cache/wx-outbox-alerts
