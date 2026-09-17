@@ -14,6 +14,10 @@ concurrency:
 env:
   PROJECT_ROOT: projects/campfire-kitchen
   TAG_PREFIX: campfire-kitchen-v
+  DEPLOY_HOST: 124.223.114.109
+  DEPLOY_PORT: '22'
+  DEPLOY_USER: campfire-deploy
+  PUBLIC_URL: http://124.223.114.109/
 
 jobs:
   build-release:
@@ -144,7 +148,6 @@ jobs:
           path.write_text(json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
           PY
           echo "artifact_sha256=$artifact_sha256" >> "$GITHUB_OUTPUT"
-          echo "ARTIFACT_SHA256=$artifact_sha256" >> "$GITHUB_ENV"
           {
             echo "### Campfire Kitchen release artifact"
             echo "- version: \`$VERSION\`"
@@ -153,6 +156,26 @@ jobs:
             echo "- sha256: \`$artifact_sha256\`"
             echo "- bytes: \`$artifact_bytes\`"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preflight immutable Release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          dist="$RUNNER_TEMP/campfire-release"
+          existing_names="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')"
+          for name in "$ARTIFACT_NAME" "$CHECKSUM_NAME" "$MANIFEST_NAME"; do
+            if grep -Fxq "$name" <<<"$existing_names"; then
+              verify_dir="$(mktemp -d)"
+              gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$name" --dir "$verify_dir"
+              cmp -s "$dist/$name" "$verify_dir/$name" || {
+                echo "Release asset $name already exists with different bytes; published assets are immutable" >&2
+                exit 1
+              }
+              rm -rf "$verify_dir"
+            fi
+          done
 
       - name: Attach immutable assets to the GitHub Release
         env:
@@ -163,18 +186,10 @@ jobs:
           dist="$RUNNER_TEMP/campfire-release"
           existing_names="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')"
           for name in "$ARTIFACT_NAME" "$CHECKSUM_NAME" "$MANIFEST_NAME"; do
-            file="$dist/$name"
             if grep -Fxq "$name" <<<"$existing_names"; then
-              verify_dir="$(mktemp -d)"
-              gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$name" --dir "$verify_dir"
-              cmp -s "$file" "$verify_dir/$name" || {
-                echo "Release asset $name already exists with different bytes; version assets are immutable" >&2
-                exit 1
-              }
-              rm -rf "$verify_dir"
               echo "Verified existing immutable asset: $name"
             else
-              gh release upload "$RELEASE_TAG" "$file" --repo "$GITHUB_REPOSITORY"
+              gh release upload "$RELEASE_TAG" "$dist/$name" --repo "$GITHUB_REPOSITORY"
               echo "Uploaded Release asset: $name"
             fi
           done
@@ -209,22 +224,14 @@ jobs:
             exit 1
           }
 
-      - name: Validate deployment credentials
+      - name: Prepare restricted SSH identity
         env:
-          DEPLOY_HOST: ${{ secrets.CAMPFIRE_DEPLOY_HOST }}
-          DEPLOY_PORT: ${{ secrets.CAMPFIRE_DEPLOY_PORT }}
-          DEPLOY_USER: ${{ secrets.CAMPFIRE_DEPLOY_USER }}
           DEPLOY_KEY: ${{ secrets.CAMPFIRE_DEPLOY_SSH_KEY }}
           DEPLOY_KNOWN_HOSTS: ${{ secrets.CAMPFIRE_DEPLOY_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
-          : "${DEPLOY_HOST:?missing CAMPFIRE_DEPLOY_HOST}"
-          : "${DEPLOY_PORT:?missing CAMPFIRE_DEPLOY_PORT}"
-          : "${DEPLOY_USER:?missing CAMPFIRE_DEPLOY_USER}"
           : "${DEPLOY_KEY:?missing CAMPFIRE_DEPLOY_SSH_KEY}"
           : "${DEPLOY_KNOWN_HOSTS:?missing CAMPFIRE_DEPLOY_KNOWN_HOSTS}"
-          [[ "$DEPLOY_PORT" =~ ^[0-9]+$ ]] || { echo "CAMPFIRE_DEPLOY_PORT must be numeric" >&2; exit 1; }
-          [[ "$DEPLOY_USER" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "invalid deploy username" >&2; exit 1; }
           umask 077
           key="$RUNNER_TEMP/campfire-deploy-key"
           known="$RUNNER_TEMP/campfire-known-hosts"
@@ -237,40 +244,52 @@ jobs:
             echo "DEPLOY_KNOWN_HOSTS_FILE=$known"
           } >> "$GITHUB_ENV"
 
-      - name: Deploy through the restricted server installer
+      - name: Stream Release artifact through the restricted deploy channel
         id: remote
         env:
-          DEPLOY_HOST: ${{ secrets.CAMPFIRE_DEPLOY_HOST }}
-          DEPLOY_PORT: ${{ secrets.CAMPFIRE_DEPLOY_PORT }}
-          DEPLOY_USER: ${{ secrets.CAMPFIRE_DEPLOY_USER }}
           ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
           EXPECTED_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
           VERSION: ${{ needs.build-release.outputs.version }}
-          SOURCE_SHA: ${{ needs.build-release.outputs.source_sha }}
         run: |
           set -euo pipefail
-          remote="${DEPLOY_USER}@${DEPLOY_HOST}"
           ssh_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -p "$DEPLOY_PORT")
-          scp_opts=(-i "$DEPLOY_KEY_FILE" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$DEPLOY_KNOWN_HOSTS_FILE" -o ConnectTimeout=15 -P "$DEPLOY_PORT")
-          remote_tmp="$(ssh "${ssh_opts[@]}" "$remote" 'mktemp /tmp/campfire-kitchen.XXXXXXXX.html')"
-          cleanup() {
-            printf -v rm_cmd 'rm -f -- %q' "$remote_tmp"
-            ssh "${ssh_opts[@]}" "$remote" "$rm_cmd" >/dev/null 2>&1 || true
-          }
-          trap cleanup EXIT
-          scp "${scp_opts[@]}" "dist/$ARTIFACT_NAME" "$remote:$remote_tmp"
-          printf -v deploy_cmd 'sudo /usr/local/sbin/campfire-kitchen-install-release deploy %q %q %q %q' \
-            "$remote_tmp" "$VERSION" "$EXPECTED_SHA256" "$SOURCE_SHA"
-          deploy_output="$(ssh "${ssh_opts[@]}" "$remote" "$deploy_cmd")"
+          remote="${DEPLOY_USER}@${DEPLOY_HOST}"
+          deploy_output="$({
+            printf 'version=1 tag=v%s sha256=%s\n' "$VERSION" "$EXPECTED_SHA256"
+            cat "dist/$ARTIFACT_NAME"
+          } | ssh "${ssh_opts[@]}" "$remote" deploy)"
           printf '%s\n' "$deploy_output"
-          served_sha="$(sed -n 's/^served_sha256=//p' <<<"$deploy_output" | tail -n 1)"
-          [ "$served_sha" = "$EXPECTED_SHA256" ] || {
-            echo "Server installer did not prove the live response hash" >&2
+          grep -Fq 'deploy-release: 完成' <<<"$deploy_output" || {
+            echo "Restricted server entry did not report a successful deploy" >&2
             exit 1
           }
-          echo "served_sha256=$served_sha" >> "$GITHUB_OUTPUT"
-          trap - EXIT
-          cleanup
+          grep -Fq "sha256=$EXPECTED_SHA256" <<<"$deploy_output" || {
+            echo "Server success receipt did not contain the expected sha256" >&2
+            exit 1
+          }
+          echo "server_receipt<<EOF" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$deploy_output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Verify the public site matches the Release bytes
+        env:
+          EXPECTED_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
+        run: |
+          set -euo pipefail
+          body="$RUNNER_TEMP/public-index.html"
+          headers="$RUNNER_TEMP/public-headers.txt"
+          curl -fsS --retry 5 --retry-delay 2 --max-time 20 -o "$body" "$PUBLIC_URL"
+          served_sha="$(sha256sum "$body" | awk '{print $1}')"
+          [ "$served_sha" = "$EXPECTED_SHA256" ] || {
+            echo "Public site sha256 mismatch: $served_sha" >&2
+            exit 1
+          }
+          curl -fsSI --retry 3 --retry-delay 1 --max-time 20 -o "$headers" "$PUBLIC_URL"
+          tr -d '\r' < "$headers" | grep -qi '^X-Content-Type-Options:[[:space:]]*nosniff[[:space:]]*$' || {
+            echo "Public site is missing X-Content-Type-Options: nosniff" >&2
+            exit 1
+          }
+          echo "SERVED_SHA256=$served_sha" >> "$GITHUB_ENV"
 
       - name: Record successful deployment on the Release
         env:
@@ -280,7 +299,6 @@ jobs:
           SOURCE_SHA: ${{ needs.build-release.outputs.source_sha }}
           ARTIFACT_NAME: ${{ needs.build-release.outputs.artifact_name }}
           ARTIFACT_SHA256: ${{ needs.build-release.outputs.artifact_sha256 }}
-          SERVED_SHA256: ${{ steps.remote.outputs.served_sha256 }}
         run: |
           set -euo pipefail
           receipt="campfire-kitchen-v${VERSION}.deployment.json"
@@ -295,7 +313,7 @@ jobs:
               'artifact': os.environ['ARTIFACT_NAME'],
               'artifactSha256': os.environ['ARTIFACT_SHA256'],
               'servedSha256': os.environ['SERVED_SHA256'],
-              'site': 'http://124.223.114.109/',
+              'site': os.environ['PUBLIC_URL'],
               'workflowRun': f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
               'deployedAt': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
           }
@@ -311,7 +329,6 @@ jobs:
             echo "- version: \`$VERSION\`"
             echo "- source: \`$SOURCE_SHA\`"
             echo "- Release artifact: \`$ARTIFACT_NAME\`"
-            echo "- artifact sha256: \`$ARTIFACT_SHA256\`"
-            echo "- live served sha256: \`$SERVED_SHA256\`"
-            echo "- site: http://124.223.114.109/"
+            echo "- Release/public sha256: \`$ARTIFACT_SHA256\`"
+            echo "- site: $PUBLIC_URL"
           } >> "$GITHUB_STEP_SUMMARY"
