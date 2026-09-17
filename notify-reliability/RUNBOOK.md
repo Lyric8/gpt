@@ -25,6 +25,17 @@ cd "$DELIVERY/implementation"
 
 人工核对：微信是否使用 auto-TTS（依赖者不能直接切换）；其他进程是否会直接调用 iLink；旧 sender/systemd/cron 的管理器与真实 unit 名称；现有失败行是否对应旧回合而不是较新待恢复回合；独立远程告警是否已接好。
 
+### A.1 remote_alert 离线测试
+
+本交付新增 `tests/test_alerting.py`，覆盖 OPEN、10 分钟 UPDATE、连续两次健康后的 RECOVERED、本地 state 丢失后由 spool 重建、push 失败保留原事件、成功后按同一 `alert_id` 归档，以及 Healthchecks secret 不进入 stdout。它只用临时目录和 mock，不访问生产微信/GitHub/Healthchecks。
+
+```bash
+cd "$DELIVERY/implementation"
+"$PY" -m unittest tests.test_alerting -v
+```
+
+这只是离线状态机门，不等价于 E 节的宿主真实故障演练。
+
 ## B. 冻结和备份
 
 1. 等正在执行的 Agent 回合结束；暂停新任务入口和会产生微信发送的定时任务。**重启会打断未结束回合，不用粗暴重启解决限流。**
@@ -52,6 +63,12 @@ cd "$DELIVERY/implementation"
 
 混合管理器用 `user:hermes-gateway.service` 与 `system:campfire-sender.service`。安装器不会停止、启动或重启服务；未知/仍运行的 unit 直接拒绝。记录输出 `BACKUP=...`。安装期间任何失败都保持服务停止，按备份恢复，不能带着半套源码启动。
 
+### B.1 直连生产者必须与切换同窗收口
+
+宿主已确认 `tools/send_message_tool.py::_send_weixin()` 会调用 `gateway.platforms.weixin.send_weixin_direct()`。本交付的 `install.py` 已在 staged `gateway/platforms/weixin.py` 的 `send_weixin_direct()` 入口加 `reliable_weixin.enabled()` 守卫，并在启用时转为 `enqueue_direct()`；因此生产切换后该工具不能再绕过 Outbox 直接命中 iLink。
+
+在真正 restart 前必须对 stage 做一次文本/AST 核对，确认 `send_weixin_direct` 内存在 `enqueue_direct`，apply 后再核对生产文件。若该 hook 因上游源码变化未进入 stage，`source_check` 必须失败，不能带着直连旁路上线。保留的显式人工 canary 也不得被任何自动 retry loop 调用。
+
 ## C. 移交历史义务（仍停机）
 
 只设置已有的非密钥账户标识；不得把 token/context_token 写进环境文件或命令示例。以下值从当前运行配置核对，不向仓库回传。
@@ -75,14 +92,26 @@ CLI=("$PY" -m gateway.wx_outbox_cli --db "$HERMES_HOME/state.db" \
 
 遇到 `manual_partial_replay_required` 必须核对；明确接受历史片段可能重复后，才使用 `--accept-partial-duplicates`。历史内容带补发/不确定提示，不宣称零重复。`outbox/*.staged` 先保留，禁止再解析日志推定送达。旧账本只包含文字时，不会凭空恢复未保存的附件；按原生成文件和任务产物核对补齐。
 
-## D. 新操作入口与定时采集
+## D. 新操作入口、A 层 alert spool、B 层 dead-man
+
+### D.1 安装脚本与 unit（只安装，不启动）
 
 ```bash
 install -m 700 "$DELIVERY/implementation/ops/outbox-ops.sh" "$HERMES_HOME/scripts/outbox-ops.sh"
+install -m 700 "$DELIVERY/implementation/ops/wx_outbox_alert.py" "$HERMES_HOME/scripts/wx_outbox_alert.py"
 mkdir -p "$HOME/.config/systemd/user"
 install -m 644 "$DELIVERY/implementation/ops/"wx-outbox-*.service "$HOME/.config/systemd/user/"
 install -m 644 "$DELIVERY/implementation/ops/"wx-outbox-*.timer "$HOME/.config/systemd/user/"
+mkdir -p "$HERMES_HOME/cache/wx-outbox-alerts"
+chmod 700 "$HERMES_HOME/cache/wx-outbox-alerts"
+systemctl --user daemon-reload
 ```
+
+A 层由三部分组成：`wx-outbox-watchdog.timer/service` 每 20 秒执行一次健康观察；失败或恢复事件先以 0600 JSON 原子写入 `~/.hermes/cache/wx-outbox-alerts/pending/`；`wx-outbox-alert-sender.timer/service` 每 30 秒独立重试，通过既有 `chat-push.sh` 投到 GitHub chat 控制面，成功后同一 `alert_id` 原样移动到 `sent/`。alert sender 从不调用微信 Outbox，也不依赖网关进程存活。
+
+watchdog 同时保留 `OnFailure=wx-outbox-alert-sender.service`，因此首次失败会立即尝试推送；网络/GitHub 不可用时 event 仍留在 `pending/`，30 秒 sender timer 后续补投。sender 使用本地 `flock` 防止 OnFailure 与 timer 并发产生双 push。
+
+### D.2 A 层非密钥环境
 
 在 `$HERMES_HOME/reliable-weixin-ops.env` 写入下面这些**非密钥**变量，权限 600。用真实值替换标识，激活秒数取切换时的 `date +%s`，不是任意回溯历史。
 
@@ -94,9 +123,43 @@ WX_ACCOUNT_ID=实际传输账户标识
 WX_CHAT_ID=实际接收方标识
 WX_PROFILE=default
 WX_ACTIVATION_EPOCH=实际激活Unix秒数
+WX_ALERT_SPOOL=/home/ubuntu/.hermes/cache/wx-outbox-alerts
+CHAT_PUSH_SCRIPT=/home/ubuntu/.hermes/scripts/chat-push.sh
+CHAT_PUSH_STYLE=path-file
 ```
 
-用户级 timer 要在用户 manager 存活时才工作。先确认已有 linger/用户服务策略，不能把交互登录保持在线当成长驻保障。原 sender 是系统级，新 collector/watchdog 是用户级；这是明确的服务边界，不要混用 systemctl 的管理器。
+`WX_ACCOUNT_ID` 进入告警正文前会被单向散列成稳定脱敏 ID；`host_id` 默认由本机 machine-id/hostname 单向散列，不回传原值。事件 reason 只使用固定分类文本，不包含 token、context、消息正文或原始异常响应。
+
+`CHAT_PUSH_STYLE` 只定义现有 `chat-push.sh` 的本地调用签名，不引入新的推送器：
+
+- `path-file`：`chat-push.sh <chat-relative-path> <payload-file>`；
+- `file-path`：`chat-push.sh <payload-file> <chat-relative-path>`；
+- `stdin-path`：payload 走 stdin，argv 只有目标 path。
+
+宿主验收前必须只读检查现有 `chat-push.sh`，选择与其真实接口一致的 style；不确定就 fail closed，不能靠“多试几种参数”冒险制造重复远端文档。远端文件名由 event 自身稳定 `observed_at + state/failure_class` 生成，retry 不重新取当前时间。
+
+### D.3 B 层 Healthchecks.io secret 只由老板本人落盘
+
+代码与 unit 固定读取：
+
+```text
+~/.config/hermes/wx-outbox-monitor.env
+```
+
+该文件不是交付物，Hermes 不创建外部账号、不索取 URL、不把 URL 写入 chat/Git/state.db/journal/argv。老板本人在宿主本地创建，目录 0700、文件 0600，内容只需要：
+
+```text
+HEALTHCHECKS_PING_URL=https://hc-ping.com/<仅宿主本地保存的secret>
+HEALTHCHECKS_TIMEOUT_SECONDS=10
+```
+
+`wx-outbox-heartbeat.service` 在进程内从环境读取 URL，用 Python stdlib 发 HTTPS GET；错误日志只写错误类别，绝不打印 URL。`wx-outbox-heartbeat.timer` 每 60 秒独立触发，不依赖 `hermes-gateway.service`、Outbox worker、watchdog 或微信链。
+
+Healthchecks.io 侧把 expected period 设为 60 秒、grace/超时门设为 180 秒，并把 DOWN/恢复通知配置到老板可在主机外收到的通道。外部账号和通知通道都由老板控制；未配置时 B 层保持未启用，`remote_alert` 只能是 PARTIAL。
+
+### D.4 原 collector 仍只负责业务通知采集
+
+用户级 timer 要在用户 manager 存活时才工作。先确认已有 linger/用户服务策略，不能把交互登录保持在线当成长驻保障。原 sender 是系统级，新 collector/watchdog/alert sender/heartbeat 是用户级；这是明确的服务边界，不要混用 systemctl 的管理器。
 
 `collect` 会接管旧文件队列，再读取激活水位后的全部不可变 cron 输出。旧 sender 必须保持关闭，否则兼容采集器和旧发送者会竞争。自动化升级为直接使用：
 
@@ -115,7 +178,9 @@ cd "$HERMES_ROOT"
 # 按真实管理器启动且只启动网关，不启动旧 sender：
 sudo systemctl start hermes-gateway.service
 systemctl --user daemon-reload
-systemctl --user enable --now wx-outbox-watchdog.timer wx-outbox-collector.timer
+systemctl --user enable --now wx-outbox-watchdog.timer wx-outbox-collector.timer wx-outbox-alert-sender.timer
+# 只有老板已在宿主本地落好 Healthchecks secret 后才启用 B：
+systemctl --user enable --now wx-outbox-heartbeat.timer
 sudo systemctl disable campfire-sender.service
 "${CLI[@]}" health
 ```
@@ -128,10 +193,20 @@ sudo systemctl disable campfire-sender.service
 - 一条超过 4000 字的测试回复；每个编号/片序只收到一次，原文无缺字。默认每片间隔 20 秒。
 - 文字加实际小附件；打开附件并核对散列。原文件在 admitted 后删除，仍能交付已保存快照。
 - 单独安排空闲维护窗口重启，确认已 accepted 片不补发、未完成片继续，且不会重新执行已经产出正文的 Agent 工具回合。
-- 确认所有手动/工具/cron 发送都走新入口；没有未经幂等 key 的外层循环对 `durable_queued` 重复创建业务意图。
-- 微信不可用时，独立于微信的运维接收端能收到/看到 watchdog 故障。仅看到 journal 不算远程告警验收。
+- 确认所有手动/工具/cron 发送都走新入口；`send_message_tool.py` 走 `send_weixin_direct -> enqueue_direct`，没有未经幂等 key 的外层循环对 `durable_queued` 重复创建业务意图。
 
-必须分别回报：本地/宿主测试结果、真实微信接收证据、附件散列、独立告警证据、生产是否重启、历史补发哪些 ID 已 accepted。敏感正文和凭据不回传。
+### E.1 remote_alert 四项硬门
+
+`remote_alert` 只有以下四项全部通过才是 PASS；A/B 任一缺失都只能记 PARTIAL：
+
+1. **A / OPEN**：人为让 watchdog 返回失败但保持宿主联网。一次 20 秒检查周期内，`pending/` 必须先出现 0600 spool event，随后 `chat/to-gpt/` 出现 OPEN。事件必须写 `weixin_outbox_used: false`；不得调用微信。
+2. **A / 节流与恢复**：保持同一故障至少 12 分钟。首次 OPEN 后 10 分钟内不得重复；持续故障最多每 10 分钟一条 UPDATE。恢复后必须连续两个 watchdog 周期健康（20s x 2，至少 40 秒），随后恰好一条 RECOVERED。`first_seen_at` 保持同一 incident，`alert_id` 每个物理事件唯一。
+3. **A / GitHub 断网恢复**：阻断到 GitHub/chat-push 的出站后制造失败，确认 event 留在 `pending/`；恢复网络后补投，同一文件中的 `alert_id` 不变，成功后原样进入 `sent/`。不能因 push 失败丢事件或重新生成另一个 OPEN。
+4. **B / dead-man**：停 `wx-outbox-heartbeat.timer`（不必停真实整机）超过 180 秒，主机外必须看到 DOWN；恢复 timer/ping 后看到恢复。此实验不读取/打印 ping URL。
+
+A 的事件分类为：`watchdog_failed` / `account_paused` / `queue_stalled` / `disk_low` / `clock_anomaly` / `sender_unhealthy`。`dedupe_key = SHA-256("wx-outbox-watchdog\0" + host_id + "\0" + failure_class + "\0" + account_id_or_empty)`；observed_at、PID、随机 nonce 不进入 dedupe key。
+
+必须分别回报：本地/宿主测试结果、真实微信接收证据、附件散列、A 层 OPEN/UPDATE/RECOVERED 的 `alert_id` 与 GitHub 文档、B 层主机外 DOWN/恢复证据、生产是否重启、历史补发哪些 ID 已 accepted。敏感正文和凭据不回传。
 
 ## F. 人为故障注入（不污染生产账户）
 
@@ -141,6 +216,7 @@ cd "$DELIVERY/implementation"
 "$PY" -m unittest tests.test_outbox.AsyncTests.test_repeated_rate_limits_then_success_exact_physical_ids -v
 "$PY" -m unittest tests.test_outbox.CoreTests.test_real_sigkill_after_provider_receipt_before_local_ack -v
 "$PY" -m unittest tests.test_outbox.CoreTests.test_retention_does_not_delete_700_pending -v
+"$PY" -m unittest tests.test_alerting -v
 ```
 
 测试目录是 Python package（有 `__init__.py`）；也可用 `discover -s tests -v` 执行全部。
@@ -157,19 +233,24 @@ cd "$DELIVERY/implementation"
 "${CLI[@]}" health
 "${CLI[@]}" status '完整outbox-id'
 journalctl --user -u wx-outbox-watchdog.service --since '10 minutes ago'
+journalctl --user -u wx-outbox-alert-sender.service --since '10 minutes ago'
+journalctl --user -u wx-outbox-heartbeat.service --since '10 minutes ago'
+find "$HERMES_HOME/cache/wx-outbox-alerts/pending" -maxdepth 1 -type f -name '*.json' -printf '%f\n'
 ```
 
 `queued/retry`：查看 next_at，等待真实冷却，不重启、不复制正文另发。
 `blocked`：按错误码修复登录、缺文件、超大小、ACK 契约或源身份；然后 `"${CLI[@]}" resume`。冲突记录不能用普通 resume 释放，需要核对源事件并以明确新业务 key 重新提交。
 心跳过期：停止产生新任务，检查网关 worker 异常；不要趁旧进程还在运行时强行删除 lock 文件。
-磁盘不足：先释放无关空间/恢复备份能力，未完成 Outbox 不是可清理缓存。
+磁盘不足：先释放无关空间/恢复备份能力，未完成 Outbox 与未投递 alert spool 都不是可清理缓存。
+A 层 `pending/` 持续堆积：只检查 `chat-push.sh`/GitHub 出站与 `CHAT_PUSH_STYLE`，不要改走微信作为兜底。
+B 层 heartbeat 失败：检查网络/EnvironmentFile 权限；journal 只允许出现错误类别，不允许出现 secret URL。
 
 ## H. 回滚（一步一条）
 
 **任何时刻都可停止发送并保全队列；恢复旧直发能力和保留未完成义务不能靠恢复旧 DB 快照同时自动完成。**
 
 1. 暂停新任务生产。
-2. 停止两个新 timer：`systemctl --user stop wx-outbox-collector.timer wx-outbox-watchdog.timer`。
+2. 停止四个新 timer：`systemctl --user stop wx-outbox-collector.timer wx-outbox-watchdog.timer wx-outbox-alert-sender.timer wx-outbox-heartbeat.timer`。保留 `~/.hermes/cache/wx-outbox-alerts/`，未投递告警不得删除。
 3. 等活跃 Agent 回合结束后停止网关；异常紧急停机会中断回合，必须记录。
 4. 保持旧 `campfire-sender` 停止，确认两个发送进程均退出。停止新 timer 不等于停止网关 worker。
 5. 使用 SQLite 在线备份保存当前 state.db；保留全部新表、原文、附件和已确认进度，严禁恢复 pre-install DB 覆盖当前 ACK。
