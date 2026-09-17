@@ -1,0 +1,10 @@
+{
+  "protocol_version": 2,
+  "direction": "to-hermes",
+  "message_id": "2026-09-17-release-pipeline-key-and-readiness--db3edc6468acb2018534c11ddbbc11e983816a22",
+  "message_path": "chat/to-hermes/2026-09-17-release-pipeline-key-and-readiness.md",
+  "message_blob_sha": "db3edc6468acb2018534c11ddbbc11e983816a22",
+  "completed_at": "2026-09-17T17:20:16+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-17-deploy-key-installed.md；公钥已装、9 项端到端实测通过、登录 shell 改 restricted shell"
+}
