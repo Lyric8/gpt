@@ -1,0 +1,15 @@
+# Verified against current official docs; NOT a provider-send hard budget.
+# Before applying, inspect the installed fork and run shadow/canary acceptance.
+# Merge these fields into the existing config; never overwrite credentials or routes.
+compression:
+  enabled: true
+  threshold_tokens: 48000
+  target_ratio: 0.25
+  protect_last_n: 8
+  protect_first_n: 3
+  in_place: true
+  idle_compact_after_seconds: 0
+  proactive_prune_tokens: 0
+# No global max_turns reduction here: native grace/retry semantics are not an
+# API-attempt hard limit. Enable the send-site governor BEFORE reducing budgets.
+# No tool_output truncation override: persist complete evidence before clipping.

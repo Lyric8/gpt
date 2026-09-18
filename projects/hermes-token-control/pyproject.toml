@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-token-control"
+version = "1.0.0"
+description = "Durable token budgets, evidence spill, local event scheduling and usage accounting"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+hermes-token-control = "hermes_token_control.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["hermes_token_control*"]

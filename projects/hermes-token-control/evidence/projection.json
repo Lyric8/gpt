@@ -1,0 +1,49 @@
+{
+  "baseline_M": 443.9,
+  "total_input_M": 441.23,
+  "main_input_mean": 263596.16801768605,
+  "largest_session_input_mean": 269252.2658610272,
+  "cron_input_mean": 70923.48284960422,
+  "cron_calls_mean": 24.19148936170213,
+  "per_turn": {
+    "n": 85,
+    "sum": 1096,
+    "mean": 12.894117647058824,
+    "median": 10,
+    "p95_nearest_rank": 39,
+    "max": 72
+  },
+  "scenarios": {
+    "conservative": {
+      "main_M": 60.1824,
+      "inbox_M": 15.573599999999999,
+      "other_M": 2.98,
+      "auxiliary_reserve_M": 5,
+      "total_M": 83.736,
+      "retained_ratio": 0.18863708042351882,
+      "reduction_pct": 81.13629195764813,
+      "factor": 5.301184675647272
+    },
+    "target": {
+      "main_M": 34.128,
+      "inbox_M": 4.431,
+      "other_M": 2.98,
+      "auxiliary_reserve_M": 5,
+      "total_M": 46.538999999999994,
+      "retained_ratio": 0.1048411804460464,
+      "reduction_pct": 89.51588195539536,
+      "factor": 9.538236747673995
+    },
+    "stress": {
+      "main_M": 88.408,
+      "inbox_M": 28.308,
+      "other_M": 2.98,
+      "auxiliary_reserve_M": 5,
+      "total_M": 124.69600000000001,
+      "retained_ratio": 0.2809101148907412,
+      "reduction_pct": 71.90898851092588,
+      "factor": 3.5598575736190408
+    }
+  },
+  "notes": "Rounded input evidence; projections, not production A/B. All original output tokens retained; auxiliary reserve explicitly added. 85 turns not the same population as all API calls."
+}
