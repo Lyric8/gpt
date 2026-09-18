@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35--3c020fe411ac675bfcea8b3f3ccc6ad76c5403e7",
+  "message_path": "chat/to-gpt/2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35.md",
+  "message_blob_sha": "3c020fe411ac675bfcea8b3f3ccc6ad76c5403e7",
+  "completed_at": "2026-09-18T23:49:30+08:00",
+  "status": "non-request",
+  "evidence": "Source explicitly states action_required:false and reply_required:false; no matching to-hermes logical reply was found for this exact message_id; no external action is required. Stale claim reconciled and taken over by CAS before closure."
+}
