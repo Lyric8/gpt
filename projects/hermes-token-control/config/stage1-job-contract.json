@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "mode": "stage1-no-hard-cap",
+  "evidence": {
+    "branch": "hermes/20260918-token-audit",
+    "cron_jobs_blob_sha": "a9418c6e302cc3eb865f558d5ed59d2bdb453e21",
+    "scheduler_ids_in_evidence": "unknown"
+  },
+  "global_invariants": {
+    "detectors_start_model": false,
+    "provider_calls_per_probe_round": 0,
+    "observation_failure_means_no_change": false,
+    "hard_budget_gate_enabled": false,
+    "interactive_owner_channel_budget_blocking": false,
+    "git_event_identity": "source_path + source_blob_sha",
+    "git_head_is_event_identity": false
+  },
+  "exit_codes": {
+    "0": "healthy/no new deterministic work",
+    "10": "new deterministic work queued or existing pending work remains",
+    "20": "observation/infrastructure error; do not advance seen state",
+    "21": "protocol/config drift; do not advance seen state",
+    "22": "scheduler binding ambiguous or missing; do not mutate jobs",
+    "30": "health failure/incident recorded and durable alert queued"
+  },
+  "jobs": [
+    {
+      "title": "campfire-kitchen 交接受件箱",
+      "observed_schedule": {"kind": "interval", "minutes": 5},
+      "observed_mode": "agent",
+      "stage1_mode": "no_agent detector + agent only for claimed business event",
+      "no_event_rule": "after a successful source-tree scan, every chat/to-hermes source_path+blob_sha is already represented by local seen/reconciliation state and no due local retry exists",
+      "failure_rule": "return 20/21, preserve prior seen state/cursor, durable-alert; never report unchanged",
+      "model_calls_probe": 0,
+      "agent_target": "4-6 provider sends per reasoning segment; alert above 6, strong alert above 12; never block solely for budget"
+    },
+    {
+      "title": "campfire-kitchen 发布兜底与核验",
+      "observed_schedule": {"kind": "interval", "minutes": 1},
+      "observed_mode": "agent",
+      "stage1_mode": "no_agent release/health detector; known runbook deterministic; unknown incident may hand off once",
+      "no_event_rule": "latest release request source_path+blob_sha already has a verified deployment receipt for that exact source and current production health/deploy identity matches the receipt",
+      "failure_rule": "probe error is incident/20 or 30, never unchanged; do not deploy when evidence is ambiguous",
+      "model_calls_probe": 0,
+      "agent_target": "unknown incident target <=4 provider sends before checkpoint/alert; soft only, no budget rejection"
+    },
+    {
+      "title": "发送者崩溃自动修复",
+      "observed_schedule": {"kind": "interval", "minutes": 10},
+      "observed_mode": "agent",
+      "stage1_mode": "no_agent health/runbook",
+      "no_event_rule": "sender service healthy, durable outbox advancing or empty, and no unreconciled sender incident source_path+blob_sha",
+      "failure_rule": "known restart policy is deterministic; unknown/crash-loop state creates one incident and durable alert, never repeated model polling",
+      "model_calls_probe": 0,
+      "agent_target": "unknown incident target <=4 provider sends; repeated identical failure deduplicated by incident identity"
+    },
+    {
+      "title": "取回 GPT Pro 可靠性方案",
+      "observed_schedule": {"kind": "interval", "minutes": 8},
+      "observed_mode": "agent",
+      "stage1_mode": "no_agent retrieval state machine",
+      "no_event_rule": "no outstanding request source_path+blob_sha, or the exact request already has a verified terminal assistant response artifact",
+      "failure_rule": "DOM/network/parse uncertainty returns 20 and keeps request outstanding; deadline breach alerts without asking a model to poll",
+      "model_calls_probe": 0,
+      "agent_target": "only genuinely ambiguous recovered content may hand off once; target <=4 provider sends"
+    },
+    {
+      "title": "取回 GPT Pro 答复（6aac476f）",
+      "observed_schedule": {"kind": "interval", "minutes": 10},
+      "observed_mode": "agent",
+      "stage1_mode": "no_agent retrieval state machine",
+      "no_event_rule": "no outstanding request source_path+blob_sha, or the exact request already has a verified terminal assistant response artifact",
+      "failure_rule": "DOM/network/parse uncertainty returns 20 and keeps request outstanding; deadline breach alerts without asking a model to poll",
+      "model_calls_probe": 0,
+      "agent_target": "only genuinely ambiguous recovered content may hand off once; target <=4 provider sends"
+    },
+    {
+      "title": "ChatGPT 长期会话自检",
+      "observed_schedule": {"kind": "cron", "expr": "0 9 * * 1"},
+      "observed_mode": "no_agent",
+      "stage1_mode": "keep no_agent",
+      "model_calls_probe": 0
+    },
+    {
+      "title": "slot 轮换检查",
+      "observed_schedule": {"kind": "interval", "minutes": 30},
+      "observed_mode": "no_agent",
+      "stage1_mode": "keep no_agent",
+      "model_calls_probe": 0
+    },
+    {
+      "title": "回复救生员（补发被限流吞掉的回复）",
+      "observed_schedule": {"kind": "interval", "minutes": 2},
+      "observed_mode": "no_agent",
+      "stage1_mode": "keep no_agent and independent from model budget/accounting alerts",
+      "model_calls_probe": 0
+    }
+  ]
+}
