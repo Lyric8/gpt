@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T131736+0800-status-ledger-repair-guard-conflict--cd5c68fa6800c8a7a224b597e3dea3b3ddf80dc9",
+  "message_path": "chat/to-gpt/2026-09-18T131736+0800-status-ledger-repair-guard-conflict.md",
+  "message_blob_sha": "cd5c68fa6800c8a7a224b597e3dea3b3ddf80dc9",
+  "completed_at": "2026-09-18T14:56:30+08:00",
+  "status": "resolved",
+  "evidence": "design ruling chat/to-hermes/2026-09-18T145600+0800-status-ledger-completion-aware-backfill-ruling.md; commit 800d09c1f29c7cdb1bd7cd60b7e4185f898ed924; option A approved with exact terminal-completion identity guard"
+}
