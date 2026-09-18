@@ -1,0 +1,59 @@
+test_counter_reset_rejected (test_stage_a.AccountingTests.test_counter_reset_rejected) ... ok
+test_disappeared_row_rejected (test_stage_a.AccountingTests.test_disappeared_row_rejected) ... ok
+test_gross_without_double_counting_reasoning (test_stage_a.AccountingTests.test_gross_without_double_counting_reasoning) ... ok
+test_live_wal_snapshot_delta (test_stage_a.AccountingTests.test_live_wal_snapshot_delta) ... ok
+test_scenarios_are_conditional (test_stage_a.AccountingTests.test_scenarios_are_conditional) ... ok
+test_url_and_task_not_exported (test_stage_a.AccountingTests.test_url_and_task_not_exported) ... ok
+test_checkpoint_removes_only_explicit_covered_closed_turn (test_stage_a.ContextTests.test_checkpoint_removes_only_explicit_covered_closed_turn) ... ok
+test_counter_failure_passes_original (test_stage_a.ContextTests.test_counter_failure_passes_original) ... ok
+test_full_disk_passes_original (test_stage_a.ContextTests.test_full_disk_passes_original) ... ok
+test_huge_context_sent_without_budget_gate (test_stage_a.ContextTests.test_huge_context_sent_without_budget_gate) ... ok
+test_incomplete_tool_group_not_closed (test_stage_a.ContextTests.test_incomplete_tool_group_not_closed) ... ok
+test_ledger_and_alert_failure_still_send (test_stage_a.ContextTests.test_ledger_and_alert_failure_still_send) ... stage_a: telemetry_unavailable; owner_request_not_blocked
+stage_a: telemetry_unavailable; owner_request_not_blocked
+ok
+test_matching_tool_group_closed (test_stage_a.ContextTests.test_matching_tool_group_closed) ... ok
+test_multimodal_content_preserves_entire_payload (test_stage_a.ContextTests.test_multimodal_content_preserves_entire_payload) ... ok
+test_mutating_broken_preparer_cannot_corrupt_original (test_stage_a.ContextTests.test_mutating_broken_preparer_cannot_corrupt_original) ... ok
+test_prepare_failure_still_sends_original (test_stage_a.ContextTests.test_prepare_failure_still_sends_original) ... ok
+test_real_provider_failure_is_not_swallowed_or_retried (test_stage_a.ContextTests.test_real_provider_failure_is_not_swallowed_or_retried) ... ok
+test_signed_message_extension_preserves_entire_payload (test_stage_a.ContextTests.test_signed_message_extension_preserves_entire_payload) ... ok
+test_tool_failure_manifest_keeps_failure_and_exact_bytes (test_stage_a.ContextTests.test_tool_failure_manifest_keeps_failure_and_exact_bytes) ... ok
+test_unknown_role_does_not_form_closed_turn (test_stage_a.ContextTests.test_unknown_role_does_not_form_closed_turn) ... ok
+test_unsupported_payload_passed_without_conversion (test_stage_a.ContextTests.test_unsupported_payload_passed_without_conversion) ... ok
+test_untrusted_checkpoint_cannot_remove_turns (test_stage_a.ContextTests.test_untrusted_checkpoint_cannot_remove_turns) ... ok
+test_fetch_failure_preserves_pending (test_stage_a.GitTests.test_fetch_failure_preserves_pending) ... ok
+test_initial_source_and_same_head_pending (test_stage_a.GitTests.test_initial_source_and_same_head_pending) ... ok
+test_long_filename_no_checkout (test_stage_a.GitTests.test_long_filename_no_checkout) ... ok
+test_no_new_work_only_after_reconciliation (test_stage_a.GitTests.test_no_new_work_only_after_reconciliation) ... ok
+test_own_receipt_commit_not_a_source_event (test_stage_a.GitTests.test_own_receipt_commit_not_a_source_event) ... ok
+test_protocol_drift_cannot_advance_seen (test_stage_a.GitTests.test_protocol_drift_cannot_advance_seen) ... ok
+test_same_head_due_retry (test_stage_a.GitTests.test_same_head_due_retry) ... ok
+test_same_path_new_blob (test_stage_a.GitTests.test_same_path_new_blob) ... ok
+test_actual_failure_reaches_durable_sender (test_stage_a.ProbeTests.test_actual_failure_reaches_durable_sender) ... ok
+test_alert_failure_is_explicit_partial_not_no_change (test_stage_a.ProbeTests.test_alert_failure_is_explicit_partial_not_no_change) ... stage_a: telemetry_unavailable; owner_request_not_blocked
+ok
+test_all_seven_probe_kinds_zero_model (test_stage_a.ProbeTests.test_all_seven_probe_kinds_zero_model) ... ok
+test_duplicate_failure_does_not_spawn_new_work (test_stage_a.ProbeTests.test_duplicate_failure_does_not_spawn_new_work) ... ok
+test_missing_assertion_is_drift (test_stage_a.ProbeTests.test_missing_assertion_is_drift) ... ok
+test_pending_work_not_hidden_by_healthy_probe (test_stage_a.ProbeTests.test_pending_work_not_hidden_by_healthy_probe) ... ok
+test_recovered_same_failure_is_new_episode (test_stage_a.ProbeTests.test_recovered_same_failure_is_new_episode) ... ok
+test_replayed_timestamp_is_error (test_stage_a.ProbeTests.test_replayed_timestamp_is_error) ... ok
+test_stale_observation_is_error_not_healthy (test_stage_a.ProbeTests.test_stale_observation_is_error_not_healthy) ... ok
+test_timeout_is_error_and_durable_alert (test_stage_a.ProbeTests.test_timeout_is_error_and_durable_alert) ... ok
+test_archive_round_trip (test_stage_a.StorageTests.test_archive_round_trip) ... ok
+test_attempt_accounting_root_survives_segments (test_stage_a.StorageTests.test_attempt_accounting_root_survives_segments) ... ok
+test_attempt_reuse_is_not_double_counted (test_stage_a.StorageTests.test_attempt_reuse_is_not_double_counted) ... ok
+test_completed_requires_external_verification (test_stage_a.StorageTests.test_completed_requires_external_verification) ... ok
+test_corrupted_archive_detected (test_stage_a.StorageTests.test_corrupted_archive_detected) ... ok
+test_notice_dedup_and_recovery (test_stage_a.StorageTests.test_notice_dedup_and_recovery) ... ok
+test_range_validates_address (test_stage_a.StorageTests.test_range_validates_address) ... ok
+test_read_range (test_stage_a.StorageTests.test_read_range) ... ok
+test_reconcile_rollback_bad_blob (test_stage_a.StorageTests.test_reconcile_rollback_bad_blob) ... ok
+test_sender_failure_retained_then_handoff (test_stage_a.StorageTests.test_sender_failure_retained_then_handoff) ... ok
+test_sender_memory_acceptance_is_not_ack (test_stage_a.StorageTests.test_sender_memory_acceptance_is_not_ack) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.598s
+
+OK

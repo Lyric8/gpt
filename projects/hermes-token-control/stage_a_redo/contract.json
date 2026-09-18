@@ -1,0 +1,158 @@
+{
+  "version": 2,
+  "mode": "observe-alert-project-never-budget-block",
+  "hard_budget_gate": false,
+  "future_owner_channel_eligible": false,
+  "identity": [
+    "source_path",
+    "source_blob_sha"
+  ],
+  "head_is_event_identity": false,
+  "failure_means_unchanged": false,
+  "jobs": [
+    {
+      "job": "inbox",
+      "observed_title": "campfire-kitchen 交接受件箱",
+      "observed_schedule": 5,
+      "previous_mode": "agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo scan",
+      "required_assertions": []
+    },
+    {
+      "job": "release",
+      "observed_title": "campfire-kitchen 发布兜底与核验",
+      "observed_schedule": 1,
+      "previous_mode": "agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job release",
+      "required_assertions": [
+        "deployment_identity_matches",
+        "healthy",
+        "receipt_verified"
+      ]
+    },
+    {
+      "job": "sender",
+      "observed_title": "发送者崩溃自动修复",
+      "observed_schedule": 10,
+      "previous_mode": "agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job sender",
+      "required_assertions": [
+        "no_unresolved_delivery",
+        "outbox_progressing",
+        "service_healthy"
+      ]
+    },
+    {
+      "job": "retrieve-reliability",
+      "observed_title": "取回 GPT Pro 可靠性方案",
+      "observed_schedule": 8,
+      "previous_mode": "agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job retrieve-reliability",
+      "required_assertions": [
+        "browser_observation_valid",
+        "request_binding_valid"
+      ]
+    },
+    {
+      "job": "retrieve-6aac476f",
+      "observed_title": "取回 GPT Pro 答复（6aac476f）",
+      "observed_schedule": 10,
+      "previous_mode": "agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job retrieve-6aac476f",
+      "required_assertions": [
+        "browser_observation_valid",
+        "request_binding_valid"
+      ]
+    },
+    {
+      "job": "session-check",
+      "observed_title": "ChatGPT 长期会话自检",
+      "observed_schedule": "0 9 * * 1",
+      "previous_mode": "no_agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job session-check",
+      "required_assertions": [
+        "session_binding_valid",
+        "session_usable"
+      ]
+    },
+    {
+      "job": "slot-check",
+      "observed_title": "slot 轮换检查",
+      "observed_schedule": 30,
+      "previous_mode": "no_agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job slot-check",
+      "required_assertions": [
+        "bindings_unique",
+        "replacement_verified_before_disable"
+      ]
+    },
+    {
+      "job": "lifeguard",
+      "observed_title": "回复救生员（补发被限流吞掉的回复）",
+      "observed_schedule": 2,
+      "previous_mode": "no_agent",
+      "scheduler_id": null,
+      "new_mode": "no_agent",
+      "max_physical_model_calls_per_probe": 0,
+      "entry": "python3 -m stage_a_redo probe --job lifeguard",
+      "required_assertions": [
+        "delivery_ledger_valid",
+        "sender_reachable"
+      ]
+    }
+  ],
+  "agent_classes": {
+    "owner_engineering": {
+      "hard_max": null,
+      "call_warning": 8,
+      "call_strong": 16
+    },
+    "inbox_reasoning": {
+      "hard_max": null,
+      "call_warning": 6,
+      "call_strong": 12
+    },
+    "incident_diagnosis": {
+      "hard_max": null,
+      "call_warning": 4,
+      "call_strong": 8
+    },
+    "recovered_content_ambiguity": {
+      "hard_max": null,
+      "call_warning": 2,
+      "call_strong": 4
+    }
+  },
+  "exit_codes": {
+    "0": "NO_NEW_EVENT",
+    "10": "DETERMINISTIC_WORK",
+    "11": "BUSY_NOT_HEALTHY",
+    "20": "OBSERVATION_ERROR",
+    "21": "PROTOCOL_DRIFT",
+    "22": "HOST_BINDING_ERROR",
+    "30": "DURABLE_INCIDENT",
+    "31": "EVENT_DURABLE_ALERT_DEGRADED"
+  },
+  "production_changed": false
+}

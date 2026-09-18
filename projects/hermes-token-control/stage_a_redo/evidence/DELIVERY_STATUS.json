@@ -1,0 +1,13 @@
+{
+  "status": "DOWNLOAD_COMPLETE_REPOSITORY_WRITE_BLOCKED",
+  "target_branch": "gpt/20260918-token-audit",
+  "target_prefix": "projects/hermes-token-control/stage_a_redo",
+  "connector": "GitHub.create_tree",
+  "multi_file_write_attempts": 2,
+  "error": "This tool call was blocked by OpenAI because we could not determine the safety status of the request.",
+  "commit_created": false,
+  "branch_updated": false,
+  "unreferenced_review_tree": "1fd3b755ac2a13ef4cf06716b1de2157579334d4",
+  "local_clone_attempt": "DNS resolution of github.com failed; no authenticated push attempted from container",
+  "production_changed": false
+}

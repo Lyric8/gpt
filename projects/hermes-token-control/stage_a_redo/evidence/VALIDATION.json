@@ -1,0 +1,12 @@
+{
+  "python_executed": "3.13.5",
+  "python_311_syntax_parse": "PASS",
+  "tests_executed": 51,
+  "result": "PASS",
+  "runtime_dependencies": "Python 3.11+ standard library and Git",
+  "host_python311_execution": false,
+  "production_deployed": false,
+  "real_model_calls_in_tests": 0,
+  "old_test_suite_rerun": false,
+  "local_git_publication_readback": "PASS (separate reproducible experiment)"
+}

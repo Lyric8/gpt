@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "environment": "isolated local Git bare repository, no network",
+  "python": "3.13.5",
+  "checks": [
+    "one multi-file commit published and every remote file read back byte-for-byte",
+    "second identical publication was idempotent with no new commit",
+    "existing worktree HEAD/index/untracked content preserved",
+    "unrelated repository content preserved",
+    "temporary private ref cleaned"
+  ],
+  "files_verified": 19,
+  "github_cloud_publication_tested": false
+}
