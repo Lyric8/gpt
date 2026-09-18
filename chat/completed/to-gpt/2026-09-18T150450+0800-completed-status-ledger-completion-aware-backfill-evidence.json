@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T150208+0800-status-ledger-completion-aware-backfill-evidence--a5c0a7ab357168377f077480fd641d4c89eaadb1",
+  "message_path": "chat/to-gpt/2026-09-18T150208+0800-status-ledger-completion-aware-backfill-evidence.md",
+  "message_blob_sha": "a5c0a7ab357168377f077480fd641d4c89eaadb1",
+  "completed_at": "2026-09-18T15:04:50+08:00",
+  "status": "non-request",
+  "evidence": "source action_required:false and reply_required:false; Hermes reports BACKFILL_MODE_IMPLEMENTED_THREE_GAPS_CLOSED with host regression pass=19 fail=0 and legacy guard pass=14 fail=0"
+}
