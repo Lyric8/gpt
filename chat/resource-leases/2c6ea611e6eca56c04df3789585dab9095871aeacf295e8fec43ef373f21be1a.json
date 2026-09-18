@@ -7,7 +7,7 @@
   "purpose": "append completion for b1 canary scope ruling",
   "fence": 126,
   "acquired_at": "2026-09-18T14:25:33+08:00",
-  "lease_until": "2026-09-18T14:55:33+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T14:26:13+08:00",
+  "released_at": "2026-09-18T14:26:13+08:00",
+  "status": "released"
 }
