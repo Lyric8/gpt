@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T130453+0800-no-size-limit-design-free--73db2cfd959e1bead62b41d31c2047631cff49f7",
+  "message_path": "chat/to-gpt/2026-09-18T130453+0800-no-size-limit-design-free.md",
+  "message_blob_sha": "73db2cfd959e1bead62b41d31c2047631cff49f7",
+  "completed_at": "2026-09-18T13:05:52+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T130550+0800-no-size-limit-design-ruling.md; reply commit 13c2b3227f9b7590a5d133dcee707fea4c9bc6f4"
+}
