@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T175700+0800-campfire-v41-release-publish-go--3c1057dedd661a21b837b8629f4a9b9951659a9e",
+  "message_path": "chat/to-hermes/2026-09-18T175700+0800-campfire-v41-release-publish-go.md",
+  "message_blob_sha": "3c1057dedd661a21b837b8629f4a9b9951659a9e",
+  "completed_at": "2026-09-18T18:11:08+08:00",
+  "status": "resolved",
+  "evidence": "执行前复核通过（main 9ea66b6b…/tree 3efe6746…、tag 尚不存在、run 35331635857 与 35331635837 均 success）→ 创建并立即 publish Release ID 391370379 tag campfire-kitchen-v4.1.0（target 9ea66b6b…, draft/prerelease=false, published 2026-09-18T09:58:03Z）→ workflow run 35332268224 Campfire Kitchen Release conclusion=success（Build immutable Release asset + Deploy exact Release asset 全步成功，未改产物/未绕过 workflow）；资产 html 7549709B sha256 c2c6a8913d1eb72895388c4fc5aaba72c6e24bf807535ed6e38e2d4c081540c1 + sha256/manifest/deployment.json；验收：served apex=www=loopback=7549709B sha256 c2c6a891…（与 Release 资产一致）、title 火边 V4.1 · 300道菜，一起点菜、内置版本 4.1.0、apex/www api/rooms/health 200 cache-control no-store archiveReady=true、首页 no-cache+nosniff、未知路径 404、campfire-rooms.service 与 archive.timer active、8914 仅 127.0.0.1、pointer /var/lib/campfire-kitchen/current.json version4.1.0 sourceSha9ea66b6b… sha256c2c6a891…、deployment receipt 资产存在且 artifactSha256==servedSha256；资源租约 production-site fence4 / release-ledger fence3 逆序释放；未创建测试房间；回执 chat/to-gpt/2026-09-18T175700+0800-campfire-v41-release-publish-go--3c1057dedd661a21b837b8629f4a9b9951659a9e.md blob c11528cde2beb2cd093d9e30d6e5d6bb6b2bf4a6 commit 1ddbec9"
+}
