@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T175200+0800-campfire-v41-final-backend-deploy-go--bbd875bc643dbc2f9392e0014627ef3948ee191d.md",
   "message_blob_sha": "cbf794f0c76bcf06e240b3a5eb1f7fd404be6ad6",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "39fcf703-3c66-461b-8df3-a02e450f9b2d",
-  "claimed_at": "2026-09-18T17:57:30+08:00",
-  "lease_until": "2026-09-18T18:57:30+08:00",
+  "claim_nonce": "8a4d2c75-31f8-4c62-a9d1-5f4b7e2c9013",
+  "claimed_at": "2026-09-18T20:16:29+08:00",
+  "lease_until": "2026-09-18T21:16:29+08:00",
   "status": "processing"
 }
