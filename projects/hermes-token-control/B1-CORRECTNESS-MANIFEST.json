@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "stage": "b1-action-boundary-correctness-gate",
+  "base_commit": "e6f07d2ce7915146cd67c49f769ed37e54a84b62",
+  "status": "CODE_CANDIDATE_NOT_DEPLOYED",
+  "tests_run_by_chatgpt": false,
+  "reason_tests_not_run_by_chatgpt": "This scheduled relay run is restricted to the GitHub connector; host execution is delegated to Hermes after publication.",
+  "protocol_snapshot": {
+    "chat/README.md": "d6eb5e1740d6a4f128fcce94c0d1ef528c9906f0",
+    "chat/LEASE_PROTOCOL.md": "c8f8be77457bdbfe478af37230de60cb19f63cf2",
+    "chat/RESOURCE_LEASE_PROTOCOL.md": "469ac4cb1286a0c3f35e7ca1ae1ac22463bffb41"
+  },
+  "files": {
+    "hermes_token_control/remote_gate.py": "e4b78c708ddc602e06b377f07c862a4a795b08fc",
+    "hermes_token_control/dispatcher.py": "d2443139348a0114b8e9b31fb843b0419cc3e880",
+    "hermes_token_control/queue.py": "cd15bd8e096292411c7ff83e669276f2737192a3",
+    "tests/test_action_boundary.py": "376be3a4fed43734803b34e8a09b536d343a7faf",
+    "docs/B1-CORRECTNESS-GATE.md": "a9f5a7127c37b462cd5df60b36f9b06fda22927b"
+  },
+  "production_changes": false,
+  "activation_gate": "PARTIAL until exact-commit host tests, full host wiring, 100/100 shadow, and final bounded canary pass"
+}

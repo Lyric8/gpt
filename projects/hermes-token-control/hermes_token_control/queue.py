@@ -4,7 +4,6 @@ import json
 import re
 import sqlite3
 import time
-import uuid
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Callable, Iterator
@@ -93,6 +92,32 @@ class EventQueue:
                       (channel, new_cursor))
         return inserted
 
+    def _with_payload(self, row: sqlite3.Row) -> dict[str, Any]:
+        result = dict(row)
+        result["payload"] = json.loads(self.store.read(row["payload_sha"]))
+        return result
+
+    def peek_due(self, *, channel: str | None = None, max_attempts: int = 5) -> dict[str, Any] | None:
+        """Read the oldest due event without changing attempts/lease state.
+
+        Stage-1 dispatch uses this before any local claim so remote completion and
+        STATUS can be re-read first. Remote uncertainty therefore does not consume
+        a local attempt or grant execution authority.
+        """
+        if max_attempts <= 0:
+            raise ValueError("max_attempts must be positive")
+        now = self.clock()
+        where_channel = " AND channel=?" if channel is not None else ""
+        params: tuple[Any, ...] = (now, max_attempts, now) + ((channel,) if channel is not None else ())
+        with self.tx() as c:
+            row = c.execute(
+                """SELECT * FROM events WHERE available<=? AND attempts<? AND
+                   (state='PENDING' OR (state='RUNNING' AND expires<=?))"""
+                + where_channel + " ORDER BY available,id LIMIT 1",
+                params,
+            ).fetchone()
+            return self._with_payload(row) if row is not None else None
+
     def claim(self, owner: str, *, ttl: float = 120, max_attempts: int = 5) -> dict[str, Any] | None:
         if not owner or not 0 < ttl <= 3600 or max_attempts <= 0:
             raise ValueError("invalid lease policy")
@@ -114,6 +139,39 @@ class EventQueue:
             result["payload"] = json.loads(self.store.read(row["payload_sha"]))
             return result
 
+    def claim_specific(self, event: str, owner: str, expected_version: str, *,
+                       ttl: float = 120, max_attempts: int = 5) -> dict[str, Any] | None:
+        """Claim exactly the event that passed the remote pre-claim gate."""
+        if not event or not owner or not expected_version or not 0 < ttl <= 3600 or max_attempts <= 0:
+            raise ValueError("invalid specific-claim policy")
+        now = self.clock()
+        with self.tx() as c:
+            row = c.execute("SELECT * FROM events WHERE id=?", (event,)).fetchone()
+            if row is None:
+                return None
+            if row["version"] != expected_version:
+                raise IntegrityError("event version changed under specific claim")
+            due = row["available"] <= now and (
+                row["state"] == "PENDING" or
+                (row["state"] == "RUNNING" and row["expires"] is not None and row["expires"] <= now)
+            )
+            if not due:
+                return None
+            if row["attempts"] >= max_attempts:
+                c.execute("UPDATE events SET state='BLOCKED',owner=NULL,expires=NULL WHERE id=?", (event,))
+                return None
+            epoch = row["epoch"] + 1
+            expires = now + ttl
+            c.execute(
+                "UPDATE events SET state='RUNNING',owner=?,epoch=?,expires=?,attempts=attempts+1 WHERE id=?",
+                (owner, epoch, expires, event),
+            )
+            result = dict(row)
+            result.update(owner=owner, epoch=epoch, expires=expires, state="RUNNING",
+                          attempts=row["attempts"] + 1)
+            result["payload"] = json.loads(self.store.read(row["payload_sha"]))
+            return result
+
     def _owned(self, c: sqlite3.Connection, event: str, owner: str, epoch: int) -> sqlite3.Row:
         row = c.execute("SELECT * FROM events WHERE id=?", (event,)).fetchone()
         if row is None or row["state"] != "RUNNING" or row["owner"] != owner or row["epoch"] != epoch:
@@ -121,6 +179,10 @@ class EventQueue:
         if row["expires"] <= self.clock():
             raise IntegrityError("local lease expired; reconcile before takeover")
         return row
+
+    def owned_event(self, event: str, owner: str, epoch: int) -> dict[str, Any]:
+        with self.tx() as c:
+            return self._with_payload(self._owned(c, event, owner, epoch))
 
     def renew(self, event: str, owner: str, epoch: int, *, ttl: float = 120) -> None:
         if not 0 < ttl <= 3600:
@@ -137,6 +199,63 @@ class EventQueue:
             self._owned(c, event, owner, epoch)
             c.execute("UPDATE events SET state='PENDING',available=?,owner=NULL,expires=NULL,receipt_sha=? WHERE id=?",
                       (self.clock()+delay, ref["sha256"], event))
+
+    def release_claim(self, event: str, owner: str, epoch: int, *, delay: float,
+                      reason: str, refund_attempt: bool = True) -> None:
+        """Fail closed after a gate/read error without burning the business retry budget."""
+        if delay < 0 or not reason:
+            raise ValueError("release requires nonnegative delay and reason")
+        ref = self.store.put_json({"reason": reason, "at": self.clock(), "gate_release": True})
+        with self.tx() as c:
+            row = self._owned(c, event, owner, epoch)
+            attempts = row["attempts"] - 1 if refund_attempt and row["attempts"] > 0 else row["attempts"]
+            c.execute(
+                """UPDATE events SET state='PENDING',available=?,owner=NULL,expires=NULL,
+                   attempts=?,receipt_sha=? WHERE id=?""",
+                (self.clock() + delay, attempts, ref["sha256"], event),
+            )
+
+    def reconcile_remote(self, event: str, expected_version: str, *, state: str,
+                         evidence: dict[str, Any]) -> None:
+        """Close an unclaimed/expired local event from authoritative remote readback.
+
+        This does not enqueue a notification: the business action already ended
+        remotely or the source explicitly says no action is required.
+        """
+        if state not in ("REMOTE_COMPLETED", "NON_REQUEST"):
+            raise ValueError("invalid reconciliation state")
+        if evidence.get("source_blob_sha") != expected_version:
+            raise IntegrityError("reconciliation evidence does not bind the event version")
+        ref = self.store.put_json(evidence)
+        now = self.clock()
+        with self.tx() as c:
+            row = c.execute("SELECT * FROM events WHERE id=?", (event,)).fetchone()
+            if row is None:
+                raise IntegrityError("unknown event")
+            if row["version"] != expected_version:
+                raise IntegrityError("reconciliation applies to another source version")
+            if row["state"] in ("DONE", "REMOTE_COMPLETED", "NON_REQUEST"):
+                return
+            if row["state"] == "RUNNING" and row["expires"] is not None and row["expires"] > now:
+                raise IntegrityError("cannot reconcile an event owned by another active local worker")
+            c.execute(
+                "UPDATE events SET state=?,owner=NULL,expires=NULL,receipt_sha=? WHERE id=?",
+                (state, ref["sha256"], event),
+            )
+
+    def reconcile_owned_remote(self, event: str, owner: str, epoch: int, *, state: str,
+                               evidence: dict[str, Any]) -> None:
+        if state not in ("REMOTE_COMPLETED", "NON_REQUEST"):
+            raise ValueError("invalid reconciliation state")
+        ref = self.store.put_json(evidence)
+        with self.tx() as c:
+            row = self._owned(c, event, owner, epoch)
+            if evidence.get("source_blob_sha") != row["version"]:
+                raise IntegrityError("reconciliation evidence does not bind the owned source version")
+            c.execute(
+                "UPDATE events SET state=?,owner=NULL,expires=NULL,receipt_sha=? WHERE id=?",
+                (state, ref["sha256"], event),
+            )
 
     def finish_local(self, event: str, owner: str, epoch: int, receipt: dict[str, Any]) -> None:
         """Caller has already read-back-verified remote completion and all required checks.
