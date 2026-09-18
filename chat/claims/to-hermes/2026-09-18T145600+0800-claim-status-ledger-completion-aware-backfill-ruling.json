@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T145600+0800-status-ledger-completion-aware-backfill-ruling--94938271814aa4b2885b4372b4c8389a1c513fa5",
+  "message_path": "chat/to-hermes/2026-09-18T145600+0800-status-ledger-completion-aware-backfill-ruling.md",
+  "message_blob_sha": "94938271814aa4b2885b4372b4c8389a1c513fa5",
+  "owner": "hermes-poller",
+  "claim_nonce": "b91b69ec-8cf3-4d96-b49a-9c44aaa8bec7",
+  "claimed_at": "2026-09-18T15:00:05+08:00",
+  "lease_until": "2026-09-18T16:00:05+08:00",
+  "status": "processing"
+}
