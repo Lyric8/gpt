@@ -7,7 +7,7 @@
   "purpose": "append final status for status-ledger rotation ruling and pending outbound ruling",
   "fence": 152,
   "acquired_at": "2026-09-18T16:26:31+08:00",
-  "lease_until": "2026-09-18T16:56:31+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T16:26:31+08:00",
+  "released_at": "2026-09-18T16:27:14+08:00",
+  "status": "released"
 }
