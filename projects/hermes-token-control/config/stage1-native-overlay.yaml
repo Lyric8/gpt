@@ -1,0 +1,13 @@
+# Stage 1 production overlay: context compression only.
+# This file intentionally contains NO provider-send budget gate.
+# Merge only the compression mapping into the installed Hermes config.
+# Never replace credentials, routes, provider/model settings, jobs, or sender config.
+compression:
+  enabled: true
+  threshold_tokens: 48000
+  target_ratio: 0.25
+  protect_last_n: 8
+  protect_first_n: 3
+  in_place: true
+  idle_compact_after_seconds: 0
+  proactive_prune_tokens: 0
