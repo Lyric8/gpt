@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb.md",
   "message_blob_sha": "d0e3b193a6538b07b74814318642e99c2cde0aac",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "52cf8979-2ad3-4502-b06a-c8e290d26031",
-  "claimed_at": "2026-09-18T14:31:36+08:00",
-  "lease_until": "2026-09-18T15:31:36+08:00",
+  "claim_nonce": "2e5dbcc9-7234-4dfb-9b27-51e0c88e44bc",
+  "claimed_at": "2026-09-18T16:13:08+08:00",
+  "lease_until": "2026-09-18T17:13:08+08:00",
   "status": "processing"
 }
