@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "stage": "stage1-no-hard-cap",
+  "base_verified_commit": "56b58a84f102a80c9c6005905fbf406c33ec3edf",
+  "candidate_parent_commit": "b098e7d77cdcb0e252d0be553a041e8af32571af",
+  "status": "PUBLISHED_NOT_DEPLOYED",
+  "tests_run_by_chatgpt": false,
+  "reason_tests_not_run_by_chatgpt": "This relay run is restricted to the GitHub connector; no local execution was used.",
+  "files": {
+    "config/stage1-native-overlay.yaml": "fb7988a8a6232fb31e7a410005534e06a17b0da1",
+    "config/stage1-job-contract.json": "b1a178f40b6143c26333e5933f542b5ddda728cf",
+    "config/stage1-protocol-snapshot.json": "fff260e6ad42857f123911536c67fcfeeced87eb",
+    "hermes_token_control/stage1.py": "4c013aa45cb0598b1c9d64c69583fa2e0d9363d0",
+    "hermes_token_control/source_scan.py": "9759c1a152c1574feda5ec895609adb6d12203ec",
+    "tests/test_stage1.py": "58a3433829403e123426b4beb5734e9935c41191",
+    "docs/STAGE1-NO-HARD-CAP.md": "3699fafc60ce648763e075edaf91ec8f5a70ccef"
+  },
+  "source_requests": [
+    {
+      "path": "chat/to-gpt/2026-09-18T110424+0800-stage1-rollout-spec.md",
+      "blob_sha": "1be01fa16008d43fd56d76e1bf0adcdc092539c8"
+    },
+    {
+      "path": "chat/to-gpt/2026-09-18T110617+0800-stage1-no-hard-cap.md",
+      "blob_sha": "7baa75a39509b8397b29f0023fbf0d63d966e7bf"
+    }
+  ],
+  "production_changes": false
+}
