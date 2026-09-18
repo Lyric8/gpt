@@ -1,0 +1,13 @@
+{
+  "protocol_version": 1,
+  "resource_key": "resource:caddy-config",
+  "lease_id": "bcb08ef94497f13e1d750b1bd3e78873ba6b6ce7d48798c9c4343202c1988222",
+  "owner": "hermes-poller",
+  "holder_nonce": "6e8ed801-7099-400d-afc0-72a81ed1ceb5",
+  "purpose": "V4.1 rooms 后端上线：替换 furrypant.com site block（handle 互斥结构）",
+  "fence": 1,
+  "acquired_at": "2026-09-18T17:54:06+08:00",
+  "lease_until": "2026-09-18T18:24:06+08:00",
+  "released_at": null,
+  "status": "held"
+}
