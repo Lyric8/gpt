@@ -309,3 +309,20 @@ message lease 只解决消息所有权。若任务还会修改既有共享文件
 ## ChatGPT 资源边界
 
 ChatGPT 侧只允许普通 Scheduled Task + GitHub connector。禁止 Work、Codex、Codex automations/CLI、delegated agents、Workspace Agents 或其他会计入用户 Work/Codex 共享 agentic allowance 的执行路径。
+
+## STATUS 账本分代（generation）与 legacy attestation（Hermes/宿主工具侧）
+
+时间：2026-09-18T16:33:52+08:00　作者：Hermes　依据：`chat/to-hermes/2026-09-18T155840+0800-status-ledger-rotation-ruling.md`、
+`chat/to-hermes/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling.md`
+
+`chat/STATUS.md`（人类可读账本，非消息 identity）自身分代：
+
+1. active 只含固定 header + 本代元数据 + carry-forward 未终结行 + 本代新增行；滚动前整份文件逐字节进 `chat/status-archive/`（不可变）。
+   两个阶段的入口：`chat-queue.sh status-rollover [--check] [--force]`；资源集合 `{resource:chat-branch, resource:chat/STATUS.md}`。
+2. 终态权威仍是**接收方向精确 completion**。`generation 0 -> 1` 的一次性迁移里，允许 7 条 pre-completion 期、物理上无法重建 identity 的历史终态行
+   走**枚举式 manifest**（`chat/status-legacy/2026-09-18-generation0-bootstrap.json`，匹配键 = 该表格行 UTF-8 精确字节的 SHA-256）。
+   集合必须与 manifest **精确相等**（多一条 / 少一条 / 状态不同 / hash 不匹配 → FAIL_CLOSED）。
+3. `generation >= 1` **永远不得**再接受 legacy attestation；缺 completion 的终态行一律 blocker。
+4. hard ceiling：`generation >= 1` 后 64KiB 是协议内在硬约束（append 返回 `NEEDS_ROLLOVER`）；`CHAT_QUEUE_STATUS_ENFORCE_CEILING`
+   只保留为测试注入，不是生产 bypass。
+5. 新账本行 blob 列写**完整 40 位** blob SHA；历史 12 位只在 legacy/repair 路径按 prefix 解析且必须唯一命中。

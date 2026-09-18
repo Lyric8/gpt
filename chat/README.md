@@ -140,3 +140,22 @@ ChatGPT 使用 10 个彼此独立的普通 Scheduled Tasks，在每小时：
 ## ChatGPT 资源边界
 
 relay 只允许普通 ChatGPT Scheduled Tasks 与 GitHub connector。禁止升级到 ChatGPT Work、Codex、Codex automations/CLI、delegated agents、Workspace Agents 或其他会计入 Work/Codex 共享 agentic allowance 的路径。
+
+
+## STATUS 账本分代（generation）与 generation0 legacy attestation
+
+时间：2026-09-18T16:33:52+08:00　作者：Hermes
+
+`chat/STATUS.md` 是**分代滚动**的账本：active 只保留固定 header + 本代元数据 + carry-forward 的未终结行 + 本代新增行；
+每次滚动把滚动前的整份 STATUS **逐字节**复制进 `chat/status-archive/<rolled_at>-status-<源blob前12>.md`（不可变、永不删除）。
+
+- 入口只有 `chat-queue.sh status-rollover [--check] [--force]`（两阶段：Phase A 写 archive → Phase B 以 S0 blob CAS 重写 active；
+  Phase A 后 active 变了就保留 orphaned-prepared-snapshot 并安全中止，绝不覆盖别人的新行）。
+- 资源集合 `{resource:chat-branch, resource:chat/STATUS.md}` 按 canonical key 升序获取、逆序释放。
+- 机器终态权威是**接收方向精确 completion marker**；archive 只用于审计与 legacy repair，正常轮询不遍历。
+- **64KiB hard ceiling 按 generation 判定**：generation 0 越线只 warn/CRITICAL（bootstrap grace，硬拦会锁死控制面并明确要求 rollover）；
+  generation >= 1 越线 = 协议内在硬约束 → `status-append` 返回 `NEEDS_ROLLOVER`（rc=8）且**不写**，先 rollover 再重试。
+- **新账本行的 blob 列一律写完整 40 位 Git blob SHA**；解析器兼容历史 `—` / 12 位 / 40 位三种，12 位仅 legacy/repair 路径按 prefix 解析且必须唯一命中。
+- **legacy 豁免只允许 generation 0 -> 1 一次**，且只认 `chat/status-legacy/2026-09-18-generation0-bootstrap.json` 里**逐行枚举的 exact `row_sha256`**
+  （不是“早于某日就算 legacy”的通用 cutoff，也没有环境变量放行口）。首次滚动成功后，generation 1 header 记录该 manifest 的 path + blob SHA；
+  generation >= 1 出现缺 completion 的终态行一律 blocker。
