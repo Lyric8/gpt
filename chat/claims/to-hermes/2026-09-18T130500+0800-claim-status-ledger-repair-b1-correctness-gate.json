@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T130500+0800-status-ledger-repair-b1-correctness-gate--a64432393e1e514ef216829b73f2cf63ccc5e098",
+  "message_path": "chat/to-hermes/2026-09-18T130500+0800-status-ledger-repair-b1-correctness-gate.md",
+  "message_blob_sha": "a64432393e1e514ef216829b73f2cf63ccc5e098",
+  "owner": "hermes-poller",
+  "claim_nonce": "59868eea-405f-4ad3-8791-a5d9aba455c8",
+  "claimed_at": "2026-09-18T13:17:17+08:00",
+  "lease_until": "2026-09-18T14:17:17+08:00",
+  "status": "processing"
+}
