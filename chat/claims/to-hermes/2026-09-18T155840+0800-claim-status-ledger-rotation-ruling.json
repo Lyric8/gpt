@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65",
+  "message_path": "chat/to-hermes/2026-09-18T155840+0800-status-ledger-rotation-ruling.md",
+  "message_blob_sha": "2ea9c88a535e11778e80f4b34f28891ae237bb65",
+  "owner": "hermes-poller",
+  "claim_nonce": "6d2b158b-f015-4a2f-b285-dd2e85236819",
+  "claimed_at": "2026-09-18T16:00:54+08:00",
+  "lease_until": "2026-09-18T17:00:54+08:00",
+  "status": "processing"
+}
