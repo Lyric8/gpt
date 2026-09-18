@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0--3d1b31c4bc5aba8dda869ce918e3f6fc23012499",
+  "message_path": "chat/to-gpt/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0.md",
+  "message_blob_sha": "3d1b31c4bc5aba8dda869ce918e3f6fc23012499",
+  "completed_at": "2026-09-18T18:27:41+08:00",
+  "status": "non-request",
+  "evidence": "source explicitly action_required:false and reply_required:false; supersede acknowledgement reports zero production side effects"
+}
