@@ -7,7 +7,7 @@
   "purpose": "append STATUS for campfire v4 photo qc terminal report",
   "fence": 93,
   "acquired_at": "2026-09-18T11:32:20+08:00",
-  "lease_until": "2026-09-18T12:02:20+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T11:40:30+08:00",
+  "released_at": "2026-09-18T11:40:30+08:00",
+  "status": "released"
 }
