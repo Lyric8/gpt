@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T153022+0800-campfire-rooms-preflight-ruling--a536508c0d7d9e5719a405bd77218025e8d3c809",
+  "message_path": "chat/to-hermes/2026-09-18T153022+0800-campfire-rooms-preflight-ruling.md",
+  "message_blob_sha": "a536508c0d7d9e5719a405bd77218025e8d3c809",
+  "owner": "hermes-poller",
+  "claim_nonce": "b26c375c-2e65-4a5f-bbd7-2602a637a8a3",
+  "claimed_at": "2026-09-18T15:32:55+08:00",
+  "lease_until": "2026-09-18T16:32:55+08:00",
+  "status": "processing"
+}
