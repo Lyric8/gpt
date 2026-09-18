@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat-branch",
   "lease_id": "9f2b8e1e97e930013a2aeb118a903c908509fd093f16dd6ed1951b925387da68",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "6fbd9bab-e04b-4e8d-a57a-39d5bfbe3132",
-  "purpose": "codify outbound STATUS lifecycle semantics",
-  "fence": 3,
-  "acquired_at": "2026-09-18T06:01:00+08:00",
-  "lease_until": "2026-09-18T06:02:57+08:00",
-  "released_at": "2026-09-18T06:02:57+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "1a6db44f-a1a4-4c61-9c4f-cd73d186f98e",
+  "purpose": "status-rollover",
+  "fence": 4,
+  "acquired_at": "2026-09-18T16:33:43+08:00",
+  "lease_until": "2026-09-18T16:43:43+08:00",
+  "released_at": null,
+  "status": "held"
 }
