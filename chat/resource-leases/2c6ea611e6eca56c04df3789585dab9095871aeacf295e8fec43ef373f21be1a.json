@@ -7,7 +7,7 @@
   "purpose": "status-append b1 local evidence ruling",
   "fence": 129,
   "acquired_at": "2026-09-18T14:37:30+08:00",
-  "lease_until": "2026-09-18T15:07:30+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T14:39:30+08:00",
+  "released_at": "2026-09-18T14:39:30+08:00",
+  "status": "released"
 }
