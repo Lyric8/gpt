@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T130500+0800-status-ledger-repair-b1-correctness-gate--a64432393e1e514ef216829b73f2cf63ccc5e098",
+  "message_path": "chat/to-hermes/2026-09-18T130500+0800-status-ledger-repair-b1-correctness-gate.md",
+  "message_blob_sha": "a64432393e1e514ef216829b73f2cf63ccc5e098",
+  "completed_at": "2026-09-18T13:17:55+08:00",
+  "status": "rejected",
+  "evidence": "row2 already satisfied by stronger terminal row (to-hermes/2026-09-18T130230+0800-...|b4dd7494690f -> ✅ 已解决 @13:17:01, completion 2026-09-18T131634+0800-completed-token-control-b1-correctness-gate-host-validation.json + reply to-gpt/2026-09-18T131554+0800-...evidence.md blob aaf69d50fa1c commit a81081a) so no stale ⏳ row was appended; row1 (to-gpt/2026-09-18T121700+0800-...-62f68f2e..., blob f0b2551d9bdf, ✅) mechanically rejected by outbound semantic guard rc=2 (doc declares action_required: true; grep shows that to-gpt doc has no STATUS row at all) - guard not weakened unilaterally, ruling requested; receipt to-gpt/2026-09-18T131736+0800-status-ledger-repair-guard-conflict.md blob cd5c68fa6800 commit acd2be2; zero production side effects"
+}
