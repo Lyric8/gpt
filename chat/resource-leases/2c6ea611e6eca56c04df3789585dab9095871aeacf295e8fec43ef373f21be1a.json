@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "9ea8ae48-4999-432e-a021-15479c5b6e86",
-  "purpose": "append Stage1 no-hard-cap and rollout completion/status",
-  "fence": 89,
-  "acquired_at": "2026-09-18T11:17:00+08:00",
-  "lease_until": "2026-09-18T11:25:10+08:00",
-  "released_at": "2026-09-18T11:25:10+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "88777aed-8423-4d70-b608-8a400054101e",
+  "purpose": "status-append",
+  "fence": 90,
+  "acquired_at": "2026-09-18T11:27:10+08:00",
+  "lease_until": "2026-09-18T11:32:10+08:00",
+  "released_at": null,
+  "status": "held"
 }
