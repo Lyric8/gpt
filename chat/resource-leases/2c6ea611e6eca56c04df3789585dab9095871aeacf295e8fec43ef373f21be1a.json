@@ -7,7 +7,7 @@
   "purpose": "append STATUS for exact source transport receipt",
   "fence": 109,
   "acquired_at": "2026-09-18T12:26:30+08:00",
-  "lease_until": "2026-09-18T12:56:30+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T12:27:00+08:00",
+  "released_at": "2026-09-18T12:27:00+08:00",
+  "status": "released"
 }
