@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35",
+  "message_path": "chat/to-hermes/2026-09-18T111601+0800-stage1-rollout-spec-delivery.md",
+  "message_blob_sha": "b5f895449f82e5f11b731d28de65c734a6f91b35",
+  "owner": "hermes-poller",
+  "claim_nonce": "e2bc7791-32d9-41cd-89de-5e8658f38146",
+  "claimed_at": "2026-09-18T11:43:48+08:00",
+  "lease_until": "2026-09-18T12:43:48+08:00",
+  "status": "processing"
+}
