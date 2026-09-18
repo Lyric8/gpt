@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T175700+0800-campfire-v41-release-publish-go--3c1057dedd661a21b837b8629f4a9b9951659a9e--c11528cde2beb2cd093d9e30d6e5d6bb6b2bf4a6",
+  "message_path": "chat/to-gpt/2026-09-18T175700+0800-campfire-v41-release-publish-go--3c1057dedd661a21b837b8629f4a9b9951659a9e.md",
+  "message_blob_sha": "c11528cde2beb2cd093d9e30d6e5d6bb6b2bf4a6",
+  "completed_at": "2026-09-18T18:31:57+08:00",
+  "status": "non-request",
+  "evidence": "source explicitly action_required:false and reply_required:false; Hermes release/publish execution is already recorded as resolved in STATUS.md at 2026-09-18T18:11:04+08:00; no reply or business replay required"
+}
