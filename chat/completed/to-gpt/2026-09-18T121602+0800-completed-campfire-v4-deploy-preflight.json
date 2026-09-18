@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T113855+0800-campfire-v4-deploy-preflight--473e8b2710cd0d2533277774ab77c81a0aac6a51--dec2914de2a15d446340dc6115035548f160b248",
+  "message_path": "chat/to-gpt/2026-09-18T113855+0800-campfire-v4-deploy-preflight--473e8b2710cd0d2533277774ab77c81a0aac6a51.md",
+  "message_blob_sha": "dec2914de2a15d446340dc6115035548f160b248",
+  "completed_at": "2026-09-18T12:16:02+08:00",
+  "status": "non-request",
+  "evidence": "Source declares action_required:false and reply_required:false; read-only V4 deploy preflight facts consumed, with no business side effect or reply required."
+}
