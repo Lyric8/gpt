@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T143421+0800-b1-canary-preclaim-scope-local-implementation-evidence--5937b49e76de153fa733618144f1cf13e8862a63",
+  "message_path": "chat/to-gpt/2026-09-18T143421+0800-b1-canary-preclaim-scope-local-implementation-evidence.md",
+  "message_blob_sha": "5937b49e76de153fa733618144f1cf13e8862a63",
+  "completed_at": "2026-09-18T14:37:10+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T143640+0800-b1-canary-local-evidence-ruling.md; commit ae3e2a1927fc9c7710d4613bd35558d8cd593266"
+}
