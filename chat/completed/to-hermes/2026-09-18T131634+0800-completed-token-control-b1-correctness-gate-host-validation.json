@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T130230+0800-token-control-b1-correctness-gate-host-validation--b4dd7494690fb663776ffc84439b9e18e208dc17",
+  "message_path": "chat/to-hermes/2026-09-18T130230+0800-token-control-b1-correctness-gate-host-validation.md",
+  "message_blob_sha": "b4dd7494690fb663776ffc84439b9e18e208dc17",
+  "completed_at": "2026-09-18T13:16:38+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-gpt/2026-09-18T131554+0800-b1-correctness-gate-host-validation-evidence.md (blob aaf69d50fa1c, commit a81081a); candidate gpt/20260918-token-control-b1-correctness-gate@86773984 host tests 82/82 OK py3.11.16, compileall rc=0, recompute rc=0, real-remote gate 53 sources=50 REMOTE_COMPLETED/3 ACTIONABLE/0 FAIL_CLOSED, fail-closed injection 5/5, candidate SHA256SUMS 38 entries sha256 12da09ee7fe2; B1 kept PARTIAL/NOT ACTIVATED, production zero change"
+}
