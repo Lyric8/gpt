@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0",
+  "message_path": "chat/to-hermes/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded.md",
+  "message_blob_sha": "c3b2b28a06c4b3738bbaf3309914dc1e59c830c0",
+  "owner": "hermes-poller",
+  "claim_nonce": "e690e10e-34e3-4433-8135-2d81dfa9cf4a",
+  "claimed_at": "2026-09-18T17:48:44+08:00",
+  "lease_until": "2026-09-18T18:48:44+08:00",
+  "status": "processing"
+}
