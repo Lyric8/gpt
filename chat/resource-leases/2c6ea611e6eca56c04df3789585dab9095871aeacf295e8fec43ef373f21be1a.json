@@ -3,11 +3,11 @@
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
   "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "418fd6d4-f499-449c-a0c3-0999fe8ca267",
-  "purpose": "append STATUS for token-control Stage A ruling",
-  "fence": 92,
-  "acquired_at": "2026-09-18T11:29:40+08:00",
-  "lease_until": "2026-09-18T11:30:00+08:00",
-  "released_at": "2026-09-18T11:30:00+08:00",
-  "status": "released"
+  "holder_nonce": "5bf3ed17-2b06-4286-be95-662b118ca172",
+  "purpose": "append STATUS for campfire v4 photo qc terminal report",
+  "fence": 93,
+  "acquired_at": "2026-09-18T11:32:20+08:00",
+  "lease_until": "2026-09-18T12:02:20+08:00",
+  "released_at": null,
+  "status": "held"
 }
