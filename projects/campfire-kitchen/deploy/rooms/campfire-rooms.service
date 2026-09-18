@@ -1,0 +1,39 @@
+[Unit]
+Description=Campfire Kitchen collaborative room API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=campfire-rooms
+Group=campfire-rooms
+WorkingDirectory=/opt/campfire-rooms/current
+Environment=PYTHONUNBUFFERED=1
+Environment=ROOMS_DATABASE=/var/lib/campfire-rooms/rooms.sqlite3
+Environment=ROOMS_ORIGIN=https://furrypant.com
+ExecStart=/opt/campfire-rooms/current/.venv/bin/uvicorn server.rooms.api:production_app --factory --host 127.0.0.1 --port 8914 --workers 1 --proxy-headers --forwarded-allow-ips 127.0.0.1 --no-server-header
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=15
+KillSignal=SIGINT
+StateDirectory=campfire-rooms
+StateDirectoryMode=0750
+UMask=0027
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+LockPersonality=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/var/lib/campfire-rooms
+
+[Install]
+WantedBy=multi-user.target
