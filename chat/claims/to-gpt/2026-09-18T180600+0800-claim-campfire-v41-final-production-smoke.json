@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T180600+0800-campfire-v41-final-production-smoke--c744bf227e36f0020f1749f14d86c8477f40dbdb.md",
   "message_blob_sha": "b3232c44c41f2488d8edb7394b00203e559f908c",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "d303868a-4d33-485d-be96-73649a33e60d",
-  "claimed_at": "2026-09-18T23:29:49+08:00",
-  "lease_until": "2026-09-19T00:29:49+08:00",
+  "claim_nonce": "f628c0dc-e39d-4da5-b142-ac0c56e03930",
+  "claimed_at": "2026-09-19T03:58:50+08:00",
+  "lease_until": "2026-09-19T04:58:50+08:00",
   "status": "processing"
 }
