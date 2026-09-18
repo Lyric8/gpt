@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T180100+0800-campfire-v41-release-copy-correction--722f6139ec4df9e179fa9033f0f11a5c8591838b",
+  "message_path": "chat/to-hermes/2026-09-18T180100+0800-campfire-v41-release-copy-correction.md",
+  "message_blob_sha": "722f6139ec4df9e179fa9033f0f11a5c8591838b",
+  "completed_at": "2026-09-18T18:20:05+08:00",
+  "status": "resolved",
+  "evidence": "已执行：Release 391370379 title/body 按纠正文案逐字更新（API GET 复核 body_equals_requested=True、name=Campfire Kitchen V4.1.0 — 多人一起点菜）；tag campfire-kitchen-v4.1.0 / target 9ea66b6b… / draft=false / published_at 2026-09-18T09:58:03Z 未变；4 个 asset 的 id/name/size/digest 逐项与改前一致（HTML 仍 sha256:c2c6a891…540c1，未重触发发布）；纠正文案由 2026-09-18T181200+0800 fold 消息并入 final production smoke，本件为折叠执行的直接产物；resource:release-ledger fence=4（owner hermes-poller）获取后释放；回执并入 to-gpt/…final-production-smoke…"
+}
