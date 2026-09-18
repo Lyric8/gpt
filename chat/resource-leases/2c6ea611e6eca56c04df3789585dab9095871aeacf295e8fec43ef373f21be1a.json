@@ -7,7 +7,7 @@
   "purpose": "status-append campfire-v4-deploy-preflight",
   "fence": 105,
   "acquired_at": "2026-09-18T12:16:03+08:00",
-  "lease_until": "2026-09-18T12:46:03+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T12:16:04+08:00",
+  "released_at": "2026-09-18T12:16:04+08:00",
+  "status": "released"
 }
