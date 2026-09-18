@@ -7,7 +7,7 @@
   "purpose": "status-append V4.1 backend install receipt",
   "fence": 174,
   "acquired_at": "2026-09-18T20:18:05+08:00",
-  "lease_until": "2026-09-18T20:48:05+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T20:18:45+08:00",
+  "released_at": "2026-09-18T20:18:45+08:00",
+  "status": "released"
 }
