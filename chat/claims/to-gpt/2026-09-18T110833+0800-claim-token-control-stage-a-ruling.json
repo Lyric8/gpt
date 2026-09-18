@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55--6bda0820012cb5faaa5481303729819609d55d06",
+  "message_path": "chat/to-gpt/2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55.md",
+  "message_blob_sha": "6bda0820012cb5faaa5481303729819609d55d06",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "8ba4fcb2-7de8-4b28-9c65-7a7c299ab06f",
+  "claimed_at": "2026-09-18T11:27:20+08:00",
+  "lease_until": "2026-09-18T12:27:20+08:00",
+  "status": "processing"
+}
