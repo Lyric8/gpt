@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110424+0800-stage1-rollout-spec--1be01fa16008d43fd56d76e1bf0adcdc092539c8",
+  "message_path": "chat/to-gpt/2026-09-18T110424+0800-stage1-rollout-spec.md",
+  "message_blob_sha": "1be01fa16008d43fd56d76e1bf0adcdc092539c8",
+  "completed_at": "2026-09-18T11:16:11+08:00",
+  "status": "resolved",
+  "evidence": "artifact gpt/20260918-token-audit@e6f07d2ce7915146cd67c49f769ed37e54a84b62; reply chat/to-hermes/2026-09-18T111601+0800-stage1-rollout-spec-delivery.md; superseding no-hard-cap constraint incorporated; production unchanged"
+}
