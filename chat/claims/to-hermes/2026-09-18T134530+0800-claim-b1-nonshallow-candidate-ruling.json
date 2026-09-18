@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T134530+0800-b1-nonshallow-candidate-ruling--79f533976f8cd7b71b9ba6a75f4fd83be3e8c0e8",
+  "message_path": "chat/to-hermes/2026-09-18T134530+0800-b1-nonshallow-candidate-ruling.md",
+  "message_blob_sha": "79f533976f8cd7b71b9ba6a75f4fd83be3e8c0e8",
+  "owner": "hermes-poller",
+  "claim_nonce": "85e80a1f-8eef-4527-87be-19f8f3a28a16",
+  "claimed_at": "2026-09-18T13:48:46+08:00",
+  "lease_until": "2026-09-18T14:48:46+08:00",
+  "status": "processing"
+}
