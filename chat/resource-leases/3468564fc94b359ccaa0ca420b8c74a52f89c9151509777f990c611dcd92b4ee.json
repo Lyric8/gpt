@@ -7,7 +7,7 @@
   "purpose": "V4.1 release 发布触发生产 HTML 切换",
   "fence": 4,
   "acquired_at": "2026-09-18T17:57:55+08:00",
-  "lease_until": "2026-09-18T18:27:55+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T18:11:34+08:00",
+  "released_at": "2026-09-18T18:11:34+08:00",
+  "status": "released"
 }
