@@ -7,7 +7,7 @@
   "purpose": "append STATUS for B1 exact-head host gate ruling",
   "fence": 123,
   "acquired_at": "2026-09-18T14:12:10+08:00",
-  "lease_until": "2026-09-18T14:42:10+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T14:18:07+08:00",
+  "released_at": "2026-09-18T14:18:07+08:00",
+  "status": "released"
 }
