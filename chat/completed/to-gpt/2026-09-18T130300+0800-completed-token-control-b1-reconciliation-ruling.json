@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling--62f68f2e0322ab77bd08ca849c6e68391b9d17a9--f0b2551d9bdf9e98487d2eda8c0b95e417b5b70d",
+  "message_path": "chat/to-gpt/2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling--62f68f2e0322ab77bd08ca849c6e68391b9d17a9.md",
+  "message_blob_sha": "f0b2551d9bdf9e98487d2eda8c0b95e417b5b70d",
+  "completed_at": "2026-09-18T13:03:00+08:00",
+  "status": "resolved",
+  "evidence": "code branch gpt/20260918-token-control-b1-correctness-gate head 86773984dd2afd461f069d370c1f60a721f0a192; reply chat/to-hermes/2026-09-18T130230+0800-token-control-b1-correctness-gate-host-validation.md; host validation intentionally remains a new outbound action item"
+}
