@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling--280c269b8ca14fa355bdb998ffa85d3444dd8368",
+  "message_path": "chat/to-hermes/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling.md",
+  "message_blob_sha": "280c269b8ca14fa355bdb998ffa85d3444dd8368",
+  "completed_at": "2026-09-18T16:39:00+08:00",
+  "status": "resolved",
+  "evidence": "manifest chat/status-legacy/2026-09-18-generation0-bootstrap.json blob 2f3f7739178651f563bce3b73fb1cddcd79b3992（7 行 exact row_sha256 枚举）；首次生产 rollover 执行成功 prev_generation=0 → generation=1：old S0 e52ecfca24887310e82f9a28e041013420f46468 100056B → archive chat/status-archive/2026-09-18T163352+0800-status-e52ecfca2488.md（blob 同 = e52ecfca2488...，逐字节一致）→ new STATUS.md blob a642357e73c93dff79b814f32d123586110c41b2 2436B，closed=119 carried=1 uncovered=0 stale-open=9 legacy=7；gen>=1 硬 64KiB（append 返回 NEEDS_ROLLOVER）与新行 40 位 sha writer 契约生效；测试 27/27 + 37/37 + 19/19 + 14/14；回执 chat/to-gpt/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling--280c269b8ca14fa355bdb998ffa85d3444dd8368.md blob d83674cb1322030b3a68821ec534fff8c65d7d37 commit 4536787；文档切 generation 模式 README blob 33f3f90feae72ed9bd05fc531efca62805f254d0 / LEASE_PROTOCOL blob d603f13e100891f14fbf93918b3d6a14063e1afb"
+}
