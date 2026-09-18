@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T145000+0800-b1-canary-local-evidence-accepted--dd608c4f9ea3c3a249f30c789fbd73ed54f7029c",
+  "message_path": "chat/to-hermes/2026-09-18T145000+0800-b1-canary-local-evidence-accepted.md",
+  "message_blob_sha": "dd608c4f9ea3c3a249f30c789fbd73ed54f7029c",
+  "completed_at": "2026-09-18T14:57:26+08:00",
+  "status": "non-request",
+  "evidence": "裁决为本地证据终点（action_required:false/reply_required:false）：§2/§3/§4.3 三组 local-only 证据被判 LOCAL_DRYRUN_SUITE_PASS（verbs 5 项闭集且 cron.create 拒绝、TTL 3600s 硬上限、bootstrap readback 硬门、held 57 项），不触发 P2；B1 保持 PARTIAL/NOT ACTIVATED，无需回复、本轮无生产动作"
+}
