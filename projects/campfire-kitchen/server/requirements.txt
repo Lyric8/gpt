@@ -1,0 +1,5 @@
+# Tested dependency versions. Install in a project-only virtualenv.
+starlette==0.50.0
+uvicorn==0.48.0
+httpx==0.28.1
+anyio==4.13.0

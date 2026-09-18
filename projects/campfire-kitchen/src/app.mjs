@@ -1,3 +1,4 @@
+import { createRoomsUI } from './rooms/controller.mjs';
 import { makeInventoryIndex, sanitizeInventory, inventoryCandidates, matchInventory, searchEntries } from './core/pantry.mjs';
 import { suggestMeals } from './core/recommendations.mjs';
 import { readJSONStorage, writeJSONStorage } from './core/storage.mjs';
@@ -83,6 +84,7 @@ function persistInventory() {
     try { if (!writeJSONStorage(localStorage, INVENTORY_STORE, inventory)) storageOK = false; }
     catch { storageOK = false; }
 }
+const roomsUI=createRoomsUI({photos:PHOTOS,readPersonal:()=>({ingredients:[...inventory.ingredients],tools:[...inventory.tools]})});
 function filteredRecipes() {
     return searchEntries(index, {categories:category==='全部'?[]:[category],query:search,experience,
         exclude:freshIdeas ? state.history.slice(-3).flatMap(h=>h.ids):[]});
@@ -110,14 +112,15 @@ function render() {
     root.querySelectorAll('details[data-keep]').forEach(d=>detailState.set(d.dataset.keep,d.open));
     lastRenderedTab=tab;
     const ctx=context();
-    const page=tab==='browse'?browseView(ctx):tab==='pantry'?pantryView(ctx):tab==='menu'?menuView(ctx):tab==='prep'?prepView(ctx):tab==='fire'?fireView():settingsView(ctx);
-    root.innerHTML=`<header class="site-header"><div class="topbar"><a class="brand" href="#browse" data-action="tab" data-tab="browse"><span class="brand-icon" aria-hidden="true">火</span><span>火边<small>V4 · 露营厨房</small></span></a><nav class="tabs" aria-label="主导航">${[['browse','看菜谱'],['pantry','我有这些'],['menu','菜单'],['fire','炭火指南']].map(([key,label])=>button(label+(key==='menu'&&state.selected.length?` <b>${state.selected.length}</b>`:''),'tab',`data-tab="${key}" ${key===tab||key==='menu'&&tab==='prep'?'aria-current="page"':''}`,key===tab||key==='menu'&&tab==='prep'?'active':'')).join('')}</nav><span class="offline-dot">离线可用</span></div></header>
+    const page=tab==='browse'?browseView(ctx):tab==='pantry'?pantryView(ctx):tab==='menu'?menuView(ctx):tab==='prep'?prepView(ctx):tab==='fire'?fireView():tab==='rooms'?'<section id="rooms-root" class="section" aria-label="一起点菜"></section>':settingsView(ctx);
+    root.innerHTML=`<header class="site-header"><div class="topbar"><a class="brand" href="#browse" data-action="tab" data-tab="browse"><span class="brand-icon" aria-hidden="true">火</span><span>火边<small>V4 · 露营厨房</small></span></a><nav class="tabs" aria-label="主导航">${[['browse','看菜谱'],['pantry','我有这些'],['menu','我的菜单'],['rooms','一起点菜'],['fire','炭火指南']].map(([key,label])=>button(label+(key==='menu'&&state.selected.length?` <b>${state.selected.length}</b>`:''),'tab',`data-tab="${key}" ${key===tab||key==='menu'&&tab==='prep'?'aria-current="page"':''}`,key===tab||key==='menu'&&tab==='prep'?'active':'')).join('')}</nav><span class="offline-dot">${tab==='rooms'?'房间需联网':'个人离线可用'}</span></div></header>
     ${banner?`<div class="banner" role="status">${E(banner)} ${button('救援原数据','rescue','','text-btn')}${button('关闭提示','dismiss-banner','','text-btn')}</div>`:''}
     ${!storageOK?'<div class="banner warn" role="status">本地保存不可用。离开前请导出完整备份；不影响当前操作。</div>':''}
     <main id="main" tabindex="-1">${tab==='menu'||tab==='prep'?`<nav class="workflow-nav" aria-label="这顿菜单与备料">${button('① 安排这顿','tab','data-tab="menu" '+(tab==='menu'?'aria-current="page"':''),tab==='menu'?'active':'')}${button('② 备料与分装','tab','data-tab="prep" '+(tab==='prep'?'aria-current="page"':''),tab==='prep'?'active':'')}</nav>`:''}${page}</main>
-    <footer><span>火边 v${E(BUILTIN.version)} · 无联网请求，不上传选择</span><div>${button('资料与备份','tab','data-tab="review"','text-btn')}${button('导出完整备份','export-backup','','text-btn')}</div></footer>
-    <div class="bottom-dock"><div><b>${state.selected.length} 道</b><span> / ${state.people} 人</span></div>${tab==='pantry'?button(`看可做的菜 · ${ctx.matches.filter(m=>m.ready).length}`,'jump-results','','btn primary'):button(tab==='prep'?'回菜单':tab==='menu'?'去备料':'查看菜单','tab',`data-tab="${tab==='menu'?'prep':'menu'}"`,'btn primary')}</div>`;
+    <footer><span>火边 v${E(BUILTIN.version)} · 个人菜单离线保存，房间需联网</span><div>${button('资料与备份','tab','data-tab="review"','text-btn')}${button('导出完整备份','export-backup','','text-btn')}</div></footer>
+    ${tab!=='rooms'?`<div class="bottom-dock"><div><b>${state.selected.length} 道</b><span> / ${state.people} 人</span></div>${tab==='pantry'?button(`看可做的菜 · ${ctx.matches.filter(m=>m.ready).length}`,'jump-results','','btn primary'):button(tab==='prep'?'回菜单':tab==='menu'?'去备料':'查看菜单','tab',`data-tab="${tab==='menu'?'prep':'menu'}"`,'btn primary')}</div>`:''}`;
     root.querySelectorAll('details[data-keep]').forEach(d=>{if(detailState.has(d.dataset.keep)&&!(tab==='pantry'&&pantryQuery&&d.classList.contains('inventory-group')))d.open=detailState.get(d.dataset.keep);});
+    roomsUI.mount(tab==='rooms'?root.querySelector('#rooms-root'):null);
     const panel=root.querySelector('.inventory-scroll'); if(panel)panel.scrollTop=innerScroll;
     if (sameTab&&focused) {
         const target=root.querySelector(focused);
@@ -170,7 +173,7 @@ else {
 } save(); }
 function download(name, contents, type = 'application/json;charset=utf-8') { const blob = new Blob([contents], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000); }
 function dateName() { return new Date().toISOString().slice(0, 10); }
-function switchTab(name) { if (!['browse', 'pantry', 'menu', 'prep', 'review', 'fire'].includes(name))
+function switchTab(name) { if (!['browse', 'pantry', 'menu', 'prep', 'review', 'fire', 'rooms'].includes(name))
     return; tab = name; if(location.hash!=='#'+name) { try { history.replaceState(null,'','#'+name); } catch { /* Opaque preview origins may deny history writes. */ } } render(); window.scrollTo({ top: 0, behavior: 'instant' }); }
 function usePreset(id) { if (state.selected.length && !confirm('用这套定稿菜单替换当前选菜？笔记保留；原菜单建议先导出备份。'))
     return; state = applyPreset(db, state, id); tab = 'menu'; save('已排好这一桌，可调每道份量。'); window.scrollTo(0, 0); }
@@ -428,7 +431,7 @@ dialog.addEventListener('click', e => { if (e.target === dialog) {
         closeDialog();
 } });
 window.addEventListener('pagehide', persist);
-const initialTab=location.hash.slice(1);
-if (['browse','pantry','menu','prep','review','fire'].includes(initialTab)) tab=initialTab;
-window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);if(next!==tab)switchTab(next);});
+const initialTab=location.hash.startsWith('#rooms/')?'rooms':location.hash.slice(1);
+if (['browse','pantry','menu','prep','review','fire','rooms'].includes(initialTab)) tab=initialTab;
+window.addEventListener('hashchange',()=>{const next=location.hash.startsWith('#rooms/')?'rooms':location.hash.slice(1);if(next!==tab)switchTab(next);else if(next==='rooms')roomsUI.route();});
 render();

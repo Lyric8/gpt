@@ -1,0 +1,4 @@
+# Insert inside the existing furrypant.com, www.furrypant.com site block.
+# Keep the existing root/encode/header/file_server directives.
+@campfire_rooms path /api/rooms /api/rooms/*
+reverse_proxy @campfire_rooms 127.0.0.1:8914

@@ -1,0 +1,34 @@
+[Unit]
+Description=Archive expired Campfire Kitchen rooms to GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=campfire-rooms
+Group=campfire-rooms
+WorkingDirectory=/opt/campfire-rooms/current
+Environment=PYTHONUNBUFFERED=1
+Environment=ROOMS_DATABASE=/var/lib/campfire-rooms/rooms.sqlite3
+Environment=ROOMS_ARCHIVE_REPOSITORY=Lyric8/gpt
+Environment=ROOMS_ARCHIVE_BRANCH=campfire-room-archives
+LoadCredential=github_token:/etc/campfire-rooms/github_token
+ExecStart=/opt/campfire-rooms/current/.venv/bin/python -m server.rooms.archive
+StateDirectory=campfire-rooms
+StateDirectoryMode=0750
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+LockPersonality=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/var/lib/campfire-rooms
