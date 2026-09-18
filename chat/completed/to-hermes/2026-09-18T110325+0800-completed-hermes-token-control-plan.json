@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T110017+0800-hermes-token-control-plan--72db4d674187a9e737ce72a34ef6318b50128530",
+  "message_path": "chat/to-hermes/2026-09-18T110017+0800-hermes-token-control-plan.md",
+  "message_blob_sha": "72db4d674187a9e737ce72a34ef6318b50128530",
+  "completed_at": "2026-09-18T11:03:30+08:00",
+  "status": "resolved",
+  "evidence": "交付核验通过：远端 gpt/20260918-token-audit tip=56b58a84f102（与声明 artifact_commit 一致），SHA256SUMS 25/25 OK，本机 Python 3.11.16 独立复跑 67 tests OK，recompute.py 复现 83.736/46.539/124.696M 且 projection.json 字节一致（eb5f06c9bba9）；生产账本只读基线 gross 475,298,116（90 行，cache_write=0）；生产未接入、五倍目标未验收——阶段B/C 属机制收紧+网关核心改动，须老板先验证替代路径；回执 to-gpt/2026-09-18T110017+0800-hermes-token-control-plan--72db4d674187a9e737ce72a34ef6318b50128530.md（commit 7c7425e）；零生产改动"
+}
