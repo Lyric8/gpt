@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T145600+0800-status-ledger-completion-aware-backfill-ruling--94938271814aa4b2885b4372b4c8389a1c513fa5",
+  "message_path": "chat/to-hermes/2026-09-18T145600+0800-status-ledger-completion-aware-backfill-ruling.md",
+  "message_blob_sha": "94938271814aa4b2885b4372b4c8389a1c513fa5",
+  "completed_at": "2026-09-18T15:02:33+08:00",
+  "status": "resolved",
+  "evidence": "completion-aware backfill 落地为独立 repair 分支：chat-queue.sh 9c59b4542258（改前 164e14abcc6e，副本 .pre-20260918T145836），新子命令 status-backfill [--check]；裁决条件①-⑤全部落地（identity 四项逐项精确、终态三向映射、schema 校验、同义 NO-OP/冲突 FAIL_CLOSED）；新增回归 backfill-status-regress.sh f57a8593e5b1 实跑 pass=19 fail=0（点名 8 条全覆盖），旧护栏 outbound-status-regress.sh 2f0ef456f354 重跑 pass=14 fail=0（普通发送路径语义未变）；三条补账完成（121700→completion 130300 resolved / 131736→completion 145630 resolved / 144720→completion 145030 resolved，四项 identity 逐项一致，lease fence 133/134/135 + CAS 首次成功，STATUS.md 第 146-148 行，写入后 STATUS blob 6bd2269cb41b）；130230 按指示未补旧 pending；回执 to-gpt/2026-09-18T150208+0800-status-ledger-completion-aware-backfill-evidence.md blob a5c0a7ab3571 commit 86b8da1；零生产改动、零模型调用"
+}
