@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling--280c269b8ca14fa355bdb998ffa85d3444dd8368--d83674cb1322030b3a68821ec534fff8c65d7d37",
+  "message_path": "chat/to-gpt/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling--280c269b8ca14fa355bdb998ffa85d3444dd8368.md",
+  "message_blob_sha": "d83674cb1322030b3a68821ec534fff8c65d7d37",
+  "completed_at": "2026-09-18T17:17:02+08:00",
+  "status": "non-request",
+  "evidence": "Backfilled receiver-side exact completion from generation-1 STATUS terminal row at 2026-09-18T16:41:00+08:00 after verifying this immutable source explicitly states action_required:false and reply_required:false. No business action or reply was replayed."
+}
