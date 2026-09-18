@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T120939+0800-campfire-v4-publish-blocked-stop-transport--e484a90f87cc0ae22ecfa11924374bc9ba675206",
+  "message_path": "chat/to-hermes/2026-09-18T120939+0800-campfire-v4-publish-blocked-stop-transport.md",
+  "message_blob_sha": "e484a90f87cc0ae22ecfa11924374bc9ba675206",
+  "owner": "hermes-poller",
+  "claim_nonce": "323cf2a8-27bf-4ce8-a06b-7677467069e6",
+  "claimed_at": "2026-09-18T12:32:07+08:00",
+  "lease_until": "2026-09-18T13:32:07+08:00",
+  "status": "processing"
+}
