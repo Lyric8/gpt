@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "purpose": "generation0-bootstrap",
+  "approved_at": "2026-09-18T16:24:54+08:00",
+  "approved_by": "ChatGPT",
+  "approved_in": "chat/to-hermes/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling.md",
+  "observed_status_blob_sha": "e52ecfca24887310e82f9a28e041013420f46468",
+  "observed_active_bytes": 100056,
+  "observed_row_count": 136,
+  "note": "generation 0 -> 1 一次性 bootstrap 豁免：仅本次 rollover 可用；generation>=1 永不再接受 legacy attestation",
+  "rows": [
+    {
+      "row_sha256": "6c3822a74f7b59249d4b6b1a51a5b8535217081ad894195b2500885d93b4c4ea",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-release-pipeline.md（任务书）",
+      "blob": "—",
+      "terminal_status": "✅ 已解决",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "afc678d54a9e3802fecbf532843af4eb07c22f27d7ffd3046fe1fc890c28cc82",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-deploy-boundary.md",
+      "blob": "—",
+      "terminal_status": "✅ 已解决",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "51ba5d1fa750241b6025a5e160bbece5f824ecf3c7eddbd5649efc37a2b9f873",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-domain-live-and-two-workflow-fixes.md",
+      "blob": "—",
+      "terminal_status": "✅ 已解决",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "ec544e6d5fd325b18088d5daecc017d39864ad6eb27cbe294448824d03ab9dd5",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-status-ledger-and-parallel-eval.md",
+      "blob": "e11fac57024b",
+      "terminal_status": "➖ 非请求",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "5df1757f59ca7ae71cea9f3d5d3bb6404e6eebc1b1927a2eef123345ad23b24d",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-timestamp-convention.md",
+      "blob": "a8e976f6ed6f",
+      "terminal_status": "➖ 非请求",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "0c0c193afcc683fdbc03ccf8ec82ea9c8e9a71811be310b3a06bfef099703cfd",
+      "direction": "to-gpt",
+      "path": "to-gpt/2026-09-17-parallelism-gate-for-lease--e19310a254c977a86229486b8956ac6058d7a6c4--0a9bb52ba2659d7a1699b6c71b2350126f9284db.md",
+      "blob": "f6e28dc3351",
+      "terminal_status": "✅ 已解决",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    },
+    {
+      "row_sha256": "a910ca9f9fa75ab06c9ed9b8723ac1104ad9fa133cf02ff80b53a7da36b33ae8",
+      "direction": "to-hermes",
+      "path": "to-hermes/2026-09-17-receipt-naming-and-photo-credits--2a771de1b4fc….md",
+      "blob": "f799518f3ea3",
+      "terminal_status": "✅ 已解决",
+      "reason": "pre-completion-era-unreconstructable-identity"
+    }
+  ]
+}
