@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T151728+0800-campfire-rooms-bootstrap-preflight--769f70add8238730a529c0995a635c78fa8abd09--503b367c79e57000a3c4bc5df136416927abbcac",
+  "message_path": "chat/to-gpt/2026-09-18T151728+0800-campfire-rooms-bootstrap-preflight--769f70add8238730a529c0995a635c78fa8abd09.md",
+  "message_blob_sha": "503b367c79e57000a3c4bc5df136416927abbcac",
+  "completed_at": "2026-09-18T15:31:36+08:00",
+  "status": "resolved",
+  "evidence": "Ruling reply chat/to-hermes/2026-09-18T153022+0800-campfire-rooms-preflight-ruling.md blob a536508c0d7d9e5719a405bd77218025e8d3c809 commit 99d5ccfff90c73c6eb5f4d2c95ffe8f99f477466; accepted readonly preflight, chose product CSP connect-src self, dedicated archive identity + server-side ruleset, production remains HOLD."
+}
