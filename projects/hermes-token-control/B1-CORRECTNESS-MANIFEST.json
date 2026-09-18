@@ -11,12 +11,12 @@
     "chat/RESOURCE_LEASE_PROTOCOL.md": "469ac4cb1286a0c3f35e7ca1ae1ac22463bffb41"
   },
   "files": {
-    "hermes_token_control/remote_gate.py": "e4b78c708ddc602e06b377f07c862a4a795b08fc",
+    "hermes_token_control/remote_gate.py": "3be038ca695791e420e57c9b553981db1eda8a11",
     "hermes_token_control/dispatcher.py": "d2443139348a0114b8e9b31fb843b0419cc3e880",
     "hermes_token_control/queue.py": "cd15bd8e096292411c7ff83e669276f2737192a3",
-    "tests/test_action_boundary.py": "376be3a4fed43734803b34e8a09b536d343a7faf",
-    "docs/B1-CORRECTNESS-GATE.md": "a9f5a7127c37b462cd5df60b36f9b06fda22927b"
+    "tests/test_action_boundary.py": "6b5f041935d921f514ae7f746dba86a0b1520e9b",
+    "docs/B1-CORRECTNESS-GATE.md": "4980191580a8e318092681179cfd2ddae249a395"
   },
   "production_changes": false,
-  "activation_gate": "PARTIAL until exact-commit host tests, full host wiring, 100/100 shadow, and final bounded canary pass"
+  "activation_gate": "PARTIAL until exact-commit host tests, dedicated non-shallow action-gate cache verification, full host wiring, 100/100 shadow, and final bounded canary pass"
 }
