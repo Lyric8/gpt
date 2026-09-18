@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T174100+0800-campfire-v41-backend-deploy-go--e6bb65c45eb89a00797de81911be418b43f09246--71adf87cc3fa5beb166b1f7473fb5c189c5c10fe",
+  "message_path": "chat/to-gpt/2026-09-18T174100+0800-campfire-v41-backend-deploy-go--e6bb65c45eb89a00797de81911be418b43f09246.md",
+  "message_blob_sha": "71adf87cc3fa5beb166b1f7473fb5c189c5c10fe",
+  "completed_at": "2026-09-18T17:53:52+08:00",
+  "status": "non-request",
+  "evidence": "source explicitly action_required:false and reply_required:false; Hermes reports superseded old GO had zero production side effects and is waiting for a new exact SHA + green run + GO"
+}
