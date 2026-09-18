@@ -1,6 +1,5 @@
 """Same-origin JSON API, HttpOnly anonymous identities, no public room enumeration."""
 from __future__ import annotations
-import asyncio
 import hashlib
 import json
 import logging
@@ -70,15 +69,29 @@ async def body(request: Request) -> dict:
         raise Problem(408, 'REQUEST_TIMEOUT', '请求超时，请重试。') from None
 
 
-def create_app(store: Store, origin: str, secure=True, require_archiver=True) -> Starlette:
-    parsed = urlsplit(origin)
-    if parsed.path not in ('', '/') or not parsed.hostname or parsed.query or parsed.fragment:
-        raise ValueError('ROOMS_ORIGIN must be an exact origin')
-    if secure and parsed.scheme != 'https':
-        raise ValueError('Production requires HTTPS')
-    if not secure and parsed.hostname not in ('127.0.0.1', 'localhost', 'testserver'):
-        raise ValueError('Insecure cookies are restricted to loopback tests')
-    origin = origin.rstrip('/')
+def _origin_allowlist(config: str, secure: bool) -> tuple[frozenset[str], frozenset[str]]:
+    if not isinstance(config, str):
+        raise ValueError('ROOMS_ORIGINS must be a comma-separated string')
+    values = [item.strip().rstrip('/') for item in config.split(',') if item.strip()]
+    if not 1 <= len(values) <= 4 or len(values) != len(set(values)):
+        raise ValueError('ROOMS_ORIGINS must contain 1-4 unique exact origins')
+    origins, hosts = set(), set()
+    for origin in values:
+        parsed = urlsplit(origin)
+        if (parsed.path not in ('', '/') or not parsed.hostname or parsed.query or parsed.fragment
+                or parsed.username is not None or parsed.password is not None):
+            raise ValueError('ROOMS_ORIGINS contains an invalid origin')
+        if secure and parsed.scheme != 'https':
+            raise ValueError('Production room origins require HTTPS')
+        if not secure and (parsed.scheme != 'http' or parsed.hostname not in ('127.0.0.1', 'localhost', 'testserver')):
+            raise ValueError('Insecure room origins are restricted to loopback tests')
+        origins.add(origin)
+        hosts.add(parsed.netloc.lower())
+    return frozenset(origins), frozenset(hosts)
+
+
+def create_app(store: Store, origin_config: str, secure=True, require_archiver=True) -> Starlette:
+    origins, hosts = _origin_allowlist(origin_config, secure)
     cookie = '__Host-campfire-device' if secure else 'campfire-device-dev'
     limiter = RateLimit()
 
@@ -142,12 +155,13 @@ def create_app(store: Store, origin: str, secure=True, require_archiver=True) ->
 
     async def guard(request, call_next):
         try:
-            require(request.headers.get('host') == parsed.netloc, '请求来源不正确。', 'ORIGIN', 403)
+            require(request.headers.get('host', '').lower() in hosts, '请求来源不正确。', 'ORIGIN', 403)
             if request.url.path.startswith('/api/rooms') and request.url.path != '/api/rooms/health':
                 require(request.headers.get('x-room-client') == '1', '请从火边页面操作。', 'ORIGIN', 403)
                 require(request.headers.get('sec-fetch-site', 'same-origin') in ('same-origin', 'none'), '不接受跨站请求。', 'ORIGIN', 403)
             if request.method not in ('GET', 'HEAD'):
-                require(request.headers.get('origin') == origin, '不接受跨站修改。', 'ORIGIN', 403)
+                request_origin = request.headers.get('origin', '').rstrip('/')
+                require(request_origin in origins, '不接受跨站修改。', 'ORIGIN', 403)
                 length = request.headers.get('content-length', '0')
                 require(length.isdigit() and int(length) <= MAX_BODY, '请求内容过大。', 'BODY_LIMIT', 413)
             response = await call_next(request)
@@ -171,4 +185,7 @@ def production_app():
     root = Path(__file__).resolve().parents[2]
     catalog = {'database': load_catalog(root), 'equipment': json.loads((root / 'data/equipment.json').read_text())}
     store = Store(os.environ['ROOMS_DATABASE'], catalog)
-    return create_app(store, os.environ['ROOMS_ORIGIN'])
+    origins = os.environ.get('ROOMS_ORIGINS') or os.environ.get('ROOMS_ORIGIN')
+    if not origins:
+        raise RuntimeError('ROOMS_ORIGINS is required')
+    return create_app(store, origins)

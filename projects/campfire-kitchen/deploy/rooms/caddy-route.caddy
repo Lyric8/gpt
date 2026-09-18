@@ -1,4 +1,25 @@
-# Insert inside the existing furrypant.com, www.furrypant.com site block.
-# Keep the existing root/encode/header/file_server directives.
-@campfire_rooms path /api/rooms /api/rooms/*
-reverse_proxy @campfire_rooms 127.0.0.1:8914
+# Desired production site block. Preserve any unrelated global imports outside this block.
+# API and static responses are intentionally separated so collaborative room data is never cacheable.
+furrypant.com, www.furrypant.com {
+    encode zstd gzip
+
+    @campfire_rooms path /api/rooms /api/rooms/*
+    handle @campfire_rooms {
+        header {
+            X-Content-Type-Options nosniff
+            Referrer-Policy no-referrer
+            Cache-Control "no-store"
+        }
+        reverse_proxy 127.0.0.1:8914
+    }
+
+    handle {
+        root * /var/www/campfire-kitchen
+        header {
+            X-Content-Type-Options nosniff
+            Referrer-Policy no-referrer
+            Cache-Control "no-cache"
+        }
+        file_server
+    }
+}
