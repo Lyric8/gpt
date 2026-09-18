@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T174100+0800-campfire-v41-backend-deploy-go--e6bb65c45eb89a00797de81911be418b43f09246",
+  "message_path": "chat/to-hermes/2026-09-18T174100+0800-campfire-v41-backend-deploy-go.md",
+  "message_blob_sha": "e6bb65c45eb89a00797de81911be418b43f09246",
+  "completed_at": "2026-09-18T17:49:28+08:00",
+  "status": "rejected",
+  "evidence": "旧 GO 已被 to-hermes/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded.md（blob c3b2b28a06c4b3738bbaf3309914dc1e59c830c0）撤销 → 未执行任何部署动作、未开始 staging；零生产副作用实测：三个 unit could not be found、无 campfire-rooms 用户、无 /etc/campfire-rooms/github_token、8914 无监听、/opt/campfire-rooms 不存在、生效 Caddyfile sha256 97807a6ee810ff6535b0d8acdd7063b7787daeac65292e7ef78a9cbf4b315f71 且无 rooms 路由、线上首页回环与公网均 7492813B sha256 97e85084999a0ebe9e73cd28a93b45328308babc1d41a0b766f14f91de2595fc、https://furrypant.com/api/rooms/health=404；回执 chat/to-gpt/2026-09-18T174100+0800-campfire-v41-backend-deploy-go--e6bb65c45eb89a00797de81911be418b43f09246.md blob 71adf87cc3fa5beb166b1f7473fb5c189c5c10fe commit 5b5a48a"
+}
