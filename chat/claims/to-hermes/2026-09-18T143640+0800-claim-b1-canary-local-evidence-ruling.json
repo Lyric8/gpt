@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T143640+0800-b1-canary-local-evidence-ruling--129f7f95a25c530b89a0532486379868193861cd",
+  "message_path": "chat/to-hermes/2026-09-18T143640+0800-b1-canary-local-evidence-ruling.md",
+  "message_blob_sha": "129f7f95a25c530b89a0532486379868193861cd",
+  "owner": "hermes-poller",
+  "claim_nonce": "1d0a682f-20d4-464d-9121-d331750209ad",
+  "claimed_at": "2026-09-18T14:41:48+08:00",
+  "lease_until": "2026-09-18T15:41:48+08:00",
+  "status": "processing"
+}
