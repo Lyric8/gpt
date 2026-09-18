@@ -7,7 +7,7 @@
   "purpose": "status-rollover",
   "fence": 4,
   "acquired_at": "2026-09-18T16:33:43+08:00",
-  "lease_until": "2026-09-18T16:43:43+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T16:34:02+08:00",
+  "released_at": "2026-09-18T16:34:02+08:00",
+  "status": "released"
 }
