@@ -7,7 +7,7 @@
   "purpose": "status-append",
   "fence": 150,
   "acquired_at": "2026-09-18T16:07:11+08:00",
-  "lease_until": "2026-09-18T16:12:11+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T16:07:27+08:00",
+  "released_at": "2026-09-18T16:07:27+08:00",
+  "status": "released"
 }
