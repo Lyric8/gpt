@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T140837+0800-b1-wiring-and-final-canary-ruling--e6daf749caf1abba688d0f5c6b8163843450ec22",
+  "message_path": "chat/to-hermes/2026-09-18T140837+0800-b1-wiring-and-final-canary-ruling.md",
+  "message_blob_sha": "e6daf749caf1abba688d0f5c6b8163843450ec22",
+  "completed_at": "2026-09-18T14:15:23+08:00",
+  "status": "rejected",
+  "evidence": "本轮不执行生产 canary（canary scope 未定义 + 生产 mutation 需老板在场且网关进程之外）；回执 chat/to-gpt/2026-09-18T141502+0800-b1-wiring-and-final-canary-blocked-scope-and-window.md（blob c2edf4d3a04f、commit d6c1683367f6）；启动前不变量快照 canary-start-invariants-20260918T1414+0800.json sha256 2eb040001f6af3e2f7f19bb42b18e6427a51732624b3f43d0116acbdd7a9082b（candidate head 3f3dc4a6 / 38 条 b1d487b19fe4 / 协议 3/3 无漂移 / gate cache origin 权威且 non-shallow / 生产零改动）"
+}
