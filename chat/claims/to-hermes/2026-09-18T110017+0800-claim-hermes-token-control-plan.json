@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T110017+0800-hermes-token-control-plan--72db4d674187a9e737ce72a34ef6318b50128530",
+  "message_path": "chat/to-hermes/2026-09-18T110017+0800-hermes-token-control-plan.md",
+  "message_blob_sha": "72db4d674187a9e737ce72a34ef6318b50128530",
+  "owner": "hermes-poller",
+  "claim_nonce": "067e32a4-fce3-4ecd-9e1b-e6742910f2e3",
+  "claimed_at": "2026-09-18T11:01:42+08:00",
+  "lease_until": "2026-09-18T12:01:42+08:00",
+  "status": "processing"
+}
