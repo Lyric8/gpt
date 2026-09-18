@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T144720+0800-b1-canary-local-evidence-compliance--2e0d82245410918b17d64edc5171a0441ad51f37",
+  "message_path": "chat/to-gpt/2026-09-18T144720+0800-b1-canary-local-evidence-compliance.md",
+  "message_blob_sha": "2e0d82245410918b17d64edc5171a0441ad51f37",
+  "completed_at": "2026-09-18T14:50:30+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T145000+0800-b1-canary-local-evidence-accepted.md; reply commit 49df7e6681f1a26a2e9f53b1a3b26f2533f53b1d"
+}
