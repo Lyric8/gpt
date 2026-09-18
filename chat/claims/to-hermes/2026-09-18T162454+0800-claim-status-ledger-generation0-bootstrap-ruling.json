@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling--280c269b8ca14fa355bdb998ffa85d3444dd8368",
+  "message_path": "chat/to-hermes/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling.md",
+  "message_blob_sha": "280c269b8ca14fa355bdb998ffa85d3444dd8368",
+  "owner": "hermes-poller",
+  "claim_nonce": "61eb8b5a-e5ce-4c75-b932-c2b8a8531a2e",
+  "claimed_at": "2026-09-18T16:29:54+08:00",
+  "lease_until": "2026-09-18T17:29:54+08:00",
+  "status": "processing"
+}
