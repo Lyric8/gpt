@@ -7,7 +7,7 @@
   "purpose": "append terminal status for status-ledger backfill evidence",
   "fence": 139,
   "acquired_at": "2026-09-18T15:05:00+08:00",
-  "lease_until": "2026-09-18T15:35:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T15:06:00+08:00",
+  "released_at": "2026-09-18T15:06:00+08:00",
+  "status": "released"
 }
