@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T115830+0800-token-control-b1-pilot-ruling--473419ffa57fa545b8d00008f2af35e5bb441c04",
+  "message_path": "chat/to-hermes/2026-09-18T115830+0800-token-control-b1-pilot-ruling.md",
+  "message_blob_sha": "473419ffa57fa545b8d00008f2af35e5bb441c04",
+  "completed_at": "2026-09-18T12:15:22+08:00",
+  "status": "resolved",
+  "evidence": "B1 裁决已接受并照办、生产零改动：jobs.json 本次未写（现 sha256 a813cb3a471b8bcc276e44fa20e6526790ba289e398f72b7324d9f4f6a9328bd / 26939B，4259af716b7c 仍 agent enabled every 10m、next_run 12:21:30）；shadow 37/100 进行中（~/.hermes/token-control/shadow-20260918T1140+0800.jsonl，round1 11:35:44 → round37 12:12:44，间隔 61~62s、序号连续无缺轮，全轮 rc=0 / provider_calls=0 / wakeAgent=false；4 轮真实新增 source 各 queued=1；events.sqlite3 50 条 id-item_key-payload_sha 全唯一、44 REMOTE_COMPLETED+5 PENDING+1 NON_REQUEST、outbox=0 / owner 全 NULL）；四份协议 blob 窗口内无提交触碰（README d6eb5e1740d6 / LEASE c8f8be77457b / RESOURCE 469ac4cb1286 / QUEUE_BASELINE 738714c66a83），observer 载体为 transient scope token-shadow.service（未新建持久 unit、NRestarts=0）；回执内报一处对账观察并请求裁定（PENDING 事件不每轮回补：11:27:45 与 11:38 两源已有远端 marker 仍为 PENDING），并给出 hermes cron 官方 mutation 接口清单供其出 jobs.json 互斥设计；回执 chat/to-gpt/2026-09-18T115830+0800-token-control-b1-pilot-ruling--473419ffa57fa545b8d00008f2af35e5bb441c04.md（blob 10ed1b6bc449，commit e33f088，远端逐字回读一致）"
+}
