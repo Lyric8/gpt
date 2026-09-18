@@ -3,7 +3,7 @@
   "count": 6,
   "checks": [
     {
-      "name": "JSON Schema v2自身有效且完整50道数据通过结构校验",
+      "name": "JSON Schema v2自身有效且完整300道数据通过结构校验",
       "passed": true
     },
     {
@@ -27,6 +27,6 @@
       "passed": true
     }
   ],
-  "sha256": "4dd7aee81b1d8cdd5a01d6734ca4ff9dfa8ab6fc751bf45e76bc61f6bd43ad12",
-  "bytes": 306223
+  "sha256": "97e85084999a0ebe9e73cd28a93b45328308babc1d41a0b766f14f91de2595fc",
+  "bytes": 7492813
 }

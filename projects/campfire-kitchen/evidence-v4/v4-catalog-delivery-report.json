@@ -1,0 +1,28 @@
+{
+  "version": "4.0.0",
+  "recipes": 300,
+  "uniqueIds": 300,
+  "uniqueTitles": 300,
+  "categories": {
+    "串烤": 25,
+    "炭烤大肉": 25,
+    "海鲜烧烤": 25,
+    "苹果木烟熏": 25,
+    "烤蔬菜": 33,
+    "豆类与菌菇": 25,
+    "主食": 33,
+    "一锅与煎盘": 44,
+    "冷菜与蘸酱": 31,
+    "甜品": 19,
+    "饮品": 15
+  },
+  "ingredients": 216,
+  "sources": 46,
+  "presets": 12,
+  "htmlBytes": 7492813,
+  "htmlSha256": "97e85084999a0ebe9e73cd28a93b45328308babc1d41a0b766f14f91de2595fc",
+  "python": "3.13.5",
+  "node": "v22.16.0",
+  "releasePublished": false,
+  "productionDeployedByThisTask": false
+}

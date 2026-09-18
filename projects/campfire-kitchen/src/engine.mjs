@@ -190,8 +190,8 @@ export function sanitizeState(raw, db) {
                 s.notes[id] = n.slice(0, 3000);
     if (Array.isArray(raw.history))
         s.history = raw.history.slice(-30).filter(h => plain(h) && str(h.at, 100) && str(h.name, 100) && Array.isArray(h.ids)).map(h => ({ at: h.at, name: h.name, ids: unique(h.ids.filter(id => ids.has(id))).slice(0, 50) }));
-    if (plain(raw.timer) && finite(raw.timer.endsAt) && raw.timer.endsAt > 0 && str(raw.timer.label, 200))
-        s.timer = { endsAt: raw.timer.endsAt, label: raw.timer.label };
+    // V4 retires countdowns; retain the null field solely for old backup compatibility.
+    s.timer = null;
     return s;
 }
 export function recipeView(db, id, state, portionOverride) {

@@ -1,3 +1,4 @@
+import { loadCatalog } from '../tools/load_catalog.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -5,7 +6,7 @@ import { makeInventoryIndex, sanitizeInventory, scopedEntries, inventoryCandidat
 import { suggestMeals } from '../src/core/recommendations.mjs';
 import { defaultState, recipeView } from '../src/engine.mjs';
 import { readJSONStorage, writeJSONStorage } from '../src/core/storage.mjs';
-const db=JSON.parse(readFileSync(new URL('../data/recipes.json',import.meta.url)));
+const db = loadCatalog();
 const equipment=JSON.parse(readFileSync(new URL('../data/equipment.json',import.meta.url)));
 const index=makeInventoryIndex(db,equipment);
 const empty=()=>sanitizeInventory(null,index);
@@ -13,9 +14,9 @@ const all=()=>sanitizeInventory({ingredients:[...index.usedIngredients],tools:[.
 const byId=(results,id)=>results.find(m=>m.recipe.id===id);
 
 test('canonical inventory is complete, scoped and deduplicated',()=>{
- assert.equal(index.recipes.length,50);assert.equal(index.categories.length,6);
- const cleaned=sanitizeInventory({ingredients:['salt','salt','bad',4],tools:['tongs','tongs','bad'],categories:['肉类','bad','肉类']},index);
- assert.deepEqual(cleaned.ingredients,['salt']);assert.deepEqual(cleaned.tools,['tongs']);assert.deepEqual(cleaned.categories,['肉类']);
+ assert.equal(index.recipes.length,300);assert.equal(index.categories.length,11);
+ const cleaned=sanitizeInventory({ingredients:['salt','salt','bad',4],tools:['tongs','tongs','bad'],categories:['炭烤大肉','bad','炭烤大肉']},index);
+ assert.deepEqual(cleaned.ingredients,['salt']);assert.deepEqual(cleaned.tools,['tongs']);assert.deepEqual(cleaned.categories,['炭烤大肉']);
  assert.equal(inventoryCandidates(index).ingredients.length,index.usedIngredients.size);
  assert.equal(inventoryCandidates(index).tools.length,index.usedTools.size);
 });
@@ -24,7 +25,7 @@ test('zero inventory never implies oil, salt, sauce or a pot',()=>{
  assert(matches.every(m=>m.missingIngredients.length>0));
 });
 test('full inventory supports every recipe only when freezer is confirmed',()=>{
- const matches=matchInventory(index,all(),{hasFreezer:true});assert.equal(matches.filter(m=>m.ready).length,50);
+ const matches=matchInventory(index,all(),{hasFreezer:true});assert.equal(matches.filter(m=>m.ready).length,300);
  const noFreezer=matchInventory(index,all());assert.equal(noFreezer.filter(m=>!m.ready).length,db.recipes.filter(r=>r.needsFreezer).length);
  assert(noFreezer.filter(m=>!m.ready).every(m=>m.needsFreezer&&m.status==='equipment'));
 });
@@ -40,16 +41,16 @@ for(const category of index.categories){
 }
 test('multi category is OR scope and changing it preserves inventory',()=>{
  const owned=all();const before=JSON.stringify(owned);
- const a=scopedEntries(index,['肉类']),b=scopedEntries(index,['蔬菜']);
- assert.equal(scopedEntries(index,['肉类','蔬菜']).length,a.length+b.length);
- inventoryCandidates(index,['肉类']);matchInventory(index,{...owned,categories:['蔬菜']});
+ const a=scopedEntries(index,['炭烤大肉']),b=scopedEntries(index,['烤蔬菜']);
+ assert.equal(scopedEntries(index,['炭烤大肉','烤蔬菜']).length,a.length+b.length);
+ inventoryCandidates(index,['炭烤大肉']);matchInventory(index,{...owned,categories:['烤蔬菜']});
  assert.equal(JSON.stringify(owned),before);
 });
 test('candidate search never introduces global out-of-scope items',()=>{
- const scoped=inventoryCandidates(index,['甜品与饮料']);const search=inventoryCandidates(index,['甜品与饮料'],'牛肉');
+ const scoped=inventoryCandidates(index,['甜品']);const search=inventoryCandidates(index,['甜品'],'牛肉');
  assert.equal(search.ingredients.length,0);
- assert(inventoryCandidates(index,['肉类'],'牛肉').ingredients.every(i=>i.name.includes('牛肉')));
- assert.equal(inventoryCandidates(index,['甜品与饮料'],' \n ').ingredients.length,scoped.ingredients.length);
+ assert(inventoryCandidates(index,['炭烤大肉'],'牛肉').ingredients.every(i=>i.name.includes('牛肉')));
+ assert.equal(inventoryCandidates(index,['甜品'],' \n ').ingredients.length,scoped.ingredients.length);
 });
 for(const entry of index.recipes){
  test(`all prerequisites individually enforced: ${entry.recipe.id}`,()=>{

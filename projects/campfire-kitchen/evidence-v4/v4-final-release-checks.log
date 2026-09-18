@@ -1,0 +1,9 @@
+VALID 4.0.0: 300 recipes, 216 ingredients, 46 sources
+Built /mnt/data/v4/index.html (7,492,813 bytes; 300 recipes; deduplicated photo library)
+Built /mnt/data/v4/index.html (7,492,813 bytes; 300 recipes; deduplicated photo library)
+PASS JSON Schema v2自身有效且完整300道数据通过结构校验
+PASS 独立CLI语义校验器成功
+PASS 相同源码数据连续构建逐字节一致
+PASS 全部ES模块与CLI通过Node语法检查
+PASS 可选标准库HTTP服务真实返回完整发行HTML及nosniff头
+PASS HTTP服务不开放目录列表

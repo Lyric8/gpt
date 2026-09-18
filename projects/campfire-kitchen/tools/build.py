@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import tempfile
+import importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
 IMPORT = re.compile(r"^import\s*\{([^}]+)\}\s*from\s*['\"]([^'\"]+)['\"]\s*;[ \t]*$", re.M)
@@ -113,14 +114,38 @@ def webp_dimensions(data: bytes) -> tuple[int, int]:
     raise ValueError('WebP dimensions not found')
 
 
+def load_database(root: Path = ROOT) -> dict:
+    spec = importlib.util.spec_from_file_location('campfire_catalog', root / 'tools/catalog.py')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.load_catalog(root)
+
+
 def photo_payload(data: dict) -> dict:
     metadata = json.loads((ROOT / 'data/photos.json').read_text(encoding='utf-8'))
-    ids = {r['id'] for r in data['recipes']}
-    if set(metadata) != ids:
-        raise ValueError(f'Photo coverage mismatch: {sorted(ids ^ set(metadata))}')
+    extras = ROOT / 'data/photos-v4.json'
+    if extras.exists():
+        extra = json.loads(extras.read_text(encoding='utf-8'))
+        if set(metadata) & set(extra):
+            raise ValueError('Duplicate photo pool key')
+        metadata.update(extra)
+    refs = {}
+    for recipe in data['recipes']:
+        key = recipe.get('photoId', recipe['id'])
+        if recipe['id'] in refs:
+            raise ValueError('Photo coverage: duplicate recipe ID')
+        if key and key not in metadata:
+            raise ValueError(f'Photo coverage: missing {key}')
+        refs[recipe['id']] = key or None
+    # Explicitly absent photos are preferable to mislabeled nuts/eggs or another meat.
+    allowed_absent = {'v4-smoke-15', 'v4-smoke-18', 'v4-vegetables-24', 'v4-vegetables-25'}
+    absent = {key for key, ref in refs.items() if ref is None}
+    if absent - allowed_absent:
+        raise ValueError(f'Photo coverage: unreviewed missing images {absent - allowed_absent}')
     photos = {}
     boundary = (ROOT / 'assets/photos').resolve()
-    for key, photo in metadata.items():
+    for key in sorted({ref for ref in refs.values() if ref}):
+        photo = metadata[key]
         if any(not isinstance(photo.get(field), str) or not photo[field].strip() for field in ('src', 'alt', 'author', 'source', 'license', 'licenseUrl', 'note')):
             raise ValueError(f'Incomplete photo attribution: {key}')
         if not photo['source'].startswith('https://') or not photo['licenseUrl'].startswith('https://'):
@@ -135,7 +160,7 @@ def photo_payload(data: dict) -> dict:
         if not 1 <= width <= 4096 or not 1 <= height <= 4096:
             raise ValueError(f'Unreasonable photo dimensions: {key}')
         photos[key] = {**photo, 'width': width, 'height': height, 'src': 'data:image/webp;base64,' + base64.b64encode(binary).decode('ascii')}
-    return photos
+    return {'schemaVersion': 2, 'library': photos, 'refs': refs}
 
 
 def safe_json(value: object) -> str:
@@ -151,6 +176,7 @@ def build(output: Path) -> None:
     equipment = json.loads((ROOT / 'data/equipment.json').read_text(encoding='utf-8'))
     if data.get('schemaVersion') != 2 or data.get('version') != package['version']:
         raise ValueError('Recipe schema or release version mismatch')
+    data = load_database(ROOT)
     if equipment.get('schemaVersion') != 1:
         raise ValueError('Unsupported equipment schema')
     template = (ROOT / 'src/index.template.html').read_text(encoding='utf-8')
@@ -176,7 +202,7 @@ def build(output: Path) -> None:
     finally:
         if os.path.exists(name):
             os.unlink(name)
-    print(f'Built {output} ({output.stat().st_size:,} bytes; {len(data["recipes"])} recipes and photos)')
+    print(f'Built {output} ({output.stat().st_size:,} bytes; {len(data["recipes"])} recipes; deduplicated photo library)')
 
 
 if __name__ == '__main__':

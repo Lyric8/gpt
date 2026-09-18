@@ -73,21 +73,21 @@ class BuildTests(unittest.TestCase):
         body=b'WEBPVP8 '+struct.pack('<I',100)+b'abc'
         with self.assertRaisesRegex(ValueError,'Truncated'):build.webp_dimensions(b'RIFF'+struct.pack('<I',len(body))+body)
     def test_photos_have_exact_recipe_coverage_and_credit(self):
-        data=json.loads((ROOT/'data/recipes.json').read_text())
+        data=build.load_database(ROOT)
         payload=build.photo_payload(data)
-        self.assertEqual(set(payload),{r['id'] for r in data['recipes']})
-        for photo in payload.values():
+        self.assertEqual(set(payload['refs']),{r['id'] for r in data['recipes']})
+        for photo in payload['library'].values():
             self.assertTrue(photo['src'].startswith('data:image/webp;base64,'))
             self.assertTrue(photo['source'].startswith('https://'))
             self.assertTrue(photo['licenseUrl'].startswith('https://'))
             self.assertTrue(photo['author'])
-        data['recipes']=data['recipes'][:-1]
+        data['recipes'][0]['photoId']='nonexistent-reviewed-photo'
         with self.assertRaisesRegex(ValueError,'coverage'):build.photo_payload(data)
     def test_real_build_reproducible_and_bounded(self):
         one=self.root/'one.html';two=self.root/'two.html'
         with contextlib.redirect_stdout(io.StringIO()):build.build(one);build.build(two)
         self.assertEqual(one.read_bytes(),two.read_bytes())
-        self.assertLess(one.stat().st_size,5_000_000)
+        self.assertLess(one.stat().st_size,8_000_000)
         self.assertNotIn(b'/*__',one.read_bytes())
     def test_version_mismatch_does_not_overwrite_existing_output(self):
         self.source('data/recipes.json','{"schemaVersion":2,"version":"2.0.0"}')

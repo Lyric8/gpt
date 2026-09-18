@@ -1,64 +1,61 @@
-# 火边 · 露营风味厨房 v3
+# 火边 · 露营厨房 V4
 
-离线优先的露营菜谱、现有食材匹配和一顿饭规划工具。内置50道定稿菜谱、112种规范材料、6类菜与8套现成菜单。正式站点：<https://furrypant.com/>。
+300 道露营菜谱，按串烤、大肉、海鲜、苹果木烟熏、蔬菜、豆类与菌菇、主食、一锅与煎盘、冷菜与蘸酱、甜品、饮品分类。
 
-## 三个入口
+> **本次交付状态：V4 已完成本地开发与下述验证，但本次没有发布 Release，也没有上线。GitHub 源码批量写入连续两次被安全状态检查拦截；没有更新主线或部署站点。** 既有生产地址为 https://furrypant.com/ ，它不是本包已上线的证明。详细状态见 [V4_DELIVERY_STATUS.md](docs/V4_DELIVERY_STATUS.md)。
 
-**看菜谱**：实拍参考图卡片、分类、中文搜索、主动操作时间和核心食材直接可见。完整做法在操作卡中；照片有来源与许可。八套现成菜单放在可展开区域，不挤占浏览主线。
+## 使用
 
-**我有这些**：先多选想做的菜谱类别，再按组勾选已有食材和工具；候选来自范围内菜谱，不摆出无关物品。勾选实时更新“完全具备 / 缺食材 / 缺工具或冷冻 / 全部”；换分类保留库存，搜索状态只选择可见候选。符合条件的菜可组成有理由的组合，不把盐、油或冰箱能力默认算有。
+**看菜谱**：搜索菜名、食材或玩法，按分类浏览，每页24道。卡片只显示照片参考、菜名、分类、现场时间估计和加入菜单按钮。做法页依次展示火区、用量、准备、上火步骤、完成标准与吃法；不再提供逐菜倒计时。
 
-**这顿菜单**：按人数、每菜份数和出餐顺序计算；接着进入“备料与分装”，查看合计采购、按菜分配、预制任务、操作进度、Markdown/CSV与完整JSON备份。已有一种食材不代表数量足够或已经称量装车。
+**我有这些**：先选菜谱分类，再勾选食材、工具与燃料。候选只来自所选范围；分类变化保留库存。盐、油、木炭与冷冻条件不默认拥有。竹炭可满足烧烤炭要求，苹果木不能替代燃料；烟熏需要带盖双区炉、炉温计、探针温度计和苹果木。
 
-库存、菜单、笔记与记录仅保存在浏览器，不上传服务器。页面打开后不请求外部图片、字体、脚本或API。下载发行HTML后可离线打开；浏览器拒绝本地存储时明确提示先导出备份。
+**菜单与备料**：按人数和每菜份量合计采购，调整出餐顺序，核对净用量、预制和分装；导出 Markdown、CSV 或完整 JSON 备份。库存“拥有”不等于数量足够，称量备好后再勾选采购完成。
 
-## 源码结构
+**炭火指南**：竹炭供热、苹果木增香；双区火、加盖间接烤、薄烟、两种温度计与安全收火分别说明。只做热烟熏熟食，不做冷熏或常温保藏。
+
+数据只保存在当前浏览器。发行HTML内置数据、照片、脚本与样式；打开后不请求外部字体、图片或API，可离线使用。浏览器禁用存储时提示导出，不假装保存成功。
+
+## 源码
 
 ```text
 data/
-  recipes.json              # 定稿菜谱、材料、分类、菜单、来源
-  recipes.schema.json       # 结构契约
-  equipment.json            # 工具实体、能力、AND/OR要求
-  photos.json               # 每菜照片、署名、许可、参考边界
-assets/photos/              # 本地实拍WebP
+  recipes.json                 # V4目录清单：版本、源文件、精确数量
+  catalog/classics.json         # 原50道完整数据，稳定ID与数量保留
+  catalog/ingredients.tsv       # 新原料定义（竖线分隔）
+  catalog/{skewers,...}.tsv     # 十个分类，各25道明确编写的配方
+  equipment.json               # 工具、能力、AND/OR要求
+  photos.json                  # 既有照片来源与许可
+  photos-v4.json               # 新照片来源、许可、参考边界
+  photos-v4-provenance.json     # 素材检索与校对记录
+assets/photos/                 # 本地WebP
 src/
-  app.mjs                   # 状态、事件、存储和视图协调
-  engine.mjs                # 数量/备料/进度/备份迁移引擎
-  core/
-    pantry.mjs              # 分类范围、候选并集、精确可做判断
-    recommendations.mjs     # 有约束的组合选择与解释
-    storage.mjs             # 可失败的存储适配
-  ui/
-    components.mjs          # 安全转义、照片、图卡、分类组件
-    browse.mjs              # 看菜谱
-    pantry.mjs              # 我有这些
-    planning.mjs            # 这顿菜单与备料
-    recipe.mjs              # 操作卡
-    settings.mjs            # 资料、导入与管理
-  styles.css                # 本地样式入口
-  styles/                   # 设计变量、基础、卡片、库存、操作布局
-  index.template.html       # 极小HTML壳
- tools/                     # 确定性离线打包、校验、可选HTTP服务
- tests/                     # 引擎/库存/构建/浏览器/发版回归
+  app.mjs                      # 状态、路由、事件协调
+  engine.mjs                   # 数量、备料、进度、备份兼容
+  core/                        # 库存、推荐、存储、分页
+  ui/                          # 浏览、库存、菜单、做法、炭火指南、资料
+  styles/                      # 设计变量与各视图样式
+  index.template.html          # 发行HTML模板
+ tools/catalog.py              # 严格编译目录；不生成调料排列组合
+ tools/build.py                # 确定性离线打包；照片池去重
+ tests/                        # 数据、引擎、构建、浏览器与发版测试
 ```
 
-维护的是多文件源码；`index.html` 是自动打包出的离线发行物，已gitignore，不应手改。新增菜谱/分类不需要修改渲染分支。详细扩展入口、库存语义、工具规则、构建语法与发布边界见 [EXTENDING_V3.md](docs/EXTENDING_V3.md)。
+`.tsv` 文件沿用工程文件名，实际分隔符为 `|`，不是制表符。每道配方包含名称、材料与克数、准备、烹饪、吃法、照片引用、时间估计、明确的烹饪模式及额外工具。构建验证路径、数量、唯一名称、原料、照片与工具引用。不是从“若干肉类×若干调料”自动乘出300道。
 
-## 本地运行与测试
+运行时和备份仍使用 `schemaVersion=2` 的完整数据库。`tools/catalog.py` 将源码清单编译成完整数据库，旧版自定义菜谱库仍可导入；导入的自定义库不会被悄悄替换。资料页提供明确确认后的“恢复内置菜谱”。旧版计时状态清空，旧菜单稳定ID、笔记、库存与数量语义保留。
 
-Node.js 20以上，Python 3.10以上；运行时与构建无npm第三方依赖。测试依赖单独固定在 `tests/requirements.txt`。
+维护多文件源码，不手改生成的 `index.html`。页面内照片共享一个内嵌资源池，不为同一参考照片重复保存几份Base64。
+
+## 构建与验收
+
+Node.js20以上、Python3.10以上。运行和构建无第三方npm依赖；浏览器测试依赖固定在 `tests/requirements.txt`。
 
 ```bash
 cd projects/campfire-kitchen
 npm run validate
 npm test
 python tools/build.py
-python tools/serve.py --no-browser --port 8080
-```
-
-浏览器访问本地8080端口。完整验证：
-
-```bash
 python -m pip install -r tests/requirements.txt
 python -m unittest discover -s tests -p '*_test.py'
 python tests/release_checks.py
@@ -66,16 +63,24 @@ python -m playwright install --with-deps chromium
 python tests/browser_smoke.py --mode http
 ```
 
-Quality workflow 在独立分支/PR运行这些测试并保留源码、报告与截图artifact；**它不部署**。报告区分真实HTTP与受限沙箱content模式，不能拿模拟存储替代真实浏览器刷新验收。
+`tools/serve.py --no-browser --port 8080` 提供本地HTTP预览。编译完整数据库：
 
-## 发版与回滚
+```bash
+python tools/catalog.py --output /tmp/campfire-catalog.json
+```
 
-只保留既有 **published Release → build → immutable assets → exact-asset deploy → public SHA256 verification** 流水线。代码push不部署。
+浏览器验收逐一打开全部300道、遍历13页，检查搜索、库存、组合、采购、导入、防脚本注入、焦点、刷新恢复、照片解码、实际文本对比度与320—1440像素布局。只有 `--mode http` 验证真实HTTP来源与原生存储；受限环境 `--mode content` 使用显式存储替身，报告会说明，不能代替上线门禁。
 
-版本同步修改 `package.json` 与 `data/recipes.json`，提交通过Quality并进入main，再创建非prerelease `campfire-kitchen-vX.Y.Z`。正式流水线会验证版本与main祖先关系、两次构建字节一致、Release产物下载校验、受限SSH部署、线上字节哈希与安全响应头。禁止覆盖已发布的不同字节产物。部署/回滚细节见 [RELEASE_PIPELINE.md](docs/RELEASE_PIPELINE.md)。
+## 发布与回滚
 
-## 设计与内容边界
+保留现有 **published Release → build → immutable assets → exact-asset deploy → public SHA256 verification** 流水线。代码push不部署。
 
-[UX_V3_PLAN.md](docs/UX_V3_PLAN.md) 记录信息架构与研究依据；[PHOTO_POLICY_V3.md](docs/PHOTO_POLICY_V3.md) 记录真实照片引用、参考差异和署名要求。照片并非本配方复刻成果，不依据照片替换原材料。
+版本必须同时匹配 `package.json` 与 `data/recipes.json`。源码通过Quality并进入main后，发布非预发布Release，标签格式 `campfire-kitchen-v4.0.0`。流水线验证main祖先关系、两次构建字节一致、Release资产不可变、下载回验、受限SSH部署、线上字节哈希与响应头。发布完成以部署回执为准，不以提交或创建标签为准。
 
-原105项数量引擎回归保留。v3新增库存、工具、组合、焦点/范围/存储恢复与构建边界测试。受控测试不等同于野外实测烹饪；安全、冷链、禁火规定和真实熟度仍按操作卡与现场要求确认。主动操作时间是配方估计，不是实测保证。
+回滚按 [RELEASE_PIPELINE.md](docs/RELEASE_PIPELINE.md) 使用已发布且校验成功的旧版资产，保留旧版Release，不覆盖不同字节的已发布文件。不会修改网关进程、凭据或其他项目。
+
+## 内容边界
+
+配方是基于烹饪和食品安全原则编写的两人分享配方，未逐道在你的炉具上实做。分钟用于安排用餐，不替代中心温度与完成标准。数量随人数调整，炉面面积、批次、腌制、冷却与升温时间需另行安排。
+
+照片是有署名和许可的实拍参考，不是本配方逐道复刻照片；食材照片明确标注。暂无匹配图片时显示缺图，不用无关照片冒充。版权、食安来源在做法和资料页可查看。

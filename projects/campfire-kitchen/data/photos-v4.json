@@ -1,0 +1,550 @@
+{
+  "v4-pork-skewers": {
+    "src": "assets/photos/v4-pork-skewers.webp",
+    "alt": "烤架上并排摆放的猪肉串",
+    "author": "Phoebus 28",
+    "source": "https://commons.wikimedia.org/wiki/File:Mu_ping.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-ribs": {
+    "src": "assets/photos/v4-ribs.webp",
+    "alt": "烤架上的一整排猪肋排，旁边烤着玉米",
+    "author": "Gyfjonas",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribs_barbecue.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-squid": {
+    "src": "assets/photos/v4-squid.webp",
+    "alt": "木板上的整只烤鱿鱼，旁边配一碟蘸汁",
+    "author": "Joy D. Ganaden",
+    "source": "https://commons.wikimedia.org/wiki/File:Inihaw_na_Pusit_DSCF4327.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-wings": {
+    "src": "assets/photos/v4-wings.webp",
+    "alt": "圆烤盘上烤至微焦的鸡翅",
+    "author": "P1898",
+    "source": "https://commons.wikimedia.org/wiki/File:Dak_nalgae_wings.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-sausage": {
+    "src": "assets/photos/v4-sausage.webp",
+    "alt": "烤架上并排烤制的香肠",
+    "author": "gcardinal from Norway",
+    "source": "https://commons.wikimedia.org/wiki/File:Sausages_on_a_Barbecue.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-whole-chicken": {
+    "src": "assets/photos/v4-whole-chicken.webp",
+    "alt": "整只香料烤鸡盛盘，配小土豆、红椒与香菜",
+    "author": "Jameswasswa",
+    "source": "https://commons.wikimedia.org/wiki/File:Whole_spiced_chicken_(roasted).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-duck": {
+    "src": "assets/photos/v4-duck.webp",
+    "alt": "整只烧鸭盛盘，鸭皮油亮",
+    "author": "CNEcija12345",
+    "source": "https://commons.wikimedia.org/wiki/File:Roast_duck_Cantonese_styleCNE.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-oyster": {
+    "src": "assets/photos/v4-oyster.webp",
+    "alt": "烤架上壳已张开的生蚝",
+    "author": "そらみみ",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_oysters_20171001.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-whole-fish": {
+    "src": "assets/photos/v4-whole-fish.webp",
+    "alt": "白盘中的整条烤鱼",
+    "author": "Yaco*",
+    "source": "https://commons.wikimedia.org/wiki/File:Yakizakana.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pork-belly": {
+    "src": "assets/photos/v4-pork-belly.webp",
+    "alt": "烤架上的五花肉片，正用筷子翻动",
+    "author": "avlxyz",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilling_streaky_pork_belly_-_Maedaya.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-tofu": {
+    "src": "assets/photos/v4-tofu.webp",
+    "alt": "烤架上煎烤至金黄的豆腐块",
+    "author": "Robert Loescher",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Tofu_Bars.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cauliflower": {
+    "src": "assets/photos/v4-cauliflower.webp",
+    "alt": "烤盘上烤至微黄的花椰菜",
+    "author": "Lablascovegmenu from London",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_cauliflower,_vegan_(7646252906).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-zucchini": {
+    "src": "assets/photos/v4-zucchini.webp",
+    "alt": "烤架上带烤痕的西葫芦片",
+    "author": "Jeremy Keith",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_zucchini.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pepper": {
+    "src": "assets/photos/v4-pepper.webp",
+    "alt": "白碗中拌了香料的烤青椒块",
+    "author": "pelican from Tokyo, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_peppers_grilled_with_Indian_spices_(2619956062).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-onion": {
+    "src": "assets/photos/v4-onion.webp",
+    "alt": "烤好的洋葱瓣",
+    "author": "Karen and Brad Emerson",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_onions_(4656854440).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-burger": {
+    "src": "assets/photos/v4-burger.webp",
+    "alt": "盘中带芝士的汉堡",
+    "author": "Ceeseven",
+    "source": "https://commons.wikimedia.org/wiki/File:Cheeseburger_on_Plate.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-hotdog": {
+    "src": "assets/photos/v4-hotdog.webp",
+    "alt": "夹在面包里的热狗，配腌黄瓜酱",
+    "author": "Farmer John",
+    "source": "https://commons.wikimedia.org/wiki/File:Dodger_Dog_by_Farmer_John.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-flatbread": {
+    "src": "assets/photos/v4-flatbread.webp",
+    "alt": "撒芝麻的烤扁面包",
+    "author": "Shisma",
+    "source": "https://commons.wikimedia.org/wiki/File:Flatbread_on_counter.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-octopus": {
+    "src": "assets/photos/v4-octopus.webp",
+    "alt": "盘中切段的烤章鱼，配青柠与蔬菜",
+    "author": "pelican from Tokyo, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_octopus_(7770285890).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-lamb-chops": {
+    "src": "assets/photos/v4-lamb-chops.webp",
+    "alt": "盘中烤羊排，配烤洋葱",
+    "author": "Fumikas Sagisavas",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_lamb_chops.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-meatballs": {
+    "src": "assets/photos/v4-meatballs.webp",
+    "alt": "垫白纸的编织篮里成串的肉丸",
+    "author": "PattayaPatrol",
+    "source": "https://commons.wikimedia.org/wiki/File:DFC_4387_Savory_grilled_meatball_skewers_golden-brown_and_garnished_with_fresh_herbs_ready_to_enjoy.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-drumsticks": {
+    "src": "assets/photos/v4-drumsticks.webp",
+    "alt": "烤好的鸡小腿，浇烧烤酱",
+    "author": "Diana from Pennsylvania USA",
+    "source": "https://commons.wikimedia.org/wiki/File:Barbecued_chicken_drumsticks-01.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pulled-pork": {
+    "src": "assets/photos/v4-pulled-pork.webp",
+    "alt": "盘中手撕烤猪肉，配凉拌卷心菜与土豆",
+    "author": "Daderot",
+    "source": "https://commons.wikimedia.org/wiki/File:Easter_dinner_of_pulled_pork_with_Kansas_City_barbecue_sauce,_potato_pancake_with_scallions_and_onion,_bell_peppers,_celery,_and_carrots_-_Massachusetts.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-gizzard": {
+    "src": "assets/photos/v4-gizzard.webp",
+    "alt": "白盘上穿签烤制的鸡胗",
+    "author": "Flixtey",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Gizzard.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-bacon": {
+    "src": "assets/photos/v4-bacon.webp",
+    "alt": "平底锅里煎好的培根",
+    "author": "Joy",
+    "source": "https://commons.wikimedia.org/wiki/File:Bacon_in_a_pan_(cooked).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-quail": {
+    "src": "assets/photos/v4-quail.webp",
+    "alt": "盘中两只烤鹌鹑，配烤根茎蔬菜",
+    "author": "T.Tseng",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_local_quail_(29543284206).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pork-chop": {
+    "src": "assets/photos/v4-pork-chop.webp",
+    "alt": "盘中三块烤猪排",
+    "author": "Shixart1985",
+    "source": "https://commons.wikimedia.org/wiki/File:Three_grilled_pork_chops.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pasta": {
+    "src": "assets/photos/v4-pasta.webp",
+    "alt": "一只盘中并盛通心粉与番茄炖菜",
+    "author": "LingLass",
+    "source": "https://commons.wikimedia.org/wiki/File:A_dish_of_Rasta_Pasta.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-fried-noodles": {
+    "src": "assets/photos/v4-fried-noodles.webp",
+    "alt": "盘中炒面，配牛肉片与红椒",
+    "author": "cyclonebill",
+    "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Stegte_nudler_med_oksek%C3%B8d_og_r%C3%B8d_peber.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-potato-salad": {
+    "src": "assets/photos/v4-potato-salad.webp",
+    "alt": "碗里的土豆沙拉",
+    "author": "Ocdp",
+    "source": "https://commons.wikimedia.org/wiki/File:Potato_salad_001.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-grilled-peach": {
+    "src": "assets/photos/v4-grilled-peach.webp",
+    "alt": "烤过的半颗桃子盛在碗中",
+    "author": "Tony Webster from Minneapolis, Minnesota, United States",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_Peach_at_Minnesota_State_Fair_(48659750766).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-chocolate-drink": {
+    "src": "assets/photos/v4-chocolate-drink.webp",
+    "alt": "蓝色马克杯里的热巧，配小勺",
+    "author": "Bahnfrend",
+    "source": "https://commons.wikimedia.org/wiki/File:Dark_Hot_Chocolate,_San_Churro_Leederville,_2026_(01).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-milk-tea": {
+    "src": "assets/photos/v4-milk-tea.webp",
+    "alt": "杯中的奶茶，带奶泡",
+    "author": "Gaurav Dhwaj Khadka",
+    "source": "https://commons.wikimedia.org/wiki/File:Fresh_Milk_Tea_1.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cabbage": {
+    "src": "assets/photos/v4-cabbage.webp",
+    "alt": "成堆摆放的绿甘蓝（卷心菜）整颗",
+    "author": "Jeffery Martin",
+    "source": "https://commons.wikimedia.org/wiki/File:Cabbage_in_a_stack.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-broccoli": {
+    "src": "assets/photos/v4-broccoli.webp",
+    "alt": "深色背景上的两颗新鲜西兰花",
+    "author": "David Monniaux",
+    "source": "https://commons.wikimedia.org/wiki/File:Broccoli_DSC00861.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-chicken-heart": {
+    "src": "assets/photos/v4-chicken-heart.webp",
+    "alt": "白盘中蒜香煎鸡心，配整瓣蒜头",
+    "author": "David Pursehouse from Kawasaki, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Hearts_(829877522).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考（蒜香煎鸡心，非烤制）；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-watermelon": {
+    "src": "assets/photos/v4-watermelon.webp",
+    "alt": "烤架上烤出焦痕的西瓜片",
+    "author": "Glane23",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_watermelon.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-berry-crumble": {
+    "src": "assets/photos/v4-berry-crumble.webp",
+    "alt": "小烤盘中的混合莓果酥，配一球香草冰淇淋",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Mixed_berry_%26_apple_crumble,_vanilla_ice_cream_-_One_Kitchen.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cookie": {
+    "src": "assets/photos/v4-cookie.webp",
+    "alt": "木砧板上散放的巧克力豆曲奇",
+    "author": "Mshuang2",
+    "source": "https://commons.wikimedia.org/wiki/File:Chocolate_chip_cookies_on_cutting_board.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-sweet-drink": {
+    "src": "assets/photos/v4-sweet-drink.webp",
+    "alt": "玻璃杯中的洛神花红色饮品，垫木杯垫",
+    "author": "MRG90",
+    "source": "https://commons.wikimedia.org/wiki/File:Chai_torsh_-_Hibiscus_tea.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-gluten": {
+    "src": "assets/photos/v4-gluten.webp",
+    "alt": "炭火烤架上的螺旋切开面筋串，一手持签翻烤",
+    "author": "Popo le Chien",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaomianjin.JPG",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-tofu-skin": {
+    "src": "assets/photos/v4-tofu-skin.webp",
+    "alt": "黑色托盘里折叠叠放的白色薄豆皮（千张）片",
+    "author": "Fumikas Sagisavas",
+    "source": "https://commons.wikimedia.org/wiki/File:White_tofu_sheet.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-leek": {
+    "src": "assets/photos/v4-leek.webp",
+    "alt": "市场箱中成捆的大葱，白梗朝外、带绿梢",
+    "author": "RIOS269611",
+    "source": "https://commons.wikimedia.org/wiki/File:Ramos_de_poro_en_el_Mercado_Michoac%C3%A1n_en_la_Condesa.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-chives": {
+    "src": "assets/photos/v4-chives.webp",
+    "alt": "深色砧板上成堆择净的中国韭菜（Allium tuberosum），叶片扁平细长",
+    "author": "경빈마마",
+    "source": "https://commons.wikimedia.org/wiki/File:Garlic_chives_2.jpg",
+    "license": "CC BY 2.0 kr",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/kr/deed.en",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-okra": {
+    "src": "assets/photos/v4-okra.webp",
+    "alt": "白碗中的秋葵荚，撒有香菜碎",
+    "author": "Andrew Z. Colvin",
+    "source": "https://commons.wikimedia.org/wiki/File:Okra_with_corriander.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-romaine": {
+    "src": "assets/photos/v4-romaine.webp",
+    "alt": "堆叠摆放的罗马生菜整颗，叶片挺立",
+    "author": "Jeffery Martin",
+    "source": "https://commons.wikimedia.org/wiki/File:Stack_of_romaine_lettuce_heads.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-pumpkin": {
+    "src": "assets/photos/v4-pumpkin.webp",
+    "alt": "切开摊成花瓣状的去皮南瓜块，放在带孔金属蒸架上",
+    "author": "Taylorderek",
+    "source": "https://commons.wikimedia.org/wiki/File:Skinned_Roast_Pumpkin_01.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-carrot": {
+    "src": "assets/photos/v4-carrot.webp",
+    "alt": "黄盘中烤好的胡萝卜块",
+    "author": "Alabama Extension",
+    "source": "https://commons.wikimedia.org/wiki/File:Simply_Roasted_Carrots_-_50383827606.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-lotus": {
+    "src": "assets/photos/v4-lotus.webp",
+    "alt": "白盘中裹着酱汁的莲藕片，藕孔清晰",
+    "author": "Fumikas Sagisavas",
+    "source": "https://commons.wikimedia.org/wiki/File:Black_duck_flavored_lotus_root_slices.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-mussels": {
+    "src": "assets/photos/v4-mussels.webp",
+    "alt": "白碗中带壳煮好的青口贝",
+    "author": "Daderot",
+    "source": "https://commons.wikimedia.org/wiki/File:Steamed_mussels_-_Napier,_New_Zealand.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-eel": {
+    "src": "assets/photos/v4-eel.webp",
+    "alt": "刷满蒲烧酱汁的烤鳗鱼整片",
+    "author": "Fumikas Sagisavas",
+    "source": "https://commons.wikimedia.org/wiki/File:Kabayaki_grilled_eel.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-french-toast": {
+    "src": "assets/photos/v4-french-toast.webp",
+    "alt": "白盘中的两片法式吐司，配一块黄油",
+    "author": "Ocdp",
+    "source": "https://commons.wikimedia.org/wiki/File:French_toast_001.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-cucumber": {
+    "src": "assets/photos/v4-cucumber.webp",
+    "alt": "黑盘中拍碎的黄瓜块，裹奶白色酱汁、淋辣椒油并撒脆葱酥",
+    "author": "Andy Li",
+    "source": "https://commons.wikimedia.org/wiki/File:Smacked_cucumber_salad,_Dan_dan_dressing,_chilli_oil_-_Bonsai_Plant_Kitchen_2024-07-30.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-chickpea": {
+    "src": "assets/photos/v4-chickpea.webp",
+    "alt": "白盘中鹰嘴豆配小黄瓜、番茄、甜椒与奶酪的沙拉",
+    "author": "FitTasteTic",
+    "source": "https://commons.wikimedia.org/wiki/File:Colorful_healthy_Chickpea_Salad_-_49859083608.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-pear": {
+    "src": "assets/photos/v4-pear.webp",
+    "alt": "盘中切成片摆开的梨",
+    "author": "Микола Василечко",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D1%83%D1%88%D1%96_-_20251108_130555.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-enoki": {
+    "src": "assets/photos/v4-enoki.webp",
+    "alt": "深色菌棒上长出的一丛白色细柄金针菇，菌盖浅色",
+    "author": "Dushan Hanuska",
+    "source": "https://commons.wikimedia.org/wiki/File:Enoki_mushrooms_(50313211173).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "食材参考，非成品；按长边640px等比缩放并转WebP；沿用原许可",
+    "kind": "ingredient"
+  },
+  "v4-beef-skewers": {
+    "src": "assets/photos/v4-beef-skewers.webp",
+    "alt": "烤架上并排烤制的牛肉串",
+    "author": "Benoît Prieur",
+    "source": "https://commons.wikimedia.org/wiki/File:Barbecue_de_brochettes_de_b%C5%93uf_en_f%C3%A9vrier_2022.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-meat-patties": {
+    "src": "assets/photos/v4-meat-patties.webp",
+    "alt": "烤架上并排翻烤的肉饼，左侧金属盘里放着切开烤过的面包胚",
+    "author": "Carlos Lopez from hermosillo, Mexico",
+    "source": "https://commons.wikimedia.org/wiki/File:Hamburguesas_grill.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-noodle-soup": {
+    "src": "assets/photos/v4-noodle-soup.webp",
+    "alt": "黑碗中的牛肉汤面，配筷子",
+    "author": "NeoBatfreak",
+    "source": "https://commons.wikimedia.org/wiki/File:Chinese_Beef_Noodle_Soup_-_%E4%B8%AD%E5%BC%8F%E7%89%9B%E8%82%89%E6%B9%AF%E9%BA%B5.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  },
+  "v4-ricecake": {
+    "src": "assets/photos/v4-ricecake.webp",
+    "alt": "白方盘中裹红酱的韩式年糕，撒白芝麻",
+    "author": "我乃野云鹤",
+    "source": "https://commons.wikimedia.org/wiki/File:Tteokbokki_in_Handan_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "同类实拍参考；按长边640px等比缩放并转WebP；沿用原许可"
+  }
+}

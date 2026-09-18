@@ -1,0 +1,26 @@
+# title|ingredients|preparation|cooking|serving|photoId|active/onsiteMinutes|mode|extraEquipment
+炭烤双层芝士汉堡|groundBeef:320,burgerBun:160,cheddar:50,lettuce:50,pickles:40,ketchup:25,salt:2|牛肉压成四片薄饼，面包剖开；生菜洗净，酸黄瓜切片。|肉饼中火烤熟，最后盖芝士；面包切面短烤，不用压板挤肉汁。|面包依次夹生菜、两层肉饼、酸黄瓜和番茄酱。|v4-burger|25/35|grill|探针温度计
+焦洋葱芥末热狗|sausageCooked:250,hotdogBun:160,onion:180,mustard:25,oil:15|熟香肠表面浅划，面包开口，洋葱切细丝。|洋葱用煎盘慢炒甜软，香肠中火复热上色，面包最后烤热。|面包塞香肠与洋葱，挤芥末，趁面包微脆吃。|v4-hotdog|22/32|grill|带沿煎盘（无漏油孔）,探针温度计
+泡菜芝士热狗|sausageCooked:250,hotdogBun:160,kimchi:120,cheddar:50,mayo:20|泡菜挤掉部分汁剪短，面包剖开，熟香肠浅划。|香肠充分复热，泡菜在带沿盘炒热；组装后盖芝士，加盖弱火融化。|最后少量挤蛋黄酱，咸味来自香肠泡菜不再加盐。|v4-hotdog|22/32|pan|与所用锅具适配的锅盖,探针温度计
+青柠虾仁脆塔可|shrimp:300,tortilla:140,cabbage:120,limeJuice:20,mayo:25,paprika:2,oil:15,salt:2|虾擦干抹油盐红椒粉；卷心菜切细丝，拌青柠和蛋黄酱。|虾在煎盘两面烤熟，薄饼两面热透并烤出微脆边。|每张饼放虾和冷菜丝，对折吃。|smash-taco|22/32|pan
+孜然羊肉烤馕夹|lamb:320,naan:180,onion:100,cumin:3,chili:1,oil:15,salt:2|羊肉逆纹切薄条，洋葱切丝，馕剖开成口袋。|煎盘热油炒羊肉与洋葱至熟，拌孜然辣椒盐；馕在弱火烤热。|热肉塞入馕，边缘微脆时拿着吃。|v4-flatbread|25/35|pan|探针温度计
+照烧鸡肉饭堡|chicken:320,rice:350,soy:20,sugar:10,oil:15,lettuce:50|冷藏熟米饭压成四片薄饭饼；鸡腿摊平，生菜洗净。|煎盘先把饭饼两面煎出焦壳并充分复热；鸡腿另煎熟，再拌生抽糖收汁。|两片饭饼夹鸡肉和生菜，略压后分食。|soy-rice|30/45|pan|与所用锅具适配的锅盖,探针温度计
+海苔芝士夹心饭团|rice:400,mozzarella:60,nori:5,soy:12,oil:12|冷藏熟米饭分四份，包少量芝士压扁成2厘米厚饭团，海苔另装。|煎盘刷油中小火烤两面焦壳，中心米饭充分复热、芝士融化，再薄刷生抽。|包上海苔拿着吃，馅心先小口试温。|soy-rice|25/40|pan|与所用锅具适配的锅盖,探针温度计
+味噌茶泡焦饭团|rice:350,miso:20,greenTea:4,water:500,nori:3,sesame:4|米饭压成薄饭团；绿茶按包装用热水冲好滤去茶叶，味噌另装。|饭团两面烤出焦壳且中心充分复热；热茶放小锅重新热透，离火拌开味噌。|碗中放饭团，浇茶汤，撒海苔芝麻。|onigiri-chazuke|22/35|pan|至少1.5L带盖小锅,探针温度计
+培根鸡蛋早餐卷|bacon:120,eggWhole:3,tortilla:160,cheddar:50,tomato:100,oil:10|培根切短，番茄切块，鸡蛋打散，薄饼冷藏分装。|煎盘烤熟培根，再炒蛋至完全凝固；薄饼热透，放芝士让其融化。|卷入培根炒蛋与番茄，封口朝下再煎一会儿。|bean-quesadilla|25/35|pan|探针温度计
+蘑菇芝士脆饼|mushroom:250,tortilla:160,mozzarella:80,onion:80,oil:15,salt:2|口蘑切片，洋葱切末，芝士分成两份。|煎盘炒熟蘑菇洋葱并收干水；薄饼铺芝士与菌菇，对折两面煎脆。|切三角共享，内馅干爽才不容易漏汁。|bean-quesadilla|25/35|pan
+罗勒番茄炭烤薄饼|naan:180,tomatoSauce:70,mozzarella:90,tomato:100,basilFresh:10,oliveOil:10|熟馕抹番茄酱，铺沥干番茄片和芝士，边缘刷少量油。|先在弱直火把饼底烤热，再转间接区加盖，芝士融化、中心热透即取出。|罗勒出炉再放，剪成小块分食。|pita-pizza|20/32|roast|耐热浅盘
+苹果猪肉薄饼|porkTender:280,naan:180,apple:150,mustard:20,mozzarella:60,oil:12,salt:2|里脊切薄片，苹果切薄片，熟馕预先剖成合适大小。|先煎熟猪肉与苹果；馕抹芥末，铺肉苹果芝士，间接加盖烤热。|切片共享，苹果甜酸与芥末搭配，不放生肉直接盖饼上。|pita-pizza|28/40|roast|带沿煎盘（无漏油孔）,耐热浅盘,探针温度计
+蒜香黄油烤馒头片|mantou:300,butter:30,garlic:15,parsleyFresh:10,salt:2|馒头切1.5厘米片；蒜欧芹切末拌软黄油和盐。|馒头先两面弱火烤干表面，再抹蒜黄油，用煎盘烤到蒜熟、表面金黄。|一片掰两半分食，避免蒜末落入炭火。|v4-flatbread|18/25|pan
+芝士炼乳烤馒头|mantou:300,mozzarella:70,condensedMilk:30,butter:15|馒头切厚片，薄抹黄油，芝士与炼乳分别装。|煎盘烤热两面，盖芝士加盖弱火融化，馒头中心也要热。|下火淋炼乳，咸甜一起吃，不提前把炼乳烧黑。|v4-flatbread|18/28|pan|与所用锅具适配的锅盖
+番茄虾仁一锅意面|pastaDry:180,shrimp:250,cannedTomato:300,garlic:15,water:700,oliveOil:20,salt:3|虾去肠线擦干，蒜切片，意面按锅径折成能放平的长度。|锅里炒蒜，加番茄水煮开，再放意面勤搅；面快熟时放虾煮熟，水不足少量补。|汤汁裹面即可，先尝面心是否熟，不只按包装分钟数。|v4-pasta|30/40|pot
+奶油蘑菇培根意面|pastaDry:180,mushroom:200,bacon:100,cream:100,water:1000,parmesan:20|口蘑切片，培根切小段，奶油冷藏；意面煮熟留少量面汤。|另用煎盘炒熟培根和蘑菇，倒奶油煮开，加入意面与少量面汤拌到顺滑。|下火拌奶酪，培根与奶酪带咸味不再盲加盐。|v4-pasta|30/40|pot|带沿煎盘（无漏油孔）,探针温度计
+蒜香辣椒橄榄意面|pastaDry:180,garlic:25,oliveOil:35,chili:1,olives:40,parsleyFresh:10,water:1000,salt:3|蒜切薄片，橄榄切圈；意面煮熟，留少量面汤。|煎盘小火温热蒜油，蒜熟但不变黑时放辣椒橄榄，拌入面和少量面汤。|撒欧芹，用叉子卷着吃。|v4-pasta|25/35|pot|带沿煎盘（无漏油孔）
+日式香肠炒面|noodleCooked:350,sausageCooked:180,cabbage:200,onion:100,okonomiSauce:35,oil:20|熟面条与香肠全程冷藏，香肠切片，卷心菜洋葱切丝。|煎盘炒熟菜丝与香肠，放面条摊开煎香，拌大阪烧酱，整盘充分复热。|锅底微焦即可，不能把面炒成黑硬壳。|v4-fried-noodles|25/35|pan|探针温度计
+泡菜牛肉炒粗面|noodleCooked:350,beefFlank:250,kimchi:150,soy:15,oil:20|使用粗熟面条，牛腹逆纹切薄片，泡菜剪短。|先炒熟牛肉，再下泡菜与面条，生抽调味；拌炒到面条中心热透。|趁热分碗，把牛肉和泡菜分匀；面条不要长时间堆在锅里回软。|v4-fried-noodles|25/35|pan|探针温度计
+鸡肉香料库斯库斯|couscous:160,chicken:300,pepper:150,water:250,oliveOil:20,cumin:2,salt:3|鸡腿切小块，甜椒切丁；库斯库斯按包装核对热水吸收比例。|小锅煎熟鸡肉甜椒，加水孜然盐煮开；倒库斯库斯离火盖焖，按包装要求焖透。|用叉子拨松，鸡肉安全温度须在加入麦粒前确认。|v4-pasta|25/40|pot|探针温度计
+香肠蘑菇焖饭|riceRaw:180,sausageCooked:180,mushroom:150,water:300,soy:15,oil:10|生米洗净沥干，熟香肠切片，口蘑切片。|厚底锅放油米水，加香肠和菇；煮开转最小火盖焖，米心全熟后离火继续焖。|拌生抽，用刮勺翻起锅底，锅底焦黑部分不吃。|kimchi-cheese-rice|20/45|pot|至少1.5L带盖厚底小锅,探针温度计
+玉米奶酪烤米饭盘|rice:350,cornKernel:150,milk:100,mozzarella:80,butter:20,salt:2|熟米饭与玉米粒冷藏带出，奶酪分装。|煎盘化黄油，加入米饭玉米牛奶煮到充分复热，撒奶酪加盖融化。|奶香稠润即可，不把米饭烧成奶糊。|kimchi-cheese-rice|22/35|pan|与所用锅具适配的锅盖,探针温度计
+韩式辣酱年糕锅|riceCake:350,kimchiSauce:30,water:300,sugar:8,sausageCooked:150,scallion:20|年糕按包装要求处理，熟香肠切片，葱切段。|小锅把水辣酱糖煮开，下年糕香肠，小火搅煮至年糕柔软、熟食热透，最后加葱。|浓汁刚裹住年糕便出锅，不让锅底干黏。|v4-ricecake|25/35|pot|探针温度计
+海苔芝麻烤年糕片|riceCake:300,soy:15,sugar:8,oil:15,nori:4,sesame:5|年糕预煮到软，沥干，生抽糖调匀。|煎盘刷油，中小火两面煎出微脆壳，最后拌酱收干。|撒海苔芝麻，趁内部软时吃，给孩子切小块。|v4-ricecake|22/30|pan|至少1.5L带盖小锅
+鸡蛋芝士法式吐司咸版|bread:220,eggWhole:2,milk:120,cheddar:60,butter:25,blackPepper:1|面包切厚片，蛋与奶搅匀，面包每面短暂浸入，不泡烂。|煎盘化黄油，小火两面煎到中心蛋液全熟；放芝士加盖融化。|撒黑椒切角共享，内部不保留流动蛋液。|v4-french-toast|25/35|pan|与所用锅具适配的锅盖,探针温度计

@@ -1,13 +1,37 @@
 {
   "ok": true,
-  "count": 33,
+  "count": 49,
   "checks": [
     {
-      "name": "内置50卡正确启动；没有鲜干/材料选项控件",
+      "name": "内置300道、首屏24卡正确启动；没有鲜干/材料选项控件",
       "passed": true
     },
     {
-      "name": "初始加载零网络请求",
+      "name": "初始加载没有任何外部网络请求",
+      "passed": true
+    },
+    {
+      "name": "逐页遍历300道、逐一打开做法：无重复或遗漏，无undefined/NaN，有步骤、熟度、吃法且无倒计时",
+      "passed": true
+    },
+    {
+      "name": "搜索重置页码；烟熏25道可翻到末页；空结果不残留旧卡片或分页",
+      "passed": true
+    },
+    {
+      "name": "完整去重图片库109张均可离线解码，300个映射；4道无对应实拍明确留空",
+      "passed": true
+    },
+    {
+      "name": "首页实际计算文字颜色满足AA对比度；可见文本最小14px，不把禁用控件当正常正文",
+      "passed": true
+    },
+    {
+      "name": "炭火指南具备竹炭/苹果木/双区火安全说明，烟熏入口真正筛到25道",
+      "passed": true
+    },
+    {
+      "name": "首访桌面与手机视觉留档；390px首张菜卡在550px内出现，主文档无横向溢出",
       "passed": true
     },
     {
@@ -35,7 +59,7 @@
       "passed": true
     },
     {
-      "name": "前台检查提醒可启动/停止，不宣称后台闹钟",
+      "name": "逐菜倒计时UI与逻辑移除，熟度标准保留",
       "passed": true
     },
     {
@@ -99,11 +123,11 @@
       "passed": true
     },
     {
-      "name": "模拟存储重新加载保留菜单和笔记（Storage接口替身）",
+      "name": "重新初始化恢复菜单和笔记（模式在报告中明示）",
       "passed": true
     },
     {
-      "name": "360/390/430/768px四种宽度，四主页面均无横向溢出",
+      "name": "320/360/390/430/768/1024/1440px七种宽度，六视图均无横向溢出",
       "passed": true
     },
     {
@@ -115,7 +139,7 @@
       "passed": true
     },
     {
-      "name": "真实存储被拒仍能选菜与计算，明确提醒备份",
+      "name": "注入存储拒绝后仍能选菜与计算，明确提醒备份",
       "passed": true
     },
     {
@@ -124,6 +148,46 @@
     },
     {
       "name": "设备冷冻前提明确提示，确认后不改食谱",
+      "passed": true
+    },
+    {
+      "name": "空库存没有默认盐油；零条件绝不宣称可做",
+      "passed": true
+    },
+    {
+      "name": "分类精确限定食材候选；搜索勾选立即生效且焦点不跳走",
+      "passed": true
+    },
+    {
+      "name": "多分类并集与库存持久化；真实HTTP模式用浏览器reload验证",
+      "passed": true
+    },
+    {
+      "name": "完整范围所有匹配结果可查看，每卡明确缺食材与缺工具",
+      "passed": true
+    },
+    {
+      "name": "所有条件显式具备时300道可做且分页展示，组合只从可做池生成",
+      "passed": true
+    },
+    {
+      "name": "搜索状态本组全选只影响可见候选，不偷选被隐藏食材",
+      "passed": true
+    },
+    {
+      "name": "组合一键加入后生成真实菜单与合计备料，统一1份不沿用隐蔽旧份量",
+      "passed": true
+    },
+    {
+      "name": "完整JSON备份包含库存与分类，跨页面导入恢复匹配结果",
+      "passed": true
+    },
+    {
+      "name": "首屏配图离线解码；署名许可可达；弹窗键盘不逸出，Esc恢复调用焦点",
+      "passed": true
+    },
+    {
+      "name": "手机底部快捷入口直达可做结果，不反复翻页",
       "passed": true
     },
     {
@@ -137,5 +201,8 @@
   ],
   "errors": [],
   "network": [],
-  "mode": "Exact bundled HTML set_content; Storage test double and real denied-storage branches; Blob byte inspection. file:// blocked by sandbox policy."
+  "mode": "content",
+  "storage": "explicit Storage interface double; HTTP/file navigation blocked by sandbox",
+  "sha256": "97e85084999a0ebe9e73cd28a93b45328308babc1d41a0b766f14f91de2595fc",
+  "bytes": 7492813
 }

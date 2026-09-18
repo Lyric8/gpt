@@ -1,13 +1,14 @@
+import { loadCatalog } from '../tools/load_catalog.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { validateDatabase, defaultState, sanitizeState, recipeView, buildPlan, applyPreset, formatQty, escapeHTML, safeUrl, makeBackup, importBackup, makeMarkdown, makeCSV, isChecked, setChecked } from '../src/engine.mjs';
-const db = JSON.parse(fs.readFileSync(new URL('../data/recipes.json', import.meta.url), 'utf8'));
+const db = loadCatalog();
 const clone = x => JSON.parse(JSON.stringify(x));
 const state = (ids, portions = {}, people = 2) => ({ ...defaultState(), selected: ids, portions, people });
 const row = (p, id) => p.shopping.find(x => x.id === id);
 const invalid = (name, mutate) => test(name, () => { const d = clone(db); mutate(d); assert.equal(validateDatabase(d).ok, false); });
-test('内置库：50道、40条旧菜审查、8套菜单、无鲜干选择', () => { assert.deepEqual(validateDatabase(db), { ok: true, errors: [] }); assert.equal(db.recipes.length, 50); assert.equal(db.audit.length, 40); assert.equal(db.presets.length, 8); assert.equal(db.audit.filter(x => x.status === '合并退役').length, 5); assert(db.recipes.every(r => !('choices' in r) && r.ingredients.every(a => !('optional' in a)))); });
+test('内置库：300道、40条旧菜审查、12套菜单、无鲜干选择', () => { assert.deepEqual(validateDatabase(db), { ok: true, errors: [] }); assert.equal(db.recipes.length, 300); assert.equal(db.audit.length, 40); assert.equal(db.presets.length, 12); assert.equal(db.audit.filter(x => x.status === '合并退役').length, 5); assert(db.recipes.every(r => !('choices' in r) && r.ingredients.every(a => !('optional' in a)))); });
 for (const r of db.recipes)
     test(`定稿卡完整与多倍率一致：${r.id}`, () => {
         assert(r.decisions.length > 0);

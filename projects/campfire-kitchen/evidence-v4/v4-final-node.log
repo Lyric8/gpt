@@ -1,0 +1,4142 @@
+
+> campfire-kitchen@4.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: 内置库：300道、40条旧菜审查、12套菜单、无鲜干选择
+ok 1 - 内置库：300道、40条旧菜审查、12套菜单、无鲜干选择
+  ---
+  duration_ms: 11.814432
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-01
+ok 2 - 定稿卡完整与多倍率一致：v4-skewers-01
+  ---
+  duration_ms: 28.899562
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-02
+ok 3 - 定稿卡完整与多倍率一致：v4-skewers-02
+  ---
+  duration_ms: 13.724172
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-03
+ok 4 - 定稿卡完整与多倍率一致：v4-skewers-03
+  ---
+  duration_ms: 9.330105
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-04
+ok 5 - 定稿卡完整与多倍率一致：v4-skewers-04
+  ---
+  duration_ms: 6.72615
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-05
+ok 6 - 定稿卡完整与多倍率一致：v4-skewers-05
+  ---
+  duration_ms: 6.940688
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-06
+ok 7 - 定稿卡完整与多倍率一致：v4-skewers-06
+  ---
+  duration_ms: 7.153872
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-07
+ok 8 - 定稿卡完整与多倍率一致：v4-skewers-07
+  ---
+  duration_ms: 6.874309
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-08
+ok 9 - 定稿卡完整与多倍率一致：v4-skewers-08
+  ---
+  duration_ms: 8.930996
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-09
+ok 10 - 定稿卡完整与多倍率一致：v4-skewers-09
+  ---
+  duration_ms: 8.585285
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-10
+ok 11 - 定稿卡完整与多倍率一致：v4-skewers-10
+  ---
+  duration_ms: 6.352098
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-11
+ok 12 - 定稿卡完整与多倍率一致：v4-skewers-11
+  ---
+  duration_ms: 7.048677
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-12
+ok 13 - 定稿卡完整与多倍率一致：v4-skewers-12
+  ---
+  duration_ms: 6.938874
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-13
+ok 14 - 定稿卡完整与多倍率一致：v4-skewers-13
+  ---
+  duration_ms: 8.513309
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-14
+ok 15 - 定稿卡完整与多倍率一致：v4-skewers-14
+  ---
+  duration_ms: 6.177
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-15
+ok 16 - 定稿卡完整与多倍率一致：v4-skewers-15
+  ---
+  duration_ms: 6.215095
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-16
+ok 17 - 定稿卡完整与多倍率一致：v4-skewers-16
+  ---
+  duration_ms: 6.280903
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-17
+ok 18 - 定稿卡完整与多倍率一致：v4-skewers-17
+  ---
+  duration_ms: 6.115308
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-18
+ok 19 - 定稿卡完整与多倍率一致：v4-skewers-18
+  ---
+  duration_ms: 6.202538
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-19
+ok 20 - 定稿卡完整与多倍率一致：v4-skewers-19
+  ---
+  duration_ms: 6.918474
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-20
+ok 21 - 定稿卡完整与多倍率一致：v4-skewers-20
+  ---
+  duration_ms: 7.713539
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-21
+ok 22 - 定稿卡完整与多倍率一致：v4-skewers-21
+  ---
+  duration_ms: 6.12994
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-22
+ok 23 - 定稿卡完整与多倍率一致：v4-skewers-22
+  ---
+  duration_ms: 6.636529
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-23
+ok 24 - 定稿卡完整与多倍率一致：v4-skewers-23
+  ---
+  duration_ms: 6.177821
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-24
+ok 25 - 定稿卡完整与多倍率一致：v4-skewers-24
+  ---
+  duration_ms: 6.322615
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-skewers-25
+ok 26 - 定稿卡完整与多倍率一致：v4-skewers-25
+  ---
+  duration_ms: 6.734383
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-01
+ok 27 - 定稿卡完整与多倍率一致：v4-meat-01
+  ---
+  duration_ms: 6.376745
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-02
+ok 28 - 定稿卡完整与多倍率一致：v4-meat-02
+  ---
+  duration_ms: 6.428001
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-03
+ok 29 - 定稿卡完整与多倍率一致：v4-meat-03
+  ---
+  duration_ms: 6.804977
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-04
+ok 30 - 定稿卡完整与多倍率一致：v4-meat-04
+  ---
+  duration_ms: 6.633294
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-05
+ok 31 - 定稿卡完整与多倍率一致：v4-meat-05
+  ---
+  duration_ms: 6.409012
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-06
+ok 32 - 定稿卡完整与多倍率一致：v4-meat-06
+  ---
+  duration_ms: 7.033054
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-07
+ok 33 - 定稿卡完整与多倍率一致：v4-meat-07
+  ---
+  duration_ms: 6.705059
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-08
+ok 34 - 定稿卡完整与多倍率一致：v4-meat-08
+  ---
+  duration_ms: 6.319119
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-09
+ok 35 - 定稿卡完整与多倍率一致：v4-meat-09
+  ---
+  duration_ms: 6.921098
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-10
+ok 36 - 定稿卡完整与多倍率一致：v4-meat-10
+  ---
+  duration_ms: 6.879437
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-11
+ok 37 - 定稿卡完整与多倍率一致：v4-meat-11
+  ---
+  duration_ms: 6.460829
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-12
+ok 38 - 定稿卡完整与多倍率一致：v4-meat-12
+  ---
+  duration_ms: 6.252721
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-13
+ok 39 - 定稿卡完整与多倍率一致：v4-meat-13
+  ---
+  duration_ms: 6.201265
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-14
+ok 40 - 定稿卡完整与多倍率一致：v4-meat-14
+  ---
+  duration_ms: 6.266902
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-15
+ok 41 - 定稿卡完整与多倍率一致：v4-meat-15
+  ---
+  duration_ms: 7.397101
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-16
+ok 42 - 定稿卡完整与多倍率一致：v4-meat-16
+  ---
+  duration_ms: 6.431295
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-17
+ok 43 - 定稿卡完整与多倍率一致：v4-meat-17
+  ---
+  duration_ms: 6.249607
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-18
+ok 44 - 定稿卡完整与多倍率一致：v4-meat-18
+  ---
+  duration_ms: 6.656468
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-19
+ok 45 - 定稿卡完整与多倍率一致：v4-meat-19
+  ---
+  duration_ms: 6.443904
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-20
+ok 46 - 定稿卡完整与多倍率一致：v4-meat-20
+  ---
+  duration_ms: 6.23784
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-21
+ok 47 - 定稿卡完整与多倍率一致：v4-meat-21
+  ---
+  duration_ms: 6.828762
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-22
+ok 48 - 定稿卡完整与多倍率一致：v4-meat-22
+  ---
+  duration_ms: 40.100975
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-23
+ok 49 - 定稿卡完整与多倍率一致：v4-meat-23
+  ---
+  duration_ms: 9.014659
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-24
+ok 50 - 定稿卡完整与多倍率一致：v4-meat-24
+  ---
+  duration_ms: 6.815953
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-meat-25
+ok 51 - 定稿卡完整与多倍率一致：v4-meat-25
+  ---
+  duration_ms: 6.471014
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-01
+ok 52 - 定稿卡完整与多倍率一致：v4-seafood-01
+  ---
+  duration_ms: 6.52873
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-02
+ok 53 - 定稿卡完整与多倍率一致：v4-seafood-02
+  ---
+  duration_ms: 6.274814
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-03
+ok 54 - 定稿卡完整与多倍率一致：v4-seafood-03
+  ---
+  duration_ms: 6.892186
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-04
+ok 55 - 定稿卡完整与多倍率一致：v4-seafood-04
+  ---
+  duration_ms: 6.777687
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-05
+ok 56 - 定稿卡完整与多倍率一致：v4-seafood-05
+  ---
+  duration_ms: 6.374891
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-06
+ok 57 - 定稿卡完整与多倍率一致：v4-seafood-06
+  ---
+  duration_ms: 7.303412
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-07
+ok 58 - 定稿卡完整与多倍率一致：v4-seafood-07
+  ---
+  duration_ms: 6.720572
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-08
+ok 59 - 定稿卡完整与多倍率一致：v4-seafood-08
+  ---
+  duration_ms: 7.972069
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-09
+ok 60 - 定稿卡完整与多倍率一致：v4-seafood-09
+  ---
+  duration_ms: 7.637576
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-10
+ok 61 - 定稿卡完整与多倍率一致：v4-seafood-10
+  ---
+  duration_ms: 7.952431
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-11
+ok 62 - 定稿卡完整与多倍率一致：v4-seafood-11
+  ---
+  duration_ms: 7.410751
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-12
+ok 63 - 定稿卡完整与多倍率一致：v4-seafood-12
+  ---
+  duration_ms: 6.63076
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-13
+ok 64 - 定稿卡完整与多倍率一致：v4-seafood-13
+  ---
+  duration_ms: 8.415655
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-14
+ok 65 - 定稿卡完整与多倍率一致：v4-seafood-14
+  ---
+  duration_ms: 12.610419
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-15
+ok 66 - 定稿卡完整与多倍率一致：v4-seafood-15
+  ---
+  duration_ms: 10.645116
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-16
+ok 67 - 定稿卡完整与多倍率一致：v4-seafood-16
+  ---
+  duration_ms: 6.469071
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-17
+ok 68 - 定稿卡完整与多倍率一致：v4-seafood-17
+  ---
+  duration_ms: 6.843383
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-18
+ok 69 - 定稿卡完整与多倍率一致：v4-seafood-18
+  ---
+  duration_ms: 7.868707
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-19
+ok 70 - 定稿卡完整与多倍率一致：v4-seafood-19
+  ---
+  duration_ms: 7.370452
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-20
+ok 71 - 定稿卡完整与多倍率一致：v4-seafood-20
+  ---
+  duration_ms: 6.825797
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-21
+ok 72 - 定稿卡完整与多倍率一致：v4-seafood-21
+  ---
+  duration_ms: 7.189565
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-22
+ok 73 - 定稿卡完整与多倍率一致：v4-seafood-22
+  ---
+  duration_ms: 7.242874
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-23
+ok 74 - 定稿卡完整与多倍率一致：v4-seafood-23
+  ---
+  duration_ms: 6.413138
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-24
+ok 75 - 定稿卡完整与多倍率一致：v4-seafood-24
+  ---
+  duration_ms: 11.05411
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-seafood-25
+ok 76 - 定稿卡完整与多倍率一致：v4-seafood-25
+  ---
+  duration_ms: 11.041372
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-01
+ok 77 - 定稿卡完整与多倍率一致：v4-smoke-01
+  ---
+  duration_ms: 11.038888
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-02
+ok 78 - 定稿卡完整与多倍率一致：v4-smoke-02
+  ---
+  duration_ms: 14.836284
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-03
+ok 79 - 定稿卡完整与多倍率一致：v4-smoke-03
+  ---
+  duration_ms: 7.388449
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-04
+ok 80 - 定稿卡完整与多倍率一致：v4-smoke-04
+  ---
+  duration_ms: 6.501358
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-05
+ok 81 - 定稿卡完整与多倍率一致：v4-smoke-05
+  ---
+  duration_ms: 6.566165
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-06
+ok 82 - 定稿卡完整与多倍率一致：v4-smoke-06
+  ---
+  duration_ms: 6.237859
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-07
+ok 83 - 定稿卡完整与多倍率一致：v4-smoke-07
+  ---
+  duration_ms: 6.130301
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-08
+ok 84 - 定稿卡完整与多倍率一致：v4-smoke-08
+  ---
+  duration_ms: 6.1975
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-09
+ok 85 - 定稿卡完整与多倍率一致：v4-smoke-09
+  ---
+  duration_ms: 6.416423
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-10
+ok 86 - 定稿卡完整与多倍率一致：v4-smoke-10
+  ---
+  duration_ms: 6.396082
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-11
+ok 87 - 定稿卡完整与多倍率一致：v4-smoke-11
+  ---
+  duration_ms: 6.483781
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-12
+ok 88 - 定稿卡完整与多倍率一致：v4-smoke-12
+  ---
+  duration_ms: 6.313929
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-13
+ok 89 - 定稿卡完整与多倍率一致：v4-smoke-13
+  ---
+  duration_ms: 6.404583
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-14
+ok 90 - 定稿卡完整与多倍率一致：v4-smoke-14
+  ---
+  duration_ms: 6.035299
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-15
+ok 91 - 定稿卡完整与多倍率一致：v4-smoke-15
+  ---
+  duration_ms: 6.249384
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-16
+ok 92 - 定稿卡完整与多倍率一致：v4-smoke-16
+  ---
+  duration_ms: 6.220061
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-17
+ok 93 - 定稿卡完整与多倍率一致：v4-smoke-17
+  ---
+  duration_ms: 6.543448
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-18
+ok 94 - 定稿卡完整与多倍率一致：v4-smoke-18
+  ---
+  duration_ms: 11.6349
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-19
+ok 95 - 定稿卡完整与多倍率一致：v4-smoke-19
+  ---
+  duration_ms: 8.297287
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-20
+ok 96 - 定稿卡完整与多倍率一致：v4-smoke-20
+  ---
+  duration_ms: 7.587019
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-21
+ok 97 - 定稿卡完整与多倍率一致：v4-smoke-21
+  ---
+  duration_ms: 7.87906
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-22
+ok 98 - 定稿卡完整与多倍率一致：v4-smoke-22
+  ---
+  duration_ms: 6.703124
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-23
+ok 99 - 定稿卡完整与多倍率一致：v4-smoke-23
+  ---
+  duration_ms: 6.601454
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-24
+ok 100 - 定稿卡完整与多倍率一致：v4-smoke-24
+  ---
+  duration_ms: 7.541852
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-smoke-25
+ok 101 - 定稿卡完整与多倍率一致：v4-smoke-25
+  ---
+  duration_ms: 7.719124
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：thyme-mushroom
+ok 102 - 定稿卡完整与多倍率一致：thyme-mushroom
+  ---
+  duration_ms: 8.790155
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：garlic-soy-mushroom
+ok 103 - 定稿卡完整与多倍率一致：garlic-soy-mushroom
+  ---
+  duration_ms: 7.729119
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：miso-corn
+ok 104 - 定稿卡完整与多倍率一致：miso-corn
+  ---
+  duration_ms: 6.829981
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：lime-corn
+ok 105 - 定稿卡完整与多倍率一致：lime-corn
+  ---
+  duration_ms: 7.277562
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：garlic-eggplant
+ok 106 - 定稿卡完整与多倍率一致：garlic-eggplant
+  ---
+  duration_ms: 8.086626
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：miso-eggplant
+ok 107 - 定稿卡完整与多倍率一致：miso-eggplant
+  ---
+  duration_ms: 8.932876
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：rosemary-potato
+ok 108 - 定稿卡完整与多倍率一致：rosemary-potato
+  ---
+  duration_ms: 6.86969
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：lemon-asparagus
+ok 109 - 定稿卡完整与多倍率一致：lemon-asparagus
+  ---
+  duration_ms: 6.933314
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-01
+ok 110 - 定稿卡完整与多倍率一致：v4-vegetables-01
+  ---
+  duration_ms: 6.731476
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-02
+ok 111 - 定稿卡完整与多倍率一致：v4-vegetables-02
+  ---
+  duration_ms: 7.402466
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-03
+ok 112 - 定稿卡完整与多倍率一致：v4-vegetables-03
+  ---
+  duration_ms: 6.897
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-04
+ok 113 - 定稿卡完整与多倍率一致：v4-vegetables-04
+  ---
+  duration_ms: 7.737882
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-05
+ok 114 - 定稿卡完整与多倍率一致：v4-vegetables-05
+  ---
+  duration_ms: 7.250673
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-06
+ok 115 - 定稿卡完整与多倍率一致：v4-vegetables-06
+  ---
+  duration_ms: 7.269399
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-07
+ok 116 - 定稿卡完整与多倍率一致：v4-vegetables-07
+  ---
+  duration_ms: 7.071217
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-08
+ok 117 - 定稿卡完整与多倍率一致：v4-vegetables-08
+  ---
+  duration_ms: 8.188827
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-09
+ok 118 - 定稿卡完整与多倍率一致：v4-vegetables-09
+  ---
+  duration_ms: 9.429318
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-10
+ok 119 - 定稿卡完整与多倍率一致：v4-vegetables-10
+  ---
+  duration_ms: 9.791753
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-11
+ok 120 - 定稿卡完整与多倍率一致：v4-vegetables-11
+  ---
+  duration_ms: 10.181689
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-12
+ok 121 - 定稿卡完整与多倍率一致：v4-vegetables-12
+  ---
+  duration_ms: 8.692841
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-13
+ok 122 - 定稿卡完整与多倍率一致：v4-vegetables-13
+  ---
+  duration_ms: 7.604014
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-14
+ok 123 - 定稿卡完整与多倍率一致：v4-vegetables-14
+  ---
+  duration_ms: 7.288037
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-15
+ok 124 - 定稿卡完整与多倍率一致：v4-vegetables-15
+  ---
+  duration_ms: 6.863411
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-16
+ok 125 - 定稿卡完整与多倍率一致：v4-vegetables-16
+  ---
+  duration_ms: 6.582997
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-17
+ok 126 - 定稿卡完整与多倍率一致：v4-vegetables-17
+  ---
+  duration_ms: 7.28927
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-18
+ok 127 - 定稿卡完整与多倍率一致：v4-vegetables-18
+  ---
+  duration_ms: 6.151771
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-19
+ok 128 - 定稿卡完整与多倍率一致：v4-vegetables-19
+  ---
+  duration_ms: 7.019641
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-20
+ok 129 - 定稿卡完整与多倍率一致：v4-vegetables-20
+  ---
+  duration_ms: 7.837498
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-21
+ok 130 - 定稿卡完整与多倍率一致：v4-vegetables-21
+  ---
+  duration_ms: 6.817193
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-22
+ok 131 - 定稿卡完整与多倍率一致：v4-vegetables-22
+  ---
+  duration_ms: 6.726669
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-23
+ok 132 - 定稿卡完整与多倍率一致：v4-vegetables-23
+  ---
+  duration_ms: 7.876896
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-24
+ok 133 - 定稿卡完整与多倍率一致：v4-vegetables-24
+  ---
+  duration_ms: 7.233107
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-vegetables-25
+ok 134 - 定稿卡完整与多倍率一致：v4-vegetables-25
+  ---
+  duration_ms: 6.810533
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-01
+ok 135 - 定稿卡完整与多倍率一致：v4-beans-01
+  ---
+  duration_ms: 7.478949
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-02
+ok 136 - 定稿卡完整与多倍率一致：v4-beans-02
+  ---
+  duration_ms: 6.724285
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-03
+ok 137 - 定稿卡完整与多倍率一致：v4-beans-03
+  ---
+  duration_ms: 6.884342
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-04
+ok 138 - 定稿卡完整与多倍率一致：v4-beans-04
+  ---
+  duration_ms: 7.150565
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-05
+ok 139 - 定稿卡完整与多倍率一致：v4-beans-05
+  ---
+  duration_ms: 7.036526
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-06
+ok 140 - 定稿卡完整与多倍率一致：v4-beans-06
+  ---
+  duration_ms: 7.07307
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-07
+ok 141 - 定稿卡完整与多倍率一致：v4-beans-07
+  ---
+  duration_ms: 6.00872
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-08
+ok 142 - 定稿卡完整与多倍率一致：v4-beans-08
+  ---
+  duration_ms: 6.501096
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-09
+ok 143 - 定稿卡完整与多倍率一致：v4-beans-09
+  ---
+  duration_ms: 6.621783
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-10
+ok 144 - 定稿卡完整与多倍率一致：v4-beans-10
+  ---
+  duration_ms: 9.040715
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-11
+ok 145 - 定稿卡完整与多倍率一致：v4-beans-11
+  ---
+  duration_ms: 7.089674
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-12
+ok 146 - 定稿卡完整与多倍率一致：v4-beans-12
+  ---
+  duration_ms: 7.404039
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-13
+ok 147 - 定稿卡完整与多倍率一致：v4-beans-13
+  ---
+  duration_ms: 6.58533
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-14
+ok 148 - 定稿卡完整与多倍率一致：v4-beans-14
+  ---
+  duration_ms: 6.036251
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-15
+ok 149 - 定稿卡完整与多倍率一致：v4-beans-15
+  ---
+  duration_ms: 7.468634
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-16
+ok 150 - 定稿卡完整与多倍率一致：v4-beans-16
+  ---
+  duration_ms: 6.370733
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-17
+ok 151 - 定稿卡完整与多倍率一致：v4-beans-17
+  ---
+  duration_ms: 6.501847
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-18
+ok 152 - 定稿卡完整与多倍率一致：v4-beans-18
+  ---
+  duration_ms: 6.492354
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-19
+ok 153 - 定稿卡完整与多倍率一致：v4-beans-19
+  ---
+  duration_ms: 6.406486
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-20
+ok 154 - 定稿卡完整与多倍率一致：v4-beans-20
+  ---
+  duration_ms: 6.871803
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-21
+ok 155 - 定稿卡完整与多倍率一致：v4-beans-21
+  ---
+  duration_ms: 6.407809
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-22
+ok 156 - 定稿卡完整与多倍率一致：v4-beans-22
+  ---
+  duration_ms: 6.780698
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-23
+ok 157 - 定稿卡完整与多倍率一致：v4-beans-23
+  ---
+  duration_ms: 5.73193
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-24
+ok 158 - 定稿卡完整与多倍率一致：v4-beans-24
+  ---
+  duration_ms: 6.852304
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-beans-25
+ok 159 - 定稿卡完整与多倍率一致：v4-beans-25
+  ---
+  duration_ms: 6.576988
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：soy-rice
+ok 160 - 定稿卡完整与多倍率一致：soy-rice
+  ---
+  duration_ms: 6.180012
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：bean-quesadilla
+ok 161 - 定稿卡完整与多倍率一致：bean-quesadilla
+  ---
+  duration_ms: 7.651023
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：pita-pizza
+ok 162 - 定稿卡完整与多倍率一致：pita-pizza
+  ---
+  duration_ms: 6.742843
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：okonomiyaki
+ok 163 - 定稿卡完整与多倍率一致：okonomiyaki
+  ---
+  duration_ms: 8.888941
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：kimchi-cheese-rice
+ok 164 - 定稿卡完整与多倍率一致：kimchi-cheese-rice
+  ---
+  duration_ms: 7.866491
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：onigiri-chazuke
+ok 165 - 定稿卡完整与多倍率一致：onigiri-chazuke
+  ---
+  duration_ms: 7.835185
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：shakshuka
+ok 166 - 定稿卡完整与多倍率一致：shakshuka
+  ---
+  duration_ms: 8.069506
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：lemon-pancakes
+ok 167 - 定稿卡完整与多倍率一致：lemon-pancakes
+  ---
+  duration_ms: 8.693443
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-01
+ok 168 - 定稿卡完整与多倍率一致：v4-staples-01
+  ---
+  duration_ms: 7.495193
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-02
+ok 169 - 定稿卡完整与多倍率一致：v4-staples-02
+  ---
+  duration_ms: 6.086384
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-03
+ok 170 - 定稿卡完整与多倍率一致：v4-staples-03
+  ---
+  duration_ms: 6.647233
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-04
+ok 171 - 定稿卡完整与多倍率一致：v4-staples-04
+  ---
+  duration_ms: 6.936608
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-05
+ok 172 - 定稿卡完整与多倍率一致：v4-staples-05
+  ---
+  duration_ms: 7.042565
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-06
+ok 173 - 定稿卡完整与多倍率一致：v4-staples-06
+  ---
+  duration_ms: 7.061844
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-07
+ok 174 - 定稿卡完整与多倍率一致：v4-staples-07
+  ---
+  duration_ms: 5.9419
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-08
+ok 175 - 定稿卡完整与多倍率一致：v4-staples-08
+  ---
+  duration_ms: 7.300636
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-09
+ok 176 - 定稿卡完整与多倍率一致：v4-staples-09
+  ---
+  duration_ms: 6.406036
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-10
+ok 177 - 定稿卡完整与多倍率一致：v4-staples-10
+  ---
+  duration_ms: 7.21477
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-11
+ok 178 - 定稿卡完整与多倍率一致：v4-staples-11
+  ---
+  duration_ms: 6.859254
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-12
+ok 179 - 定稿卡完整与多倍率一致：v4-staples-12
+  ---
+  duration_ms: 7.28294
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-13
+ok 180 - 定稿卡完整与多倍率一致：v4-staples-13
+  ---
+  duration_ms: 6.51805
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-14
+ok 181 - 定稿卡完整与多倍率一致：v4-staples-14
+  ---
+  duration_ms: 6.310545
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-15
+ok 182 - 定稿卡完整与多倍率一致：v4-staples-15
+  ---
+  duration_ms: 6.980834
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-16
+ok 183 - 定稿卡完整与多倍率一致：v4-staples-16
+  ---
+  duration_ms: 10.002805
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-17
+ok 184 - 定稿卡完整与多倍率一致：v4-staples-17
+  ---
+  duration_ms: 11.770034
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-18
+ok 185 - 定稿卡完整与多倍率一致：v4-staples-18
+  ---
+  duration_ms: 11.325718
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-19
+ok 186 - 定稿卡完整与多倍率一致：v4-staples-19
+  ---
+  duration_ms: 10.158314
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-20
+ok 187 - 定稿卡完整与多倍率一致：v4-staples-20
+  ---
+  duration_ms: 7.538026
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-21
+ok 188 - 定稿卡完整与多倍率一致：v4-staples-21
+  ---
+  duration_ms: 6.937119
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-22
+ok 189 - 定稿卡完整与多倍率一致：v4-staples-22
+  ---
+  duration_ms: 7.291543
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-23
+ok 190 - 定稿卡完整与多倍率一致：v4-staples-23
+  ---
+  duration_ms: 7.274738
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-24
+ok 191 - 定稿卡完整与多倍率一致：v4-staples-24
+  ---
+  duration_ms: 7.017759
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-staples-25
+ok 192 - 定稿卡完整与多倍率一致：v4-staples-25
+  ---
+  duration_ms: 7.123845
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：rosemary-beef
+ok 193 - 定稿卡完整与多倍率一致：rosemary-beef
+  ---
+  duration_ms: 7.022917
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：chimi-beef
+ok 194 - 定稿卡完整与多倍率一致：chimi-beef
+  ---
+  duration_ms: 7.899961
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：cumin-beef-wrap
+ok 195 - 定稿卡完整与多倍率一致：cumin-beef-wrap
+  ---
+  duration_ms: 6.19232
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：greek-chicken
+ok 196 - 定稿卡完整与多倍率一致：greek-chicken
+  ---
+  duration_ms: 7.588682
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：mustard-chicken
+ok 197 - 定稿卡完整与多倍率一致：mustard-chicken
+  ---
+  duration_ms: 7.249431
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：pepper-chicken
+ok 198 - 定稿卡完整与多倍率一致：pepper-chicken
+  ---
+  duration_ms: 5.951515
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：teriyaki-chicken
+ok 199 - 定稿卡完整与多倍率一致：teriyaki-chicken
+  ---
+  duration_ms: 6.849139
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：mint-lamb
+ok 200 - 定稿卡完整与多倍率一致：mint-lamb
+  ---
+  duration_ms: 6.51
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：lemon-shrimp
+ok 201 - 定稿卡完整与多倍率一致：lemon-shrimp
+  ---
+  duration_ms: 7.989973
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：paprika-shrimp
+ok 202 - 定稿卡完整与多倍率一致：paprika-shrimp
+  ---
+  duration_ms: 7.41177
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：lime-shrimp
+ok 203 - 定稿卡完整与多倍率一致：lime-shrimp
+  ---
+  duration_ms: 6.867897
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：dill-salmon
+ok 204 - 定稿卡完整与多倍率一致：dill-salmon
+  ---
+  duration_ms: 7.761237
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：ginger-fish
+ok 205 - 定稿卡完整与多倍率一致：ginger-fish
+  ---
+  duration_ms: 6.366838
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：miso-salmon
+ok 206 - 定稿卡完整与多倍率一致：miso-salmon
+  ---
+  duration_ms: 6.901417
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：clams-tofu
+ok 207 - 定稿卡完整与多倍率一致：clams-tofu
+  ---
+  duration_ms: 7.507261
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：smash-taco
+ok 208 - 定稿卡完整与多倍率一致：smash-taco
+  ---
+  duration_ms: 6.747159
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：satay-chicken
+ok 209 - 定稿卡完整与多倍率一致：satay-chicken
+  ---
+  duration_ms: 8.046647
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：scallop-vermicelli
+ok 210 - 定稿卡完整与多倍率一致：scallop-vermicelli
+  ---
+  duration_ms: 7.054933
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：corn-chowder
+ok 211 - 定稿卡完整与多倍率一致：corn-chowder
+  ---
+  duration_ms: 6.925032
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-01
+ok 212 - 定稿卡完整与多倍率一致：v4-pots-01
+  ---
+  duration_ms: 6.689464
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-02
+ok 213 - 定稿卡完整与多倍率一致：v4-pots-02
+  ---
+  duration_ms: 5.971985
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-03
+ok 214 - 定稿卡完整与多倍率一致：v4-pots-03
+  ---
+  duration_ms: 6.617698
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-04
+ok 215 - 定稿卡完整与多倍率一致：v4-pots-04
+  ---
+  duration_ms: 10.140839
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-05
+ok 216 - 定稿卡完整与多倍率一致：v4-pots-05
+  ---
+  duration_ms: 7.832992
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-06
+ok 217 - 定稿卡完整与多倍率一致：v4-pots-06
+  ---
+  duration_ms: 6.865995
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-07
+ok 218 - 定稿卡完整与多倍率一致：v4-pots-07
+  ---
+  duration_ms: 6.559453
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-08
+ok 219 - 定稿卡完整与多倍率一致：v4-pots-08
+  ---
+  duration_ms: 6.963188
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-09
+ok 220 - 定稿卡完整与多倍率一致：v4-pots-09
+  ---
+  duration_ms: 6.037712
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-10
+ok 221 - 定稿卡完整与多倍率一致：v4-pots-10
+  ---
+  duration_ms: 6.867226
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-11
+ok 222 - 定稿卡完整与多倍率一致：v4-pots-11
+  ---
+  duration_ms: 6.621433
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-12
+ok 223 - 定稿卡完整与多倍率一致：v4-pots-12
+  ---
+  duration_ms: 6.027607
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-13
+ok 224 - 定稿卡完整与多倍率一致：v4-pots-13
+  ---
+  duration_ms: 6.777294
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-14
+ok 225 - 定稿卡完整与多倍率一致：v4-pots-14
+  ---
+  duration_ms: 8.581967
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-15
+ok 226 - 定稿卡完整与多倍率一致：v4-pots-15
+  ---
+  duration_ms: 11.011494
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-16
+ok 227 - 定稿卡完整与多倍率一致：v4-pots-16
+  ---
+  duration_ms: 8.368873
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-17
+ok 228 - 定稿卡完整与多倍率一致：v4-pots-17
+  ---
+  duration_ms: 5.885077
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-18
+ok 229 - 定稿卡完整与多倍率一致：v4-pots-18
+  ---
+  duration_ms: 6.501136
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-19
+ok 230 - 定稿卡完整与多倍率一致：v4-pots-19
+  ---
+  duration_ms: 5.874
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-20
+ok 231 - 定稿卡完整与多倍率一致：v4-pots-20
+  ---
+  duration_ms: 6.700039
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-21
+ok 232 - 定稿卡完整与多倍率一致：v4-pots-21
+  ---
+  duration_ms: 6.63906
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-22
+ok 233 - 定稿卡完整与多倍率一致：v4-pots-22
+  ---
+  duration_ms: 6.065372
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-23
+ok 234 - 定稿卡完整与多倍率一致：v4-pots-23
+  ---
+  duration_ms: 6.527445
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-24
+ok 235 - 定稿卡完整与多倍率一致：v4-pots-24
+  ---
+  duration_ms: 6.085092
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-pots-25
+ok 236 - 定稿卡完整与多倍率一致：v4-pots-25
+  ---
+  duration_ms: 6.446616
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：basil-toast
+ok 237 - 定稿卡完整与多倍率一致：basil-toast
+  ---
+  duration_ms: 6.720059
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：camembert-dip
+ok 238 - 定稿卡完整与多倍率一致：camembert-dip
+  ---
+  duration_ms: 5.942712
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：halloumi
+ok 239 - 定稿卡完整与多倍率一致：halloumi
+  ---
+  duration_ms: 6.25997
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：summer-roll
+ok 240 - 定稿卡完整与多倍率一致：summer-roll
+  ---
+  duration_ms: 6.971451
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：nori-popcorn
+ok 241 - 定稿卡完整与多倍率一致：nori-popcorn
+  ---
+  duration_ms: 6.616847
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：sesame-soba
+ok 242 - 定稿卡完整与多倍率一致：sesame-soba
+  ---
+  duration_ms: 6.601694
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-01
+ok 243 - 定稿卡完整与多倍率一致：v4-cold-01
+  ---
+  duration_ms: 6.007527
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-02
+ok 244 - 定稿卡完整与多倍率一致：v4-cold-02
+  ---
+  duration_ms: 6.290765
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-03
+ok 245 - 定稿卡完整与多倍率一致：v4-cold-03
+  ---
+  duration_ms: 5.783987
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-04
+ok 246 - 定稿卡完整与多倍率一致：v4-cold-04
+  ---
+  duration_ms: 6.360058
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-05
+ok 247 - 定稿卡完整与多倍率一致：v4-cold-05
+  ---
+  duration_ms: 5.8267
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-06
+ok 248 - 定稿卡完整与多倍率一致：v4-cold-06
+  ---
+  duration_ms: 6.345126
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-07
+ok 249 - 定稿卡完整与多倍率一致：v4-cold-07
+  ---
+  duration_ms: 6.588355
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-08
+ok 250 - 定稿卡完整与多倍率一致：v4-cold-08
+  ---
+  duration_ms: 6.282363
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-09
+ok 251 - 定稿卡完整与多倍率一致：v4-cold-09
+  ---
+  duration_ms: 6.542186
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-10
+ok 252 - 定稿卡完整与多倍率一致：v4-cold-10
+  ---
+  duration_ms: 6.125903
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-11
+ok 253 - 定稿卡完整与多倍率一致：v4-cold-11
+  ---
+  duration_ms: 6.482138
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-12
+ok 254 - 定稿卡完整与多倍率一致：v4-cold-12
+  ---
+  duration_ms: 6.739427
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-13
+ok 255 - 定稿卡完整与多倍率一致：v4-cold-13
+  ---
+  duration_ms: 6.095307
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-14
+ok 256 - 定稿卡完整与多倍率一致：v4-cold-14
+  ---
+  duration_ms: 6.772157
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-15
+ok 257 - 定稿卡完整与多倍率一致：v4-cold-15
+  ---
+  duration_ms: 6.295242
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-16
+ok 258 - 定稿卡完整与多倍率一致：v4-cold-16
+  ---
+  duration_ms: 6.251938
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-17
+ok 259 - 定稿卡完整与多倍率一致：v4-cold-17
+  ---
+  duration_ms: 5.522912
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-18
+ok 260 - 定稿卡完整与多倍率一致：v4-cold-18
+  ---
+  duration_ms: 5.967258
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-19
+ok 261 - 定稿卡完整与多倍率一致：v4-cold-19
+  ---
+  duration_ms: 6.365216
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-20
+ok 262 - 定稿卡完整与多倍率一致：v4-cold-20
+  ---
+  duration_ms: 7.073861
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-21
+ok 263 - 定稿卡完整与多倍率一致：v4-cold-21
+  ---
+  duration_ms: 8.012807
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-22
+ok 264 - 定稿卡完整与多倍率一致：v4-cold-22
+  ---
+  duration_ms: 5.836015
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-23
+ok 265 - 定稿卡完整与多倍率一致：v4-cold-23
+  ---
+  duration_ms: 6.733569
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-24
+ok 266 - 定稿卡完整与多倍率一致：v4-cold-24
+  ---
+  duration_ms: 6.451312
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-cold-25
+ok 267 - 定稿卡完整与多倍率一致：v4-cold-25
+  ---
+  duration_ms: 5.881642
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：mint-pineapple
+ok 268 - 定稿卡完整与多倍率一致：mint-pineapple
+  ---
+  duration_ms: 6.179932
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：sweetpotato-dessert
+ok 269 - 定稿卡完整与多倍率一致：sweetpotato-dessert
+  ---
+  duration_ms: 5.87383
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：banana-chocolate
+ok 270 - 定稿卡完整与多倍率一致：banana-chocolate
+  ---
+  duration_ms: 6.120143
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：cinnamon-apple
+ok 271 - 定稿卡完整与多倍率一致：cinnamon-apple
+  ---
+  duration_ms: 6.207042
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：strawberry-cheesecake-cup
+ok 272 - 定稿卡完整与多倍率一致：strawberry-cheesecake-cup
+  ---
+  duration_ms: 6.615525
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：smores
+ok 273 - 定稿卡完整与多倍率一致：smores
+  ---
+  duration_ms: 6.170729
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-01
+ok 274 - 定稿卡完整与多倍率一致：v4-sweets-01
+  ---
+  duration_ms: 5.841212
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-02
+ok 275 - 定稿卡完整与多倍率一致：v4-sweets-02
+  ---
+  duration_ms: 6.247141
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-03
+ok 276 - 定稿卡完整与多倍率一致：v4-sweets-03
+  ---
+  duration_ms: 6.076299
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-04
+ok 277 - 定稿卡完整与多倍率一致：v4-sweets-04
+  ---
+  duration_ms: 6.535126
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-05
+ok 278 - 定稿卡完整与多倍率一致：v4-sweets-05
+  ---
+  duration_ms: 6.028398
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-06
+ok 279 - 定稿卡完整与多倍率一致：v4-sweets-06
+  ---
+  duration_ms: 6.470842
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-07
+ok 280 - 定稿卡完整与多倍率一致：v4-sweets-07
+  ---
+  duration_ms: 6.02308
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-08
+ok 281 - 定稿卡完整与多倍率一致：v4-sweets-08
+  ---
+  duration_ms: 6.363183
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-09
+ok 282 - 定稿卡完整与多倍率一致：v4-sweets-09
+  ---
+  duration_ms: 6.423331
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-10
+ok 283 - 定稿卡完整与多倍率一致：v4-sweets-10
+  ---
+  duration_ms: 5.934339
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-11
+ok 284 - 定稿卡完整与多倍率一致：v4-sweets-11
+  ---
+  duration_ms: 6.262524
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-12
+ok 285 - 定稿卡完整与多倍率一致：v4-sweets-12
+  ---
+  duration_ms: 5.687475
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-13
+ok 286 - 定稿卡完整与多倍率一致：v4-sweets-13
+  ---
+  duration_ms: 6.176527
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：virgin-mojito
+ok 287 - 定稿卡完整与多倍率一致：virgin-mojito
+  ---
+  duration_ms: 5.924925
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：basil-berry-soda
+ok 288 - 定稿卡完整与多倍率一致：basil-berry-soda
+  ---
+  duration_ms: 6.527125
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：spiced-hot-apple
+ok 289 - 定稿卡完整与多倍率一致：spiced-hot-apple
+  ---
+  duration_ms: 7.942383
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-14
+ok 290 - 定稿卡完整与多倍率一致：v4-sweets-14
+  ---
+  duration_ms: 5.89455
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-15
+ok 291 - 定稿卡完整与多倍率一致：v4-sweets-15
+  ---
+  duration_ms: 6.384774
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-16
+ok 292 - 定稿卡完整与多倍率一致：v4-sweets-16
+  ---
+  duration_ms: 6.020397
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-17
+ok 293 - 定稿卡完整与多倍率一致：v4-sweets-17
+  ---
+  duration_ms: 7.087341
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-18
+ok 294 - 定稿卡完整与多倍率一致：v4-sweets-18
+  ---
+  duration_ms: 5.606555
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-19
+ok 295 - 定稿卡完整与多倍率一致：v4-sweets-19
+  ---
+  duration_ms: 6.233261
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-20
+ok 296 - 定稿卡完整与多倍率一致：v4-sweets-20
+  ---
+  duration_ms: 5.852809
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-21
+ok 297 - 定稿卡完整与多倍率一致：v4-sweets-21
+  ---
+  duration_ms: 6.169196
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-22
+ok 298 - 定稿卡完整与多倍率一致：v4-sweets-22
+  ---
+  duration_ms: 5.99616
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-23
+ok 299 - 定稿卡完整与多倍率一致：v4-sweets-23
+  ---
+  duration_ms: 6.397753
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-24
+ok 300 - 定稿卡完整与多倍率一致：v4-sweets-24
+  ---
+  duration_ms: 6.391404
+  type: 'test'
+  ...
+# Subtest: 定稿卡完整与多倍率一致：v4-sweets-25
+ok 301 - 定稿卡完整与多倍率一致：v4-sweets-25
+  ---
+  duration_ms: 5.429715
+  type: 'test'
+  ...
+# Subtest: 两种牛肉各半份精确合计220g、不重复采购
+ok 302 - 两种牛肉各半份精确合计220g、不重复采购
+  ---
+  duration_ms: 0.646614
+  type: 'test'
+  ...
+# Subtest: 同样原料不同形态按用途保留、包不混成一袋
+ok 303 - 同样原料不同形态按用途保留、包不混成一袋
+  ---
+  duration_ms: 0.546026
+  type: 'test'
+  ...
+# Subtest: 鲜欧芹与干牛至同菜共存，不是全局fresh模式
+ok 304 - 鲜欧芹与干牛至同菜共存，不是全局fresh模式
+  ---
+  duration_ms: 0.140277
+  type: 'test'
+  ...
+# Subtest: 土豆固定干迷迭香、牛肉固定鲜枝
+ok 305 - 土豆固定干迷迭香、牛肉固定鲜枝
+  ---
+  duration_ms: 0.44027
+  type: 'test'
+  ...
+# Subtest: 熟虾/生虾、整玉米/玉米粒不会错误合并
+ok 306 - 熟虾/生虾、整玉米/玉米粒不会错误合并
+  ---
+  duration_ms: 0.627967
+  type: 'test'
+  ...
+# Subtest: 批次保底蒸贝水：半份仍150ml，汤量随份量缩小
+ok 307 - 批次保底蒸贝水：半份仍150ml，汤量随份量缩小
+  ---
+  duration_ms: 0.424086
+  type: 'test'
+  ...
+# Subtest: 三份花蛤按三批、保底水与汤总量一致
+ok 308 - 三份花蛤按三批、保底水与汤总量一致
+  ---
+  duration_ms: 0.461211
+  type: 'test'
+  ...
+# Subtest: 半份焖鱼不会把锅底水减为20ml
+ok 309 - 半份焖鱼不会把锅底水减为20ml
+  ---
+  duration_ms: 0.403766
+  type: 'test'
+  ...
+# Subtest: 米纸浸泡水按批、不是500ml全部算饮料
+ok 310 - 米纸浸泡水按批、不是500ml全部算饮料
+  ---
+  duration_ms: 0.401253
+  type: 'test'
+  ...
+# Subtest: 柠檬汁和皮屑同果复用取最大，不相加
+ok 311 - 柠檬汁和皮屑同果复用取最大，不相加
+  ---
+  duration_ms: 0.445257
+  type: 'test'
+  ...
+# Subtest: 柠檬皮需求超过汁时按皮算采购
+ok 312 - 柠檬皮需求超过汁时按皮算采购
+  ---
+  duration_ms: 6.963908
+  type: 'test'
+  ...
+# Subtest: 蛋液+整蛋采购必须相加，不能套柠檬max算法
+ok 313 - 蛋液+整蛋采购必须相加，不能套柠檬max算法
+  ---
+  duration_ms: 0.578895
+  type: 'test'
+  ...
+# Subtest: 熟米饭原料计算与采购生米换算分开
+ok 314 - 熟米饭原料计算与采购生米换算分开
+  ---
+  duration_ms: 0.456464
+  type: 'test'
+  ...
+# Subtest: 菜单不会擅自去掉已知两瓶调料
+ok 315 - 菜单不会擅自去掉已知两瓶调料
+  ---
+  duration_ms: 0.382905
+  type: 'test'
+  ...
+# Subtest: 四分之一份茶匙保留非零小数
+ok 316 - 四分之一份茶匙保留非零小数
+  ---
+  duration_ms: 0.113057
+  type: 'test'
+  ...
+# Subtest: 食材勾选在相关需求变化时失效
+ok 317 - 食材勾选在相关需求变化时失效
+  ---
+  duration_ms: 0.737709
+  type: 'test'
+  ...
+# Subtest: 步骤勾选在份量/配方步骤/修订改变时失效
+ok 318 - 步骤勾选在份量/配方步骤/修订改变时失效
+  ---
+  duration_ms: 5.158244
+  type: 'test'
+  ...
+# Subtest: 取消勾选会删键
+ok 319 - 取消勾选会删键
+  ---
+  duration_ms: 0.08166
+  type: 'test'
+  ...
+# Subtest: 推荐顺序与手动顺序均稳定
+ok 320 - 推荐顺序与手动顺序均稳定
+  ---
+  duration_ms: 0.940178
+  type: 'test'
+  ...
+# Subtest: 重复味型和过多主材有说明，不作为硬禁止
+ok 321 - 重复味型和过多主材有说明，不作为硬禁止
+  ---
+  duration_ms: 0.709968
+  type: 'test'
+  ...
+# Subtest: 超操作量、浓味堆叠和缺清爽都会提示
+ok 322 - 超操作量、浓味堆叠和缺清爽都会提示
+  ---
+  duration_ms: 0.829384
+  type: 'test'
+  ...
+# Subtest: 冷冻是设备前提，不触发食谱替换
+ok 323 - 冷冻是设备前提，不触发食谱替换
+  ---
+  duration_ms: 0.920028
+  type: 'test'
+  ...
+# Subtest: 补口建议不重复已选菜，不暗加到菜单
+ok 324 - 补口建议不重复已选菜，不暗加到菜单
+  ---
+  duration_ms: 0.658502
+  type: 'test'
+  ...
+# Subtest: 每套预设引用有效且不修改原输入
+ok 325 - 每套预设引用有效且不修改原输入
+  ---
+  duration_ms: 7.488403
+  type: 'test'
+  ...
+# Subtest: v2备份往返保持选菜、顺序、份量、笔记、历史与勾选
+ok 326 - v2备份往返保持选菜、顺序、份量、笔记、历史与勾选
+  ---
+  duration_ms: 4.834556
+  type: 'test'
+  ...
+# Subtest: v1菜单迁移固定配方，保留份量，报告退役不暗替换
+ok 327 - v1菜单迁移固定配方，保留份量，报告退役不暗替换
+  ---
+  duration_ms: 0.200536
+  type: 'test'
+  ...
+# Subtest: 恶意或缺失旧选择对象不会导致原型污染
+ok 328 - 恶意或缺失旧选择对象不会导致原型污染
+  ---
+  duration_ms: 0.137503
+  type: 'test'
+  ...
+# Subtest: 非法备份不被当作菜单
+ok 329 - 非法备份不被当作菜单
+  ---
+  duration_ms: 0.339982
+  type: 'test'
+  ...
+# Subtest: Markdown包含本菜份量、全步骤、形态和安全，不留模板变量
+ok 330 - Markdown包含本菜份量、全步骤、形态和安全，不留模板变量
+  ---
+  duration_ms: 1.195525
+  type: 'test'
+  ...
+# Subtest: CSV逐用途列出且防公式注入
+ok 331 - CSV逐用途列出且防公式注入
+  ---
+  duration_ms: 6.377664
+  type: 'test'
+  ...
+# Subtest: HTML与URL输出转义，不接受javascript或嵌入凭据
+ok 332 - HTML与URL输出转义，不接受javascript或嵌入凭据
+  ---
+  duration_ms: 0.165204
+  type: 'test'
+  ...
+# Subtest: 空菜单仍能导出和规划
+ok 333 - 空菜单仍能导出和规划
+  ---
+  duration_ms: 0.09436
+  type: 'test'
+  ...
+# Subtest: 拒绝旧版鲜干菜谱库
+ok 334 - 拒绝旧版鲜干菜谱库
+  ---
+  duration_ms: 5.207346
+  type: 'test'
+  ...
+# Subtest: 拒绝偷偷加回choices
+ok 335 - 拒绝偷偷加回choices
+  ---
+  duration_ms: 7.941742
+  type: 'test'
+  ...
+# Subtest: 拒绝optional材料选择
+ok 336 - 拒绝optional材料选择
+  ---
+  duration_ms: 8.15047
+  type: 'test'
+  ...
+# Subtest: 拒绝重复菜谱ID
+ok 337 - 拒绝重复菜谱ID
+  ---
+  duration_ms: 8.039417
+  type: 'test'
+  ...
+# Subtest: 拒绝重复原料行key
+ok 338 - 拒绝重复原料行key
+  ---
+  duration_ms: 12.991697
+  type: 'test'
+  ...
+# Subtest: 拒绝不存在的原料
+ok 339 - 拒绝不存在的原料
+  ---
+  duration_ms: 8.581117
+  type: 'test'
+  ...
+# Subtest: 拒绝非有限数量
+ok 340 - 拒绝非有限数量
+  ---
+  duration_ms: 10.403056
+  type: 'test'
+  ...
+# Subtest: 拒绝负数数量
+ok 341 - 拒绝负数数量
+  ---
+  duration_ms: 17.484298
+  type: 'test'
+  ...
+# Subtest: 拒绝未知单位
+ok 342 - 拒绝未知单位
+  ---
+  duration_ms: 18.504043
+  type: 'test'
+  ...
+# Subtest: 拒绝无效模板引用
+ok 343 - 拒绝无效模板引用
+  ---
+  duration_ms: 12.845271
+  type: 'test'
+  ...
+# Subtest: 拒绝错误采购产率
+ok 344 - 拒绝错误采购产率
+  ---
+  duration_ms: 12.930526
+  type: 'test'
+  ...
+# Subtest: 拒绝跨原料采购规则矛盾
+ok 345 - 拒绝跨原料采购规则矛盾
+  ---
+  duration_ms: 11.575652
+  type: 'test'
+  ...
+# Subtest: 拒绝无效外链
+ok 346 - 拒绝无效外链
+  ---
+  duration_ms: 8.008461
+  type: 'test'
+  ...
+# Subtest: 拒绝缺失研究来源
+ok 347 - 拒绝缺失研究来源
+  ---
+  duration_ms: 10.346022
+  type: 'test'
+  ...
+# Subtest: 拒绝非法分批规则
+ok 348 - 拒绝非法分批规则
+  ---
+  duration_ms: 6.927305
+  type: 'test'
+  ...
+# Subtest: 拒绝主动操作超过总时间
+ok 349 - 拒绝主动操作超过总时间
+  ---
+  duration_ms: 7.03888
+  type: 'test'
+  ...
+# Subtest: 拒绝原型名原料ID
+ok 350 - 拒绝原型名原料ID
+  ---
+  duration_ms: 12.064137
+  type: 'test'
+  ...
+# Subtest: 拒绝空菜单库
+ok 351 - 拒绝空菜单库
+  ---
+  duration_ms: 6.965942
+  type: 'test'
+  ...
+# Subtest: 拒绝过长用户可渲染文字
+ok 352 - 拒绝过长用户可渲染文字
+  ---
+  duration_ms: 6.953183
+  type: 'test'
+  ...
+# Subtest: 同一口感家族合并计数，不把每个修辞都算一种
+ok 353 - 同一口感家族合并计数，不把每个修辞都算一种
+  ---
+  duration_ms: 1.298807
+  type: 'test'
+  ...
+# Subtest: 完整v2备份的无效数据库不能绕过导入校验
+ok 354 - 完整v2备份的无效数据库不能绕过导入校验
+  ---
+  duration_ms: 7.265935
+  type: 'test'
+  ...
+# Subtest: 缺少口感分类不能伪造全新体验
+ok 355 - 缺少口感分类不能伪造全新体验
+  ---
+  duration_ms: 10.166086
+  type: 'test'
+  ...
+# Subtest: canonical inventory is complete, scoped and deduplicated
+ok 356 - canonical inventory is complete, scoped and deduplicated
+  ---
+  duration_ms: 6.226593
+  type: 'test'
+  ...
+# Subtest: zero inventory never implies oil, salt, sauce or a pot
+ok 357 - zero inventory never implies oil, salt, sauce or a pot
+  ---
+  duration_ms: 0.971825
+  type: 'test'
+  ...
+# Subtest: full inventory supports every recipe only when freezer is confirmed
+ok 358 - full inventory supports every recipe only when freezer is confirmed
+  ---
+  duration_ms: 2.136615
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 串烤
+ok 359 - scope derives candidate union from recipes only: 串烤
+  ---
+  duration_ms: 0.664401
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 炭烤大肉
+ok 360 - scope derives candidate union from recipes only: 炭烤大肉
+  ---
+  duration_ms: 0.342195
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 海鲜烧烤
+ok 361 - scope derives candidate union from recipes only: 海鲜烧烤
+  ---
+  duration_ms: 0.299953
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 苹果木烟熏
+ok 362 - scope derives candidate union from recipes only: 苹果木烟熏
+  ---
+  duration_ms: 1.513204
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 烤蔬菜
+ok 363 - scope derives candidate union from recipes only: 烤蔬菜
+  ---
+  duration_ms: 1.914978
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 豆类与菌菇
+ok 364 - scope derives candidate union from recipes only: 豆类与菌菇
+  ---
+  duration_ms: 0.521981
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 主食
+ok 365 - scope derives candidate union from recipes only: 主食
+  ---
+  duration_ms: 0.540168
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 一锅与煎盘
+ok 366 - scope derives candidate union from recipes only: 一锅与煎盘
+  ---
+  duration_ms: 0.362535
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 冷菜与蘸酱
+ok 367 - scope derives candidate union from recipes only: 冷菜与蘸酱
+  ---
+  duration_ms: 0.217992
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 甜品
+ok 368 - scope derives candidate union from recipes only: 甜品
+  ---
+  duration_ms: 0.591804
+  type: 'test'
+  ...
+# Subtest: scope derives candidate union from recipes only: 饮品
+ok 369 - scope derives candidate union from recipes only: 饮品
+  ---
+  duration_ms: 0.187567
+  type: 'test'
+  ...
+# Subtest: multi category is OR scope and changing it preserves inventory
+ok 370 - multi category is OR scope and changing it preserves inventory
+  ---
+  duration_ms: 0.259663
+  type: 'test'
+  ...
+# Subtest: candidate search never introduces global out-of-scope items
+ok 371 - candidate search never introduces global out-of-scope items
+  ---
+  duration_ms: 0.29803
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-01
+ok 372 - all prerequisites individually enforced: v4-skewers-01
+  ---
+  duration_ms: 0.560477
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-02
+ok 373 - all prerequisites individually enforced: v4-skewers-02
+  ---
+  duration_ms: 0.427461
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-03
+ok 374 - all prerequisites individually enforced: v4-skewers-03
+  ---
+  duration_ms: 2.320982
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-04
+ok 375 - all prerequisites individually enforced: v4-skewers-04
+  ---
+  duration_ms: 0.928381
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-05
+ok 376 - all prerequisites individually enforced: v4-skewers-05
+  ---
+  duration_ms: 0.648667
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-06
+ok 377 - all prerequisites individually enforced: v4-skewers-06
+  ---
+  duration_ms: 0.600237
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-07
+ok 378 - all prerequisites individually enforced: v4-skewers-07
+  ---
+  duration_ms: 0.516433
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-08
+ok 379 - all prerequisites individually enforced: v4-skewers-08
+  ---
+  duration_ms: 0.640255
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-09
+ok 380 - all prerequisites individually enforced: v4-skewers-09
+  ---
+  duration_ms: 1.048037
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-10
+ok 381 - all prerequisites individually enforced: v4-skewers-10
+  ---
+  duration_ms: 0.52824
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-11
+ok 382 - all prerequisites individually enforced: v4-skewers-11
+  ---
+  duration_ms: 0.542321
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-12
+ok 383 - all prerequisites individually enforced: v4-skewers-12
+  ---
+  duration_ms: 0.46068
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-13
+ok 384 - all prerequisites individually enforced: v4-skewers-13
+  ---
+  duration_ms: 1.994454
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-14
+ok 385 - all prerequisites individually enforced: v4-skewers-14
+  ---
+  duration_ms: 0.834522
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-15
+ok 386 - all prerequisites individually enforced: v4-skewers-15
+  ---
+  duration_ms: 0.585955
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-16
+ok 387 - all prerequisites individually enforced: v4-skewers-16
+  ---
+  duration_ms: 0.476793
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-17
+ok 388 - all prerequisites individually enforced: v4-skewers-17
+  ---
+  duration_ms: 0.448111
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-18
+ok 389 - all prerequisites individually enforced: v4-skewers-18
+  ---
+  duration_ms: 0.31143
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-19
+ok 390 - all prerequisites individually enforced: v4-skewers-19
+  ---
+  duration_ms: 0.315526
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-20
+ok 391 - all prerequisites individually enforced: v4-skewers-20
+  ---
+  duration_ms: 0.637331
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-21
+ok 392 - all prerequisites individually enforced: v4-skewers-21
+  ---
+  duration_ms: 0.330978
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-22
+ok 393 - all prerequisites individually enforced: v4-skewers-22
+  ---
+  duration_ms: 0.317478
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-23
+ok 394 - all prerequisites individually enforced: v4-skewers-23
+  ---
+  duration_ms: 0.307905
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-24
+ok 395 - all prerequisites individually enforced: v4-skewers-24
+  ---
+  duration_ms: 0.307183
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-skewers-25
+ok 396 - all prerequisites individually enforced: v4-skewers-25
+  ---
+  duration_ms: 0.693083
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-01
+ok 397 - all prerequisites individually enforced: v4-meat-01
+  ---
+  duration_ms: 0.521419
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-02
+ok 398 - all prerequisites individually enforced: v4-meat-02
+  ---
+  duration_ms: 0.314273
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-03
+ok 399 - all prerequisites individually enforced: v4-meat-03
+  ---
+  duration_ms: 0.319091
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-04
+ok 400 - all prerequisites individually enforced: v4-meat-04
+  ---
+  duration_ms: 0.279132
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-05
+ok 401 - all prerequisites individually enforced: v4-meat-05
+  ---
+  duration_ms: 0.340633
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-06
+ok 402 - all prerequisites individually enforced: v4-meat-06
+  ---
+  duration_ms: 0.652494
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-07
+ok 403 - all prerequisites individually enforced: v4-meat-07
+  ---
+  duration_ms: 0.302977
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-08
+ok 404 - all prerequisites individually enforced: v4-meat-08
+  ---
+  duration_ms: 0.322856
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-09
+ok 405 - all prerequisites individually enforced: v4-meat-09
+  ---
+  duration_ms: 0.441472
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-10
+ok 406 - all prerequisites individually enforced: v4-meat-10
+  ---
+  duration_ms: 0.296418
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-11
+ok 407 - all prerequisites individually enforced: v4-meat-11
+  ---
+  duration_ms: 0.335966
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-12
+ok 408 - all prerequisites individually enforced: v4-meat-12
+  ---
+  duration_ms: 0.88689
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-13
+ok 409 - all prerequisites individually enforced: v4-meat-13
+  ---
+  duration_ms: 0.312111
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-14
+ok 410 - all prerequisites individually enforced: v4-meat-14
+  ---
+  duration_ms: 0.35885
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-15
+ok 411 - all prerequisites individually enforced: v4-meat-15
+  ---
+  duration_ms: 0.314865
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-16
+ok 412 - all prerequisites individually enforced: v4-meat-16
+  ---
+  duration_ms: 0.268066
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-17
+ok 413 - all prerequisites individually enforced: v4-meat-17
+  ---
+  duration_ms: 0.269668
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-18
+ok 414 - all prerequisites individually enforced: v4-meat-18
+  ---
+  duration_ms: 0.553677
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-19
+ok 415 - all prerequisites individually enforced: v4-meat-19
+  ---
+  duration_ms: 0.552276
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-20
+ok 416 - all prerequisites individually enforced: v4-meat-20
+  ---
+  duration_ms: 0.542782
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-21
+ok 417 - all prerequisites individually enforced: v4-meat-21
+  ---
+  duration_ms: 0.523192
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-22
+ok 418 - all prerequisites individually enforced: v4-meat-22
+  ---
+  duration_ms: 0.481641
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-23
+ok 419 - all prerequisites individually enforced: v4-meat-23
+  ---
+  duration_ms: 0.628017
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-24
+ok 420 - all prerequisites individually enforced: v4-meat-24
+  ---
+  duration_ms: 0.595589
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-meat-25
+ok 421 - all prerequisites individually enforced: v4-meat-25
+  ---
+  duration_ms: 0.313522
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-01
+ok 422 - all prerequisites individually enforced: v4-seafood-01
+  ---
+  duration_ms: 0.411818
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-02
+ok 423 - all prerequisites individually enforced: v4-seafood-02
+  ---
+  duration_ms: 0.273934
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-03
+ok 424 - all prerequisites individually enforced: v4-seafood-03
+  ---
+  duration_ms: 0.316758
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-04
+ok 425 - all prerequisites individually enforced: v4-seafood-04
+  ---
+  duration_ms: 0.325771
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-05
+ok 426 - all prerequisites individually enforced: v4-seafood-05
+  ---
+  duration_ms: 0.518946
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-06
+ok 427 - all prerequisites individually enforced: v4-seafood-06
+  ---
+  duration_ms: 0.484826
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-07
+ok 428 - all prerequisites individually enforced: v4-seafood-07
+  ---
+  duration_ms: 0.703158
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-08
+ok 429 - all prerequisites individually enforced: v4-seafood-08
+  ---
+  duration_ms: 0.498185
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-09
+ok 430 - all prerequisites individually enforced: v4-seafood-09
+  ---
+  duration_ms: 0.580006
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-10
+ok 431 - all prerequisites individually enforced: v4-seafood-10
+  ---
+  duration_ms: 0.743798
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-11
+ok 432 - all prerequisites individually enforced: v4-seafood-11
+  ---
+  duration_ms: 0.300143
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-12
+ok 433 - all prerequisites individually enforced: v4-seafood-12
+  ---
+  duration_ms: 0.269848
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-13
+ok 434 - all prerequisites individually enforced: v4-seafood-13
+  ---
+  duration_ms: 0.344499
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-14
+ok 435 - all prerequisites individually enforced: v4-seafood-14
+  ---
+  duration_ms: 0.29822
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-15
+ok 436 - all prerequisites individually enforced: v4-seafood-15
+  ---
+  duration_ms: 0.32536
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-16
+ok 437 - all prerequisites individually enforced: v4-seafood-16
+  ---
+  duration_ms: 0.307494
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-17
+ok 438 - all prerequisites individually enforced: v4-seafood-17
+  ---
+  duration_ms: 0.251391
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-18
+ok 439 - all prerequisites individually enforced: v4-seafood-18
+  ---
+  duration_ms: 0.239373
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-19
+ok 440 - all prerequisites individually enforced: v4-seafood-19
+  ---
+  duration_ms: 0.299272
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-20
+ok 441 - all prerequisites individually enforced: v4-seafood-20
+  ---
+  duration_ms: 0.314194
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-21
+ok 442 - all prerequisites individually enforced: v4-seafood-21
+  ---
+  duration_ms: 0.592895
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-22
+ok 443 - all prerequisites individually enforced: v4-seafood-22
+  ---
+  duration_ms: 0.698721
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-23
+ok 444 - all prerequisites individually enforced: v4-seafood-23
+  ---
+  duration_ms: 0.302737
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-24
+ok 445 - all prerequisites individually enforced: v4-seafood-24
+  ---
+  duration_ms: 0.509812
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-seafood-25
+ok 446 - all prerequisites individually enforced: v4-seafood-25
+  ---
+  duration_ms: 0.334814
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-01
+ok 447 - all prerequisites individually enforced: v4-smoke-01
+  ---
+  duration_ms: 0.44022
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-02
+ok 448 - all prerequisites individually enforced: v4-smoke-02
+  ---
+  duration_ms: 0.347613
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-03
+ok 449 - all prerequisites individually enforced: v4-smoke-03
+  ---
+  duration_ms: 0.341925
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-04
+ok 450 - all prerequisites individually enforced: v4-smoke-04
+  ---
+  duration_ms: 0.526648
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-05
+ok 451 - all prerequisites individually enforced: v4-smoke-05
+  ---
+  duration_ms: 0.353352
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-06
+ok 452 - all prerequisites individually enforced: v4-smoke-06
+  ---
+  duration_ms: 0.29103
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-07
+ok 453 - all prerequisites individually enforced: v4-smoke-07
+  ---
+  duration_ms: 0.276539
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-08
+ok 454 - all prerequisites individually enforced: v4-smoke-08
+  ---
+  duration_ms: 0.573516
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-09
+ok 455 - all prerequisites individually enforced: v4-smoke-09
+  ---
+  duration_ms: 0.305451
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-10
+ok 456 - all prerequisites individually enforced: v4-smoke-10
+  ---
+  duration_ms: 0.324058
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-11
+ok 457 - all prerequisites individually enforced: v4-smoke-11
+  ---
+  duration_ms: 0.312291
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-12
+ok 458 - all prerequisites individually enforced: v4-smoke-12
+  ---
+  duration_ms: 0.281806
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-13
+ok 459 - all prerequisites individually enforced: v4-smoke-13
+  ---
+  duration_ms: 0.277309
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-14
+ok 460 - all prerequisites individually enforced: v4-smoke-14
+  ---
+  duration_ms: 0.287635
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-15
+ok 461 - all prerequisites individually enforced: v4-smoke-15
+  ---
+  duration_ms: 0.25695
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-16
+ok 462 - all prerequisites individually enforced: v4-smoke-16
+  ---
+  duration_ms: 0.263239
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-17
+ok 463 - all prerequisites individually enforced: v4-smoke-17
+  ---
+  duration_ms: 0.261697
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-18
+ok 464 - all prerequisites individually enforced: v4-smoke-18
+  ---
+  duration_ms: 0.30502
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-19
+ok 465 - all prerequisites individually enforced: v4-smoke-19
+  ---
+  duration_ms: 0.275867
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-20
+ok 466 - all prerequisites individually enforced: v4-smoke-20
+  ---
+  duration_ms: 0.534639
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-21
+ok 467 - all prerequisites individually enforced: v4-smoke-21
+  ---
+  duration_ms: 0.2849
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-22
+ok 468 - all prerequisites individually enforced: v4-smoke-22
+  ---
+  duration_ms: 0.259574
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-23
+ok 469 - all prerequisites individually enforced: v4-smoke-23
+  ---
+  duration_ms: 0.330518
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-24
+ok 470 - all prerequisites individually enforced: v4-smoke-24
+  ---
+  duration_ms: 0.281045
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-smoke-25
+ok 471 - all prerequisites individually enforced: v4-smoke-25
+  ---
+  duration_ms: 0.244671
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: thyme-mushroom
+ok 472 - all prerequisites individually enforced: thyme-mushroom
+  ---
+  duration_ms: 0.286654
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: garlic-soy-mushroom
+ok 473 - all prerequisites individually enforced: garlic-soy-mushroom
+  ---
+  duration_ms: 0.310518
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: miso-corn
+ok 474 - all prerequisites individually enforced: miso-corn
+  ---
+  duration_ms: 0.266383
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: lime-corn
+ok 475 - all prerequisites individually enforced: lime-corn
+  ---
+  duration_ms: 0.241837
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: garlic-eggplant
+ok 476 - all prerequisites individually enforced: garlic-eggplant
+  ---
+  duration_ms: 0.267736
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: miso-eggplant
+ok 477 - all prerequisites individually enforced: miso-eggplant
+  ---
+  duration_ms: 0.32518
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: rosemary-potato
+ok 478 - all prerequisites individually enforced: rosemary-potato
+  ---
+  duration_ms: 0.544283
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: lemon-asparagus
+ok 479 - all prerequisites individually enforced: lemon-asparagus
+  ---
+  duration_ms: 0.336637
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-01
+ok 480 - all prerequisites individually enforced: v4-vegetables-01
+  ---
+  duration_ms: 0.283789
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-02
+ok 481 - all prerequisites individually enforced: v4-vegetables-02
+  ---
+  duration_ms: 0.290689
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-03
+ok 482 - all prerequisites individually enforced: v4-vegetables-03
+  ---
+  duration_ms: 0.303338
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-04
+ok 483 - all prerequisites individually enforced: v4-vegetables-04
+  ---
+  duration_ms: 0.253574
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-05
+ok 484 - all prerequisites individually enforced: v4-vegetables-05
+  ---
+  duration_ms: 0.287745
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-06
+ok 485 - all prerequisites individually enforced: v4-vegetables-06
+  ---
+  duration_ms: 0.294766
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-07
+ok 486 - all prerequisites individually enforced: v4-vegetables-07
+  ---
+  duration_ms: 0.303818
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-08
+ok 487 - all prerequisites individually enforced: v4-vegetables-08
+  ---
+  duration_ms: 0.320934
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-09
+ok 488 - all prerequisites individually enforced: v4-vegetables-09
+  ---
+  duration_ms: 0.296798
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-10
+ok 489 - all prerequisites individually enforced: v4-vegetables-10
+  ---
+  duration_ms: 0.503994
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-11
+ok 490 - all prerequisites individually enforced: v4-vegetables-11
+  ---
+  duration_ms: 0.279492
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-12
+ok 491 - all prerequisites individually enforced: v4-vegetables-12
+  ---
+  duration_ms: 0.293223
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-13
+ok 492 - all prerequisites individually enforced: v4-vegetables-13
+  ---
+  duration_ms: 0.2444
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-14
+ok 493 - all prerequisites individually enforced: v4-vegetables-14
+  ---
+  duration_ms: 0.23675
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-15
+ok 494 - all prerequisites individually enforced: v4-vegetables-15
+  ---
+  duration_ms: 0.312521
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-16
+ok 495 - all prerequisites individually enforced: v4-vegetables-16
+  ---
+  duration_ms: 0.288756
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-17
+ok 496 - all prerequisites individually enforced: v4-vegetables-17
+  ---
+  duration_ms: 0.25052
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-18
+ok 497 - all prerequisites individually enforced: v4-vegetables-18
+  ---
+  duration_ms: 0.255377
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-19
+ok 498 - all prerequisites individually enforced: v4-vegetables-19
+  ---
+  duration_ms: 0.276057
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-20
+ok 499 - all prerequisites individually enforced: v4-vegetables-20
+  ---
+  duration_ms: 0.276999
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-21
+ok 500 - all prerequisites individually enforced: v4-vegetables-21
+  ---
+  duration_ms: 0.246535
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-22
+ok 501 - all prerequisites individually enforced: v4-vegetables-22
+  ---
+  duration_ms: 0.523543
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-23
+ok 502 - all prerequisites individually enforced: v4-vegetables-23
+  ---
+  duration_ms: 0.267335
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-24
+ok 503 - all prerequisites individually enforced: v4-vegetables-24
+  ---
+  duration_ms: 0.245122
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-vegetables-25
+ok 504 - all prerequisites individually enforced: v4-vegetables-25
+  ---
+  duration_ms: 0.284339
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-01
+ok 505 - all prerequisites individually enforced: v4-beans-01
+  ---
+  duration_ms: 0.354353
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-02
+ok 506 - all prerequisites individually enforced: v4-beans-02
+  ---
+  duration_ms: 0.286193
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-03
+ok 507 - all prerequisites individually enforced: v4-beans-03
+  ---
+  duration_ms: 0.341584
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-04
+ok 508 - all prerequisites individually enforced: v4-beans-04
+  ---
+  duration_ms: 0.288636
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-05
+ok 509 - all prerequisites individually enforced: v4-beans-05
+  ---
+  duration_ms: 0.266063
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-06
+ok 510 - all prerequisites individually enforced: v4-beans-06
+  ---
+  duration_ms: 0.270359
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-07
+ok 511 - all prerequisites individually enforced: v4-beans-07
+  ---
+  duration_ms: 0.29132
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-08
+ok 512 - all prerequisites individually enforced: v4-beans-08
+  ---
+  duration_ms: 0.4813
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-09
+ok 513 - all prerequisites individually enforced: v4-beans-09
+  ---
+  duration_ms: 0.314454
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-10
+ok 514 - all prerequisites individually enforced: v4-beans-10
+  ---
+  duration_ms: 0.2778
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-11
+ok 515 - all prerequisites individually enforced: v4-beans-11
+  ---
+  duration_ms: 0.25751
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-12
+ok 516 - all prerequisites individually enforced: v4-beans-12
+  ---
+  duration_ms: 0.269378
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-13
+ok 517 - all prerequisites individually enforced: v4-beans-13
+  ---
+  duration_ms: 0.269067
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-14
+ok 518 - all prerequisites individually enforced: v4-beans-14
+  ---
+  duration_ms: 0.252082
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-15
+ok 519 - all prerequisites individually enforced: v4-beans-15
+  ---
+  duration_ms: 0.251191
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-16
+ok 520 - all prerequisites individually enforced: v4-beans-16
+  ---
+  duration_ms: 0.322897
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-17
+ok 521 - all prerequisites individually enforced: v4-beans-17
+  ---
+  duration_ms: 0.277369
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-18
+ok 522 - all prerequisites individually enforced: v4-beans-18
+  ---
+  duration_ms: 0.263489
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-19
+ok 523 - all prerequisites individually enforced: v4-beans-19
+  ---
+  duration_ms: 0.244922
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-20
+ok 524 - all prerequisites individually enforced: v4-beans-20
+  ---
+  duration_ms: 0.52184
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-21
+ok 525 - all prerequisites individually enforced: v4-beans-21
+  ---
+  duration_ms: 0.287985
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-22
+ok 526 - all prerequisites individually enforced: v4-beans-22
+  ---
+  duration_ms: 0.295026
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-23
+ok 527 - all prerequisites individually enforced: v4-beans-23
+  ---
+  duration_ms: 0.28477
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-24
+ok 528 - all prerequisites individually enforced: v4-beans-24
+  ---
+  duration_ms: 0.272532
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-beans-25
+ok 529 - all prerequisites individually enforced: v4-beans-25
+  ---
+  duration_ms: 0.260535
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: soy-rice
+ok 530 - all prerequisites individually enforced: soy-rice
+  ---
+  duration_ms: 0.280153
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: bean-quesadilla
+ok 531 - all prerequisites individually enforced: bean-quesadilla
+  ---
+  duration_ms: 0.261496
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: pita-pizza
+ok 532 - all prerequisites individually enforced: pita-pizza
+  ---
+  duration_ms: 0.224712
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: okonomiyaki
+ok 533 - all prerequisites individually enforced: okonomiyaki
+  ---
+  duration_ms: 0.286553
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: kimchi-cheese-rice
+ok 534 - all prerequisites individually enforced: kimchi-cheese-rice
+  ---
+  duration_ms: 0.264631
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: onigiri-chazuke
+ok 535 - all prerequisites individually enforced: onigiri-chazuke
+  ---
+  duration_ms: 0.440361
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: shakshuka
+ok 536 - all prerequisites individually enforced: shakshuka
+  ---
+  duration_ms: 0.246414
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: lemon-pancakes
+ok 537 - all prerequisites individually enforced: lemon-pancakes
+  ---
+  duration_ms: 0.268446
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-01
+ok 538 - all prerequisites individually enforced: v4-staples-01
+  ---
+  duration_ms: 0.26408
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-02
+ok 539 - all prerequisites individually enforced: v4-staples-02
+  ---
+  duration_ms: 0.255387
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-03
+ok 540 - all prerequisites individually enforced: v4-staples-03
+  ---
+  duration_ms: 0.288206
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-04
+ok 541 - all prerequisites individually enforced: v4-staples-04
+  ---
+  duration_ms: 0.254626
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-05
+ok 542 - all prerequisites individually enforced: v4-staples-05
+  ---
+  duration_ms: 0.2845
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-06
+ok 543 - all prerequisites individually enforced: v4-staples-06
+  ---
+  duration_ms: 0.275197
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-07
+ok 544 - all prerequisites individually enforced: v4-staples-07
+  ---
+  duration_ms: 0.284139
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-08
+ok 545 - all prerequisites individually enforced: v4-staples-08
+  ---
+  duration_ms: 0.25708
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-09
+ok 546 - all prerequisites individually enforced: v4-staples-09
+  ---
+  duration_ms: 0.510674
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-10
+ok 547 - all prerequisites individually enforced: v4-staples-10
+  ---
+  duration_ms: 0.282767
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-11
+ok 548 - all prerequisites individually enforced: v4-staples-11
+  ---
+  duration_ms: 0.239474
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-12
+ok 549 - all prerequisites individually enforced: v4-staples-12
+  ---
+  duration_ms: 0.267705
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-13
+ok 550 - all prerequisites individually enforced: v4-staples-13
+  ---
+  duration_ms: 0.284299
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-14
+ok 551 - all prerequisites individually enforced: v4-staples-14
+  ---
+  duration_ms: 0.242658
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-15
+ok 552 - all prerequisites individually enforced: v4-staples-15
+  ---
+  duration_ms: 0.241306
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-16
+ok 553 - all prerequisites individually enforced: v4-staples-16
+  ---
+  duration_ms: 0.248056
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-17
+ok 554 - all prerequisites individually enforced: v4-staples-17
+  ---
+  duration_ms: 0.27767
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-18
+ok 555 - all prerequisites individually enforced: v4-staples-18
+  ---
+  duration_ms: 0.255678
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-19
+ok 556 - all prerequisites individually enforced: v4-staples-19
+  ---
+  duration_ms: 0.229519
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-20
+ok 557 - all prerequisites individually enforced: v4-staples-20
+  ---
+  duration_ms: 0.486738
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-21
+ok 558 - all prerequisites individually enforced: v4-staples-21
+  ---
+  duration_ms: 0.278671
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-22
+ok 559 - all prerequisites individually enforced: v4-staples-22
+  ---
+  duration_ms: 0.291711
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-23
+ok 560 - all prerequisites individually enforced: v4-staples-23
+  ---
+  duration_ms: 0.644372
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-24
+ok 561 - all prerequisites individually enforced: v4-staples-24
+  ---
+  duration_ms: 0.27078
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-staples-25
+ok 562 - all prerequisites individually enforced: v4-staples-25
+  ---
+  duration_ms: 0.300954
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: rosemary-beef
+ok 563 - all prerequisites individually enforced: rosemary-beef
+  ---
+  duration_ms: 0.258852
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: chimi-beef
+ok 564 - all prerequisites individually enforced: chimi-beef
+  ---
+  duration_ms: 0.254656
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: cumin-beef-wrap
+ok 565 - all prerequisites individually enforced: cumin-beef-wrap
+  ---
+  duration_ms: 0.226224
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: greek-chicken
+ok 566 - all prerequisites individually enforced: greek-chicken
+  ---
+  duration_ms: 0.25727
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: mustard-chicken
+ok 567 - all prerequisites individually enforced: mustard-chicken
+  ---
+  duration_ms: 0.251131
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: pepper-chicken
+ok 568 - all prerequisites individually enforced: pepper-chicken
+  ---
+  duration_ms: 0.46794
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: teriyaki-chicken
+ok 569 - all prerequisites individually enforced: teriyaki-chicken
+  ---
+  duration_ms: 0.315075
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: mint-lamb
+ok 570 - all prerequisites individually enforced: mint-lamb
+  ---
+  duration_ms: 0.263099
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: lemon-shrimp
+ok 571 - all prerequisites individually enforced: lemon-shrimp
+  ---
+  duration_ms: 0.335956
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: paprika-shrimp
+ok 572 - all prerequisites individually enforced: paprika-shrimp
+  ---
+  duration_ms: 0.296007
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: lime-shrimp
+ok 573 - all prerequisites individually enforced: lime-shrimp
+  ---
+  duration_ms: 0.276328
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: dill-salmon
+ok 574 - all prerequisites individually enforced: dill-salmon
+  ---
+  duration_ms: 0.249098
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: ginger-fish
+ok 575 - all prerequisites individually enforced: ginger-fish
+  ---
+  duration_ms: 0.296598
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: miso-salmon
+ok 576 - all prerequisites individually enforced: miso-salmon
+  ---
+  duration_ms: 0.260194
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: clams-tofu
+ok 577 - all prerequisites individually enforced: clams-tofu
+  ---
+  duration_ms: 0.26397
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: smash-taco
+ok 578 - all prerequisites individually enforced: smash-taco
+  ---
+  duration_ms: 0.242418
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: satay-chicken
+ok 579 - all prerequisites individually enforced: satay-chicken
+  ---
+  duration_ms: 0.484135
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: scallop-vermicelli
+ok 580 - all prerequisites individually enforced: scallop-vermicelli
+  ---
+  duration_ms: 0.313503
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: corn-chowder
+ok 581 - all prerequisites individually enforced: corn-chowder
+  ---
+  duration_ms: 0.256378
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-01
+ok 582 - all prerequisites individually enforced: v4-pots-01
+  ---
+  duration_ms: 0.329276
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-02
+ok 583 - all prerequisites individually enforced: v4-pots-02
+  ---
+  duration_ms: 0.258632
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-03
+ok 584 - all prerequisites individually enforced: v4-pots-03
+  ---
+  duration_ms: 0.526187
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-04
+ok 585 - all prerequisites individually enforced: v4-pots-04
+  ---
+  duration_ms: 0.314795
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-05
+ok 586 - all prerequisites individually enforced: v4-pots-05
+  ---
+  duration_ms: 0.276839
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-06
+ok 587 - all prerequisites individually enforced: v4-pots-06
+  ---
+  duration_ms: 0.313693
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-07
+ok 588 - all prerequisites individually enforced: v4-pots-07
+  ---
+  duration_ms: 0.291271
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-08
+ok 589 - all prerequisites individually enforced: v4-pots-08
+  ---
+  duration_ms: 0.345951
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-09
+ok 590 - all prerequisites individually enforced: v4-pots-09
+  ---
+  duration_ms: 0.308626
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-10
+ok 591 - all prerequisites individually enforced: v4-pots-10
+  ---
+  duration_ms: 0.514249
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-11
+ok 592 - all prerequisites individually enforced: v4-pots-11
+  ---
+  duration_ms: 0.276719
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-12
+ok 593 - all prerequisites individually enforced: v4-pots-12
+  ---
+  duration_ms: 0.302436
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-13
+ok 594 - all prerequisites individually enforced: v4-pots-13
+  ---
+  duration_ms: 0.262007
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-14
+ok 595 - all prerequisites individually enforced: v4-pots-14
+  ---
+  duration_ms: 0.245182
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-15
+ok 596 - all prerequisites individually enforced: v4-pots-15
+  ---
+  duration_ms: 0.303107
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-16
+ok 597 - all prerequisites individually enforced: v4-pots-16
+  ---
+  duration_ms: 0.269728
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-17
+ok 598 - all prerequisites individually enforced: v4-pots-17
+  ---
+  duration_ms: 0.229859
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-18
+ok 599 - all prerequisites individually enforced: v4-pots-18
+  ---
+  duration_ms: 0.232594
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-19
+ok 600 - all prerequisites individually enforced: v4-pots-19
+  ---
+  duration_ms: 0.244421
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-20
+ok 601 - all prerequisites individually enforced: v4-pots-20
+  ---
+  duration_ms: 0.266474
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-21
+ok 602 - all prerequisites individually enforced: v4-pots-21
+  ---
+  duration_ms: 0.510944
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-22
+ok 603 - all prerequisites individually enforced: v4-pots-22
+  ---
+  duration_ms: 0.313292
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-23
+ok 604 - all prerequisites individually enforced: v4-pots-23
+  ---
+  duration_ms: 0.268867
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-24
+ok 605 - all prerequisites individually enforced: v4-pots-24
+  ---
+  duration_ms: 0.260004
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-pots-25
+ok 606 - all prerequisites individually enforced: v4-pots-25
+  ---
+  duration_ms: 0.294966
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: basil-toast
+ok 607 - all prerequisites individually enforced: basil-toast
+  ---
+  duration_ms: 0.273784
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: camembert-dip
+ok 608 - all prerequisites individually enforced: camembert-dip
+  ---
+  duration_ms: 0.26409
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: halloumi
+ok 609 - all prerequisites individually enforced: halloumi
+  ---
+  duration_ms: 0.396766
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: summer-roll
+ok 610 - all prerequisites individually enforced: summer-roll
+  ---
+  duration_ms: 0.37938
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: nori-popcorn
+ok 611 - all prerequisites individually enforced: nori-popcorn
+  ---
+  duration_ms: 0.292962
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: sesame-soba
+ok 612 - all prerequisites individually enforced: sesame-soba
+  ---
+  duration_ms: 0.357077
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-01
+ok 613 - all prerequisites individually enforced: v4-cold-01
+  ---
+  duration_ms: 0.688036
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-02
+ok 614 - all prerequisites individually enforced: v4-cold-02
+  ---
+  duration_ms: 0.343447
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-03
+ok 615 - all prerequisites individually enforced: v4-cold-03
+  ---
+  duration_ms: 0.282777
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-04
+ok 616 - all prerequisites individually enforced: v4-cold-04
+  ---
+  duration_ms: 0.258482
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-05
+ok 617 - all prerequisites individually enforced: v4-cold-05
+  ---
+  duration_ms: 0.308025
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-06
+ok 618 - all prerequisites individually enforced: v4-cold-06
+  ---
+  duration_ms: 0.281876
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-07
+ok 619 - all prerequisites individually enforced: v4-cold-07
+  ---
+  duration_ms: 0.261416
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-08
+ok 620 - all prerequisites individually enforced: v4-cold-08
+  ---
+  duration_ms: 0.352671
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-09
+ok 621 - all prerequisites individually enforced: v4-cold-09
+  ---
+  duration_ms: 0.276298
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-10
+ok 622 - all prerequisites individually enforced: v4-cold-10
+  ---
+  duration_ms: 0.243619
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-11
+ok 623 - all prerequisites individually enforced: v4-cold-11
+  ---
+  duration_ms: 0.270249
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-12
+ok 624 - all prerequisites individually enforced: v4-cold-12
+  ---
+  duration_ms: 0.532025
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-13
+ok 625 - all prerequisites individually enforced: v4-cold-13
+  ---
+  duration_ms: 0.37289
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-14
+ok 626 - all prerequisites individually enforced: v4-cold-14
+  ---
+  duration_ms: 0.319602
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-15
+ok 627 - all prerequisites individually enforced: v4-cold-15
+  ---
+  duration_ms: 0.272913
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-16
+ok 628 - all prerequisites individually enforced: v4-cold-16
+  ---
+  duration_ms: 0.259674
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-17
+ok 629 - all prerequisites individually enforced: v4-cold-17
+  ---
+  duration_ms: 0.268627
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-18
+ok 630 - all prerequisites individually enforced: v4-cold-18
+  ---
+  duration_ms: 0.321445
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-19
+ok 631 - all prerequisites individually enforced: v4-cold-19
+  ---
+  duration_ms: 0.264681
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-20
+ok 632 - all prerequisites individually enforced: v4-cold-20
+  ---
+  duration_ms: 0.294335
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-21
+ok 633 - all prerequisites individually enforced: v4-cold-21
+  ---
+  duration_ms: 0.287003
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-22
+ok 634 - all prerequisites individually enforced: v4-cold-22
+  ---
+  duration_ms: 0.264701
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-23
+ok 635 - all prerequisites individually enforced: v4-cold-23
+  ---
+  duration_ms: 0.464717
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-24
+ok 636 - all prerequisites individually enforced: v4-cold-24
+  ---
+  duration_ms: 0.315386
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-cold-25
+ok 637 - all prerequisites individually enforced: v4-cold-25
+  ---
+  duration_ms: 0.256709
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: mint-pineapple
+ok 638 - all prerequisites individually enforced: mint-pineapple
+  ---
+  duration_ms: 0.263639
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: sweetpotato-dessert
+ok 639 - all prerequisites individually enforced: sweetpotato-dessert
+  ---
+  duration_ms: 0.261976
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: banana-chocolate
+ok 640 - all prerequisites individually enforced: banana-chocolate
+  ---
+  duration_ms: 0.24361
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: cinnamon-apple
+ok 641 - all prerequisites individually enforced: cinnamon-apple
+  ---
+  duration_ms: 0.234857
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: strawberry-cheesecake-cup
+ok 642 - all prerequisites individually enforced: strawberry-cheesecake-cup
+  ---
+  duration_ms: 0.233715
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: smores
+ok 643 - all prerequisites individually enforced: smores
+  ---
+  duration_ms: 0.246874
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-01
+ok 644 - all prerequisites individually enforced: v4-sweets-01
+  ---
+  duration_ms: 0.23697
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-02
+ok 645 - all prerequisites individually enforced: v4-sweets-02
+  ---
+  duration_ms: 0.226885
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-03
+ok 646 - all prerequisites individually enforced: v4-sweets-03
+  ---
+  duration_ms: 0.256318
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-04
+ok 647 - all prerequisites individually enforced: v4-sweets-04
+  ---
+  duration_ms: 0.485096
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-05
+ok 648 - all prerequisites individually enforced: v4-sweets-05
+  ---
+  duration_ms: 0.266213
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-06
+ok 649 - all prerequisites individually enforced: v4-sweets-06
+  ---
+  duration_ms: 0.234586
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-07
+ok 650 - all prerequisites individually enforced: v4-sweets-07
+  ---
+  duration_ms: 0.319051
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-08
+ok 651 - all prerequisites individually enforced: v4-sweets-08
+  ---
+  duration_ms: 0.267165
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-09
+ok 652 - all prerequisites individually enforced: v4-sweets-09
+  ---
+  duration_ms: 0.246694
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-10
+ok 653 - all prerequisites individually enforced: v4-sweets-10
+  ---
+  duration_ms: 0.286012
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-11
+ok 654 - all prerequisites individually enforced: v4-sweets-11
+  ---
+  duration_ms: 0.269728
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-12
+ok 655 - all prerequisites individually enforced: v4-sweets-12
+  ---
+  duration_ms: 0.246084
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-13
+ok 656 - all prerequisites individually enforced: v4-sweets-13
+  ---
+  duration_ms: 0.241697
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: virgin-mojito
+ok 657 - all prerequisites individually enforced: virgin-mojito
+  ---
+  duration_ms: 0.272112
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: basil-berry-soda
+ok 658 - all prerequisites individually enforced: basil-berry-soda
+  ---
+  duration_ms: 0.586386
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: spiced-hot-apple
+ok 659 - all prerequisites individually enforced: spiced-hot-apple
+  ---
+  duration_ms: 0.334153
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-14
+ok 660 - all prerequisites individually enforced: v4-sweets-14
+  ---
+  duration_ms: 0.28432
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-15
+ok 661 - all prerequisites individually enforced: v4-sweets-15
+  ---
+  duration_ms: 0.272833
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-16
+ok 662 - all prerequisites individually enforced: v4-sweets-16
+  ---
+  duration_ms: 0.252082
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-17
+ok 663 - all prerequisites individually enforced: v4-sweets-17
+  ---
+  duration_ms: 0.288707
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-18
+ok 664 - all prerequisites individually enforced: v4-sweets-18
+  ---
+  duration_ms: 0.26427
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-19
+ok 665 - all prerequisites individually enforced: v4-sweets-19
+  ---
+  duration_ms: 0.261767
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-20
+ok 666 - all prerequisites individually enforced: v4-sweets-20
+  ---
+  duration_ms: 0.262978
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-21
+ok 667 - all prerequisites individually enforced: v4-sweets-21
+  ---
+  duration_ms: 0.226815
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-22
+ok 668 - all prerequisites individually enforced: v4-sweets-22
+  ---
+  duration_ms: 0.220746
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-23
+ok 669 - all prerequisites individually enforced: v4-sweets-23
+  ---
+  duration_ms: 0.900119
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-24
+ok 670 - all prerequisites individually enforced: v4-sweets-24
+  ---
+  duration_ms: 0.334564
+  type: 'test'
+  ...
+# Subtest: all prerequisites individually enforced: v4-sweets-25
+ok 671 - all prerequisites individually enforced: v4-sweets-25
+  ---
+  duration_ms: 0.348254
+  type: 'test'
+  ...
+# Subtest: OR tools accept either implement, not both mandatory
+ok 672 - OR tools accept either implement, not both mandatory
+  ---
+  duration_ms: 0.33885
+  type: 'test'
+  ...
+# Subtest: raw and cooked two-tool requirement is AND, never one shared tong
+ok 673 - raw and cooked two-tool requirement is AND, never one shared tong
+  ---
+  duration_ms: 0.197201
+  type: 'test'
+  ...
+# Subtest: stronger exact cookware capability is allowed, weaker cookware rejected
+ok 674 - stronger exact cookware capability is allowed, weaker cookware rejected
+  ---
+  duration_ms: 0.271221
+  type: 'test'
+  ...
+# Subtest: unknown custom recipe tools become explicit exact candidates
+ok 675 - unknown custom recipe tools become explicit exact candidates
+  ---
+  duration_ms: 0.181589
+  type: 'test'
+  ...
+# Subtest: search and history exclusion use the same recipe-derived vocabulary
+ok 676 - search and history exclusion use the same recipe-derived vocabulary
+  ---
+  duration_ms: 0.266663
+  type: 'test'
+  ...
+# Subtest: recommendations cannot use missing ingredients, tools or freezer
+ok 677 - recommendations cannot use missing ingredients, tools or freezer
+  ---
+  duration_ms: 0.628228
+  type: 'test'
+  ...
+# Subtest: recommendations are deterministic, unique and respect operation budgets
+ok 678 - recommendations are deterministic, unique and respect operation budgets
+  ---
+  duration_ms: 41.922695
+  type: 'test'
+  ...
+# Subtest: recommendation estimate uses actual people and resets recommended portions to one
+ok 679 - recommendation estimate uses actual people and resets recommended portions to one
+  ---
+  duration_ms: 7.244796
+  type: 'test'
+  ...
+# Subtest: zero or one feasible recipe cannot become a fictitious meal combination
+ok 680 - zero or one feasible recipe cannot become a fictitious meal combination
+  ---
+  duration_ms: 0.139546
+  type: 'test'
+  ...
+# Subtest: storage preserves corrupt raw bytes and reports denied/quota failures
+ok 681 - storage preserves corrupt raw bytes and reports denied/quota failures
+  ---
+  duration_ms: 0.336768
+  type: 'test'
+  ...
+# Subtest: malformed tool catalog fails closed before availability can be claimed
+ok 682 - malformed tool catalog fails closed before availability can be claimed
+  ---
+  duration_ms: 1.347299
+  type: 'test'
+  ...
+# Subtest: 300 unique dishes, 25 smoke dishes, every builtin equipment requirement resolves explicitly
+ok 683 - 300 unique dishes, 25 smoke dishes, every builtin equipment requirement resolves explicitly
+  ---
+  duration_ms: 2.605817
+  type: 'test'
+  ...
+# Subtest: pagination reaches every dish exactly once with bounded DOM pages
+ok 684 - pagination reaches every dish exactly once with bounded DOM pages
+  ---
+  duration_ms: 0.69063
+  type: 'test'
+  ...
+# Subtest: applewood does not replace charcoal, open grill does not replace covered grill
+ok 685 - applewood does not replace charcoal, open grill does not replace covered grill
+  ---
+  duration_ms: 3.756357
+  type: 'test'
+  ...
+# Subtest: empty stock does not infer user ownership or salt/oil
+ok 686 - empty stock does not infer user ownership or salt/oil
+  ---
+  duration_ms: 0.607036
+  type: 'test'
+  ...
+# Subtest: search exposes cooking modes and durations are finite for every dish
+ok 687 - search exposes cooking modes and durations are finite for every dish
+  ---
+  duration_ms: 0.499437
+  type: 'test'
+  ...
+# Subtest: obsolete countdown is cleared during persisted-state migration and absent from app
+ok 688 - obsolete countdown is cleared during persisted-state migration and absent from app
+  ---
+  duration_ms: 0.576381
+  type: 'test'
+  ...
+1..688
+# tests 688
+# suites 0
+# pass 688
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3365.362583

@@ -1,8 +1,0 @@
-VALID 2.0.0: 50 recipes, 112 ingredients, 41 sources
-Built /mnt/data/work/campfire_kitchen_v2/index.html (306,223 bytes; 50 recipes)
-PASS JSON Schema v2自身有效且完整50道数据通过结构校验
-PASS 独立CLI语义校验器成功
-PASS 相同源码数据连续构建逐字节一致
-PASS 全部ES模块与CLI通过Node语法检查
-PASS 可选标准库HTTP服务真实返回完整发行HTML及nosniff头
-PASS HTTP服务不开放目录列表

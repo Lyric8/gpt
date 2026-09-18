@@ -6,12 +6,13 @@ Both modes inspect downloaded Blob bytes; HTTP mode also exercises native reload
 """
 from __future__ import annotations
 from pathlib import Path
-import argparse, functools, hashlib, http.server, json, os, shutil, threading, time, traceback
+import argparse, functools, hashlib, http.server, json, os, shutil, threading, time, traceback, subprocess, sys
 from playwright.sync_api import sync_playwright
+from browser_v4_quality import audit_v4
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'test-results';OUT.mkdir(exist_ok=True)
 HTML=(ROOT/'index.html').read_text(encoding='utf8')
-DATA=json.loads((ROOT/'data/recipes.json').read_text(encoding='utf8'))
+DATA=json.loads(subprocess.check_output([sys.executable,'tools/catalog.py'],cwd=ROOT,text=True))
 parser=argparse.ArgumentParser()
 parser.add_argument('--mode',choices=['http','content'],default='http')
 ARGS=parser.parse_args()
@@ -50,9 +51,14 @@ def nav(p,tab):
  else:p.locator(f'.tabs [data-tab="{tab}"]').click()
  p.wait_for_timeout(25)
 def action(p,name,id=None):
+ if name in ('export-library','import-library','restore-library') and p.locator('summary').filter(has_text='管理菜谱库').count():
+  p.locator('summary').filter(has_text='管理菜谱库').evaluate('(x)=>x.parentElement.open=true')
+ if name=='clear' and not p.locator('[data-action=clear]').count():nav(p,'menu')
  if name=='preset':
   disclosure=p.locator('.preset-disclosure')
   if disclosure.count() and disclosure.get_attribute('open') is None:disclosure.locator('summary').first.click()
+ if name=='detail' and id and not p.locator(f'[data-action=detail][data-id="{id}"]').count() and p.locator('#recipe-search').count():
+  p.locator('[data-action=category][data-value=""]').click();p.locator('#recipe-search').fill(next(r['title'] for r in DATA['recipes'] if r['id']==id))
  return p.locator(f'[data-action="{name}"]'+(f'[data-id="{id}"]' if id else '')).first
 
 def wait(p,expr):
@@ -90,15 +96,16 @@ def main():
   browser_path = os.environ.get('CHROMIUM_PATH') or shutil.which('chromium') or shutil.which('chromium-browser') or w.chromium.executable_path
   b=w.chromium.launch(executable_path=browser_path,headless=True,args=['--no-sandbox'])
   p=new_page(b)
-  assert p.locator('[data-card]').count()==50;assert not p.locator('[data-change=choice], [data-change=dry-only]').count()
-  ok('内置50卡正确启动；没有鲜干/材料选项控件')
+  assert p.locator('[data-card]').count()==24;assert '300' in p.locator('#recipe-count').inner_text();assert not p.locator('[data-change=choice], [data-change=dry-only]').count()
+  ok('内置300道、首屏24卡正确启动；没有鲜干/材料选项控件')
   assert all(x.startswith(ORIGIN+'/') for x in network);ok('初始加载没有任何外部网络请求')
+  audit_v4(p,ok,OUT)
   p.screenshot(path=str(OUT/'desktop-browse.png'))
   p.locator('#recipe-search').fill('米纸')
-  assert p.locator('[data-card]').count()==1;assert p.locator('#recipe-search').evaluate('(x)=>x===document.activeElement')
+  assert p.locator('[data-card=summer-roll]').count()==1;assert p.locator('#recipe-search').evaluate('(x)=>x===document.activeElement')
   ok('中文搜索按菜谱与材料匹配，输入焦点保留')
   p.locator('#recipe-search').fill('');p.locator('[data-action=category][data-value="主食"]').click()
-  assert p.locator('[data-card=okonomiyaki]').count()==1;assert p.locator('[data-card=rosemary-beef]').count()==0
+  p.locator('#recipe-search').fill('大阪烧');assert p.locator('[data-card=okonomiyaki]').count()==1;p.locator('#recipe-search').fill('');assert p.locator('[data-card=rosemary-beef]').count()==0
   p.locator('[data-action=category][data-value=""]').click()
   p.locator('.extra-filter summary').click();p.locator('#experience-filter').select_option('动手');assert p.locator('[data-card]').count()>5
   p.locator('#experience-filter').select_option('全部');ok('分类与动手体验筛选可组合且可清除')
@@ -121,8 +128,7 @@ def main():
   ok('相关原料需求变化后旧备好勾选自动失效')
   nav(p,'menu');action(p,'detail','rosemary-beef').click();assert not dlg.locator('[data-change=step]').first.is_checked();assert dlg.locator('textarea').input_value().startswith('迷迭香')
   ok('操作步骤进度随配方量变化失效，笔记仍保留')
-  dlg.locator('[data-action=timer][data-minutes="1"]').click();assert '0:59' in dlg.locator('#timer-readout').inner_text() or '1:00' in dlg.locator('#timer-readout').inner_text()
-  dlg.locator('[data-action=stop-timer]').click();assert dlg.locator('#timer-readout').inner_text()=='未计时';ok('前台检查提醒可启动/停止，不宣称后台闹钟')
+  assert dlg.locator('[data-action=timer],#timer-readout,.timer-box').count()==0;ok('逐菜倒计时UI与逻辑移除，熟度标准保留')
   action(dlg,'close-dialog').click();nav(p,'browse');action(p,'preset','play-date').click()
   assert p.locator('[data-menu-item]').count()==5;assert p.locator('[data-menu-item=summer-roll]').count()==1
   p.wait_for_timeout(70);assert p.evaluate('window.scrollY')<=2;ok('套菜单或切换主页面从顶部开始，不被旧滚动位置覆盖')
@@ -134,10 +140,10 @@ def main():
   assert p.locator('[data-menu-item]').first.get_attribute('data-menu-item')==second
   action(p,'sort').click();assert p.locator('[data-menu-item]').first.get_attribute('data-menu-item')==first
   ok('手动换出餐顺序与恢复推荐顺序正常')
-  action(p,'record').click();nav(p,'browse');
+  action(p,'record').click();nav(p,'browse');p.locator('#recipe-search').fill('');
   if p.locator('.extra-filter').get_attribute('open') is None:p.locator('.extra-filter summary').click()
   p.locator('[data-change=fresh-ideas]').check()
-  assert p.locator('[data-card=smash-taco]').count()==0;assert p.locator('[data-card]').count()==45
+  assert p.locator('[data-card=smash-taco]').count()==0;assert '295' in p.locator('#recipe-count').inner_text()
   p.locator('[data-change=fresh-ideas]').uncheck();ok('最近三次做过记录真实影响新鲜感筛选')
   nav(p,'prep');p.locator('[data-pack-recipe=smash-taco] summary').click()
   assert '生牛肉' in p.locator('[data-pack-recipe=smash-taco]').inner_text();assert '酸黄瓜' in p.locator('[data-pack-recipe=smash-taco]').inner_text()
@@ -154,7 +160,7 @@ def main():
   csv=p.evaluate('window.__downloads.find(x=>x.type.startsWith("text/csv")).text');assert '处理形态' in csv and '即食熟虾仁' in csv
   ok('CSV Blob保留材料形态、按菜分配，不只给购物总量')
   action(p,'export-backup').click();wait(p,'window.__downloads.some(x=>x.type.startsWith("application/json"))')
-  backup=json.loads(p.evaluate('window.__downloads.find(x=>x.type.startsWith("application/json")).text'));assert backup['backupVersion']==2 and len(backup['database']['recipes'])==50
+  backup=json.loads(p.evaluate('window.__downloads.find(x=>x.type.startsWith("application/json")).text'));assert backup['backupVersion']==2 and len(backup['database']['recipes'])==300
   ok('完整JSON备份同时含菜单、记录与定稿菜谱库')
   action(p,'print').click();assert p.evaluate('window.__printed===true');assert '迷你' in p.locator('#print-container').inner_text() or '米纸' in p.locator('#print-container').inner_text()
   ok('打印区域由当前清单生成，未使用旧版模板')
@@ -167,14 +173,14 @@ def main():
   bad=json.loads(json.dumps(DATA));bad['recipes'][0]['choices']=[]
   p.locator('#library-import').set_input_files({'name':'bad.json','mimeType':'application/json','buffer':json.dumps(bad).encode()})
   wait(p,'document.getElementById("toast").textContent.includes("不再允许choices")')
-  assert '50' in p.locator('.intro').inner_text() or p.locator('[data-action=detail]').count()>30
+  assert '300' in p.locator('.intro').inner_text()
   ok('含鲜干choices的坏库被拒，当前定稿库未覆盖')
-  good=json.loads(json.dumps(DATA));good['title']='本机测试库';good['recipes'][0]['title']='<img src=x onerror="window.hacked=true">'
+  good=json.loads(json.dumps(DATA));good['title']='本机测试库';next(r for r in good['recipes'] if r['id']=='basil-toast')['title']='<img src=x onerror="window.hacked=true">'
   p.locator('#library-import').set_input_files({'name':'good.json','mimeType':'application/json','buffer':json.dumps(good,ensure_ascii=False).encode()})
-  p.wait_for_timeout(150);nav(p,'browse');assert p.locator('[data-card=basil-toast]').count()==1
+  p.wait_for_timeout(150);nav(p,'browse');p.locator('#recipe-search').fill('<img src=x');assert p.locator('[data-card=basil-toast]').count()==1
   assert '<img src=x' in p.locator('[data-card=basil-toast]').inner_text();assert p.locator('[data-card=basil-toast] img').count()==1;assert p.evaluate('window.hacked===undefined')
   ok('扩展库可加载，导入文本HTML转义不会执行注入')
-  nav(p,'review');action(p,'restore-library').click();nav(p,'browse');assert '罗勒番茄' in p.locator('[data-card=basil-toast]').inner_text()
+  nav(p,'review');action(p,'restore-library').click();nav(p,'browse');p.locator('#recipe-search').fill('罗勒番茄');assert '罗勒番茄' in p.locator('[data-card=basil-toast]').inner_text()
   ok('恢复内置库可用，保留仍存在的菜单ID')
   snapshot=p.evaluate('window.__storageDump()');q=new_page(b,initial=snapshot)
   nav(q,'menu');assert q.locator('[data-menu-item]').count()==2;action(q,'detail','rosemary-beef').click()
@@ -186,9 +192,9 @@ def main():
   action(mobile,'preset','play-date').click();mobile.screenshot(path=str(OUT/'mobile-menu.png'))
   for width in [320,360,390,430,768,1024,1440]:
    mobile.set_viewport_size({'width':width,'height':844})
-   for t in ['browse','pantry','menu','prep','review']:
+   for t in ['browse','pantry','menu','prep','review','fire']:
     nav(mobile,t);assert mobile.evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'),(width,t)
-  ok('320/360/390/430/768/1024/1440px七种宽度，五视图均无横向溢出')
+  ok('320/360/390/430/768/1024/1440px七种宽度，六视图均无横向溢出')
   mobile.set_viewport_size({'width':390,'height':844});nav(mobile,'menu');action(mobile,'detail','smash-taco').click()
   assert mobile.locator('#recipe-dialog').is_visible();assert mobile.locator('[data-change=step]').count()==4
   assert mobile.locator('#recipe-dialog').evaluate('(x)=>x.scrollWidth<=x.clientWidth+1')
@@ -214,8 +220,8 @@ def main():
   assert '现在可做 0 道' in stock.locator('#results-title').inner_text()
   assert stock.locator('[data-change=inventory]:checked').count()==0
   ok('空库存没有默认盐油；零条件绝不宣称可做')
-  stock.locator('[data-action=scope][data-value="甜品与饮料"]').click()
-  wanted={i['ingredient'] for r in DATA['recipes'] if r['category']=='甜品与饮料' for i in r['ingredients']}
+  stock.locator('[data-action=scope][data-value="甜品"]').click()
+  wanted={i['ingredient'] for r in DATA['recipes'] if r['category']=='甜品' for i in r['ingredients']}
   actual=set(stock.locator('[data-change=inventory][data-kind=ingredients]').evaluate_all('(xs)=>xs.map(x=>x.dataset.id)'))
   assert actual==wanted
   stock.locator('#pantry-search').fill('柠檬')
@@ -228,16 +234,16 @@ def main():
   ok('分类精确限定食材候选；搜索勾选立即生效且焦点不跳走')
   stock.locator('#pantry-search').fill('')
   stock.locator('[data-action=scope][data-value="主食"]').click()
-  assert set(json.loads(stock.evaluate('localStorage.getItem("campfire-kitchen-pantry-v1")'))['categories'])=={'甜品与饮料','主食'}
+  assert set(json.loads(stock.evaluate('localStorage.getItem("campfire-kitchen-pantry-v1")'))['categories'])=={'甜品','主食'}
   assert chosen in json.loads(stock.evaluate('localStorage.getItem("campfire-kitchen-pantry-v1")'))['ingredients']
   reload_page(stock);nav(stock,'pantry')
   assert chosen in json.loads(stock.evaluate('localStorage.getItem("campfire-kitchen-pantry-v1")'))['ingredients']
-  assert stock.locator('[data-action=scope][data-value="甜品与饮料"]').get_attribute('aria-pressed')=='true'
+  assert stock.locator('[data-action=scope][data-value="甜品"]').get_attribute('aria-pressed')=='true'
   ok('多分类并集与库存持久化；真实HTTP模式用浏览器reload验证')
   stock.locator('.match-filters [data-action=match-filter][data-value="all"]').click()
-  assert stock.locator('[data-card]').count()==sum(r['category'] in ['甜品与饮料','主食'] for r in DATA['recipes'])
+  assert stock.locator('[data-card]').count()==24;assert stock.locator('[data-action=pantry-page]').count()==2
   assert stock.locator('[data-card]').first.get_attribute('data-match')!='ready'
-  assert stock.locator('[data-card] .match-note.missing span').first.inner_text()
+  stock.locator('[data-card] .match-note.missing summary').first.click();assert stock.locator('[data-card] .match-note.missing p').first.inner_text()
   stock.screenshot(path=str(OUT/'desktop-pantry-missing.png'))
   ok('完整范围所有匹配结果可查看，每卡明确缺食材与缺工具')
   # All-owned state is explicit test fixture, not a product default.
@@ -245,11 +251,11 @@ def main():
   full={'version':1,'ingredients':list(DATA['ingredients']),'tools':[t['id'] for t in gear['tools']],'categories':[]}
   ready=new_page(b,initial={'campfire-kitchen-pantry-v1':json.dumps(full),'campfire-kitchen-state-v2':json.dumps({'people':2,'hasFreezer':True})})
   nav(ready,'pantry')
-  assert ready.locator('[data-card]').count()==50
-  assert '50' in ready.locator('#results-title').inner_text()
+  assert ready.locator('[data-card]').count()==24
+  assert '300' in ready.locator('#results-title').inner_text()
   assert ready.locator('[data-action=apply-meal]').count()>=1
   ready.screenshot(path=str(OUT/'desktop-pantry-ready.png'))
-  ok('所有条件显式具备时列全50道，组合只从可做池生成')
+  ok('所有条件显式具备时300道可做且分页展示，组合只从可做池生成')
   # Group selection under search must not accidentally select hidden candidates.
   nav(stock,'pantry');stock.locator('#pantry-search').fill('柠檬')
   displayed=set(stock.locator('[data-change=inventory][data-kind=ingredients]').evaluate_all('(xs)=>xs.map(x=>x.dataset.id)'))
@@ -259,22 +265,22 @@ def main():
   after=set(json.loads(stock.evaluate('localStorage.getItem("campfire-kitchen-pantry-v1")'))['ingredients'])
   assert after-prior<=displayed
   ok('搜索状态本组全选只影响可见候选，不偷选被隐藏食材')
-  ready.locator('[data-action=apply-meal]').first.click()
+  ready.locator('.meal-ideas summary').click();ready.locator('[data-action=apply-meal]').first.click()
   assert 2<=ready.locator('[data-menu-item]').count()<=4
   assert all(x=='1' for x in ready.locator('[data-change=portion]').evaluate_all('(xs)=>xs.map(x=>x.value)'))
   nav(ready,'prep');assert ready.locator('[data-shop]').count()>0
   ok('组合一键加入后生成真实菜单与合计备料，统一1份不沿用隐蔽旧份量')
   action(ready,'export-backup').click();wait(ready,'window.__downloads.some(x=>x.type.startsWith("application/json"))')
   saved=json.loads(ready.evaluate('window.__downloads.find(x=>x.type.startsWith("application/json")).text'))
-  assert len(saved['inventory']['ingredients'])==len(DATA['ingredients'])
-  load_backup(stock,saved);nav(stock,'pantry');assert stock.locator('[data-card]').count()==50
+  assert len(saved['inventory']['ingredients'])==len({a['ingredient'] for r in DATA['recipes'] for a in r['ingredients']})
+  load_backup(stock,saved);nav(stock,'pantry');assert stock.locator('[data-card]').count()==24
   ok('完整JSON备份包含库存与分类，跨页面导入恢复匹配结果')
   nav(ready,'browse')
   ready.locator('.extra-filter').evaluate('(x)=>x.open=false')
   ready.locator('.preset-disclosure').evaluate('(x)=>x.open=false')
   ready.locator('.recipe-grid img').evaluate_all('(xs)=>xs.forEach(x=>x.loading="eager")')
   ready.evaluate('async()=>{await Promise.all([...document.querySelectorAll(".recipe-grid img")].map(x=>x.decode()))}')
-  assert ready.locator('.recipe-grid img').count()==50
+  assert ready.locator('.recipe-grid img').count()==24
   assert ready.locator('.recipe-grid img').evaluate_all('(xs)=>xs.every(x=>x.naturalWidth>0&&x.naturalHeight>0)')
   ready.screenshot(path=str(OUT/'desktop-browse.png'))
   ready.set_viewport_size({'width':390,'height':844});ready.screenshot(path=str(OUT/'mobile-browse.png'))
@@ -289,7 +295,7 @@ def main():
   for _ in range(4):ready.keyboard.press('Tab');assert ready.evaluate('document.getElementById("recipe-dialog").contains(document.activeElement)')
   ready.keyboard.press('Escape');assert not rd.is_visible()
   assert ready.locator('[data-action=detail][data-id=rosemary-beef]').first.evaluate('(x)=>x===document.activeElement')
-  ok('50张配图离线解码；署名许可可达；弹窗键盘不逸出，Esc恢复调用焦点')
+  ok('首屏配图离线解码；署名许可可达；弹窗键盘不逸出，Esc恢复调用焦点')
   nav(ready,'pantry');ready.screenshot(path=str(OUT/'mobile-pantry.png'))
   action(ready,'jump-results').click()
   assert ready.locator('#inventory-results').evaluate('(x)=>x===document.activeElement')
@@ -304,8 +310,8 @@ def main():
 try:
  main()
 except Exception:
- (OUT/'browser-v3-report.json').write_text(json.dumps({'ok':False,'checks':checks,'errors':errors,'trace':traceback.format_exc()},ensure_ascii=False,indent=2))
+ (OUT/'browser-v4-report.json').write_text(json.dumps({'ok':False,'checks':checks,'errors':errors,'trace':traceback.format_exc()},ensure_ascii=False,indent=2))
  raise
 else:
- (OUT/'browser-v3-report.json').write_text(json.dumps({'ok':True,'count':len(checks),'checks':checks,'errors':errors,'network':network,'mode':ARGS.mode,'storage':('native browser Storage + native reload' if ARGS.mode=='http' else 'explicit Storage interface double; HTTP/file navigation blocked by sandbox'),'sha256':hashlib.sha256(HTML.encode()).hexdigest(),'bytes':len(HTML.encode())},ensure_ascii=False,indent=2))
+ (OUT/'browser-v4-report.json').write_text(json.dumps({'ok':True,'count':len(checks),'checks':checks,'errors':errors,'network':network,'mode':ARGS.mode,'storage':('native browser Storage + native reload' if ARGS.mode=='http' else 'explicit Storage interface double; HTTP/file navigation blocked by sandbox'),'sha256':hashlib.sha256(HTML.encode()).hexdigest(),'bytes':len(HTML.encode())},ensure_ascii=False,indent=2))
  print('COMPLETE',len(checks),'browser checks')

@@ -15,11 +15,11 @@ index = R / 'index.html'
 had_index = index.exists()
 old_index = index.read_bytes() if had_index else None
 try:
-    d = json.loads((R / 'data/recipes.json').read_text())
+    d = json.loads(subprocess.check_output([sys.executable, 'tools/catalog.py'], cwd=R, text=True))
     schema = json.loads((R / 'data/recipes.schema.json').read_text())
     jsonschema.Draft202012Validator.check_schema(schema)
     jsonschema.validate(d, schema)
-    ok('JSON Schema v2自身有效且完整50道数据通过结构校验')
+    ok('JSON Schema v2自身有效且完整300道数据通过结构校验')
 
     subprocess.run(['node', 'tools/check_catalog.mjs'], cwd=R, check=True)
     ok('独立CLI语义校验器成功')
@@ -74,7 +74,7 @@ try:
         'sha256': hashlib.sha256(first).hexdigest(),
         'bytes': len(first),
     }
-    (R / 'test-results/release-v3-report.json').write_text(
+    (R / 'test-results/release-v4-report.json').write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 finally:
     if had_index:

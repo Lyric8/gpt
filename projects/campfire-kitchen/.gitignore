@@ -3,3 +3,6 @@
 
 # Browser smoke screenshots are local test evidence, not release inputs.
 /test-results/*.png
+
+__pycache__/
+*.pyc

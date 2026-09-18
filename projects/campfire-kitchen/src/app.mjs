@@ -2,7 +2,8 @@ import { makeInventoryIndex, sanitizeInventory, inventoryCandidates, matchInvent
 import { suggestMeals } from './core/recommendations.mjs';
 import { readJSONStorage, writeJSONStorage } from './core/storage.mjs';
 import { E, button, metric, fraction, recipeCards } from './ui/components.mjs';
-import { browseView } from './ui/browse.mjs';
+import { fireView } from './ui/fire.mjs';
+import { browseView, catalogResults } from './ui/browse.mjs';
 import { pantryView } from './ui/pantry.mjs';
 import { menuView, prepView } from './ui/planning.mjs';
 import { settingsView } from './ui/settings.mjs';
@@ -15,9 +16,10 @@ const root = document.getElementById('app'), dialog = document.getElementById('r
 const PHOTOS = JSON.parse(document.getElementById('photo-data').textContent);
 const EQUIPMENT = JSON.parse(document.getElementById('equipment-data').textContent);
 const INVENTORY_STORE = 'campfire-kitchen-pantry-v1';
+let browsePage=1, pantryPage=1;
 let index, inventory, pantryQuery = '', matchFilter = 'ready', inventoryRaw = '', dialogTrigger = '';
 const detailState = new Map();
-let db = BUILTIN, state = defaultState(), tab = 'browse', search = '', category = '全部', experience = '全部', freshIdeas = false, onlyMissing = false, dialogId = null, presetCycle = 0, storageOK = true, banner = '', failedRaw = '', timerTick = null, lastRenderedTab = null;
+let db = BUILTIN, state = defaultState(), tab = 'browse', search = '', category = '全部', experience = '全部', freshIdeas = false, onlyMissing = false, dialogId = null, presetCycle = 0, storageOK = true, banner = '', failedRaw = '', lastRenderedTab = null;
 const validation = validateDatabase(BUILTIN);
 if (!validation.ok)
     throw new Error('内置菜谱校验失败：' + validation.errors.join('；'));
@@ -40,8 +42,10 @@ try {
     const lib = readStore(LIB);
     if (lib) {
         const candidate = JSON.parse(lib), v = validateDatabase(candidate);
-        if (v.ok)
+        if (v.ok) {
             db = candidate;
+            if(candidate.version!==BUILTIN.version) banner=`当前使用已保存的 ${candidate.recipes.length} 道自定义库。到「资料与备份」可切换 V4 内置 300 道，已有数据不会自动删除。`;
+        }
         else
             banner = '保存的自定义库没有通过v2校验，已暂用内置库。原数据仍在本机；可导出救援数据。';
     }
@@ -86,11 +90,11 @@ function filteredRecipes() {
 function context() {
     const matches = tab === 'pantry' ? matchInventory(index,inventory,{hasFreezer:state.hasFreezer}) : [];
     return {db,state,photos:PHOTOS,index,inventory,search,category,experience,freshIdeas,onlyMissing,
-        pantryQuery,matchFilter,matches,meals:tab==='pantry'?suggestMeals(db,matches,state):[],
+        pantryQuery,matchFilter,matches,browsePage,pantryPage,meals:tab==='pantry'?suggestMeals(db,matches,state):[],
         recipes:filteredRecipes(),renderPeople,portionControl,findRecipe,sourceLinks};
 }
-function renderCards() { return recipeCards(filteredRecipes(),context()); }
-function renderDialog() { renderRecipeDialog({...context(),dialogId,dialog,toggleButton,updateTimer}); }
+function renderCatalog() { document.getElementById('catalog-results').innerHTML=catalogResults(context()); }
+function renderDialog() { renderRecipeDialog({...context(),dialogId,dialog,toggleButton}); }
 function elementSelector(el) {
     if (!el || el===document.body) return '';
     if (el.id) return '#'+CSS.escape(el.id);
@@ -106,13 +110,13 @@ function render() {
     root.querySelectorAll('details[data-keep]').forEach(d=>detailState.set(d.dataset.keep,d.open));
     lastRenderedTab=tab;
     const ctx=context();
-    const page=tab==='browse'?browseView(ctx):tab==='pantry'?pantryView(ctx):tab==='menu'?menuView(ctx):tab==='prep'?prepView(ctx):settingsView(ctx);
-    root.innerHTML=`<header class="site-header"><div class="topbar"><a class="brand" href="#browse" data-action="tab" data-tab="browse"><span class="brand-icon" aria-hidden="true">火</span><span>火边<small>露营风味厨房</small></span></a><nav class="tabs" aria-label="主导航">${[['browse','看菜谱'],['pantry','我有这些'],['menu','这顿菜单']].map(([key,label])=>button(label+(key==='menu'&&state.selected.length?` <b>${state.selected.length}</b>`:''),'tab',`data-tab="${key}" ${key===tab||key==='menu'&&tab==='prep'?'aria-current="page"':''}`,key===tab||key==='menu'&&tab==='prep'?'active':'')).join('')}</nav><span class="offline-dot">离线可用</span></div></header>
+    const page=tab==='browse'?browseView(ctx):tab==='pantry'?pantryView(ctx):tab==='menu'?menuView(ctx):tab==='prep'?prepView(ctx):tab==='fire'?fireView():settingsView(ctx);
+    root.innerHTML=`<header class="site-header"><div class="topbar"><a class="brand" href="#browse" data-action="tab" data-tab="browse"><span class="brand-icon" aria-hidden="true">火</span><span>火边<small>V4 · 露营厨房</small></span></a><nav class="tabs" aria-label="主导航">${[['browse','看菜谱'],['pantry','我有这些'],['menu','菜单'],['fire','炭火指南']].map(([key,label])=>button(label+(key==='menu'&&state.selected.length?` <b>${state.selected.length}</b>`:''),'tab',`data-tab="${key}" ${key===tab||key==='menu'&&tab==='prep'?'aria-current="page"':''}`,key===tab||key==='menu'&&tab==='prep'?'active':'')).join('')}</nav><span class="offline-dot">离线可用</span></div></header>
     ${banner?`<div class="banner" role="status">${E(banner)} ${button('救援原数据','rescue','','text-btn')}${button('关闭提示','dismiss-banner','','text-btn')}</div>`:''}
     ${!storageOK?'<div class="banner warn" role="status">本地保存不可用。离开前请导出完整备份；不影响当前操作。</div>':''}
     <main id="main" tabindex="-1">${tab==='menu'||tab==='prep'?`<nav class="workflow-nav" aria-label="这顿菜单与备料">${button('① 安排这顿','tab','data-tab="menu" '+(tab==='menu'?'aria-current="page"':''),tab==='menu'?'active':'')}${button('② 备料与分装','tab','data-tab="prep" '+(tab==='prep'?'aria-current="page"':''),tab==='prep'?'active':'')}</nav>`:''}${page}</main>
-    <footer><span>火边 v${E(BUILTIN.version)} · 无联网请求，不上传选择</span><div>${button('资料与管理','tab','data-tab="review"','text-btn')}${button('导出完整备份','export-backup','','text-btn')}</div></footer>
-    <div class="bottom-dock"><div><b>${state.selected.length} 道</b><span> / ${state.people} 人</span></div>${tab==='pantry'?button(`看可做的菜 · ${ctx.matches.filter(m=>m.ready).length}`,'jump-results','','btn primary'):button(tab==='prep'?'回到这顿':'看这顿与备料','tab',`data-tab="${tab==='menu'?'prep':'menu'}"`,'btn primary')}${state.selected.length?button('清空菜单','clear','','text-btn'):''}</div>`;
+    <footer><span>火边 v${E(BUILTIN.version)} · 无联网请求，不上传选择</span><div>${button('资料与备份','tab','data-tab="review"','text-btn')}${button('导出完整备份','export-backup','','text-btn')}</div></footer>
+    <div class="bottom-dock"><div><b>${state.selected.length} 道</b><span> / ${state.people} 人</span></div>${tab==='pantry'?button(`看可做的菜 · ${ctx.matches.filter(m=>m.ready).length}`,'jump-results','','btn primary'):button(tab==='prep'?'回菜单':tab==='menu'?'去备料':'查看菜单','tab',`data-tab="${tab==='menu'?'prep':'menu'}"`,'btn primary')}</div>`;
     root.querySelectorAll('details[data-keep]').forEach(d=>{if(detailState.has(d.dataset.keep)&&!(tab==='pantry'&&pantryQuery&&d.classList.contains('inventory-group')))d.open=detailState.get(d.dataset.keep);});
     const panel=root.querySelector('.inventory-scroll'); if(panel)panel.scrollTop=innerScroll;
     if (sameTab&&focused) {
@@ -121,7 +125,6 @@ function render() {
         if (target&&Number.isInteger(selection)&&typeof target.setSelectionRange==='function') {try {target.setSelectionRange(selection,selection);}catch{}}
     }
     if (dialogId&&dialog.open) renderDialog();
-    updateTimer();
     requestAnimationFrame(()=>window.scrollTo(0,scroll));
 }
 function applyMeal(id) {
@@ -167,15 +170,10 @@ else {
 } save(); }
 function download(name, contents, type = 'application/json;charset=utf-8') { const blob = new Blob([contents], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000); }
 function dateName() { return new Date().toISOString().slice(0, 10); }
-function switchTab(name) { if (!['browse', 'pantry', 'menu', 'prep', 'review'].includes(name))
+function switchTab(name) { if (!['browse', 'pantry', 'menu', 'prep', 'review', 'fire'].includes(name))
     return; tab = name; if(location.hash!=='#'+name) { try { history.replaceState(null,'','#'+name); } catch { /* Opaque preview origins may deny history writes. */ } } render(); window.scrollTo({ top: 0, behavior: 'instant' }); }
 function usePreset(id) { if (state.selected.length && !confirm('用这套定稿菜单替换当前选菜？笔记保留；原菜单建议先导出备份。'))
     return; state = applyPreset(db, state, id); tab = 'menu'; save('已排好这一桌，可调每道份量。'); window.scrollTo(0, 0); }
-function updateTimer() { const el = document.getElementById('timer-readout'); if (!el)
-    return; if (!state.timer) {
-    el.textContent = '未计时';
-    return;
-} const sec = Math.max(0, Math.ceil((state.timer.endsAt - Date.now()) / 1000)); el.textContent = sec ? `${state.timer.label} · ${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}` : '时间到了：检查食物，不代表已经熟透。'; el.classList.toggle('timer-done', sec === 0); }
 document.addEventListener('click', event => {
     const b = event.target.closest('[data-action]');
     if (!b)
@@ -191,15 +189,20 @@ document.addEventListener('click', event => {
     else if (a === 'toggle')
         doToggle(id);
     else if (a === 'category') {
-        category = b.dataset.value || '全部';
+        category = b.dataset.value || '全部'; browsePage=1;
         render();
     }
+    else if (a === 'fire-recipes') { category='苹果木烟熏';search='';browsePage=1;switchTab('browse'); }
+    else if (a === 'browse-page') {browsePage=Number(b.dataset.page);renderCatalog();const target=document.getElementById('recipe-count');target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}
+    else if (a === 'pantry-page') {pantryPage=Number(b.dataset.page);render();requestAnimationFrame(()=>document.getElementById('inventory-results')?.scrollIntoView({block:'start'}));}
     else if (a === 'scope') {
+        pantryPage=1;
         const value=b.dataset.value;
         inventory.categories=value?(inventory.categories.includes(value)?inventory.categories.filter(c=>c!==value):[...inventory.categories,value]):[];
         persistInventory();render();
     }
     else if (a === 'match-filter') {
+        pantryPage=1;
         if (['ready','ingredients','equipment','all'].includes(b.dataset.value)) matchFilter=b.dataset.value;
         render();
     }
@@ -279,7 +282,7 @@ document.addEventListener('click', event => {
         document.getElementById('library-import').click();
     else if (a === 'restore-library') {
         if (confirm('恢复内置定稿库？自定义库会移除，仍存在的选菜与笔记保留；请先导出自定义库。')) {
-            db = BUILTIN;
+            db = BUILTIN;banner='';browsePage=1;pantryPage=1;category='全部';search='';
             rebuildIndex();
             state = sanitizeState(state, db);
             state.checked = {};
@@ -293,16 +296,6 @@ document.addEventListener('click', event => {
             save('已恢复内置定稿库。');
         }
     }
-    else if (a === 'timer') {
-        state.timer = { endsAt: Date.now() + Number(b.dataset.minutes) * 60000, label: findRecipe(id)?.title ?? '检查食物' };
-        persist();
-        updateTimer();
-    }
-    else if (a === 'stop-timer') {
-        state.timer = null;
-        persist();
-        updateTimer();
-    }
     else if (a === 'rescue') {
         download('火边本机数据救援.json', JSON.stringify({ stateRaw: failedRaw || readStore(STORE + '-recovery') || readStore(STORE), libraryRaw: readStore(LIB),inventoryRaw: inventoryRaw || readStore(INVENTORY_STORE + '-recovery') || readStore(INVENTORY_STORE) }, null, 2));
     }
@@ -315,8 +308,7 @@ document.addEventListener('input', event => {
     const t = event.target;
     if (t.id === 'recipe-search') {
         search = t.value;
-        document.getElementById('catalog-list').innerHTML = renderCards();
-        document.getElementById('recipe-count').textContent = `${filteredRecipes().length} / ${db.recipes.length}道`;
+        browsePage=1;renderCatalog();
     }
     else if (t.id === 'pantry-search') {
         pantryQuery=t.value;render();
@@ -350,11 +342,11 @@ document.addEventListener('change', event => {
         }
     }
     else if (a === 'experience') {
-        experience = t.value;
+        experience = t.value; browsePage=1;
         render();
     }
     else if (a === 'fresh-ideas') {
-        freshIdeas = t.checked;
+        freshIdeas = t.checked; browsePage=1;
         render();
     }
     else if (a === 'freezer') {
@@ -435,11 +427,8 @@ dialog.addEventListener('click', e => { if (e.target === dialog) {
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)
         closeDialog();
 } });
-document.addEventListener('visibilitychange', updateTimer);
-timerTick = setInterval(updateTimer, 1000);
-window.addEventListener('pagehide', () => { persist(); clearInterval(timerTick); });
-window.addEventListener('pageshow', () => { clearInterval(timerTick); timerTick = setInterval(updateTimer, 1000); updateTimer(); });
+window.addEventListener('pagehide', persist);
 const initialTab=location.hash.slice(1);
-if (['browse','pantry','menu','prep','review'].includes(initialTab)) tab=initialTab;
+if (['browse','pantry','menu','prep','review','fire'].includes(initialTab)) tab=initialTab;
 window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);if(next!==tab)switchTab(next);});
 render();
