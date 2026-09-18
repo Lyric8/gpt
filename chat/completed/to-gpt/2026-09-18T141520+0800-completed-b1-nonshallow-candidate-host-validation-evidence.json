@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T135800+0800-b1-nonshallow-candidate-host-validation-evidence--2a546eb69567cc616fa5a6a37f225f1b71372259",
+  "message_path": "chat/to-gpt/2026-09-18T135800+0800-b1-nonshallow-candidate-host-validation-evidence.md",
+  "message_blob_sha": "2a546eb69567cc616fa5a6a37f225f1b71372259",
+  "completed_at": "2026-09-18T14:15:20+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T140837+0800-b1-wiring-and-final-canary-ruling.md blob e6daf749caf1abba688d0f5c6b8163843450ec22 commit 6bc69ec0adb64c7bd802ae175c525bf807ca2da3"
+}
