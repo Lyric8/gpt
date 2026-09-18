@@ -7,7 +7,7 @@
   "purpose": "append terminal status for recovered Stage1 notification",
   "fence": 156,
   "acquired_at": "2026-09-18T16:43:20+08:00",
-  "lease_until": "2026-09-18T17:13:20+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T16:44:00+08:00",
+  "released_at": "2026-09-18T16:44:00+08:00",
+  "status": "released"
 }
