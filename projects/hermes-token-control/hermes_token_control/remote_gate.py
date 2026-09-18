@@ -133,6 +133,12 @@ class ActionBoundaryGate:
     the source by ``source_path + source_blob_sha``, and then reads completion
     markers plus STATUS. A caller must run this gate before local/remote claim,
     agent wake, provider calls and external side effects.
+
+    The gate cache is a correctness boundary, not an observer cache. It is kept
+    non-shallow so authorization never depends on the mutable ``shallow`` file.
+    A pre-existing shallow cache is converged with ``--unshallow`` while the
+    gate-local lock is held; failure to prove a non-shallow repository fails
+    closed before any snapshot is authorized.
     """
 
     def __init__(
@@ -156,15 +162,27 @@ class ActionBoundaryGate:
         self.completion_dir = completion_dir
         self.status_path = status_path
 
+    def _is_shallow_repository(self) -> bool:
+        value = _git(
+            self.bare, "rev-parse", "--is-shallow-repository", max_stdout=64
+        ).decode("ascii", errors="strict").strip()
+        if value == "true":
+            return True
+        if value == "false":
+            return False
+        raise RemoteStateError("git returned invalid shallow-repository state")
+
     def _refresh_snapshot(self) -> str:
-        _git(
-            self.bare,
-            "fetch",
-            "--no-tags",
-            "--depth=1",
+        fetch_args = ["fetch", "--no-tags"]
+        if self._is_shallow_repository():
+            fetch_args.append("--unshallow")
+        fetch_args.extend((
             "origin",
             "+refs/heads/chat:refs/remotes/origin/chat",
-        )
+        ))
+        _git(self.bare, *fetch_args)
+        if self._is_shallow_repository():
+            raise RemoteStateError("action gate cache remained shallow after refresh")
         snapshot = _git(self.bare, "rev-parse", "refs/remotes/origin/chat", max_stdout=256).decode().strip()
         allowed = {
             "chat/README.md",
