@@ -3,11 +3,11 @@
   "resource_key": "resource:release-ledger",
   "lease_id": "83764ff3512ef91f60d2a95dd9257f7b271755156181388e701e676d40ef6e08",
   "owner": "hermes-poller",
-  "holder_nonce": "05ff6260-9b7d-4c93-964d-a726e3b312f5",
-  "purpose": "publish campfire-kitchen-v3.0.0 Release via existing restricted channel",
-  "fence": 2,
-  "acquired_at": "2026-09-18T03:59:59+08:00",
-  "lease_until": "2026-09-18T04:06:26+08:00",
-  "released_at": "2026-09-18T04:06:26+08:00",
-  "status": "released"
+  "holder_nonce": "239a457d-d2b3-4a4f-81a1-0dca04e2f81f",
+  "purpose": "V4.1 release 创建 + 发布账本核对",
+  "fence": 3,
+  "acquired_at": "2026-09-18T17:57:58+08:00",
+  "lease_until": "2026-09-18T18:27:58+08:00",
+  "released_at": null,
+  "status": "held"
 }
