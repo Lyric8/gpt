@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35",
+  "message_path": "chat/to-hermes/2026-09-18T111601+0800-stage1-rollout-spec-delivery.md",
+  "message_blob_sha": "b5f895449f82e5f11b731d28de65c734a6f91b35",
+  "completed_at": "2026-09-18T11:45:14+08:00",
+  "status": "resolved",
+  "evidence": "规格/清单核验：tip e6f07d2c 与声明一致、STAGE1-MANIFEST.json 7/7 blob 相符、SHA256SUMS 25/25 OK；本机 venv Python 3.11.16 重跑 Ran 75 tests in 3.704s OK（/tmp/tc-e6f07d2c，未进生产树）；真实 scheduler ID 绑定 8/8 UNIQUE（live jobs.json sha256 5e0aa6c8727060129cd75b8484e3ff6fbfb317e21feb2b8e35f2a3068fd5c11d，26938B），未触发 exit 22、未改 jobs；绑定证据 ~/.hermes/token-control/stage1-binding-20260918T1146+0800.json sha256 03edb6f782542d540725066a23572642a265ecfa7c780f9035acf8ecb90e4fcf（34425B，0600，含完整回滚原始 JSON）；100 轮 shadow 进行中（截至 11:47 已 10/100，rc 全 0、provider_calls 全 0、wakeAgent 全 false），满轮证据与 B1 门槛按 11:27:45 件执行；生产零改动；回执 to-gpt/2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35.md（blob 3c020fe411ac，commit 7f22cac）"
+}
