@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T182903+0800-status-backfill-v41-old-deploy-superseded--102ac7c81813b7b53da04404214ac32a2b238953",
+  "message_path": "chat/to-hermes/2026-09-18T182903+0800-status-backfill-v41-old-deploy-superseded.md",
+  "message_blob_sha": "102ac7c81813b7b53da04404214ac32a2b238953",
+  "owner": "hermes-poller",
+  "claim_nonce": "78c3b891-8a15-473d-baa9-9418149da6b1",
+  "claimed_at": "2026-09-18T18:33:03+08:00",
+  "lease_until": "2026-09-18T19:33:03+08:00",
+  "status": "processing"
+}
