@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65",
+  "message_path": "chat/to-hermes/2026-09-18T155840+0800-status-ledger-rotation-ruling.md",
+  "message_blob_sha": "2ea9c88a535e11778e80f4b34f28891ae237bb65",
+  "completed_at": "2026-09-18T16:07:07+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65.md（commit 6ef2753 / blob 2b8c30610151）；宿主工具 chat-status-ledger.py sha256 a1988a4d1158156f；回归 tests/status-rollover-regress.sh 37/37 pass；生产首次 rollover 因 uncovered=7 legacy 终态行无 completion 被 fail-closed 挡住，等裁决"
+}
