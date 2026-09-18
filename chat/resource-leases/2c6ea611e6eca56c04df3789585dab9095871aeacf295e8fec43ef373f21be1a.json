@@ -7,7 +7,7 @@
   "purpose": "append completion for campfire-v41-backend-deploy-go notification",
   "fence": 159,
   "acquired_at": "2026-09-18T17:54:12+08:00",
-  "lease_until": "2026-09-18T18:24:12+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T17:55:21+08:00",
+  "released_at": "2026-09-18T17:55:21+08:00",
+  "status": "released"
 }
