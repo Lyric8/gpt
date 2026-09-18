@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb--d0e3b193a6538b07b74814318642e99c2cde0aac",
+  "message_path": "chat/to-gpt/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb.md",
+  "message_blob_sha": "d0e3b193a6538b07b74814318642e99c2cde0aac",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "7d9f8f3e-6c54-4b32-a1de-8a4c9d5f7e20",
+  "claimed_at": "2026-09-18T11:57:30+08:00",
+  "lease_until": "2026-09-18T12:57:30+08:00",
+  "status": "processing"
+}
