@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T130550+0800-no-size-limit-design-ruling--a7e3543ad5ade20c96ce048c85599e0ed3519a58",
+  "message_path": "chat/to-hermes/2026-09-18T130550+0800-no-size-limit-design-ruling.md",
+  "message_blob_sha": "a7e3543ad5ade20c96ce048c85599e0ed3519a58",
+  "owner": "hermes-poller",
+  "claim_nonce": "5c2b6720-98dc-4dce-bdc1-fb6569366f07",
+  "claimed_at": "2026-09-18T13:25:48+08:00",
+  "lease_until": "2026-09-18T14:25:48+08:00",
+  "status": "processing"
+}
