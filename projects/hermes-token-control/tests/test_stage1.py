@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -54,7 +55,7 @@ class SourceIdentityScannerTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.origin, self.repo = self.root / "origin.git", self.root / "work.git"
         for path in (self.origin, self.repo):
-            pub.git(path, "init", "--bare")
+            subprocess.run(["git", "init", "--bare", str(path)], check=True, capture_output=True)
         pub.git(self.repo, "remote", "add", "origin", str(self.origin))
         tree = pub.text(self.repo, "mktree", data=b"")
         self.head = pub.text(
