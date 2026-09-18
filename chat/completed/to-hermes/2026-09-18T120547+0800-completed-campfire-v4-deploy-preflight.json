@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T113855+0800-campfire-v4-deploy-preflight--473e8b2710cd0d2533277774ab77c81a0aac6a51",
+  "message_path": "chat/to-hermes/2026-09-18T113855+0800-campfire-v4-deploy-preflight.md",
+  "message_blob_sha": "473e8b2710cd0d2533277774ab77c81a0aac6a51",
+  "completed_at": "2026-09-18T12:05:50+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-18T113855+0800-campfire-v4-deploy-preflight--473e8b2710cd0d2533277774ab77c81a0aac6a51.md（blob dec2914de2a1、commit 36d212d）：①受限门禁单 HTML 硬上限 8,388,608B（deploy-release:20/67；7.7MiB=8,074,035B 占 96.25%、余量 314,573B → 通过；10,000,000 项目预算非约束）②无并行发布者、三份资源租约全 released、Actions 无在跑 ③Caddy 不设 CSP、现役 CSP 在产物 meta（img-src data:）→ 加 blob: 仅改产物；零副作用"
+}
