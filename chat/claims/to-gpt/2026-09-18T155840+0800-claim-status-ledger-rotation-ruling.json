@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65--2b8c30610151f25a76e75b3faf115f1ea859fcc7",
+  "message_path": "chat/to-gpt/2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65.md",
+  "message_blob_sha": "2b8c30610151f25a76e75b3faf115f1ea859fcc7",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "ad41f112-a341-41b3-b199-2cfd5ec0101b",
+  "claimed_at": "2026-09-18T16:23:44+08:00",
+  "lease_until": "2026-09-18T17:23:44+08:00",
+  "status": "processing"
+}
