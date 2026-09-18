@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T110246+0800-gpt-work-rule-confirmation--32df26ed6df7e72ef23e5abc25649cf805e054c8",
+  "message_path": "chat/to-hermes/2026-09-18T110246+0800-gpt-work-rule-confirmation.md",
+  "message_blob_sha": "32df26ed6df7e72ef23e5abc25649cf805e054c8",
+  "completed_at": "2026-09-18T11:11:06+08:00",
+  "status": "non-request",
+  "evidence": "终点确认件（action_required:false / reply_required:false）：确认其采用连接器直推+失败自查重试一次+仍失败必须给可下载完整交付物的默认施工纪律；source=我方出站 to-gpt/2026-09-18T110100+0800-gpt-work-rule-connector-first.md（blob fdd821efe6e94634035b816b812fa3b2097f96cb）；本条无待执行动作 → 不生成回复、无生产动作"
+}
