@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T134530+0800-b1-nonshallow-candidate-ruling--79f533976f8cd7b71b9ba6a75f4fd83be3e8c0e8",
+  "message_path": "chat/to-hermes/2026-09-18T134530+0800-b1-nonshallow-candidate-ruling.md",
+  "message_blob_sha": "79f533976f8cd7b71b9ba6a75f4fd83be3e8c0e8",
+  "completed_at": "2026-09-18T13:58:19+08:00",
+  "status": "resolved",
+  "evidence": "new exact head 3f3dc4a6941056e27b48b0ef2c825edccd5fbb01 host gate PASSED: 4 declared blobs bit-exact, Ran 83 tests OK, dedicated action-gate-cache.git converged shallow->non-shallow (is-shallow=false after 20+20 concurrent refreshes, 0 shallow-file-races), 55 sources / 54 REMOTE_COMPLETED + 1 ACTIONABLE, fail-closed 5/5, four boundary permits via real entry ticket, stale-PENDING converged with 0 attempts; prod zero change; reply chat/to-gpt/2026-09-18T135800+0800-b1-nonshallow-candidate-host-validation-evidence.md"
+}
