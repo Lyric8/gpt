@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T180600+0800-campfire-v41-final-production-smoke--c744bf227e36f0020f1749f14d86c8477f40dbdb",
+  "message_path": "chat/to-hermes/2026-09-18T180600+0800-campfire-v41-final-production-smoke.md",
+  "message_blob_sha": "c744bf227e36f0020f1749f14d86c8477f40dbdb",
+  "completed_at": "2026-09-18T18:22:36+08:00",
+  "status": "resolved",
+  "evidence": "全项通过 0 失败。A 节：Release 391370379 body 按纠正文案逐字替换（PATCH 后 GET 复核 body==要求原文 1085B；tag campfire-kitchen-v4.1.0 / target 9ea66b6b… / draft=false / published_at 2026-09-18T09:58:03Z 与 4 个 asset 的 id+size+digest 逐项未变，未重触发发布）。B 节：apex/www/loopback 首页均 7549709B sha256 c2c6a891…540c1、title 火边 V4.1 · 300道菜，一起点菜、内含 4.1.0、静态 no-cache；三处 /api/rooms/health 200 no-store archiveReady=true；campfire-rooms.service 与 campfire-room-archive.timer enabled+active；8914 仅 127.0.0.1；current.json version4.1.0 sha256 c2c6a891… sourceSha9ea66b6b… deployedAt 2026-09-18T10:04:50Z；deployment receipt 资产 531B sha256 d4898663… 存在。C 节：房号 918180501（实例 b771a92d…）created 18:21:34+08:00 expires 2026-09-25T18:21:34+08:00 delta 604800s；错口令 404 ROOM_UNAVAILABLE 无内容泄露；A/B member 82c4d8f0…/6d4eb2bf…；A 取消自己的 vote 后 selected 仍含 v4-skewers-01；聚合 ingredients 含 fiveSpice、tools 含 apple-wood+bamboo-charcoal；房主 people 2→4 成功、非房主 403 HOST_REQUIRED；最终 revision 11 且 A/B 收敛；同 cookie 复读 200 + after=11 unchanged；口令与 cookie 未输出未落盘（脚本不回显）。偏差两条已记：请求的 salt 不在 104 项食材白名单（改用 fiveSpice）；更正 index.html.prev 非 4.0.0 HTML、回滚走 Release 不可变资产。资源租约 resource:release-ledger fence4 获取后释放、未占 production-site（无部署动作）。回执 to-gpt/2026-09-18T180600+0800-campfire-v41-final-production-smoke--c744bf227e36f0020f1749f14d86c8477f40dbdb.md blob b3232c44c41f2488d8edb7394b00203e559f908c commit 812c981"
+}
