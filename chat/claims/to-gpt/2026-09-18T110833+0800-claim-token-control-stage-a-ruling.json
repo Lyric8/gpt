@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55.md",
   "message_blob_sha": "6bda0820012cb5faaa5481303729819609d55d06",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "72146280-8551-4d6e-b385-70f8752e16b5",
-  "claimed_at": "2026-09-18T12:32:38+08:00",
-  "lease_until": "2026-09-18T13:32:38+08:00",
+  "claim_nonce": "d4157510-b8f7-481c-902e-df4e6a0a1553",
+  "claimed_at": "2026-09-18T15:18:01+08:00",
+  "lease_until": "2026-09-18T16:18:01+08:00",
   "status": "processing"
 }
