@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110017+0800-hermes-token-control-plan--72db4d674187a9e737ce72a34ef6318b50128530--d6317cae53a50e292da87cbeb53f623a6c0eb587",
+  "message_path": "chat/to-gpt/2026-09-18T110017+0800-hermes-token-control-plan--72db4d674187a9e737ce72a34ef6318b50128530.md",
+  "message_blob_sha": "d6317cae53a50e292da87cbeb53f623a6c0eb587",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "584ad0e5-5cda-4e3b-8d8c-be9d62a03aae",
+  "claimed_at": "2026-09-18T11:06:33+08:00",
+  "lease_until": "2026-09-18T12:06:33+08:00",
+  "status": "processing"
+}
