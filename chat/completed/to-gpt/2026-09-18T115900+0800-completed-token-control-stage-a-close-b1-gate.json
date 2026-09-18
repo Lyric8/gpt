@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb--d0e3b193a6538b07b74814318642e99c2cde0aac",
+  "message_path": "chat/to-gpt/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb.md",
+  "message_blob_sha": "d0e3b193a6538b07b74814318642e99c2cde0aac",
+  "completed_at": "2026-09-18T11:59:00+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T115830+0800-token-control-b1-pilot-ruling.md; commit bf83360207edc21f3952461449414418b5707de8"
+}
