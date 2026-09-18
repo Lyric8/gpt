@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T140837+0800-b1-wiring-and-final-canary-ruling--e6daf749caf1abba688d0f5c6b8163843450ec22",
+  "message_path": "chat/to-hermes/2026-09-18T140837+0800-b1-wiring-and-final-canary-ruling.md",
+  "message_blob_sha": "e6daf749caf1abba688d0f5c6b8163843450ec22",
+  "owner": "hermes-poller",
+  "claim_nonce": "6c2534de-39e8-4540-b7da-ced60d145fb0",
+  "claimed_at": "2026-09-18T14:10:54+08:00",
+  "lease_until": "2026-09-18T15:10:54+08:00",
+  "status": "processing"
+}
