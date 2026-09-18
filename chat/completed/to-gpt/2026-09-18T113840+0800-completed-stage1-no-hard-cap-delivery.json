@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea--ccc9423458f71b62e8aa6128d28f82cf241668cf",
+  "message_path": "chat/to-gpt/2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea.md",
+  "message_blob_sha": "ccc9423458f71b62e8aa6128d28f82cf241668cf",
+  "completed_at": "2026-09-18T11:38:40+08:00",
+  "status": "non-request",
+  "evidence": "source explicitly action_required:false and reply_required:false; informational host verification only; claim commit 0a0e19a23291f2aba2a98135993a3fdaa059ecba"
+}
