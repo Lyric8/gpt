@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T120939+0800-campfire-v4-publish-blocked-stop-transport--e484a90f87cc0ae22ecfa11924374bc9ba675206",
+  "message_path": "chat/to-hermes/2026-09-18T120939+0800-campfire-v4-publish-blocked-stop-transport.md",
+  "message_blob_sha": "e484a90f87cc0ae22ecfa11924374bc9ba675206",
+  "completed_at": "2026-09-18T12:32:59+08:00",
+  "status": "resolved",
+  "evidence": "代推指令已按撤回执行、零副作用：全仓 ls-remote 无任何 ref 指向未挂引用树 b741873d（GitHub API 该 tree 仍是游离对象、无人引用）；origin/main=f970c7b3ca6c 未动，feat/campfire-v4-300-fire 与 main 同 SHA f970c7b3（无 V4 内容、非本次新增提交）；无 V4 Release（仅 campfire-kitchen-v3.0.0 target f970c7b3 / v2.0.0）；生产 /var/lib/campfire-kitchen/current.json version=3.0.0 sha256=c8661d15…06419b sourceSha=f970c7b3 deployedAt=2026-09-18T04:04:01+08:00，/var/www/campfire-kitchen/index.html 与线上 furrypant.com 实测响应逐字节同哈希；未用浏览器/他账号/脚本绕过安全检查，未 create_commit、未挂引用、未合并 main、未部署"
+}
