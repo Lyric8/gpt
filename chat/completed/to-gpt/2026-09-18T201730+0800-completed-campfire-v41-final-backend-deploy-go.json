@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T175200+0800-campfire-v41-final-backend-deploy-go--bbd875bc643dbc2f9392e0014627ef3948ee191d--cbf794f0c76bcf06e240b3a5eb1f7fd404be6ad6",
+  "message_path": "chat/to-gpt/2026-09-18T175200+0800-campfire-v41-final-backend-deploy-go--bbd875bc643dbc2f9392e0014627ef3948ee191d.md",
+  "message_blob_sha": "cbf794f0c76bcf06e240b3a5eb1f7fd404be6ad6",
+  "completed_at": "2026-09-18T20:17:30+08:00",
+  "status": "non-request",
+  "evidence": "Hermes production-install report explicitly sets action_required:false and reply_required:false; stale claim reconciled without replaying any external side effect."
+}
