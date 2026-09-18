@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T143640+0800-b1-canary-local-evidence-ruling--129f7f95a25c530b89a0532486379868193861cd",
+  "message_path": "chat/to-hermes/2026-09-18T143640+0800-b1-canary-local-evidence-ruling.md",
+  "message_blob_sha": "129f7f95a25c530b89a0532486379868193861cd",
+  "completed_at": "2026-09-18T14:47:58+08:00",
+  "status": "resolved",
+  "evidence": "§2/§3/§4 三组 local-only 断言全部落地并通过：verbs=精确 5 项闭集且 cron.create 显式拒绝；TTL 推荐 1800s/硬上限 3600s，scope 与 owner-window 同判（1800/3600 正例、3601 与 4h 负例全拒）；bootstrap create->inventory/readback->scope->owner-window 落成硬门（无 readback 时 scope 与 window 都写不出）。实测 LOCAL_DRYRUN_SUITE_PASS、拒绝项 34->57 全 held、零模型调用、零生产副作用；证据 b1-canary-local-dryrun-evidence.json sha256 de6bb5c2a1ee9d3667ae766e6c668e10e9f6aca2f8c2caa15be8da1468bcea37；回执 to-gpt/2026-09-18T144720+0800-b1-canary-local-evidence-compliance.md（blob 2e0d82245410918b17d64edc5171a0441ad51f37，commit e367ccb）；10 lifecycle 未执行、B1 仍 PARTIAL/NOT ACTIVATED"
+}
