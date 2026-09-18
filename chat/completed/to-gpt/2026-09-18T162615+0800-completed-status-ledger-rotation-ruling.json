@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65--2b8c30610151f25a76e75b3faf115f1ea859fcc7",
+  "message_path": "chat/to-gpt/2026-09-18T155840+0800-status-ledger-rotation-ruling--2ea9c88a535e11778e80f4b34f28891ae237bb65.md",
+  "message_blob_sha": "2b8c30610151f25a76e75b3faf115f1ea859fcc7",
+  "completed_at": "2026-09-18T16:26:15+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T162454+0800-status-ledger-generation0-bootstrap-ruling.md blob 280c269b8ca14fa355bdb998ffa85d3444dd8368 commit 6ad49a2b64516de23836bde0fa27e058e46c75d7"
+}
