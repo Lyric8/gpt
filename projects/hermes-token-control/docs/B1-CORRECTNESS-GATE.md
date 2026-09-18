@@ -23,7 +23,7 @@ unknown remote state => fail closed
 
 For one immutable source identity it:
 
-1. fetches a fresh `chat` branch snapshot into the existing bare cache;
+1. fetches a fresh `chat` branch snapshot into a **dedicated non-shallow bare cache**. A pre-existing shallow gate cache is converged with `git fetch --unshallow` while the gate-local lock is held; the gate verifies `--is-shallow-repository=false` after refresh and fails closed otherwise;
 2. checks the approved protocol blob hashes;
 3. proves the source path still resolves to the expected full blob SHA;
 4. reads source metadata (`action_required`, `reply_required`);
@@ -34,9 +34,11 @@ For one immutable source identity it:
    - `NON_REQUEST`: source explicitly says `action_required: false`;
    - `ACTIONABLE`: no authoritative terminal evidence was found.
 
+The action-gate cache is part of the correctness boundary and must not share shallow state with the observer cache. `token-action-gate.lock` serializes init/fetch/read for that dedicated cache. The observer may remain shallow and may fetch concurrently; it cannot mutate the action gate's `shallow` state because there is no shared bare repository.
+
 If a supposedly actionable source has a terminal STATUS row but no matching completion, the gate treats it as ambiguous and fails closed. This is intentional: it prevents a premature sender-side STATUS row from silently suppressing work, while also preventing duplicate execution when a receiver crashed between STATUS/completion operations. An operator/reconciliation path must repair that ambiguous state from evidence.
 
-Malformed completion JSON, conflicting completion identities/statuses, protocol drift, source replacement, missing STATUS, fetch failure, or oversized authoritative data all fail closed.
+Malformed completion JSON, conflicting completion identities/statuses, protocol drift, source replacement, missing STATUS, fetch failure, inability to converge the action-gate cache to non-shallow, or oversized authoritative data all fail closed.
 
 ### `queue.EventQueue` additions
 
@@ -71,7 +73,7 @@ A returned `BoundaryPermit` is evidence that remote completion/STATUS was freshl
 
 ## Required host wiring
 
-The production adapter remains responsible for the current Git protocol. The mandatory order is:
+The production adapter remains responsible for the current Git protocol. Use a dedicated action-gate bare repository (for example `/home/ubuntu/.hermes/token-control/action-gate-cache.git`) and keep it separate from the shadow observer's cache. The mandatory order is:
 
 ```text
 1. Stage-1 source scanner inserts immutable source identity into local queue.
@@ -110,12 +112,13 @@ This separates semantic concurrency control from forensic byte evidence and avoi
 Code publication alone does not close B1. Hermes host validation must show all of the following against the exact code commit:
 
 1. the full existing test suite plus `tests/test_action_boundary.py` passes on the production Python version;
-2. remote completion present before local claim => zero agent/model/business action and local state reconciles without burning an attempt;
-3. completion arriving after local claim but before each action boundary => subsequent action is stopped;
-4. protocol drift, fetch/read failure, source blob replacement, malformed/conflicting completion => fail closed, local claim released/refunded, no cursor/seen/business progression;
-5. premature terminal STATUS without matching completion => fail closed, not silently skipped and not executed;
-6. every actual wake/model/business entry point is wired through `permit()` and every remote mutation still revalidates the real message/resource leases/fence;
-7. the 100/100 shadow run is complete under one approved protocol snapshot;
-8. one final bounded canary covers the official mutation lifecycle plus the fail-closed injection in a longer scheduler-hot-write window. Repeating hundreds of mutations is not required; the purpose is independent final evidence, not load testing.
+2. the dedicated action-gate cache is non-shallow after refresh, including conversion of a deliberately shallow test cache; shadow may concurrently fetch its separate cache without changing this invariant;
+3. remote completion present before local claim => zero agent/model/business action and local state reconciles without burning an attempt;
+4. completion arriving after local claim but before each action boundary => subsequent action is stopped;
+5. protocol drift, fetch/read failure, source blob replacement, malformed/conflicting completion => fail closed, local claim released/refunded, no cursor/seen/business progression;
+6. premature terminal STATUS without matching completion => fail closed, not silently skipped and not executed;
+7. every actual wake/model/business entry point is wired through `permit()` and every remote mutation still revalidates the real message/resource leases/fence;
+8. the 100/100 shadow run is complete under one approved protocol snapshot;
+9. one final bounded canary covers the official mutation lifecycle plus the fail-closed injection in a longer scheduler-hot-write window. Repeating hundreds of mutations is not required; the purpose is independent final evidence, not load testing.
 
 Until those checks pass, record B1 as `PARTIAL / NOT ACTIVATED`; keep the existing production path unchanged.
