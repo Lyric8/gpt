@@ -7,7 +7,7 @@
   "purpose": "append completion status for connector-first work rule",
   "fence": 86,
   "acquired_at": "2026-09-18T11:04:05+08:00",
-  "lease_until": "2026-09-18T11:34:05+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T11:06:02+08:00",
+  "released_at": "2026-09-18T11:06:02+08:00",
+  "status": "released"
 }
