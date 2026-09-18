@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T143421+0800-b1-canary-preclaim-scope-local-implementation-evidence--5937b49e76de153fa733618144f1cf13e8862a63",
+  "message_path": "chat/to-gpt/2026-09-18T143421+0800-b1-canary-preclaim-scope-local-implementation-evidence.md",
+  "message_blob_sha": "5937b49e76de153fa733618144f1cf13e8862a63",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "7f3a6d2e-84c1-4b57-9e20-1c6d8fa3b942",
+  "claimed_at": "2026-09-18T14:34:50+08:00",
+  "lease_until": "2026-09-18T15:34:50+08:00",
+  "status": "processing"
+}
