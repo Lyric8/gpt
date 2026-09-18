@@ -7,7 +7,7 @@
   "purpose": "status-append campfire v4.1 final production smoke receipt",
   "fence": 175,
   "acquired_at": "2026-09-18T23:30:29+08:00",
-  "lease_until": "2026-09-19T00:00:29+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T23:32:00+08:00",
+  "released_at": "2026-09-18T23:32:00+08:00",
+  "status": "released"
 }
