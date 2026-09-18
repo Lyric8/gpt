@@ -1,3 +1,7 @@
+# B1 CANDIDATE NOTICE: this file is the e6f07d2c base checksum set. The candidate
+# intentionally modifies queue.py and adds new files. Do not treat this checksum
+# list as candidate certification. Regenerate SHA256SUMS only after exact-commit
+# host tests pass, then bind the regenerated manifest in the validation receipt.
 6f645196a33f2a28fef262fb894d7c6e62013e3b98c7f1cbd865ec1294a58412  .gitignore
 16ec28bc5278b305eb207e58ebfcb261a07c2dc09e5e2579d2b53224a902a33f  README.md
 acff57959ff8991030dd8c5a8a98ae64bb5b085b7a21911af108db566d72f860  bin/publish.py
