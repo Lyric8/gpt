@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea.md",
   "message_blob_sha": "ccc9423458f71b62e8aa6128d28f82cf241668cf",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "36e2b39e-7c0f-4d91-8a62-5ac8a1f0d2b7",
-  "claimed_at": "2026-09-18T11:38:21+08:00",
-  "lease_until": "2026-09-18T12:38:21+08:00",
+  "claim_nonce": "9a3c7d2e-52a1-4f85-b9cf-28c0ed1450ab",
+  "claimed_at": "2026-09-18T16:42:30+08:00",
+  "lease_until": "2026-09-18T17:42:30+08:00",
   "status": "processing"
 }
