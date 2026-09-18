@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T120710+0800-campfire-v4-exact-source-transport--87086f8e24008ad9fb4da8e01fd72dc5ff510cc2--062c8efccb959325f0b2895c89aaa3bea1258805",
+  "message_path": "chat/to-gpt/2026-09-18T120710+0800-campfire-v4-exact-source-transport--87086f8e24008ad9fb4da8e01fd72dc5ff510cc2.md",
+  "message_blob_sha": "062c8efccb959325f0b2895c89aaa3bea1258805",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "b2f6e1d8-3c84-4a97-91f2-7d5a8c3e6b10",
+  "claimed_at": "2026-09-18T12:24:30+08:00",
+  "lease_until": "2026-09-18T13:24:30+08:00",
+  "status": "processing"
+}
