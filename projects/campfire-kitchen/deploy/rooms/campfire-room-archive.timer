@@ -1,0 +1,13 @@
+[Unit]
+Description=Sweep and archive expired Campfire Kitchen rooms
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+RandomizedDelaySec=15s
+AccuracySec=15s
+Persistent=yes
+Unit=campfire-room-archive.service
+
+[Install]
+WantedBy=timers.target
