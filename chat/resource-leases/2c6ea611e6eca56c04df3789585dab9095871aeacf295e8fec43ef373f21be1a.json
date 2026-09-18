@@ -7,7 +7,7 @@
   "purpose": "append completion for b1 canary local evidence compliance",
   "fence": 132,
   "acquired_at": "2026-09-18T14:51:00+08:00",
-  "lease_until": "2026-09-18T15:21:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T14:52:00+08:00",
+  "released_at": "2026-09-18T14:52:00+08:00",
+  "status": "released"
 }
