@@ -7,7 +7,7 @@
   "purpose": "append Stage1 no-hard-cap and rollout completion/status",
   "fence": 89,
   "acquired_at": "2026-09-18T11:17:00+08:00",
-  "lease_until": "2026-09-18T11:47:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T11:25:10+08:00",
+  "released_at": "2026-09-18T11:25:10+08:00",
+  "status": "released"
 }
