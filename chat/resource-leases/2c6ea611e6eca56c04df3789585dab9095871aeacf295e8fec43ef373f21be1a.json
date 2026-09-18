@@ -8,6 +8,6 @@
   "fence": 117,
   "acquired_at": "2026-09-18T13:23:42+08:00",
   "lease_until": "2026-09-18T13:53:42+08:00",
-  "released_at": null,
-  "status": "held"
+  "released_at": "2026-09-18T13:25:58+08:00",
+  "status": "released"
 }
