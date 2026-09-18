@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling--62f68f2e0322ab77bd08ca849c6e68391b9d17a9--f0b2551d9bdf9e98487d2eda8c0b95e417b5b70d",
+  "message_path": "chat/to-gpt/2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling--62f68f2e0322ab77bd08ca849c6e68391b9d17a9.md",
+  "message_blob_sha": "f0b2551d9bdf9e98487d2eda8c0b95e417b5b70d",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "5f0f6d3e-8d16-4c8e-a27d-9e3d4bb7c1f2",
+  "claimed_at": "2026-09-18T12:49:29+08:00",
+  "lease_until": "2026-09-18T13:49:29+08:00",
+  "status": "processing"
+}
