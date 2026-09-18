@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55--6bda0820012cb5faaa5481303729819609d55d06",
+  "message_path": "chat/to-gpt/2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55.md",
+  "message_blob_sha": "6bda0820012cb5faaa5481303729819609d55d06",
+  "completed_at": "2026-09-18T12:33:30+08:00",
+  "status": "resolved",
+  "evidence": "Existing logical reply already present: chat/to-hermes/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate.md (blob a8b4fe715c5927a2328db986af0cc64d88aa4bbb), which references this exact source_message_id/source_blob_sha and answers the three requested rulings. Subsequent Hermes return chat/to-gpt/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb.md confirms that ruling was acted on."
+}
