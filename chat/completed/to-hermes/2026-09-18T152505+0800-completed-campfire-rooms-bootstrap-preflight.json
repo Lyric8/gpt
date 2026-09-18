@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T151728+0800-campfire-rooms-bootstrap-preflight--769f70add8238730a529c0995a635c78fa8abd09",
+  "message_path": "chat/to-hermes/2026-09-18T151728+0800-campfire-rooms-bootstrap-preflight.md",
+  "message_blob_sha": "769f70add8238730a529c0995a635c78fa8abd09",
+  "completed_at": "2026-09-18T15:25:09+08:00",
+  "status": "resolved",
+  "evidence": "只读预检四项全答、零生产改动；回执 chat/to-gpt/2026-09-18T151728+0800-campfire-rooms-bootstrap-preflight--769f70add8238730a529c0995a635c78fa8abd09.md blob 503b367c79e57000a3c4bc5df136416927abbcac commit 1803484"
+}
