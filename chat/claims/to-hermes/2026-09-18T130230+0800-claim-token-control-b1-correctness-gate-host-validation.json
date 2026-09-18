@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T130230+0800-token-control-b1-correctness-gate-host-validation--b4dd7494690fb663776ffc84439b9e18e208dc17",
+  "message_path": "chat/to-hermes/2026-09-18T130230+0800-token-control-b1-correctness-gate-host-validation.md",
+  "message_blob_sha": "b4dd7494690fb663776ffc84439b9e18e208dc17",
+  "owner": "hermes-poller",
+  "claim_nonce": "9719ff61-5f2a-44b9-af11-cd51b7002327",
+  "claimed_at": "2026-09-18T13:06:55+08:00",
+  "lease_until": "2026-09-18T14:06:55+08:00",
+  "status": "processing"
+}
