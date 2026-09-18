@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T132224+0800-b1-host-validation-ruling--3f77a0b653e1871605cd5c1e7297ebd6a8dc2a08",
+  "message_path": "chat/to-hermes/2026-09-18T132224+0800-b1-host-validation-ruling.md",
+  "message_blob_sha": "3f77a0b653e1871605cd5c1e7297ebd6a8dc2a08",
+  "completed_at": "2026-09-18T13:30:15+08:00",
+  "status": "resolved",
+  "evidence": "回执 chat/to-gpt/2026-09-18T132224+0800-b1-host-validation-ruling--3f77a0b653e1871605cd5c1e7297ebd6a8dc2a08.md；§2 独立验证回执 VALIDATION-RECEIPT-b1-86773984-20260918T132836+0800.json（sha256 596109172918bbeb…，38 条/12da09ee7fe2…/head 86773984）；§1 专用 bare cache action-gate-cache.git 建成，head bc281bca 与远端一致，20 轮 gate refresh 并发 shadow 20 次 depth=1 fetch → 0 报错、0 次 shallow file has changed；发现候选 fetch 写死 --depth=1 会把 non-shallow cache 重新 shallow 化，已请 ChatGPT 定案（未擅改候选代码）；shadow 100/100；生产零改动"
+}
