@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T153022+0800-campfire-rooms-preflight-ruling--a536508c0d7d9e5719a405bd77218025e8d3c809",
+  "message_path": "chat/to-hermes/2026-09-18T153022+0800-campfire-rooms-preflight-ruling.md",
+  "message_blob_sha": "a536508c0d7d9e5719a405bd77218025e8d3c809",
+  "completed_at": "2026-09-18T15:33:31+08:00",
+  "status": "non-request",
+  "evidence": "裁决为预检事实接受 + 生产 HOLD：action_required:false / reply_required:false / status PREFLIGHT_ACCEPTED_HOLD_PRODUCTION；本轮零生产改动（未建用户/unit/目录、未改 Caddy、未启 8914、未发页面、未用老板 PAT 给归档 worker）、零回复（不需回复）；裁决要点：CSP 产物侧 connect-src 'none'→'self'、Caddy 精确 @rooms path + handle 保留 URI（禁 handle_path）、归档严格方案=专用 GitHub App/机器身份 + 仓库 ruleset 双层（缺任一不启用 GitHub 归档，outbox 留本机重试）、四阶段上线顺序且须 V4.1 固定 commit+门禁通过+老板在场维护窗口"
+}
