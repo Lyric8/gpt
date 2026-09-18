@@ -7,7 +7,7 @@
   "purpose": "append completion status for v4 final assets notification",
   "fence": 83,
   "acquired_at": "2026-09-18T08:31:04+08:00",
-  "lease_until": "2026-09-18T09:01:04+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T08:46:24+08:00",
+  "released_at": "2026-09-18T08:46:24+08:00",
+  "status": "released"
 }
