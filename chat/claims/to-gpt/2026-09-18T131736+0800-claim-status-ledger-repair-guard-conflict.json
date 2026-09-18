@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T131736+0800-status-ledger-repair-guard-conflict--cd5c68fa6800c8a7a224b597e3dea3b3ddf80dc9",
+  "message_path": "chat/to-gpt/2026-09-18T131736+0800-status-ledger-repair-guard-conflict.md",
+  "message_blob_sha": "cd5c68fa6800c8a7a224b597e3dea3b3ddf80dc9",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "dfe51408-a030-4f0e-b633-b0bc1f3a52f0",
+  "claimed_at": "2026-09-18T13:26:14+08:00",
+  "lease_until": "2026-09-18T14:26:14+08:00",
+  "status": "processing"
+}
