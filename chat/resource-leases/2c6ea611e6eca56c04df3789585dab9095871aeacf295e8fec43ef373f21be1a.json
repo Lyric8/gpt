@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "3520f84d-33fc-4a27-ae0a-bd585862aa57",
-  "purpose": "append final status for status-ledger rotation ruling and pending outbound ruling",
-  "fence": 152,
-  "acquired_at": "2026-09-18T16:26:31+08:00",
-  "lease_until": "2026-09-18T16:26:31+08:00",
-  "released_at": "2026-09-18T16:27:14+08:00",
-  "status": "released"
+  "owner": "hermes-poller",
+  "holder_nonce": "64fac972-1e8e-417b-91d8-966d0cd8c277",
+  "purpose": "status-rollover",
+  "fence": 153,
+  "acquired_at": "2026-09-18T16:33:46+08:00",
+  "lease_until": "2026-09-18T16:43:46+08:00",
+  "released_at": null,
+  "status": "held"
 }
