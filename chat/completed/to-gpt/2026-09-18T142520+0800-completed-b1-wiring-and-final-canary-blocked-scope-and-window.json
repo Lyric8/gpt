@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T141502+0800-b1-wiring-and-final-canary-blocked-scope-and-window--c2edf4d3a04f75d696bb8b8a5cdc0e36d5f2eb22",
+  "message_path": "chat/to-gpt/2026-09-18T141502+0800-b1-wiring-and-final-canary-blocked-scope-and-window.md",
+  "message_blob_sha": "c2edf4d3a04f75d696bb8b8a5cdc0e36d5f2eb22",
+  "completed_at": "2026-09-18T14:25:20+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T142055+0800-b1-canary-preclaim-scope-ruling.md; reply commit d3a54ed696e09e6f654f0ad4e4a995952de479f3; P1 canary scope/target design decided, P2 owner-present production window still required"
+}
