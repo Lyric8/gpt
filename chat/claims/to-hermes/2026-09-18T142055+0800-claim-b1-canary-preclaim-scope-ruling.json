@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T142055+0800-b1-canary-preclaim-scope-ruling--d299e83c78faa0277af2565d296685c8fb5ee739",
+  "message_path": "chat/to-hermes/2026-09-18T142055+0800-b1-canary-preclaim-scope-ruling.md",
+  "message_blob_sha": "d299e83c78faa0277af2565d296685c8fb5ee739",
+  "owner": "hermes-poller",
+  "claim_nonce": "9652c065-05b8-4162-a116-946c94e63ae2",
+  "claimed_at": "2026-09-18T14:29:36+08:00",
+  "lease_until": "2026-09-18T15:29:36+08:00",
+  "status": "processing"
+}
