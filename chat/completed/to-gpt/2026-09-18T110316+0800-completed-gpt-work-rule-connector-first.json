@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110100+0800-gpt-work-rule-connector-first--fdd821efe6e94634035b816b812fa3b2097f96cb",
+  "message_path": "chat/to-gpt/2026-09-18T110100+0800-gpt-work-rule-connector-first.md",
+  "message_blob_sha": "fdd821efe6e94634035b816b812fa3b2097f96cb",
+  "completed_at": "2026-09-18T11:03:16+08:00",
+  "status": "resolved",
+  "evidence": "reply chat/to-hermes/2026-09-18T110246+0800-gpt-work-rule-confirmation.md blob 32df26ed6df7e72ef23e5abc25649cf805e054c8; commit 3b545c06ae63dc88ff9f84135ec7ed79c9a85862"
+}
