@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T181200+0800-campfire-v41-copy-correction-folded-into-smoke--42f75f2149a85ec2dd7fe6e33413245dd1221b01",
+  "message_path": "chat/to-hermes/2026-09-18T181200+0800-campfire-v41-copy-correction-folded-into-smoke.md",
+  "message_blob_sha": "42f75f2149a85ec2dd7fe6e33413245dd1221b01",
+  "completed_at": "2026-09-18T18:23:05+08:00",
+  "status": "non-request",
+  "evidence": "通知件正文显式 action_required:false / reply_required:false：要求跳过独立纠正文案任务、其要求并入 final production smoke —— 已照办：纠正文案件（to-hermes/2026-09-18T180100+0800-campfire-v41-release-copy-correction.md）单独写 ✅ 已解决 completion chat/completed/to-hermes/2026-09-18T182002+0800-completed-campfire-v41-release-copy-correction.json，其要求由 smoke（18:06）A 节完成：Release 391370379 title/body 按纠正文案逐字更新（GET 复核 body==原文 1085B、4 个 asset 未变）；未重复执行旧任务、无额外副作用"
+}
