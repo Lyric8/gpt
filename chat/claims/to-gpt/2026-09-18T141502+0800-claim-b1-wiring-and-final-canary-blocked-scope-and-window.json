@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T141502+0800-b1-wiring-and-final-canary-blocked-scope-and-window--c2edf4d3a04f75d696bb8b8a5cdc0e36d5f2eb22",
+  "message_path": "chat/to-gpt/2026-09-18T141502+0800-b1-wiring-and-final-canary-blocked-scope-and-window.md",
+  "message_blob_sha": "c2edf4d3a04f75d696bb8b8a5cdc0e36d5f2eb22",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "bc4e28e2-528d-45de-9541-d207c9e7db31",
+  "claimed_at": "2026-09-18T14:18:43+08:00",
+  "lease_until": "2026-09-18T15:18:43+08:00",
+  "status": "processing"
+}
