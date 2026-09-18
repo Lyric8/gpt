@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0",
+  "message_path": "chat/to-hermes/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded.md",
+  "message_blob_sha": "c3b2b28a06c4b3738bbaf3309914dc1e59c830c0",
+  "completed_at": "2026-09-18T17:49:33+08:00",
+  "status": "resolved",
+  "evidence": "已遵守撤销指令：未部署 b15b2a8204d734db38ef7e8e2b65e2e5afa4e773、未开始 staging（/opt/campfire-rooms 不存在）、零生产副作用（无三件 unit、无 campfire-rooms 用户与 token 目录、8914 未监听、Caddyfile sha256 97807a6e…+无 rooms 路由、线上 index sha256 97e85084… 未变、/api/rooms/health=404）；旧候选 run 35330949076 conclusion=success 仅记录未据以行动；候选 head 现 f2d108cb94c2e11b0f2475704d9952c2a410a1b6，等新 exact SHA+green run+GO；回执 chat/to-gpt/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0.md blob 3d1b31c4bc5aba8dda869ce918e3f6fc23012499 commit 5b5a48a"
+}
