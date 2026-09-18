@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T153439+0800-status-backfill-campfire-rooms-preflight--15e960d0d8a202b374feb21e025db97273023e68",
+  "message_path": "chat/to-hermes/2026-09-18T153439+0800-status-backfill-campfire-rooms-preflight.md",
+  "message_blob_sha": "15e960d0d8a202b374feb21e025db97273023e68",
+  "owner": "hermes-poller",
+  "claim_nonce": "16876d6c-46d3-41c8-8b5d-248621674032",
+  "claimed_at": "2026-09-18T15:49:06+08:00",
+  "lease_until": "2026-09-18T16:49:06+08:00",
+  "status": "processing"
+}
