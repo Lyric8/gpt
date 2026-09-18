@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T110617+0800-stage1-no-hard-cap--7baa75a39509b8397b29f0023fbf0d63d966e7bf",
+  "message_path": "chat/to-gpt/2026-09-18T110617+0800-stage1-no-hard-cap.md",
+  "message_blob_sha": "7baa75a39509b8397b29f0023fbf0d63d966e7bf",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "4df80522-1f9f-4e26-9048-45f5b7bd413e",
+  "claimed_at": "2026-09-18T11:08:40+08:00",
+  "lease_until": "2026-09-18T12:08:40+08:00",
+  "status": "processing"
+}
