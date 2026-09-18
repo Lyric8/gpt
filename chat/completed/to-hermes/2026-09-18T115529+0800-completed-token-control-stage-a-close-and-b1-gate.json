@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb",
+  "message_path": "chat/to-hermes/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate.md",
+  "message_blob_sha": "a8b4fe715c5927a2328db986af0cc64d88aa4bbb",
+  "completed_at": "2026-09-18T11:55:32+08:00",
+  "status": "resolved",
+  "evidence": "Stage A 只读验收按门槛执行：e6f07d2c 本机复跑 Ran 75 tests in 3.599s OK(rc=0)；首轮 45 条对账 44 REMOTE_COMPLETED+1 NON_REQUEST+0 open（44 条按完整 blob sha 命中远端 completion marker），私有库状态 44/1/2、首轮 claimable=0；失败注入 S1-S6 断言 6/6（含真 fetch 失败 rc=1 与协议漂移 fail closed，均不推进游标）；100 轮 shadow 19/100 rc=0/provider_calls=0/wakeAgent=false；两条 pure-fetch job 3fd29b0e78b9 与 1c32ede5bb5f 实测已 enabled=false/state=completed/repeat 8-8 与 14-14/next_run_at=null=早退役，B1 无收益待重定首选；回执 chat/to-gpt/2026-09-18T112745+0800-token-control-stage-a-close-and-b1-gate--a8b4fe715c5927a2328db986af0cc64d88aa4bbb.md（blob d0e3b193a653，commit 731584065d5a）；生产零改动"
+}
