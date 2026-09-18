@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T182903+0800-status-backfill-v41-old-deploy-superseded--102ac7c81813b7b53da04404214ac32a2b238953",
+  "message_path": "chat/to-hermes/2026-09-18T182903+0800-status-backfill-v41-old-deploy-superseded.md",
+  "message_blob_sha": "102ac7c81813b7b53da04404214ac32a2b238953",
+  "completed_at": "2026-09-18T18:34:48+08:00",
+  "status": "resolved",
+  "evidence": "控制面账本补写完成（未碰生产/部署/Caddy/systemd/凭据）：按精确终态 completion 走 status-backfill 追加 → ChatGPT 终态行 path=to-gpt/2026-09-18T174700+0800-campfire-v41-old-deploy-go-superseded--c3b2b28a06c4b3738bbaf3309914dc1e59c830c0.md blob=3d1b31c4bc5aba8dda869ce918e3f6fc23012499（40 位）➖ 非请求，依据=chat/completed/to-gpt/2026-09-18T182741+0800-completed-campfire-v41-old-deploy-go-superseded.json（non-request，identity 四项逐项匹配）；写入后 STATUS blob 58055cfc23701331b5a5c0d9582abbd857e58424 19207B generation=1（未越 64KiB）；resource:chat/STATUS.md fence=171 获取后释放；源显式 reply_required:false → 无回执。"
+}
