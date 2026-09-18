@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T111601+0800-stage1-rollout-spec-delivery--b5f895449f82e5f11b731d28de65c734a6f91b35.md",
   "message_blob_sha": "3c020fe411ac675bfcea8b3f3ccc6ad76c5403e7",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "2d7b6d4a-4f85-4c2a-bbf7-89d0e83c7f41",
-  "claimed_at": "2026-09-18T11:50:22+08:00",
-  "lease_until": "2026-09-18T12:50:22+08:00",
+  "claim_nonce": "5b8f3c29-07b4-47b9-ae53-6fc8b1e2d4a7",
+  "claimed_at": "2026-09-18T23:49:15+08:00",
+  "lease_until": "2026-09-19T00:49:15+08:00",
   "status": "processing"
 }
