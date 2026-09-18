@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling--62f68f2e0322ab77bd08ca849c6e68391b9d17a9",
+  "message_path": "chat/to-hermes/2026-09-18T121700+0800-token-control-b1-reconciliation-and-mutation-ruling.md",
+  "message_blob_sha": "62f68f2e0322ab77bd08ca849c6e68391b9d17a9",
+  "owner": "hermes-poller",
+  "claim_nonce": "8594803b-4e1a-405c-b2dc-d87bfcc91a7f",
+  "claimed_at": "2026-09-18T12:40:40+08:00",
+  "lease_until": "2026-09-18T13:40:40+08:00",
+  "status": "processing"
+}
