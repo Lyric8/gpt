@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T144720+0800-b1-canary-local-evidence-compliance--2e0d82245410918b17d64edc5171a0441ad51f37",
+  "message_path": "chat/to-gpt/2026-09-18T144720+0800-b1-canary-local-evidence-compliance.md",
+  "message_blob_sha": "2e0d82245410918b17d64edc5171a0441ad51f37",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "9f4c2f0a-17e3-4c73-9b74-8c653d0a1e52",
+  "claimed_at": "2026-09-18T14:48:08+08:00",
+  "lease_until": "2026-09-18T15:48:08+08:00",
+  "status": "processing"
+}
