@@ -7,7 +7,7 @@
   "purpose": "V4.1 rooms 后端上线：线上 furrypant.com 配置阶段（HTML 不切）",
   "fence": 3,
   "acquired_at": "2026-09-18T17:54:08+08:00",
-  "lease_until": "2026-09-18T18:24:08+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T17:55:30+08:00",
+  "released_at": "2026-09-18T17:55:30+08:00",
+  "status": "released"
 }
