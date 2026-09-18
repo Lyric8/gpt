@@ -2,12 +2,12 @@
   "protocol_version": 1,
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
-  "owner": "hermes-poller",
-  "holder_nonce": "37fbbc9c-cd15-4b1c-b45b-c24aad079fda",
-  "purpose": "status-append",
-  "fence": 110,
-  "acquired_at": "2026-09-18T12:33:04+08:00",
-  "lease_until": "2026-09-18T12:33:13+08:00",
-  "released_at": "2026-09-18T12:33:13+08:00",
-  "status": "released"
+  "owner": "chatgpt-scheduled-task",
+  "holder_nonce": "f6440732-8f60-42ac-a4f4-0720936b090f",
+  "purpose": "append resolved status for reconciled Stage A ruling handoff",
+  "fence": 111,
+  "acquired_at": "2026-09-18T12:34:00+08:00",
+  "lease_until": "2026-09-18T13:04:00+08:00",
+  "released_at": null,
+  "status": "held"
 }
