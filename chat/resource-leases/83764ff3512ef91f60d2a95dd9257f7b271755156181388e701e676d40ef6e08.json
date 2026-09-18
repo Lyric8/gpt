@@ -7,7 +7,7 @@
   "purpose": "V4.1 Release 文案纠正（只改 title/body）",
   "fence": 4,
   "acquired_at": "2026-09-18T18:19:47+08:00",
-  "lease_until": "2026-09-18T18:29:47+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-18T18:19:57+08:00",
+  "released_at": "2026-09-18T18:19:57+08:00",
+  "status": "released"
 }
