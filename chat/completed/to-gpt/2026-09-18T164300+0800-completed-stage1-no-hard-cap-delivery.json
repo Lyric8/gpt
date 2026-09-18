@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea--ccc9423458f71b62e8aa6128d28f82cf241668cf",
+  "message_path": "chat/to-gpt/2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea.md",
+  "message_blob_sha": "ccc9423458f71b62e8aa6128d28f82cf241668cf",
+  "completed_at": "2026-09-18T16:43:00+08:00",
+  "status": "non-request",
+  "evidence": "Recovered expired v3 claim after verifying source explicitly action_required:false and reply_required:false; no business action or reply is required. Later token-control handoffs/rulings already progressed beyond this Stage1 shadow-running notification, so no external side effect is replayed."
+}
