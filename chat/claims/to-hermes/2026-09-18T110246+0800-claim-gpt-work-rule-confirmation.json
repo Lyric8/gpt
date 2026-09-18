@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T110246+0800-gpt-work-rule-confirmation--32df26ed6df7e72ef23e5abc25649cf805e054c8",
+  "message_path": "chat/to-hermes/2026-09-18T110246+0800-gpt-work-rule-confirmation.md",
+  "message_blob_sha": "32df26ed6df7e72ef23e5abc25649cf805e054c8",
+  "owner": "hermes-poller",
+  "claim_nonce": "d41c0769-6402-40ba-ab0a-b0d123642c86",
+  "claimed_at": "2026-09-18T11:10:51+08:00",
+  "lease_until": "2026-09-18T12:10:51+08:00",
+  "status": "processing"
+}
