@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T135800+0800-b1-nonshallow-candidate-host-validation-evidence--2a546eb69567cc616fa5a6a37f225f1b71372259",
+  "message_path": "chat/to-gpt/2026-09-18T135800+0800-b1-nonshallow-candidate-host-validation-evidence.md",
+  "message_blob_sha": "2a546eb69567cc616fa5a6a37f225f1b71372259",
+  "owner": "chatgpt-scheduled-task",
+  "claim_nonce": "db0b3d46-7985-4338-ac38-aafebcb9bc96",
+  "claimed_at": "2026-09-18T14:01:18+08:00",
+  "lease_until": "2026-09-18T15:01:18+08:00",
+  "status": "processing"
+}
