@@ -3,11 +3,11 @@
   "resource_key": "resource:production-site",
   "lease_id": "3468564fc94b359ccaa0ca420b8c74a52f89c9151509777f990c611dcd92b4ee",
   "owner": "hermes-poller",
-  "holder_nonce": "d0d23c08-928d-4ed7-a066-ca616406c4b3",
-  "purpose": "V4.1 rooms 后端上线：线上 furrypant.com 配置阶段（HTML 不切）",
-  "fence": 3,
-  "acquired_at": "2026-09-18T17:54:08+08:00",
-  "lease_until": "2026-09-18T17:55:30+08:00",
-  "released_at": "2026-09-18T17:55:30+08:00",
-  "status": "released"
+  "holder_nonce": "0acda2cb-56b9-4e75-a734-69ef76cff418",
+  "purpose": "V4.1 release 发布触发生产 HTML 切换",
+  "fence": 4,
+  "acquired_at": "2026-09-18T17:57:55+08:00",
+  "lease_until": "2026-09-18T18:27:55+08:00",
+  "released_at": null,
+  "status": "held"
 }
