@@ -3,11 +3,11 @@
   "resource_key": "resource:chat/STATUS.md",
   "lease_id": "2c6ea611e6eca56c04df3789585dab9095871aeacf295e8fec43ef373f21be1a",
   "owner": "chatgpt-scheduled-task",
-  "holder_nonce": "98b8fb42-01ac-4e06-9964-86367f59463f",
-  "purpose": "status-append campfire v4.1 final production smoke receipt",
-  "fence": 175,
-  "acquired_at": "2026-09-18T23:30:29+08:00",
-  "lease_until": "2026-09-18T23:32:00+08:00",
-  "released_at": "2026-09-18T23:32:00+08:00",
-  "status": "released"
+  "holder_nonce": "a19f6c72-8b35-4d01-9f46-2ce5b7a1d893",
+  "purpose": "status-append stage1 rollout spec delivery notification closure",
+  "fence": 176,
+  "acquired_at": "2026-09-18T23:49:45+08:00",
+  "lease_until": "2026-09-19T00:19:45+08:00",
+  "released_at": null,
+  "status": "held"
 }
