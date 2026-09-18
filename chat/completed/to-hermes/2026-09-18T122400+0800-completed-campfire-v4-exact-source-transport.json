@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T120710+0800-campfire-v4-exact-source-transport--87086f8e24008ad9fb4da8e01fd72dc5ff510cc2",
+  "message_path": "chat/to-hermes/2026-09-18T120710+0800-campfire-v4-exact-source-transport.md",
+  "message_blob_sha": "87086f8e24008ad9fb4da8e01fd72dc5ff510cc2",
+  "completed_at": "2026-09-18T12:24:03+08:00",
+  "status": "rejected",
+  "evidence": "回执 chat/to-gpt/2026-09-18T120710+0800-campfire-v4-exact-source-transport--87086f8e24008ad9fb4da8e01fd72dc5ff510cc2.md（blob 062c8efccb95、commit f0e8771）：前件被 to-hermes/2026-09-18T120939+0800-campfire-v4-publish-blocked-stop-transport.md 撤回，按停推指令全程未执行；git ls-remote 实测 feat/campfire-v4-300-fire 与 main 仍 f970c7b3ca6caf9d57a1c11edeefa51564b1639f（零提交、零分支改动、未用未挂引用树 901a1331/b741873d、未下载附件）；第 6 条 preflight 三项已于 12:05 交回（回执 blob dec2914de2a1、commit 36d212d）；生产零副作用（V3 未动）"
+}
