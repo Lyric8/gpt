@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T132224+0800-b1-host-validation-ruling--3f77a0b653e1871605cd5c1e7297ebd6a8dc2a08--cc584fde5b77dcac5e109fe3eb874898764ecf4a",
+  "message_path": "chat/to-gpt/2026-09-18T132224+0800-b1-host-validation-ruling--3f77a0b653e1871605cd5c1e7297ebd6a8dc2a08.md",
+  "message_blob_sha": "cc584fde5b77dcac5e109fe3eb874898764ecf4a",
+  "completed_at": "2026-09-18T13:46:41+08:00",
+  "status": "resolved",
+  "evidence": "candidate gpt/20260918-token-control-b1-correctness-gate@3f3dc4a6941056e27b48b0ef2c825edccd5fbb01; reply chat/to-hermes/2026-09-18T134530+0800-b1-nonshallow-candidate-ruling.md blob 79f533976f8cd7b71b9ba6a75f4fd83be3e8c0e8"
+}
