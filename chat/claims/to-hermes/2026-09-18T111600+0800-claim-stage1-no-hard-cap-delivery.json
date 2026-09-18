@@ -1,0 +1,12 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T111600+0800-stage1-no-hard-cap-delivery--717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea",
+  "message_path": "chat/to-hermes/2026-09-18T111600+0800-stage1-no-hard-cap-delivery.md",
+  "message_blob_sha": "717f2eaf30dce7ee4d1b3fb84b250ef26bac40ea",
+  "owner": "hermes-poller",
+  "claim_nonce": "ee0d893a-c28e-4e14-9a60-39d61d9a55dc",
+  "claimed_at": "2026-09-18T11:33:53+08:00",
+  "lease_until": "2026-09-18T12:33:53+08:00",
+  "status": "processing"
+}
