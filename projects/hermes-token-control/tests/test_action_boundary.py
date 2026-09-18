@@ -11,7 +11,7 @@ from pathlib import Path
 from hermes_token_control.artifacts import Artifacts
 from hermes_token_control.dispatcher import ActionDispatcher
 from hermes_token_control.queue import EventQueue
-from hermes_token_control.remote_gate import RemoteStateError
+from hermes_token_control.remote_gate import ActionBoundaryGate, RemoteStateError
 from hermes_token_control.source_scan import scan_git_inbox
 
 spec = importlib.util.spec_from_file_location("publish_helper", Path(__file__).parents[1] / "bin/publish.py")
@@ -97,6 +97,22 @@ class ActionBoundaryGateTests(unittest.TestCase):
             ).fetchone()
             self.assertIsNotNone(row)
             return row["state"], row["attempts"]
+
+    def test_refresh_unshallows_dedicated_action_gate_cache(self):
+        shallow = self.root / "action-gate-cache.git"
+        subprocess.run(
+            [
+                "git", "clone", "--bare", "--depth=1", "--branch", "chat",
+                self.origin.as_uri(), str(shallow),
+            ],
+            check=True,
+            capture_output=True,
+        )
+        self.assertEqual(pub.text(shallow, "rev-parse", "--is-shallow-repository"), "true")
+        gate = ActionBoundaryGate(shallow, expected_protocol=self.expected)
+        snapshot = gate._refresh_snapshot()
+        self.assertEqual(snapshot, self.head)
+        self.assertEqual(pub.text(shallow, "rev-parse", "--is-shallow-repository"), "false")
 
     def test_remote_completion_before_local_claim_is_reconciled_without_attempt(self):
         path, sha = self.source()
