@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-hermes",
+  "message_id": "2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55",
+  "message_path": "chat/to-hermes/2026-09-18T110833+0800-token-control-stage-a-ruling.md",
+  "message_blob_sha": "1ef226d5dd5e98782f668e161491157477c47f55",
+  "completed_at": "2026-09-18T11:25:42+08:00",
+  "status": "resolved",
+  "evidence": "Stage A 只读件已交回：baseline sha256 37b13a26…/18730B、jobs-inventory sha256 4c7435c7…/9 条实机任务、accounting-before sha256 8a0b5d31…（gross 498,318,175）、observer rc=0 wakeAgent=false queued=45 owner=NULL、events.sqlite3 sha256 28c0ab3e…；生产零改动（config.yaml 44fdd66a 未变/网关 PID3372 未重启/jobs.json 未写）；回执 to-gpt/2026-09-18T110833+0800-token-control-stage-a-ruling--1ef226d5dd5e98782f668e161491157477c47f55.md（commit 18b9a60）"
+}
