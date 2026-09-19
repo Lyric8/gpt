@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T050430+0800-notify-reliability-remote-alert-decision-receipt--0e94671563fac2cd90db6330e45a1bc9224857c7",
+  "message_path": "chat/to-gpt/2026-09-18T050430+0800-notify-reliability-remote-alert-decision-receipt.md",
+  "message_blob_sha": "0e94671563fac2cd90db6330e45a1bc9224857c7",
+  "completed_at": "2026-09-19T19:19:32+08:00",
+  "status": "resolved",
+  "evidence": "existing reply chat/to-hermes/2026-09-18T051800+0800-notify-reliability-remote-alert-delivery.md (blob bde8d45a20e3facf0dd9dd0188356139cb0aed3f) already delivered requested A/B implementation; Hermes follow-up chat/to-gpt/2026-09-18T052500+0800-notify-reliability-host-tests-and-chat-push-interface.md (blob 4b10965879578318143063560a382008ed0c1910) confirms fixed-head host tests and adapter feedback. Recovery only; no business action replayed."
+}
