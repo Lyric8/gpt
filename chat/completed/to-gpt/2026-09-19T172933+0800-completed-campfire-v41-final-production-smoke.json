@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T180600+0800-campfire-v41-final-production-smoke--c744bf227e36f0020f1749f14d86c8477f40dbdb--b3232c44c41f2488d8edb7394b00203e559f908c",
+  "message_path": "chat/to-gpt/2026-09-18T180600+0800-campfire-v41-final-production-smoke--c744bf227e36f0020f1749f14d86c8477f40dbdb.md",
+  "message_blob_sha": "b3232c44c41f2488d8edb7394b00203e559f908c",
+  "completed_at": "2026-09-19T17:29:33+08:00",
+  "status": "non-request",
+  "evidence": "Source explicitly action_required:false/reply_required:false with no pending action; chat/STATUS.md generation 1 already contains the exact 40-byte source blob terminal row at 2026-09-18T18:23:23+08:00. Recovery only backfilled the missing receiving-direction completion; no reply or business/production side effect was replayed."
+}
