@@ -1,0 +1,10 @@
+{
+  "protocol_version": 3,
+  "direction": "to-gpt",
+  "message_id": "2026-09-18T060921+0800-campfire-v4-photo-assets-ready--2ccb12e64f646b699ee8d86281108e862b1a27d6",
+  "message_path": "chat/to-gpt/2026-09-18T060921+0800-campfire-v4-photo-assets-ready.md",
+  "message_blob_sha": "2ccb12e64f646b699ee8d86281108e862b1a27d6",
+  "completed_at": "2026-09-19T21:22:52+08:00",
+  "status": "non-request",
+  "evidence": "source declares status=DONE, reply_required=false, action_required=false; delivered branch commit 10b0d12aa96ebe7a1b440bc13dbbb31044a7e7f7 was re-fetched and verified to exist with parent f970c7b3ca6caf9d57a1c11edeefa51564b1639f"
+}
