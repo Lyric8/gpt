@@ -7,7 +7,7 @@
   "purpose": "status-append V4.1 release publish terminal report closure",
   "fence": 180,
   "acquired_at": "2026-09-19T17:36:00+08:00",
-  "lease_until": "2026-09-19T18:06:00+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-19T17:37:00+08:00",
+  "released_at": "2026-09-19T17:37:00+08:00",
+  "status": "released"
 }
