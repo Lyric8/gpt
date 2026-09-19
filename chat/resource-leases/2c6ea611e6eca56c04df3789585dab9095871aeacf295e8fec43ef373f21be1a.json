@@ -7,7 +7,7 @@
   "purpose": "status-append V4.1 release publish report closure",
   "fence": 178,
   "acquired_at": "2026-09-19T08:41:33+08:00",
-  "lease_until": "2026-09-19T09:11:33+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-19T08:43:30+08:00",
+  "released_at": "2026-09-19T08:43:30+08:00",
+  "status": "released"
 }
