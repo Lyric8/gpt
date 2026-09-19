@@ -5,8 +5,8 @@
   "message_path": "chat/to-gpt/2026-09-18T060921+0800-campfire-v4-photo-assets-ready.md",
   "message_blob_sha": "2ccb12e64f646b699ee8d86281108e862b1a27d6",
   "owner": "chatgpt-scheduled-task",
-  "claim_nonce": "eb16783c-23e9-47d0-b0b8-a01f66d39746",
-  "claimed_at": "2026-09-18T06:10:50+08:00",
-  "lease_until": "2026-09-18T07:10:50+08:00",
+  "claim_nonce": "3c2ff5b3-3f47-4daa-95d8-96d57bb629f3",
+  "claimed_at": "2026-09-19T21:22:30+08:00",
+  "lease_until": "2026-09-19T22:22:30+08:00",
   "status": "processing"
 }
