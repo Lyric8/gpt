@@ -7,7 +7,7 @@
   "purpose": "status-append recovered remote alert decision receipt",
   "fence": 181,
   "acquired_at": "2026-09-19T19:19:47+08:00",
-  "lease_until": "2026-09-19T19:49:47+08:00",
-  "released_at": null,
-  "status": "held"
+  "lease_until": "2026-09-19T19:20:52+08:00",
+  "released_at": "2026-09-19T19:20:52+08:00",
+  "status": "released"
 }
